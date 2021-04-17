@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
 
-import './ToDo.css';
 
-function ToDo({ toDos, addToDo, deleteToDo, completeToDo }) {
+
+function Home({ toDos, addToDo, deleteToDo, completeToDo }) {
   const [filter, setFilter] = useState('all');
 
   const changeFilter = (newFilter) => {
@@ -110,4 +110,4 @@ function ToDo({ toDos, addToDo, deleteToDo, completeToDo }) {
 }
 
 
-export default ToDo;
+export default Home;

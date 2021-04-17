@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Jumbotron, Row, Col, Alert, Button } from 'reactstrap';
 import axios from 'axios';
-import ToDo from './ToDo'
+import Home from './Home'
 
 import './App.css';
 import logo from './aws.png';
@@ -162,7 +162,7 @@ function App() {
             <Col md="12">
               {idToken.length > 0 ?
                 (
-                  <ToDo updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} />
+                  <Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} />
                 ) : (
                   <Button
                     href={`https://${config.cognito_hosted_domain}/login?response_type=token&client_id=${config.aws_user_pools_web_client_id}&redirect_uri=${config.redirect_url}`}
