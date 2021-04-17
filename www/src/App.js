@@ -158,7 +158,6 @@ function App() {
       <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
         <p dangerouslySetInnerHTML={{ __html: alert }}></p>
       </Alert>
-      <Jumbotron>
         <Row>
           <Col md="12">
             {idToken.length > 0 ? (
@@ -180,7 +179,6 @@ function App() {
             }
           </Col>
         </Row>
-      </Jumbotron>
     </div >
   );
 }

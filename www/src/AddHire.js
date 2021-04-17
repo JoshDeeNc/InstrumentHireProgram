@@ -4,7 +4,13 @@ import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 're
 function AddHire({ toDos, addToDo, deleteToDo, completeToDo }) {
     return (
         <div>
-            <h2>Add Hire</h2>
+            
+            <div class="subheader">
+                    <h1 class="subheader-title">
+                       Add Hire
+
+                    </h1>
+                </div>
             <div class="row">
                 <div class="col-md-6">
                     <div id="panel-1" class="panel">
