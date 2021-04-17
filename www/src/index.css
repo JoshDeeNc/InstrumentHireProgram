@@ -13,3 +13,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+button {
+  color:#FFFFFF !important;
+  text-transform: uppercase !important;
+}
+
+button a {
+  color:#FFFFFF !important;
+
+}
+
+.btn-lg {
+  min-width: 120px !important;
+}
