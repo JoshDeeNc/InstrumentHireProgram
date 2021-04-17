@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Jumbotron, Row, Col, Alert, Button } from 'reactstrap';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import Home from './Home';
-import RTR from './Router';
 import './App.css';
 
 import config from './config';
@@ -114,6 +113,13 @@ function App() {
     } else if (result && result.status === 200) {
       getAllTodos();
       name = '';
+      code = '';
+      instrument = '';
+      brand = '';
+      rate = '';
+      owner = '';
+      dueDate = '';
+      <Redirect to='/'/>
     }
   }
 
@@ -163,7 +169,7 @@ function App() {
             {idToken.length > 0 ? (
               <BrowserRouter>
                 <Switch>
-                  <Route path="/addhire"><AddHire updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
+                  <Route path="/addhire"><AddHire updateAlert={updateAlert} addToDo={addToDo} /></Route>
                   <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
                 </Switch>
               </BrowserRouter>

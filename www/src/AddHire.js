@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
-function AddHire({ toDos, addToDo, deleteToDo, completeToDo }) {
+function AddHire({ addToDo }) {
     return (
         <div>
             
