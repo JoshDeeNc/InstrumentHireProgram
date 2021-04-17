@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Jumbotron, Row, Col, Alert, Button } from 'reactstrap';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
-import Home from './Home'
-
+import Home from './Home';
+import RTR from './Router';
 import './App.css';
-import logo from './aws.png';
 
 import config from './config';
+import AddHire from './AddHire';
 
 function App() {
   const [alert, setAlert] = useState();
@@ -154,28 +155,32 @@ function App() {
 
   return (
     <div className="App">
-        <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
-          <p dangerouslySetInnerHTML={{ __html: alert }}></p>
-        </Alert>
-        <Jumbotron>
-          <Row>
-            <Col md="12">
-              {idToken.length > 0 ?
-                (
-                  <Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} />
-                ) : (
-                  <Button
-                    href={`https://${config.cognito_hosted_domain}/login?response_type=token&client_id=${config.aws_user_pools_web_client_id}&redirect_uri=${config.redirect_url}`}
-                    color="primary"
-                    className="mt-5 float-center"
-                  >
-                    Log In
-                  </Button>
-                )
-              }
-            </Col>
-          </Row>
-        </Jumbotron>
+      <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
+        <p dangerouslySetInnerHTML={{ __html: alert }}></p>
+      </Alert>
+      <Jumbotron>
+        <Row>
+          <Col md="12">
+            {idToken.length > 0 ? (
+              <BrowserRouter>
+                <Switch>
+                  <Route path="/addhire"><AddHire updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
+                  <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
+                </Switch>
+              </BrowserRouter>
+            ) : (
+              <Button
+                href={`https://${config.cognito_hosted_domain}/login?response_type=token&client_id=${config.aws_user_pools_web_client_id}&redirect_uri=${config.redirect_url}`}
+                color="primary"
+                className="mt-5 float-center"
+              >
+                Log In
+              </Button>
+            )
+            }
+          </Col>
+        </Row>
+      </Jumbotron>
     </div >
   );
 }

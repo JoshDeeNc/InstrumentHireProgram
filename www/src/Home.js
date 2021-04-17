@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
-
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 
 function Home({ toDos, addToDo, deleteToDo, completeToDo }) {
@@ -22,7 +22,7 @@ function Home({ toDos, addToDo, deleteToDo, completeToDo }) {
                 <div class="panel-hdr">
                   <h2>
                     New Hire
-                          </h2>
+                          </h2><Button color="primary" className="ml-1"><Link to="/addhire">Add Hire</Link></Button>
 
                 </div>
                 <div class="panel-container show">
