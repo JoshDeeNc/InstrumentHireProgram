@@ -78,13 +78,24 @@ function App() {
   };
 
   const addToDo = async (event) => {
-    const newToDoInput = document.getElementById('newToDo');
-    const item = newToDoInput.value;
-    console.log(item);
-    if (!item || item === '') return;
+    const name = document.getElementById('newToDoName').value;
+    const code = document.getElementById('newToDoCode').value;
+    const instrument = document.getElementById('newToDoInstrument').value;
+    const brand = document.getElementById('newToBrand').value;
+    const rate = document.getElementById('newToDoRate').value;
+    const owner = document.getElementById('newToDoOwner').value;
+    const dueDate = document.getElementById('newToDoDueDate').value;
+    console.log(name);
+    if (!name || name === '') return;
 
     const newToDo = {
-      "item": item,
+      "name": name,
+      "code": code,
+      "instrument": instrument,
+      "brand": brand,
+      "rate": rate,
+      "owner": owner,
+      "due": dueDate,
       "completed": false
     };
 
@@ -101,7 +112,7 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllTodos();
-      newToDoInput.value = '';
+      name = '';
     }
   }
 
@@ -143,20 +154,12 @@ function App() {
 
   return (
     <div className="App">
-      <Container>
         <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
           <p dangerouslySetInnerHTML={{ __html: alert }}></p>
         </Alert>
         <Jumbotron>
           <Row>
-            <Col md="6" className="logo">
-              <h1>Serverless Todo</h1>
-              <p>This is a demo that showcases AWS serverless 2.</p>
-              <p>The application is built using the SAM CLI toolchain, and uses AWS Lambda, Amazon DynamoDB, and Amazon API Gateway for API services and Amazon Cognito for identity.</p>
-
-              <img src={logo} alt="Logo" />
-            </Col>
-            <Col md="6">
+            <Col md="12">
               {idToken.length > 0 ?
                 (
                   <ToDo updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} />
@@ -173,7 +176,6 @@ function App() {
             </Col>
           </Row>
         </Jumbotron>
-      </Container>
     </div >
   );
 }
