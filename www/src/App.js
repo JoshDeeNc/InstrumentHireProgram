@@ -81,7 +81,7 @@ function App() {
     const name = document.getElementById('newToDoName').value;
     const code = document.getElementById('newToDoCode').value;
     const instrument = document.getElementById('newToDoInstrument').value;
-    const brand = document.getElementById('newToBrand').value;
+    const brand = document.getElementById('newToDoBrand').value;
     const rate = document.getElementById('newToDoRate').value;
     const owner = document.getElementById('newToDoOwner').value;
     const dueDate = document.getElementById('newToDoDueDate').value;
