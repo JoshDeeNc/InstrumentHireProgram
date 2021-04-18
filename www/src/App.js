@@ -172,7 +172,7 @@ function App() {
                 <Switch>
                   <Route path="/addhire"><AddHire updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
                   <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
-                  <Route path="/hirerecord/{id}"><HireRecord/></Route>
+                  <Route path="/hirerecord"><HireRecord/></Route>
                 </Switch>
               </BrowserRouter>
             ) : (
