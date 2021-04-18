@@ -1,7 +1,9 @@
 import React from 'react';
 
 function HireRecord({ toDos, getTodo }) {
-    //const id = /[^/]*$/.exec(window.location.href);
+    const id = /[^/]*$/.exec(window.location.href);
+    const HireRecord = toDos.find(item => item.id === id);
+    console.log(HireRecord);
     return (
         <div>
             <div class="row">
