@@ -1,8 +1,7 @@
 import React from 'react';
 
-const id = /[^/]*$/.exec(window.location.href);
-
 function HireRecord({ toDos, getTodo }) {
+    const id = /[^/]*$/.exec(window.location.href);
     console.log(id)
     return (
         <div>
