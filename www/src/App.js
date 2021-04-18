@@ -94,7 +94,6 @@ function App() {
       console.log(result.data.Items);
       setToDos(result.data.Items);
     }
-    return result;
   };
 
   const addToDo = async (event) => {
