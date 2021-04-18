@@ -3,6 +3,7 @@ import React from 'react';
 const id = /[^/]*$/.exec(window.location.href);
 
 function HireRecord({ toDos, getTodo }) {
+    console.log(id)
     return (
         <div>
             <div class="row">
@@ -19,7 +20,7 @@ function HireRecord({ toDos, getTodo }) {
                         </div>
                         <div class="panel-container show">
                         {toDos.find(item => {
-                            return item.id === id;
+                            return item.id === "c9e7f8a0-9fd7-11eb-8f00-5952e620535c";
                         }).map((item, index) => (
                             <div class="panel-content" key={item.id}>
                                 
