@@ -55,7 +55,7 @@ function AddHire({ addToDo }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Due Date</label>
-                                        <Input type="text" name="date" id="newToDoDueDate" placeholder="new date" />
+                                        <Input class="form-control" id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy"/>
                                     </div>
 
                                     <Button onClick={addToDo} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
