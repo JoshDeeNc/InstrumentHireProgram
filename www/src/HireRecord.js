@@ -1,14 +1,7 @@
 import React from 'react';
 
 function HireRecord({ toDos, getTodo }) {
-    const id = /[^/]*$/.exec(window.location.href);
-    const hireRecord;
-    toDos.map((item, index) => {
-        console.log(item);
-        console.log(index);
-    })
-    console.log(id);
-    //console.log(hireRecord);
+    //const id = /[^/]*$/.exec(window.location.href);
     return (
         <div>
             <div class="row">
@@ -28,31 +21,31 @@ function HireRecord({ toDos, getTodo }) {
                                 
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Name </div>
-                                    <div class="col-md-9">{hireRecord.name}</div>
+                                    <div class="col-md-9">s</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Code </div>
-                                    <div class="col-md-9">{hireRecord.code}</div>
+                                    <div class="col-md-9">s</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Instrument </div>
-                                    <div class="col-md-9">{hireRecord.instrument}</div>
+                                    <div class="col-md-9">s</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Brand </div>
-                                    <div class="col-md-9">{hireRecord.brand}</div>
+                                    <div class="col-md-9">s</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Rate </div>
-                                    <div class="col-md-9">{hireRecord.rate}</div>
+                                    <div class="col-md-9">s</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Owner </div>
-                                    <div class="col-md-9">{hireRecord.owner}</div>
+                                    <div class="col-md-9">s</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Due Date </div>
-                                    <div class="col-md-9">{hireRecord.due}</div>
+                                    <div class="col-md-9">s</div>
                                 </div>
                             </div>
                         </div>
