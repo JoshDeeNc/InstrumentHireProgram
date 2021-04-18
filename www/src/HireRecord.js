@@ -2,7 +2,10 @@ import React from 'react';
 
 function HireRecord({ toDos, getTodo }) {
     const id = /[^/]*$/.exec(window.location.href);
-    console.log(id)
+    const hireRecord = toDos.find(item => {
+        return item.id === id;
+    })
+    console.log(hireRecord)
     return (
         <div>
             <div class="row">
@@ -18,38 +21,37 @@ function HireRecord({ toDos, getTodo }) {
                                                 </button>
                         </div>
                         <div class="panel-container show">
-                        {toDos.map((item, index) => (
-                            <div class="panel-content" key={item.id}>
+                            <div class="panel-content">
                                 
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Name </div>
-                                    <div class="col-md-9">{item.name}</div>
+                                    <div class="col-md-9">{hireRecord.name}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Code </div>
-                                    <div class="col-md-9">{item.code}</div>
+                                    <div class="col-md-9">{hireRecord.code}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Instrument </div>
-                                    <div class="col-md-9">{item.instrument}</div>
+                                    <div class="col-md-9">{hireRecord.instrument}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Brand </div>
-                                    <div class="col-md-9">{item.brand}</div>
+                                    <div class="col-md-9">{hireRecord.brand}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Rate </div>
-                                    <div class="col-md-9">{item.rate}</div>
+                                    <div class="col-md-9">{hireRecord.rate}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Owner </div>
-                                    <div class="col-md-9">{item.owner}</div>
+                                    <div class="col-md-9">{hireRecord.owner}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Due Date </div>
-                                    <div class="col-md-9">{item.due}</div>
+                                    <div class="col-md-9">{hireRecord.due}</div>
                                 </div>
-                            </div>))}
+                            </div>
                         </div>
                     </div>
                 </div>
