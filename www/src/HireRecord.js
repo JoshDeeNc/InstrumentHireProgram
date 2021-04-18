@@ -8,7 +8,7 @@ function HireRecord({ toDos, getTodo }) {
         console.log(index);
     })
     console.log(id);
-    console.log(hireRecord);
+    //console.log(hireRecord);
     return (
         <div>
             <div class="row">
