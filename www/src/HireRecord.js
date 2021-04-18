@@ -19,9 +19,7 @@ function HireRecord({ toDos, getTodo }) {
                                                 </button>
                         </div>
                         <div class="panel-container show">
-                        {toDos.find(item => {
-                            return item.id === "c9e7f8a0-9fd7-11eb-8f00-5952e620535c";
-                        }).map((item, index) => (
+                        {toDos.map((item, index) => (
                             <div class="panel-content" key={item.id}>
                                 
                                 <div class="row" >
