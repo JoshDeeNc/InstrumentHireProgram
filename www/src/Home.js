@@ -44,6 +44,7 @@ function Home({ toDos, addToDo, deleteToDo, completeToDo }) {
                           <th>Rate</th>
                           <th>Owner</th>
                           <th>Due Date</th>
+                          <th>Details</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -56,6 +57,7 @@ function Home({ toDos, addToDo, deleteToDo, completeToDo }) {
                             <td>{item.rate}</td>
                             <td>{item.owner}</td>
                             <td>{item.due}</td>
+                            <td><Link to="/hirerecord/{item.id}"><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                           </tr>
                         ))}
 

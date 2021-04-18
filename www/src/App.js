@@ -3,6 +3,7 @@ import { Container, Jumbotron, Row, Col, Alert, Button } from 'reactstrap';
 import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import Home from './Home';
+import HireRecord from './HireRecord';
 import './App.css';
 
 import config from './config';
@@ -119,8 +120,8 @@ function App() {
       rate = '';
       owner = '';
       dueDate = '';
-      window.location = "/"
     }
+    window.location = "/"
   }
 
   const deleteToDo = async (indexToRemove, itemId) => {
@@ -171,6 +172,7 @@ function App() {
                 <Switch>
                   <Route path="/addhire"><AddHire updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
                   <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
+                  <Route path="/hirerecord/{id}"><HireRecord/></Route>
                 </Switch>
               </BrowserRouter>
             ) : (
