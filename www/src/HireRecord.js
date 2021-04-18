@@ -4,16 +4,8 @@ function HireRecord({ toDos, getTodo }) {
     const id = /[^/]*$/.exec(window.location.href);
     //const HireRecord = toDos.find(item => item.id === id);
     for(var to in toDos) {
-        if(to.id === id) {
-            console.log("Yes!");
-            console.log(to.id);
-            console.log(id);
-        }
-        else {
-            console.log("No");
-            console.log(to.id);
-            console.log(id);
-        }
+        console.log(to);
+        console.log(id);
     }
     //console.log(HireRecord);
     return (
