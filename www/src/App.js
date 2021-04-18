@@ -78,24 +78,6 @@ function App() {
     }
   };
 
-  const getTodo = async (itemId) => {
-    if (itemId === null) return;
-
-    const result = await axios({
-      url: `${config.api_base_url}/item/${itemId}`,
-      headers: {
-        Authorization: idToken
-      }
-    });
-
-    if (result && result.status === 401) {
-      clearCredentials();
-    } else if (result && result.status === 200) {
-      console.log(result.data.Items);
-      setToDos(result.data.Items);
-    }
-  };
-
   const addToDo = async (event) => {
     const name = document.getElementById('newToDoName').value;
     const code = document.getElementById('newToDoCode').value;
@@ -189,7 +171,7 @@ function App() {
             <BrowserRouter>
               <Switch>
                 <Route path="/addhire"><AddHire updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
-                <Route path="/hirerecord"><HireRecord toDos={toDos} getTodo={getTodo} /></Route>
+                <Route path="/hirerecord"><HireRecord toDos={toDos} /></Route>
                 <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
               </Switch>
             </BrowserRouter>
