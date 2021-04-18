@@ -165,29 +165,31 @@ function App() {
       <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
         <p dangerouslySetInnerHTML={{ __html: alert }}></p>
       </Alert>
-        <Row>
-          <Col md="12">
-            {idToken.length > 0 ? (
-              <BrowserRouter>
-                <Switch>
-                  <Route path="/addhire"><AddHire updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
-                  <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
-                  <Route path="/hirerecord"><HireRecord/></Route>
-                </Switch>
-              </BrowserRouter>
-            ) : (
-              <Button
-                href={`https://${config.cognito_hosted_domain}/login?response_type=token&client_id=${config.aws_user_pools_web_client_id}&redirect_uri=${config.redirect_url}`}
-                color="primary"
-                className="mt-5 float-center"
-              >
-                Log In
-              </Button>
-            )
-            }
-          </Col>
-        </Row>
+      <Row>
+        <Col md="12">
+          {idToken.length > 0 ? (
+            <BrowserRouter>
+              <Switch>
+                <Route path="/addhire"><AddHire updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
+                <Route path="/hirerecord"><HireRecord /></Route>
+                <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
+
+              </Switch>
+            </BrowserRouter>
+          ) : (
+            <Button
+              href={`https://${config.cognito_hosted_domain}/login?response_type=token&client_id=${config.aws_user_pools_web_client_id}&redirect_uri=${config.redirect_url}`}
+              color="primary"
+              className="mt-5 float-center"
+            >
+              Log In
+            </Button>
+          )
+          }
+        </Col>
+      </Row>
     </div >
+
   );
 }
 
