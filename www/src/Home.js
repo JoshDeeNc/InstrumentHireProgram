@@ -3,7 +3,7 @@ import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 're
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 
-function Home({ toDos, addToDo, deleteToDo, completeToDo }) {
+function Home({ toDos, deleteToDo, completeToDo }) {
   const [filter, setFilter] = useState('all');
 
   const changeFilter = (newFilter) => {
@@ -11,7 +11,6 @@ function Home({ toDos, addToDo, deleteToDo, completeToDo }) {
   };
 
   return (
-    
     <div className="ToDo">
 
 <div class="subheader">
@@ -57,7 +56,7 @@ function Home({ toDos, addToDo, deleteToDo, completeToDo }) {
                             <td>{item.rate}</td>
                             <td>{item.owner}</td>
                             <td>{item.due}</td>
-                            <td><Link to="/hirerecord"><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
+                            <td><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                           </tr>
                         ))}
 
