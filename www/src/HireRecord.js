@@ -2,10 +2,13 @@ import React from 'react';
 
 function HireRecord({ toDos, getTodo }) {
     const id = /[^/]*$/.exec(window.location.href);
-    toDos.map(item => {
+    const hireRecord;
+    toDos.map((item, index) => {
         console.log(item);
+        console.log(index);
     })
-    console.log(hireRecord)
+    console.log(id);
+    console.log(hireRecord);
     return (
         <div>
             <div class="row">
