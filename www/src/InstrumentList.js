@@ -27,7 +27,7 @@ function InstrumentList({ toDos, deleteToDo, completeToDo }) {
               <div id="panel-1" class="panel">
                 <div class="panel-hdr">
                   <h2>
-                    New Instrument
+                    Instrument Inventory
                           </h2><Button color="primary" className="ml-1"><Link to="/addhire">Add Hire</Link></Button>
 
                 </div>
@@ -41,7 +41,6 @@ function InstrumentList({ toDos, deleteToDo, completeToDo }) {
                           <th>Brand</th>
                           <th>Rate</th>
                           <th>Owner</th>
-                          <th>Due Date</th>
                           <th>Details</th>
                         </tr>
                       </thead>
@@ -53,7 +52,6 @@ function InstrumentList({ toDos, deleteToDo, completeToDo }) {
                             <td>{item.brand}</td>
                             <td>{item.rate}</td>
                             <td>{item.owner}</td>
-                            <td>{item.due}</td>
                             <td><Link to={`/instrumentrecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                           </tr>
                         ))}
