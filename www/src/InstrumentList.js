@@ -15,7 +15,7 @@ function InstrumentList({ toDos, deleteToDo, completeToDo }) {
 
 <div class="subheader">
                     <h1 class="subheader-title">
-                        One Maker Academy
+                    Instrument Inventory
 
                     </h1>
                 </div>
@@ -27,7 +27,7 @@ function InstrumentList({ toDos, deleteToDo, completeToDo }) {
               <div id="panel-1" class="panel">
                 <div class="panel-hdr">
                   <h2>
-                    Instrument Inventory
+                    Instrument List
                           </h2><Button color="primary" className="ml-1"><Link to="/addhire">Add Hire</Link></Button>
 
                 </div>
