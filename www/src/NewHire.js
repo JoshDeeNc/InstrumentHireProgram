@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
-function AddHire({ addToDo }) {
+function NewHire({ addToDo }) {
     return (
         <div>
             
@@ -78,7 +78,7 @@ function AddHire({ addToDo }) {
     );
 }
 
-export default AddHire;
+export default NewHire;
 
 /*<div class="form-group">
                                                     <label class="form-label" for="example-select">Instrument</label>

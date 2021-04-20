@@ -5,10 +5,11 @@ import axios from 'axios';
 import Home from './Home';
 import HireRecord from './HireRecord';
 import InstrumentList from './InstrumentList';
+import NewInstrument from './NewInstrument';
+import NewHire from './NewHire';
 import './App.css';
 
 import config from './config';
-import AddHire from './AddHire';
 
 function App() {
   const [alert, setAlert] = useState();
@@ -172,9 +173,10 @@ function App() {
           {idToken.length > 0 ? (
             <BrowserRouter>
               <Switch>
-                <Route path="/addhire"><AddHire updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
+                <Route path="/newhire"><NewHire updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
                 <Route path="/hirerecord"><HireRecord toDos={toDos} /></Route>
                 <Route path="/instrumentlist"><InstrumentList toDos={toDos} /></Route>
+                <Route path="/newinstrument"><NewInstrument toDos={toDos} /></Route>
                 <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
               </Switch>
             </BrowserRouter>
