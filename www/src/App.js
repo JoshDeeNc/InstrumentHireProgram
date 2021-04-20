@@ -173,7 +173,7 @@ function App() {
           {idToken.length > 0 ? (
             <BrowserRouter>
               <Switch>
-                <Route path="/newhire"><NewHire updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
+                <Route path="/newhire"><NewHire toDos={toDos} addToDo={addToDo} /></Route>
                 <Route path="/hirerecord"><HireRecord toDos={toDos} /></Route>
                 <Route path="/instrumentlist"><InstrumentList toDos={toDos} /></Route>
                 <Route path="/newinstrument"><NewInstrument toDos={toDos} /></Route>

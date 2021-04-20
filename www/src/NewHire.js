@@ -35,7 +35,10 @@ function NewHire({ addToDo }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument</label>
-                                        <Input type="text" name="instrument" id="newToDoInstrument" placeholder="new instrument" />
+                                        <select class="form-control" id="newToDoInstrument">
+                                        {availInstruments.map((item, index) => (
+                                                        <option>{item}</option>))}
+                                                        </select>
                                     </div>
 
                                     <div class="form-group">
