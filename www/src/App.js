@@ -88,7 +88,8 @@ function App() {
     const owner = document.getElementById('newToDoOwner').value;
     const dueDate = document.getElementById('newToDoDueDate').value;
     console.log(name);
-    if (!name || name === '') return;
+    if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
+      || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
 
     const newToDo = {
       "name": name,
