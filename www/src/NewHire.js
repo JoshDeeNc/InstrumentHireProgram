@@ -39,10 +39,10 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument</label>
-                                        <select class="form-control" id="newToDoInstrument">
+                                        <datalist class="form-control" id="newToDoInstrument">
                                         {availInstruments.map((item, index) => (
                                                         <option>{item}</option>))}
-                                                        </select>
+                                                        </datalist>
                                     </div>
 
                                     <div class="form-group">
