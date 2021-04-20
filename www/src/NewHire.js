@@ -2,7 +2,10 @@ import React from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
 function NewHire({ addToDo, toDos }) {
-    const availInstruments = toDos.map(item => item.instrument)
+    const unique = (value, index, self) => {
+        return self.indexOf(value) === index
+    }
+    const availInstruments = toDos.map(item => item.instrument).filter(unique)
     return (
         <div>
             
