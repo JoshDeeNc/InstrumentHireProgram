@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
 function NewHire({ addToDo, toDos }) {
-    availInstruments = toDos.map(item => item.instrument)
+    const availInstruments = toDos.map(item => item.instrument)
     return (
         <div>
             
