@@ -4,6 +4,7 @@ import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import Home from './Home';
 import HireRecord from './HireRecord';
+import InstrumentList from './InstrumentList';
 import './App.css';
 
 import config from './config';
@@ -172,6 +173,7 @@ function App() {
               <Switch>
                 <Route path="/addhire"><AddHire updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
                 <Route path="/hirerecord"><HireRecord toDos={toDos} /></Route>
+                <Route path="/hirerecord"><InstrumentList toDos={toDos} /></Route>
                 <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
               </Switch>
             </BrowserRouter>

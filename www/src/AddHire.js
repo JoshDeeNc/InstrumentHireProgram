@@ -79,3 +79,16 @@ function AddHire({ addToDo }) {
 }
 
 export default AddHire;
+
+/*<div class="form-group">
+                                                    <label class="form-label" for="example-select">Instrument</label>
+                                                    <select class="form-control" id="example-select">
+                                                        <option>Electric Guitar</option>
+														<option>Bass Guitar</option>
+														<option>Accoustic Guitar</option>
+                                                        <option>Flute</option>
+                                                        <option>Violin</option>
+                                                        <option>Trumpet</option>
+                                                      
+                                                    </select>
+                                                </div>*/
