@@ -8,7 +8,7 @@ function NewHire({ addToDo, toDos }) {
     const instrumentList = toDos.map(item => item.instrument).filter(unique)
 
     function populate(id1, id2) {
-        var s1 = document.getElementById(id1).value;
+        var s1 = document.getElementById(id1);
         var s2 = document.getElementById(id2);
 
         var select = s2.options.length;
@@ -17,7 +17,7 @@ function NewHire({ addToDo, toDos }) {
             console.log(i);
         }
         document.getElementById('select').selected='selected';
-        const filteredBrands = toDos.filter(item => item.instrument === s1)
+        const filteredBrands = toDos.filter(item => item.instrument === s1.value)
         console.log(filteredBrands)
         for(var f in filteredBrands) {
             var newOption = document.createElement("f");
