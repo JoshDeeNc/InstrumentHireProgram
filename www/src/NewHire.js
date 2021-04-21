@@ -7,7 +7,7 @@ function NewHire({ addToDo, toDos }) {
     }
     const availInstruments = toDos.map(item => item.instrument).filter(unique)
 
-    const filteredBrands = toDos.filter(item => item.instrument === document.getElementById('newToDoInstrument').value)
+    //const filteredBrands = toDos.filter(item => item.instrument === document.getElementById('newToDoInstrument').value)
 
     return (
         <div>
