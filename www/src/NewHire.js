@@ -63,8 +63,7 @@ function NewHire({ addToDo, toDos }) {
                                         <label class="form-label" for="simpleinput">Instrument</label>
                                         <select class="form-control" id="newToDoInstrument" onChange={populate('newToDoInstrument', 'newToDoBrand')}>
                                             <option selected>select instrument type</option>
-                                            {instrumentList.map((item, index) => (
-                                                <option value={item}>{item}</option>))}
+                                            <option value="hi">Saxaphone</option>
                                         </select>
                                     </div>
 
