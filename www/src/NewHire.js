@@ -27,7 +27,7 @@ function NewHire({ addToDo, toDos }) {
             s2.options.add(newOption);
         }
     }*/
-    populate = e => {
+    const populate = e => {
         console.log('is this working?')
     }
 
