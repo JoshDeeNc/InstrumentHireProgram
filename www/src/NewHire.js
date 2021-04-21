@@ -6,6 +6,23 @@ function NewHire({ addToDo, toDos }) {
         return self.indexOf(value) === index
     }
     const availInstruments = toDos.map(item => item.instrument).filter(unique)
+    function populate(id1, id2) {
+        var s1 = document.getElementById(id1).value;
+        var s2 = document.getElementById(id2);
+
+        var select = s2.options.length;
+        for (var i = select; i >0;i-- ) {
+            document.getElementById(s2).options.remove(i);
+            console.log(i);
+        }
+
+        const filteredBrands = toDos.filter(item => item.instrument === s1)
+        for(var f in filteredBrands) {
+            var newOption = document.createElement("option");
+            newOption.value = f.brand;
+            s2.add(newOption);
+        }
+    }
 
     //const filteredBrands = toDos.filter(item => item.instrument === document.getElementById('newToDoInstrument').value)
 
@@ -42,8 +59,8 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument</label>
-                                        <select class="form-control" id="newToDoInstrument">
-                                            <option>select</option>
+                                        <select onChange="populate('newToDoInstrument','newToDoBrand');" class="form-control" id="newToDoInstrument">
+                                            <option selected>select</option>
                                         {availInstruments.map((item, index) => (
                                                         <option>{item}</option>))}
                                                         </select>
@@ -51,7 +68,9 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
-                                        <Input type="text" name="brand" id="newToDoBrand" placeholder="new brand" />
+                                        <select class="form-control" id="newToDoBrand">
+                                                    <option selected>select</option>
+                                                        </select>
                                     </div>
 
                                     <div class="form-group">
