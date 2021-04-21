@@ -64,7 +64,7 @@ function NewHire({ addToDo, toDos }) {
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument</label>
                                         <Dropdown class="form-control" id="newToDoInstrument" 
-                                        options={availInstruments.map((item, index) => (
+                                        options={instrumentList.map((item, index) => (
                                             <option>{item}</option>))}
                                             onChange={populate()}
                                         />
