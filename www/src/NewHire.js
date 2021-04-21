@@ -7,12 +7,12 @@ function NewHire({ addToDo, toDos }) {
     }
     const instrumentList = toDos.map(item => item.instrument).filter(unique)
 
-    function populate(id1, id2) {
-        var s1 = document.getElementById(id1);
-        var s2 = document.getElementById(id2);
+    function populate() {
+        var s1 = document.getElementById("newToDoInstrument");
+        var s2 = document.getElementById("newToDoBrand");
 
         var select = s2.options.length;
-        for (var i = select; i > 0; i--) {
+        /*for (var i = select; i > 0; i--) {
             document.getElementById(s2).options.remove(i);
             console.log(i);
         }
@@ -23,7 +23,7 @@ function NewHire({ addToDo, toDos }) {
             var newOption = document.createElement("f");
             newOption.value = f.brand;
             s2.options.add(newOption);
-        }
+        }*/
     }
 
     //const filteredBrands = toDos.filter(item => item.instrument === document.getElementById('newToDoInstrument').value)
@@ -61,7 +61,7 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument</label>
-                                        <select class="form-control" id="newToDoInstrument" onChange={populate('newToDoInstrument', 'newToDoBrand')}>
+                                        <select class="form-control" id="newToDoInstrument" onchange="populate()">
                                             <option selected>select instrument type</option>
                                             <option value="hi">Saxaphone</option>
                                         </select>
