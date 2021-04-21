@@ -20,6 +20,7 @@ function NewHire({ addToDo, toDos }) {
         for(var f in filteredBrands) {
             var newOption = document.createElement("option");
             newOption.value = f.brand;
+            newOption.innerHTML = f.brand;
             s2.add(newOption);
         }
     }
