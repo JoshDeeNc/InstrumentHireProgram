@@ -6,6 +6,9 @@ function NewHire({ addToDo, toDos }) {
         return self.indexOf(value) === index
     }
     const availInstruments = toDos.map(item => item.instrument).filter(unique)
+
+    const filteredBrands = toDos.filter(item => item.instrument === document.getElementById('newToDoInstrument').value)
+
     return (
         <div>
             
@@ -47,7 +50,10 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
-                                        <Input type="text" name="brand" id="newToDoBrand" placeholder="new brand" />
+                                        <select class="form-control" id="newToDoBrand">
+                                        {filteredBrands.map((item, index) => (
+                                                        <option>{item.brand}</option>))}
+                                                        </select>
                                     </div>
 
                                     <div class="form-group">
