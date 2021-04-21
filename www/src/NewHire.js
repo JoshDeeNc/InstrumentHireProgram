@@ -12,14 +12,14 @@ function NewHire({ addToDo, toDos }) {
         var s2 = document.getElementById(id2);
 
         var select = s2.options.length;
-        for (var i = select; i >0;i-- ) {
+        for (var i = select; i > 0; i--) {
             document.getElementById(s2).options.remove(i);
             console.log(i);
         }
-        document.getElementById('select').selected='selected';
+        document.getElementById('select').selected = 'selected';
         const filteredBrands = toDos.filter(item => item.instrument === s1.value)
         console.log(filteredBrands)
-        for(var f in filteredBrands) {
+        for (var f in filteredBrands) {
             var newOption = document.createElement("f");
             newOption.value = f.brand;
             s2.options.add(newOption);
@@ -30,13 +30,13 @@ function NewHire({ addToDo, toDos }) {
 
     return (
         <div>
-            
+
             <div class="subheader">
-                    <h1 class="subheader-title">
-                       Add Hire
+                <h1 class="subheader-title">
+                    Add Hire
 
                     </h1>
-                </div>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <div id="panel-1" class="panel">
@@ -61,17 +61,18 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument</label>
-                                        <select class="form-control" id="newToDoInstrument" onChange={populate('newToDoInstrument','newToDoBrand')}>
-                                        {instrumentList.map((item, index) => (
-                                                        <option value={item}>{item}</option>))}
-                                                        </select>
+                                        <select class="form-control" id="newToDoInstrument" onChange={populate('newToDoInstrument', 'newToDoBrand')}>
+                                            <option selected>select instrument type</option>
+                                            {instrumentList.map((item, index) => (
+                                                <option value={item}>{item}</option>))}
+                                        </select>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
                                         <select class="form-control" id="newToDoBrand">
-                                                    <option id="select" selected>select</option>
-                                                        </select>
+                                            <option id="select" selected>select brand</option>
+                                        </select>
                                     </div>
 
                                     <div class="form-group">
@@ -86,7 +87,7 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Due Date</label>
-                                        <Input class="form-control" id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy"/>
+                                        <Input class="form-control" id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" />
                                     </div>
 
                                     <Button onClick={addToDo} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
@@ -115,11 +116,11 @@ export default NewHire;
                                                     <label class="form-label" for="example-select">Instrument</label>
                                                     <select class="form-control" id="example-select">
                                                         <option>Electric Guitar</option>
-														<option>Bass Guitar</option>
-														<option>Accoustic Guitar</option>
+                                                        <option>Bass Guitar</option>
+                                                        <option>Accoustic Guitar</option>
                                                         <option>Flute</option>
                                                         <option>Violin</option>
                                                         <option>Trumpet</option>
-                                                      
+
                                                     </select>
                                                 </div>*/
