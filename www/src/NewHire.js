@@ -21,7 +21,7 @@ function NewHire({ addToDo, toDos }) {
             var newOption = document.createElement("option");
             newOption.value = f.brand;
             newOption.innerHTML = f.brand;
-            s2.add(newOption);
+            s2.options.add(newOption);
         }
     }
 
