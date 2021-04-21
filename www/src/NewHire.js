@@ -63,7 +63,7 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument</label>
-                                        <select class="form-control" id="newToDoInstrument" onChange="populate()">
+                                        <select class="form-control" id="newToDoInstrument" onChange={populate()}>
                                             
                                             <option value="Saxaphone">Saxaphone</option>
                                             <option value="Violin">Violin</option>
