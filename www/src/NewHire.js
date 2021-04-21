@@ -8,22 +8,22 @@ function NewHire({ addToDo, toDos }) {
     const availInstruments = toDos.map(item => item.instrument).filter(unique)
     function populate(id1, id2) {
         var s1 = document.getElementById(id1).value;
-        /*var s2 = document.getElementById(id2);
+        var s2 = document.getElementById(id2);
 
         var select = s2.options.length;
         for (var i = select; i >0;i-- ) {
             document.getElementById(s2).options.remove(i);
             console.log(i);
-        }*/
-
+        }
+        document.getElementById('select').selected='selected';
         const filteredBrands = toDos.filter(item => item.instrument === s1)
         console.log(filteredBrands)
-        /*for(var f in filteredBrands) {
+        for(var f in filteredBrands) {
             var newOption = document.createElement("f");
             newOption.value = f.brand;
             newOption.innerHTML = f.brand;
             s2.options.add(newOption);
-        }*/
+        }
     }
 
     //const filteredBrands = toDos.filter(item => item.instrument === document.getElementById('newToDoInstrument').value)
@@ -70,7 +70,9 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
-                                        <Input type="text" name="rate" id="newToDoBrand" placeholder="new rate" />
+                                        <select class="form-control" id="newToDoBrand">
+                                                    <option id="select" selected>select</option>
+                                                        </select>
                                     </div>
 
                                     <div class="form-group">
@@ -109,10 +111,6 @@ function NewHire({ addToDo, toDos }) {
 }
 
 export default NewHire;
-
-/*<select class="form-control" id="newToDoBrand">
-                                                    <option selected>select</option>
-                                                        </select>*/
 
 /*<div class="form-group">
                                                     <label class="form-label" for="example-select">Instrument</label>
