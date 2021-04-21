@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
+import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Dropdown } from 'reactstrap';
 function NewHire({ addToDo, toDos }) {
     const unique = (value, index, self) => {
         return self.indexOf(value) === index
     }
     const instrumentList = toDos.map(item => item.instrument).filter(unique)
 
-    /*function populate() {
+    function populate() {
         console.log("Hello is this working?")
-        var s1 = document.getElementById("newToDoInstrument");
+        /*var s1 = document.getElementById("newToDoInstrument");
         var s2 = document.getElementById("newToDoBrand");
 
         var select = s2.options.length;
@@ -25,10 +25,7 @@ function NewHire({ addToDo, toDos }) {
             newOption.value = f.brand;
             newOption.innerHTML = f.brand;
             s2.options.add(newOption);
-        }
-    }*/
-    const populate = e => {
-        console.log('is this working?')
+        }*/
     }
 
     //const filteredBrands = toDos.filter(item => item.instrument === document.getElementById('newToDoInstrument').value)
@@ -66,11 +63,11 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument</label>
-                                        <select class="form-control" id="newToDoInstrument" onChange={this.populate}>
-                                            
-                                            <option value="Saxaphone">Saxaphone</option>
-                                            <option value="Violin">Violin</option>
-                                        </select>
+                                        <Dropdown class="form-control" id="newToDoInstrument" 
+                                        options={availInstruments.map((item, index) => (
+                                            <option>{item}</option>))}
+                                            onChange={populate()}
+                                        />
                                     </div>
 
                                     <div class="form-group">
