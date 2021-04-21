@@ -1,31 +1,32 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
-
-function populate(id1, id2) {
-    var s1 = document.getElementById(id1).value;
-    var s2 = document.getElementById(id2);
-
-    var select = s2.options.length;
-    for (var i = select; i >0;i-- ) {
-        document.getElementById(s2).options.remove(i);
-        console.log(i);
-    }
-    document.getElementById('select').selected='selected';
-    const filteredBrands = toDos.filter(item => item.instrument === s1)
-    console.log(filteredBrands)
-    for(var f in filteredBrands) {
-        var newOption = document.createElement("f");
-        newOption.value = f.brand;
-        s2.options.add(newOption);
-    }
-}
-
 function NewHire({ addToDo, toDos }) {
     const unique = (value, index, self) => {
         return self.indexOf(value) === index
     }
     const availInstruments = toDos.map(item => item.instrument).filter(unique)
+
+    function populate(id1, id2) {
+        var s1 = document.getElementById(id1);
+        var s2 = document.getElementById(id2);
+        console.log(s1)
+        console.log(s2)
+
+        /*var select = s2.options.length;
+        for (var i = select; i >0;i-- ) {
+            document.getElementById(s2).options.remove(i);
+            console.log(i);
+        }
+        document.getElementById('select').selected='selected';
+        const filteredBrands = toDos.filter(item => item.instrument === s1)
+        console.log(filteredBrands)
+        for(var f in filteredBrands) {
+            var newOption = document.createElement("f");
+            newOption.value = f.brand;
+            s2.options.add(newOption);
+        }*/
+    }
 
     //const filteredBrands = toDos.filter(item => item.instrument === document.getElementById('newToDoInstrument').value)
 
