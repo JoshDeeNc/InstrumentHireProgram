@@ -1,45 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
-import { Dropdown } from 'react-dropdown'
 function NewHire({ addToDo, toDos }) {
     const unique = (value, index, self) => {
         return self.indexOf(value) === index
     }
-    const instrumentList = toDos.map(item => item.instrument).filter(unique)
-
-    function populate() {
-        console.log("Hello is this working?")
-        /*var s1 = document.getElementById("newToDoInstrument");
-        var s2 = document.getElementById("newToDoBrand");
-
-        var select = s2.options.length;
-        for (var i = select; i > 0; i--) {
-            document.getElementById(s2).options.remove(i);
-            console.log(i);
-        }
-        document.getElementById('select').selected = 'selected';
-        const filteredBrands = toDos.filter(item => item.instrument === s1.value)
-        console.log(filteredBrands)
-        for (var f in filteredBrands) {
-            var newOption = document.createElement("f");
-            newOption.value = f.brand;
-            newOption.innerHTML = f.brand;
-            s2.options.add(newOption);
-        }*/
-    }
-
-    //const filteredBrands = toDos.filter(item => item.instrument === document.getElementById('newToDoInstrument').value)
-
+    const availInstruments = toDos.map(item => item.instrument).filter(unique)
     return (
         <div>
-
+            
             <div class="subheader">
-                <h1 class="subheader-title">
-                    Add Hire
+                    <h1 class="subheader-title">
+                       Add Hire
 
                     </h1>
-            </div>
+                </div>
             <div class="row">
                 <div class="col-md-6">
                     <div id="panel-1" class="panel">
@@ -64,18 +39,15 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument</label>
-                                        <Dropdown id="newToDoInstrument" 
-                                        options={instrumentList.map((item, index) => (
-                                            <option>{item}</option>))}
-                                            onChange={populate()}
-                                        />
+                                        <select class="form-control" id="newToDoInstrument">
+                                        {availInstruments.map((item, index) => (
+                                                        <option>{item}</option>))}
+                                                        </select>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
-                                        <select class="form-control" id="newToDoBrand">
-                                            <option id="select" selected>select brand</option>
-                                        </select>
+                                        <Input type="text" name="brand" id="newToDoBrand" placeholder="new brand" />
                                     </div>
 
                                     <div class="form-group">
@@ -90,7 +62,7 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Due Date</label>
-                                        <Input class="form-control" id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" />
+                                        <Input class="form-control" id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy"/>
                                     </div>
 
                                     <Button onClick={addToDo} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
@@ -114,16 +86,3 @@ function NewHire({ addToDo, toDos }) {
 }
 
 export default NewHire;
-
-/*<div class="form-group">
-                                                    <label class="form-label" for="example-select">Instrument</label>
-                                                    <select class="form-control" id="example-select">
-                                                        <option>Electric Guitar</option>
-                                                        <option>Bass Guitar</option>
-                                                        <option>Accoustic Guitar</option>
-                                                        <option>Flute</option>
-                                                        <option>Violin</option>
-                                                        <option>Trumpet</option>
-
-                                                    </select>
-                                                </div>*/
