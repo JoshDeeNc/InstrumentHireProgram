@@ -8,7 +8,8 @@ function NewHire({ addToDo, toDos }) {
     const instrumentList = toDos.map(item => item.instrument).filter(unique)
 
     function populate() {
-        var s1 = document.getElementById("newToDoInstrument");
+        console.log("Hello is this working?")
+        /*var s1 = document.getElementById("newToDoInstrument");
         var s2 = document.getElementById("newToDoBrand");
 
         var select = s2.options.length;
@@ -24,7 +25,7 @@ function NewHire({ addToDo, toDos }) {
             newOption.value = f.brand;
             newOption.innerHTML = f.brand;
             s2.options.add(newOption);
-        }
+        }*/
     }
 
     //const filteredBrands = toDos.filter(item => item.instrument === document.getElementById('newToDoInstrument').value)
