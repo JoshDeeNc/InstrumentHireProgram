@@ -12,7 +12,7 @@ function NewHire({ addToDo, toDos }) {
         var s2 = document.getElementById("newToDoBrand");
 
         var select = s2.options.length;
-        /*for (var i = select; i > 0; i--) {
+        for (var i = select; i > 0; i--) {
             document.getElementById(s2).options.remove(i);
             console.log(i);
         }
@@ -23,7 +23,7 @@ function NewHire({ addToDo, toDos }) {
             var newOption = document.createElement("f");
             newOption.value = f.brand;
             s2.options.add(newOption);
-        }*/
+        }
     }
 
     //const filteredBrands = toDos.filter(item => item.instrument === document.getElementById('newToDoInstrument').value)
