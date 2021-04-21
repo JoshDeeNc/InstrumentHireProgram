@@ -43,6 +43,7 @@ function NewHire({ addToDo, toDos }) {
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument</label>
                                         <select class="form-control" id="newToDoInstrument">
+                                            <option>select</option>
                                         {availInstruments.map((item, index) => (
                                                         <option>{item}</option>))}
                                                         </select>
@@ -50,10 +51,7 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
-                                        <select class="form-control" id="newToDoBrand">
-                                        {filteredBrands.map((item, index) => (
-                                                        <option>{item.brand}</option>))}
-                                                        </select>
+                                        <Input type="text" name="brand" id="newToDoBrand" placeholder="new brand" />
                                     </div>
 
                                     <div class="form-group">
