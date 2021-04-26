@@ -19,6 +19,11 @@ function HireRecord({ toDos }) {
                         </div>
                         <div class="panel-container show">
                             <div class="panel-content">
+
+                                <div class="row" >
+                                    <div class="col-md-3 fw-700"> Date hired </div>
+                                    <div class="col-md-9">{Convert.ToDateTime(hireRecord.creation_date).ToString("yyyy-MM-dd")}</div>
+                                </div>
                                 
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Name </div>

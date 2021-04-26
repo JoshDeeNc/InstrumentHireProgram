@@ -36,6 +36,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                     <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                       <thead>
                         <tr>
+                          <th>Date Hired</th>
                           <th>Name</th>
                           <th>Code</th>
                           <th>Instrument</th>
@@ -49,6 +50,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                       <tbody>
                         {toDos.map((item, index) => (
                           <tr role="row" key={item.id}>
+                            <td>{item.creation_date}</td>
                             <td>{item.name}</td>
                             <td>{item.code}</td>
                             <td>{item.instrument}</td>
