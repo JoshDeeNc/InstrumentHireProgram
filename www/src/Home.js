@@ -50,7 +50,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                       <tbody>
                         {toDos.map((item, index) => (
                           <tr role="row" key={item.id}>
-                            <td>{item.creation_date}</td>
+                            <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                             <td>{item.name}</td>
                             <td>{item.code}</td>
                             <td>{item.instrument}</td>
