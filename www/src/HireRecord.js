@@ -3,7 +3,8 @@ import React from 'react';
 function HireRecord({ toDos }) {
     const id = /[^/]*$/.exec(window.location.href)[0];
     const hireRecord = toDos.find(item => item.id === id);
-    
+    const d = new Date(hireRecord.creation_date)
+    const dateHired = d.toLocaleDateString()
     return (
         <div>
             <div class="row">
@@ -23,7 +24,7 @@ function HireRecord({ toDos }) {
 
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Date hired </div>
-                                    <div class="col-md-9">{hireRecord.creation_date.toLocaleDateString()}</div>
+                                    <div class="col-md-9">{dateHired}</div>
                                 </div>
                                 
                                 <div class="row" >
