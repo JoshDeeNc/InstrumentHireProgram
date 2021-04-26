@@ -52,7 +52,7 @@ function HireRecord({ toDos }) {
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Due Date </div>
-                                    <div class="col-md-9">{hireRecord.due}</div>
+                                    <div class="col-md-9">{new Date(hireRecord.due).toLocaleDateString()}</div>
                                 </div>
                             </div>
                         </div>

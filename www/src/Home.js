@@ -57,7 +57,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                             <td>{item.brand}</td>
                             <td>{item.rate}</td>
                             <td>{item.owner}</td>
-                            <td>{item.due}</td>
+                            <td>{new Date(hireRecord.due).toLocaleDateString()}</td>
                             <td><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                           </tr>
                         ))}
