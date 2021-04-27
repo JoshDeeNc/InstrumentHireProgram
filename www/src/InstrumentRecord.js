@@ -22,39 +22,39 @@ function InstrumentRecord({ instInventory }) {
                             <div class="panel-content">
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Code </div>
-                                    <div class="col-md-9">{hireRecord.code}</div>
+                                    <div class="col-md-9">{instrumentRecord.code}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Type </div>
-                                    <div class="col-md-9">{hireRecord.type}</div>
+                                    <div class="col-md-9">{instrumentRecord.type}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Object Name </div>
-                                    <div class="col-md-9">{hireRecord.object}</div>
+                                    <div class="col-md-9">{instrumentRecord.object}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Brand </div>
-                                    <div class="col-md-9">{hireRecord.brand}</div>
+                                    <div class="col-md-9">{instrumentRecord.brand}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Rate </div>
-                                    <div class="col-md-9">{hireRecord.rate}</div>
+                                    <div class="col-md-9">{instrumentRecord.rate}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Value at Purchase </div>
-                                    <div class="col-md-9">{hireRecord.purchVal}</div>
+                                    <div class="col-md-9">{instrumentRecord.purchVal}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Depreciation </div>
-                                    <div class="col-md-9">{hireRecord.depreciation}</div>
+                                    <div class="col-md-9">{instrumentRecord.depreciation}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Owner </div>
-                                    <div class="col-md-9">{hireRecord.owner}</div>
+                                    <div class="col-md-9">{instrumentRecord.owner}</div>
                                 </div>
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Available </div>
-                                    <div class="col-md-9">{hireRecord.available}</div>
+                                    <div class="col-md-9">{instrumentRecord.available}</div>
                                 </div>
                             </div>
                         </div>
