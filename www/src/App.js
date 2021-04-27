@@ -132,7 +132,7 @@ function App() {
       owner = '';
       dueDate = '';
     }
-    window.location.href = "/"
+    window.location = "/"
   }
 
   const getAllInstruments = async () => {
@@ -203,7 +203,7 @@ function App() {
       depreciation = '';
       owner = '';
     }
-    window.location.href = "/";
+    window.location = "/";
   }
 
   const deleteToDo = async (indexToRemove, itemId) => {
@@ -275,8 +275,9 @@ function App() {
       lastName = '';
       phone = '';
       email = '';
+      clearCredentials();
     }
-    return <Redirect to='/studentlist'/>
+    
   }
 
   const getAllStudents = async () => {
