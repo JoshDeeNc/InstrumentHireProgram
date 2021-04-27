@@ -101,7 +101,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                         </tr>
                       </thead>
                       <tbody>
-                        {toDos.map((item, index) => (
+                        {overDue.map((item, index) => (
                           <tr role="row" key={item.id}>
                             <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                             <td>{item.name}</td>
