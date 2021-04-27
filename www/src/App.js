@@ -275,8 +275,8 @@ function App() {
       lastName = '';
       phone = '';
       email = '';
-      clearCredentials();
     }
+    clearCredentials();
     
   }
 
