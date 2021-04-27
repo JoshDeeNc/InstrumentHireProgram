@@ -28,6 +28,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                 <div class="panel-hdr">
                   <h2>New Hire</h2>
                   <Button color="primary" className="ml-1"><Link to="/newhire">New Hire</Link></Button>
+                  <Button color="primary" className="ml-1"><Link to="/studentlist">Students</Link></Button>
                   <Button color="primary" className="ml-1"><Link to="/instrumentlist">Instruments</Link></Button>
 
                 </div>

@@ -28,7 +28,7 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
                 <div class="panel-hdr">
                   <h2>
                     Student List
-                          </h2><Button color="primary" className="ml-1"><Link to="/newinstrument">New instrument</Link></Button>
+                          </h2><Button color="primary" className="ml-1"><Link to="/newstudent">New Student</Link></Button>
 
                 </div>
                 <div class="panel-container show">
