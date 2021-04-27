@@ -3,7 +3,7 @@ import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 're
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 
-function InstrumentList({ toDos, deleteToDo, completeToDo }) {
+function InstrumentList({ instInventory, deleteToDo, completeToDo }) {
   const [filter, setFilter] = useState('all');
 
   const changeFilter = (newFilter) => {
@@ -37,7 +37,8 @@ function InstrumentList({ toDos, deleteToDo, completeToDo }) {
                       <thead>
                         <tr>
                           <th>Code</th>
-                          <th>Instrument</th>
+                          <th>Type</th>
+                          <th>Object Name</th>
                           <th>Brand</th>
                           <th>Rate</th>
                           <th>Owner</th>
@@ -45,10 +46,11 @@ function InstrumentList({ toDos, deleteToDo, completeToDo }) {
                         </tr>
                       </thead>
                       <tbody>
-                        {toDos.map((item, index) => (
+                        {instInventory.map((item, index) => (
                           <tr role="row" key={item.id}>
                             <td>{item.code}</td>
-                            <td>{item.instrument}</td>
+                            <td>{item.type}</td>
+                            <td>{item.object}</td>
                             <td>{item.brand}</td>
                             <td>{item.rate}</td>
                             <td>{item.owner}</td>

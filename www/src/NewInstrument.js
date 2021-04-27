@@ -33,6 +33,11 @@ function NewInstrument({ addInstrument }) {
                                         <label class="form-label" for="simpleinput">Instrument/Add-on Type </label>
                                         <Input type="text" class="form-control" name="name" id="newInstType" placeholder="new name" />
                                     </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="simpleinput">Object Name </label>
+                                        <Input type="text" class="form-control" name="name" id="newInstName" placeholder="new name" />
+                                    </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>

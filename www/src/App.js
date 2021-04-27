@@ -3,10 +3,11 @@ import { Container, Jumbotron, Row, Col, Alert, Button } from 'reactstrap';
 import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import Home from './Home';
+import NewHire from './NewHire';
 import HireRecord from './HireRecord';
 import InstrumentList from './InstrumentList';
 import NewInstrument from './NewInstrument';
-import NewHire from './NewHire';
+import InstrumentRecord from './InstrumentRecord';
 import './App.css';
 
 import config from './config';
@@ -18,10 +19,12 @@ function App() {
   const [alertDismissable, setAlertDismissable] = useState(false);
   const [idToken, setIdToken] = useState('');
   const [toDos, setToDos] = useState([]);
+  const [instInventory, setInstInventory] = useState([]);
 
   useEffect(() => {
     getIdToken();
     if (idToken.length > 0) {
+      getAllInstruments();
       getAllTodos();
     }
   }, [idToken]);
@@ -127,22 +130,44 @@ function App() {
     window.location = "/"
   }
 
+  const getAllInstruments = async () => {
+    const result = await axios({
+      url: `${config.api_base_url}/instrument/`,
+      headers: {
+        Authorization: idToken
+      }
+    }).catch(error => {
+      console.log(error);
+    });
+
+    console.log(result);
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      console.log(result.data.Items);
+      setInstInventory(result.data.Items);
+    }
+  };
+
   const addInstrument = async (event) => {
     const code = document.getElementById('newInstCode').value;
     const type = document.getElementById('newInstType').value;
+    const object = document.getElementById('newInstName').value;
     const brand = document.getElementById('newInstBrand').value;
     const rate = document.getElementById('newInstRate').value;
     const purchVal = document.getElementById('newInstPurchVal').value
     const depreciation = document.getElementById('newInstDepr').value;
     const owner = document.getElementById('newInstOwner').value;
     
-    if (!code || code === '' || !type || type === ''
+    if (!code || code === '' || !type || type === '' || !object || object === ''
       || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === '' 
       || !depreciation || depreciation === '' || !owner || owner === '') return;
 
     const newInstrument = {
       "code": code,
       "type": type,
+      "object": object,
       "brand": brand,
       "rate": rate,
       "purchaseValue": purchVal,
@@ -163,15 +188,17 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      code = ''
-      type = ''
-      brand = ''
-      rate = ''
-      purchVal = ''
-      depreciation = ''
-      owner = ''
+      getAllInstruments();
+      code = '';
+      type = '';
+      object = '';
+      brand = '';
+      rate = '';
+      purchVal = '';
+      depreciation = '';
+      owner = '';
     }
-    window.location = "/"
+    window.location = "/";
   }
 
   const deleteToDo = async (indexToRemove, itemId) => {
@@ -222,7 +249,8 @@ function App() {
               <Switch>
                 <Route path="/newhire"><NewHire toDos={toDos} addToDo={addToDo} /></Route>
                 <Route path="/hirerecord"><HireRecord toDos={toDos} /></Route>
-                <Route path="/instrumentlist"><InstrumentList toDos={toDos} /></Route>
+                <Route path="/instrumentrecord"><InstrumentRecord instInventory={instInventory} /></Route>
+                <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
                 <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
                 <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
               </Switch>
