@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import history from './history'
+import history from './history';
 
 function Home({ toDos, deleteToDo, completeToDo }) {
 
@@ -27,9 +27,9 @@ function Home({ toDos, deleteToDo, completeToDo }) {
               <div id="panel-1" class="panel">
                 <div class="panel-hdr">
                   <h2>New Hire</h2>
-                  <Button color="primary" className="ml-1" onClick={() => history.push('/newhire')}>New Hire</Button>
-                  <Button color="primary" className="ml-1"><Link to="/studentlist">Students</Link></Button>
-                  <Button color="primary" className="ml-1"><Link to="/instrumentlist">Instruments</Link></Button>
+                  <Link to="/newhire"><Button color="primary" className="ml-1">New Hire</Button></Link>
+                  <Link to="/studentlist"><Button color="primary" className="ml-1">Students</Button></Link>
+                  <Link to="/instrumentlist"><Button color="primary" className="ml-1">Instruments</Button></Link>
 
                 </div>
                 <div class="panel-container show">

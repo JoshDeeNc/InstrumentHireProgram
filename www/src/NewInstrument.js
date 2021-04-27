@@ -65,7 +65,7 @@ function NewInstrument({ addInstrument }) {
                                     </div>
 
                                     <Button onClick={addInstrument} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
-                                    <Button class="btn btn-lg btn-default waves-effect waves-themed " className="ml-1"><Link to="/">Cancel</Link></Button>
+                                    <Link to="/instrumentlist"><Button class="btn btn-lg btn-default waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
 
 
 

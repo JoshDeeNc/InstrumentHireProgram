@@ -28,7 +28,7 @@ function InstrumentList({ instInventory, deleteToDo, completeToDo }) {
                 <div class="panel-hdr">
                   <h2>
                     Instrument List
-                          </h2><Button color="primary" className="ml-1"><Link to="/newinstrument">New instrument</Link></Button>
+                          </h2><Link to="/newinstrument"><Button color="primary" className="ml-1">New instrument</Button></Link>
 
                 </div>
                 <div class="panel-container show">
