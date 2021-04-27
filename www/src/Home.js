@@ -5,10 +5,6 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 function Home({ toDos, deleteToDo, completeToDo }) {
   const [filter, setFilter] = useState('all');
-  const overDue = toDos.filter(function(item) {
-    var parts = item.due.split('-');
-    return new Date().toLocaleDateString() > new Date(parts[0], parts[1] - 1, parts[2])
-  });
   const changeFilter = (newFilter) => {
     setFilter(newFilter);
   };
@@ -104,7 +100,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                         </tr>
                       </thead>
                       <tbody>
-                        {overDue.map((item, index) => (
+                        {toDos.filter(item => new Date(item.due) < new Date().toLocaleDateString()).map((item, index) => (
                           <tr role="row" key={item.id}>
                             <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                             <td>{item.name}</td>
