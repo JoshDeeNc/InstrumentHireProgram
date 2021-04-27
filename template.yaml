@@ -108,6 +108,26 @@ Resources:
       SSESpecification:
         SSEEnabled: true
 
+  InstrumentTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Join ['-', [instrument-table, !Ref AWS::StackName]]
+      KeySchema:
+          - AttributeName: cognito-username
+            KeyType: HASH
+          - AttributeName: id
+            KeyType: RANGE
+      AttributeDefinitions:
+          - AttributeName: cognito-username
+            AttributeType: S
+          - AttributeName: id
+            AttributeType: S
+      ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5                  
+      SSESpecification:
+        SSEEnabled: true
+
   # API declaration
   TodoApi:
     Type: AWS::Serverless::Api
@@ -285,6 +305,32 @@ Resources:
           Properties:
             Path: /item/{id}
             Method: DELETE
+            RestApiId: !Ref TodoApi
+            Auth:
+              Authorizer: CognitoAuthorizer
+    
+  AddInstrumentFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: todo-src/addInstrument/
+      Handler: app.addInstrument
+      Tracing: Active
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref InstrumentTable
+        - CloudWatchPutMetricPolicy: {}
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref InstrumentTable
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+          ENDPOINT_OVERRIDE: ""
+
+      Events:
+        PutItem:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /instrument
+            Method: POST
             RestApiId: !Ref TodoApi
             Auth:
               Authorizer: CognitoAuthorizer
