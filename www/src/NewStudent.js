@@ -44,7 +44,7 @@ function NewStudent({ addStudent }) {
                                         <Input type="text" name="code" id="newEmail" placeholder="new code" />
                                     </div>
 
-                                    <Button onClick={addStudent} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
+                                    <Link to="/studentlist"><Button onClick={addStudent} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button></Link>
                                     <Button class="btn btn-lg btn-default waves-effect waves-themed " className="ml-1"><Link to="/studentlist">Cancel</Link></Button>
 
                                 </form>

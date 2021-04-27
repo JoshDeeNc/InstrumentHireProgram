@@ -276,7 +276,7 @@ function App() {
       phone = '';
       email = '';
     }
-    window.location.href = "/";
+    
   }
 
   const getAllStudents = async () => {
