@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
-function NewInstrument({ addToDo }) {
+function NewInstrument({ addInstrument }) {
     return (
         <div>
             
@@ -26,40 +26,40 @@ function NewInstrument({ addToDo }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Code</label>
-                                        <Input type="text" name="code" id="newInstrumentCode" placeholder="new code" />
+                                        <Input type="text" name="code" id="newInstCode" placeholder="new code" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument/Add-on Type </label>
-                                        <Input type="text" class="form-control" name="name" id="newInstrumentType" placeholder="new name" />
+                                        <Input type="text" class="form-control" name="name" id="newInstType" placeholder="new name" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
-                                        <Input type="text" name="brand" id="newInstrumentBrand" placeholder="new brand" />
+                                        <Input type="text" name="brand" id="newInstBrand" placeholder="new brand" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Rate</label>
-                                        <Input type="text" name="rate" id="newInstrumentRate" placeholder="new rate" />
+                                        <Input type="text" name="rate" id="newInstRate" placeholder="new rate" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Purchase Cost</label>
-                                        <Input type="text" name="rate" id="newToDoRate" placeholder="new rate" />
+                                        <Input type="text" name="rate" id="newInstPurchVal" placeholder="new rate" />
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="form-label" for="simpleinput">Deprectiation Rate</label>
-                                        <Input type="text" name="rate" id="newInstrumentDepreciation" placeholder="new rate" />
+                                        <label class="form-label" for="simpleinput">Depreciation Rate</label>
+                                        <Input type="text" name="rate" id="newInstDepr" placeholder="new rate" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Owner</label>
-                                        <Input type="text" name="owner" id="newInstrumentOwner" placeholder="new owner" />
+                                        <Input type="text" name="owner" id="newInstOwner" placeholder="new owner" />
                                     </div>
 
-                                    <Button onClick={addToDo} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
+                                    <Button onClick={addInstrument} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
                                     <Button class="btn btn-lg btn-default waves-effect waves-themed " className="ml-1"><Link to="/">Cancel</Link></Button>
 
 

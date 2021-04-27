@@ -127,6 +127,53 @@ function App() {
     window.location = "/"
   }
 
+  const addInstrument = async (event) => {
+    const code = document.getElementById('newInstCode').value;
+    const type = document.getElementById('newInstType').value;
+    const brand = document.getElementById('newInstBrand').value;
+    const rate = document.getElementById('newInstRate').value;
+    const purchVal = document.getElementById('newInstPurchVal').value
+    const depreciation = document.getElementById('newInstDepr').value;
+    const owner = document.getElementById('newInstOwner').value;
+    
+    if (!code || code === '' || !type || type === ''
+      || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === '' 
+      || !depreciation || depreciation === '' || !owner || owner === '') return;
+
+    const newInstrument = {
+      "code": code,
+      "type": type,
+      "brand": brand,
+      "rate": rate,
+      "purchaseValue": purchVal,
+      "depreciation": depreciation,
+      "owner": owner,
+      "available": true
+    };
+
+    const result = await axios({
+      method: 'POST',
+      url: `${config.api_base_url}/instrument/`,
+      headers: {
+        Authorization: idToken
+      },
+      data: newInstrument
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      code = ''
+      type = ''
+      brand = ''
+      rate = ''
+      purchVal = ''
+      depreciation = ''
+      owner = ''
+    }
+    window.location = "/"
+  }
+
   const deleteToDo = async (indexToRemove, itemId) => {
     if (indexToRemove === null) return;
     if (itemId === null) return;
@@ -176,7 +223,7 @@ function App() {
                 <Route path="/newhire"><NewHire toDos={toDos} addToDo={addToDo} /></Route>
                 <Route path="/hirerecord"><HireRecord toDos={toDos} /></Route>
                 <Route path="/instrumentlist"><InstrumentList toDos={toDos} /></Route>
-                <Route path="/newinstrument"><NewInstrument toDos={toDos} /></Route>
+                <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
                 <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
               </Switch>
             </BrowserRouter>
