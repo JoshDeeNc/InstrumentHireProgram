@@ -275,8 +275,8 @@ function App() {
       lastName = '';
       phone = '';
       email = '';
-      return <Redirect to='/studentlist'/>
     }
+    return <Redirect to='/studentlist'/>
   }
 
   const getAllStudents = async () => {
