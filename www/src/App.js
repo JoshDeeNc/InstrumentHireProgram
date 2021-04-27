@@ -8,6 +8,9 @@ import HireRecord from './HireRecord';
 import InstrumentList from './InstrumentList';
 import NewInstrument from './NewInstrument';
 import InstrumentRecord from './InstrumentRecord';
+import StudentList from './StudentList';
+import NewStudent from './NewStudent';
+import StudentRecord from './StudentRecord'
 import './App.css';
 
 import config from './config';
@@ -20,11 +23,13 @@ function App() {
   const [idToken, setIdToken] = useState('');
   const [toDos, setToDos] = useState([]);
   const [instInventory, setInstInventory] = useState([]);
+  const [studentList, setStudents] = useState([]);
 
   useEffect(() => {
     getIdToken();
     if (idToken.length > 0) {
       getAllInstruments();
+      getAllStudents();
       getAllTodos();
     }
   }, [idToken]);
@@ -237,6 +242,63 @@ function App() {
     }
   }
 
+  const addStudent = async (event) => {
+    const firstName = document.getElementById('newFirstName').value;
+    const lastName = document.getElementById('newLastName').value;
+    const phone = document.getElementById('newPhoneNumber').value;
+    const email = document.getElementById('newEmail').value;
+
+    if (!firstName || firstName === '' || !lastName || lastName === '' || !phone || phone === ''
+      || !email || email === '') return;
+
+    const newStudent = {
+      "firstName": firstName,
+      "lastName": lastName,
+      "phone": phone,
+      "email": email,
+    };
+
+    const result = await axios({
+      method: 'POST',
+      url: `${config.api_base_url}/student/`,
+      headers: {
+        Authorization: idToken
+      },
+      data: newStudent
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      getAllInstruments();
+      firstName = '';
+      lastName = '';
+      phone = '';
+      email = '';
+    }
+    window.location = "/";
+  }
+
+  const getAllStudents = async () => {
+    const result = await axios({
+      url: `${config.api_base_url}/student/`,
+      headers: {
+        Authorization: idToken
+      }
+    }).catch(error => {
+      console.log(error);
+    });
+
+    console.log(result);
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      console.log(result.data.Items);
+      setStudents(result.data.Items);
+    }
+  };
+
   return (
     <div className="App">
       <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
@@ -252,6 +314,9 @@ function App() {
                 <Route path="/instrumentrecord"><InstrumentRecord instInventory={instInventory} /></Route>
                 <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
                 <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
+                <Route path="/studentrecord"><StudentRecord studentList={studentList} /></Route>
+                <Route path="/studentlist"><StudentList studentList={studentList} /></Route>
+                <Route path="/newstudent"><NewStudent addStudent={addStudent} /></Route>
                 <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
               </Switch>
             </BrowserRouter>

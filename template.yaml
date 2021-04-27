@@ -128,6 +128,26 @@ Resources:
       SSESpecification:
         SSEEnabled: true
 
+  StudentTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Join ['-', [student-table, !Ref AWS::StackName]]
+      KeySchema:
+          - AttributeName: cognito-username
+            KeyType: HASH
+          - AttributeName: id
+            KeyType: RANGE
+      AttributeDefinitions:
+          - AttributeName: cognito-username
+            AttributeType: S
+          - AttributeName: id
+            AttributeType: S
+      ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5                  
+      SSESpecification:
+        SSEEnabled: true
+
   # API declaration
   TodoApi:
     Type: AWS::Serverless::Api
