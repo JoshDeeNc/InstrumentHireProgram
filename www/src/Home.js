@@ -9,7 +9,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     setFilter(newFilter);
   };
 
-  overDue = toDos.filter(item => new Date(item.due) < new Date().toLocaleDateString())
+  const overDue = toDos.filter(item => new Date(item.due) < new Date().toLocaleDateString())
   console.log(overDue)
 
   return (
