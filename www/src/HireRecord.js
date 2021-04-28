@@ -4,7 +4,7 @@ import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 're
 function HireRecord({ updateToDo, toDos }) {
     const id = /[^/]*$/.exec(window.location.href)[0];
     const hireRecord = toDos.find(item => item.id === id);
-    function editField() {
+    const editField = async (event) => {
         document.getElementsByClassName('displayDiv').display = 'none';
         document.getElementsByClassName('editDiv').display = 'block';
     }
@@ -31,7 +31,7 @@ function HireRecord({ updateToDo, toDos }) {
                                     <div class="col-md-9">{new Date(hireRecord.creation_date).toLocaleDateString()}</div>
                                 </div>
 
-                                <div class="form-group editDiv" style='display:none'>
+                                <div class="form-group editDiv">
                                         <label class="form-label" for="simpleinput">  Date hired  </label>
                                         <Input type="text" class="form-control" name="name" id="newToDoName" placeholder="name" />
                                     </div>
