@@ -50,15 +50,19 @@ function getCognitoUsername(event){
 
 
 function updateRecord(username, recordId) {
+    let d = new Date()
     let params = {
         TableName: TABLE_NAME,
         Key: { 
             "cognito-username": username,
             "id": recordId
         },
-        UpdateExpression: "set #field = :value",
+        UpdateExpression: "set #field = :value, lastupdate_date = :lud",
         ExpressionAttributeNames: { '#field': 'completed' },
-        ExpressionAttributeValues: { ':value': true }
+        ExpressionAttributeValues: { 
+            ':value': true,
+            ':lud': d.toISOString()
+        }
     }
     return docClient.update(params)
 }
