@@ -57,11 +57,15 @@ function updateRecord(username, recordId) {
             "cognito-username": username,
             "id": recordId
         },
-        UpdateExpression: "set #field = :value, lastupdate_date = :lud",
-        ExpressionAttributeNames: { '#field': 'completed' },
+        UpdateExpression: "set #field = :value, lastupdate_date = :lud, #n = :n",
+        ExpressionAttributeNames: { 
+            '#field': 'completed',
+            '#n': 'name' 
+        },
         ExpressionAttributeValues: { 
             ':value': true,
-            ':lud': d.toISOString()
+            ':lud': d.toISOString(),
+            ':n': 'JuanChanged'
         }
     }
     return docClient.update(params)
