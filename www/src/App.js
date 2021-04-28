@@ -134,15 +134,16 @@ function App() {
       window.location.href = '/';
     }
   }
+
   const updateToDo = async (itemId) => {
     if (itemId === null) return;
-    const name = document.getElementById('newToDoName').value;
-    const code = document.getElementById('newToDoCode').value;
-    const instrument = document.getElementById('newToDoInstrument').value;
-    const brand = document.getElementById('newToDoBrand').value;
-    const rate = document.getElementById('newToDoRate').value;
-    const owner = document.getElementById('newToDoOwner').value;
-    const dueDate = document.getElementById('newToDoDueDate').value;
+    const name = document.getElementById('editToDoName').value;
+    const code = document.getElementById('editToDoCode').value;
+    const instrument = document.getElementById('editToDoInstrument').value;
+    const brand = document.getElementById('editToDoBrand').value;
+    const rate = document.getElementById('editToDoRate').value;
+    const owner = document.getElementById('editToDoOwner').value;
+    const dueDate = document.getElementById('editToDoDueDate').value;
     console.log(name);
     if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;

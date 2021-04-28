@@ -37,43 +37,43 @@ function HireRecord({ updateToDo, toDos }) {
                                 <form>
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Student Name </label>
-                                        <Input type="text" class="form-control" name="name" id="newToDoName"
+                                        <Input type="text" class="form-control" name="name" id="editToDoName"
                                         value={studName} onChange={onChange} placeholder="name" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Code</label>
-                                        <Input type="text" name="code" id="newToDoCode" placeholder="code"
+                                        <Input type="text" name="code" id="editToDoCode" placeholder="code"
                                         value={hireRecord.code}/>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument</label>
-                                        <Input type="text" name="code" id="newToDoInstrument" placeholder="instrument"
+                                        <Input type="text" name="code" id="editToDoInstrument" placeholder="instrument"
                                         value={hireRecord.instrument}/>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
-                                        <Input type="text" name="brand" id="newToDoBrand" placeholder="brand" 
+                                        <Input type="text" name="brand" id="editToDoBrand" placeholder="brand" 
                                         value={hireRecord.brand}/>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Rate</label>
-                                        <Input type="text" name="rate" id="newToDoRate" placeholder="rate"
+                                        <Input type="text" name="rate" id="editToDoRate" placeholder="rate"
                                         value={hireRecord.rate}/>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Owner</label>
-                                        <Input type="text" name="owner" id="newToDoOwner" placeholder="owner" 
+                                        <Input type="text" name="owner" id="editToDoOwner" placeholder="owner" 
                                         value={hireRecord.owner}/>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Due Date</label>
-                                        <Input class="form-control" id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" value={hireRecord.due}/>
+                                        <Input class="form-control" id="editToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" value={hireRecord.due}/>
                                     </div>
 
                                     <Button data-item-id={hireRecord.id} onClick={(e) => updateToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>

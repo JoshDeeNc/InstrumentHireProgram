@@ -56,11 +56,12 @@ function updateRecord(username, recordId, eventBody) {
             "cognito-username": username,
             "id": recordId
         },
-        UpdateExpression: "set completed = :c, lastupdate_date = :lud, #n = :n, code = :cde, instrument = :instr, brand = :brd, rate = :r, owner = :own, due = :due",
+        UpdateExpression: "set completed = :c, lastupdate_date = :lud, #n = :n, #cde = :cde, instrument = :instr, brand = :brd, rate = :r, owner = :own, due = :due",
         ExpressionAttributeNames: {
             // using ExpressionAttributeNames to show how to
             // overcome reserved names, in this case <item>
-            '#n': 'name'
+            '#n': 'name',
+            '#cde': 'code'
         },
         ExpressionAttributeValues: {
             ':c': eventBody.completed,
