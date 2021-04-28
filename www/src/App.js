@@ -57,6 +57,10 @@ function App() {
     window.location.href = config.redirect_url;
   }
 
+  const homePage = () => {
+    window.location.href = '/';
+  }
+
   const getIdToken = () => {
     const hash = window.location.hash.substr(1);
     const objects = hash.split("&");
@@ -124,6 +128,7 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllTodos();
+      homePage();
       name = '';
       code = '';
       instrument = '';
@@ -132,8 +137,6 @@ function App() {
       owner = '';
       dueDate = '';
     }
-
-    window.location.href = "/";
   }
 
   const getAllInstruments = async () => {
