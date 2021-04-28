@@ -164,8 +164,8 @@ function App() {
       url: `${config.api_base_url}/item/${itemId}`,
       headers: {
         Authorization: idToken
-      },
-      data: updateToDo
+      }//,
+      //data: updateToDo
     });
 
     if (result && result.status === 401) {
@@ -173,14 +173,14 @@ function App() {
       console.log(result)
     } else if (result && result.status === 200) {
       getAllTodos();
-      name = '';
-      code = '';
-      instrument = '';
-      brand = '';
-      rate = '';
-      owner = '';
-      dueDate = '';
-      window.location.href = '/';
+      //name = '';
+      //code = '';
+      //instrument = '';
+      //brand = '';
+      //rate = '';
+      //owner = '';
+      //dueDate = '';
+      //window.location.href = '/';
     }
   }
 
