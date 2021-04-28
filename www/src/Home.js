@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
-import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
+import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, image } from 'reactstrap';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import chart1 from './img/chart1.png'; 
+import chart2 from './img/chart2.png'; 
+
 import history from './history';
+
+
 
 function Home({ toDos, deleteToDo, completeToDo }) {
 
@@ -23,10 +28,10 @@ function Home({ toDos, deleteToDo, completeToDo }) {
               <a class="nav-link h2 active " data-toggle="tab" href="#tab_borders_icons-1" role="tab" aria-selected="true"><i class="fal fa-guitar mr-1"></i>  Instrument Hires</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Overdue Hires<span class="badge badge-icon pos-top ml-1">{toDos.filter(item => new Date(item.due) < new Date()).length}</span> </a>
+              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Overdue Hires<span class="badge badge-icon pos-top ml-1 mt-2">{toDos.filter(item => new Date(item.due) < new Date()).length}</span> </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-chart-bar mr-1"></i> Insights </a>
+              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-3" role="tab" aria-selected="false"><i class="fal fa-chart-bar mr-1"></i> Insights </a>
             </li>
 
           </ul>
@@ -34,7 +39,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
             <div class="tab-pane fade active show" id="tab_borders_icons-1" role="tabpanel">
               <div class="row">
                 <div class="col-xl-12">
-                  <div id="panel-1" class="panel">
+                  <div id="panel-1" class="panel mb-0">
                     <div class="panel-hdr">
                       <h2> Hired Instrument List</h2>
                       <Link to="/newhire"><Button color="primary" className="ml-1">New Hire</Button></Link>
@@ -86,7 +91,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
             <div class="tab-pane fade" id="tab_borders_icons-2" role="tabpanel">
               <div class="row">
                 <div class="col-xl-12">
-                  <div id="panel-1" class="panel">
+                  <div id="panel-1" class="panel mb-0">
                     <div class="panel-hdr">
                       <h2>Overdue Hire Instrument List</h2>
                     </div>
@@ -134,16 +139,59 @@ function Home({ toDos, deleteToDo, completeToDo }) {
               </div>
             </div>
 
-            <div class="tab-pane fade" id="tab_borders_icons-2" role="tabpanel">
+            <div class="tab-pane fade" id="tab_borders_icons-3" role="tabpanel">
               <div class="row">
                 <div class="col-xl-12">
-                  <div id="panel-1" class="panel">
+                  <div id="panel-1" class="panel mb-0">
                     <div class="panel-hdr">
                       <h2>Insights </h2>
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
-                        <h1>CHARTS</h1>
+                        
+                         <div class="row">
+                                    <div class="col-xl-6">
+                                        <div id="panel-1" class="panel">
+                                            <div class="panel-hdr">
+                                                <h2>
+                                                Instrument Hires  
+                                                </h2>
+                                               
+                                            </div>
+                                            <div class="panel-container show">
+                                                <div class="panel-content">
+                                                    <div class="panel-tag">
+                                                        The line chart requires an array of labels for each of the data points. This is shown on the X axis. It has a colour for the fill, a colour for the line and colours for the points and strokes of the points
+                                                    </div>
+
+                                                    <div>  <img src={chart2} alt="chart" class="img-fluid"/>   </div>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div id="panel-7" class="panel">
+                                            <div class="panel-hdr">
+                                                <h2>
+                                                    Instrument Availability
+                                                </h2>
+                                              
+                                            </div>
+                                            <div class="panel-container show">
+                                                <div class="panel-content">
+                                                    <div class="panel-tag">
+                                                        An area chart or area graph displays graphically quantitative data. It is based on the line chart. The area between axis and line are commonly emphasized with colors, textures and hatchings
+                                                    </div>
+                                                    <div>  <img src={chart1} alt="Logo" class="img-fluid" />     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                        
                       </div>
                     </div>
                   </div>
