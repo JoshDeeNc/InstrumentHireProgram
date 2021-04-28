@@ -193,7 +193,6 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      getAllInstruments();
       window.location.href = "/instrumentlist";
     }
   }
