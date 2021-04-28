@@ -13,20 +13,33 @@ function Home({ toDos, deleteToDo, completeToDo }) {
   return (
     <div className="ToDo">
 
-<div class="subheader">
-                    <h1 class="subheader-title">
-                        One Maker Academy
+      <div class="subheader">
+        <h1 class="subheader-title">
+          OneMaker Academy
 
                     </h1>
-                </div>
+      </div>
       <Row>
         <Col xs="12" className="mt-1 mb-1">
 
-          <div class="row">
+
+          <ul class="nav nav-tabs nav-justified" role="tablist">
+            <li class="nav-item ">
+              <a class="nav-link h2 active " data-toggle="tab" href="#tab_borders_icons-1" role="tab" aria-selected="true"><i class="fal fa-guitar mr-1"></i>  Instrument Hires</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Overdue Hires </a>
+            </li>
+
+          </ul>
+
+          <div class="tab-content border border-top-0  ">
+            <div class="tab-pane fade active show" id="tab_borders_icons-1" role="tabpanel">
+            <div class="row">
             <div class="col-xl-12">
               <div id="panel-1" class="panel">
                 <div class="panel-hdr">
-                  <h2>New Hire</h2>
+                  <h2> Hired Instrument List</h2>
                   <Link to="/newhire"><Button color="primary" className="ml-1">New Hire</Button></Link>
                   <Link to="/studentlist"><Button color="primary" className="ml-1">Students</Button></Link>
                   <Link to="/instrumentlist"><Button color="primary" className="ml-1">Instruments</Button></Link>
@@ -72,16 +85,13 @@ function Home({ toDos, deleteToDo, completeToDo }) {
               </div>
             </div>
           </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs="12" className="mt-1 mb-1">
-
-          <div class="row">
+                          </div>
+            <div class="tab-pane fade" id="tab_borders_icons-2" role="tabpanel">
+            <div class="row">
             <div class="col-xl-12">
               <div id="panel-1" class="panel">
                 <div class="panel-hdr">
-                  <h2>Overdue</h2>
+                  <h2>Overdue Hire Instrument List</h2>
 
                 </div>
                 <div class="panel-container show">
@@ -96,7 +106,8 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                           <th>Brand</th>
                           <th>Rate</th>
                           <th>Owner</th>
-                          <th>Due Date</th>
+                          <th>Due Date </th>
+                          <th>Due Days</th>
                           <th>Details</th>
                         </tr>
                       </thead>
@@ -111,6 +122,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                             <td>{item.rate}</td>
                             <td>{item.owner}</td>
                             <td>{new Date(item.due).toLocaleDateString()}</td>
+                            <td> <span class="txt-red"> 17 </span>  </td>
                             <td><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                           </tr>
                         ))}
@@ -124,6 +136,17 @@ function Home({ toDos, deleteToDo, completeToDo }) {
               </div>
             </div>
           </div>
+                     </div>
+
+          </div>
+
+      
+        </Col>
+      </Row>
+      <Row>
+        <Col xs="12" className="mt-1 mb-1">
+
+         
         </Col>
       </Row>
     </div >

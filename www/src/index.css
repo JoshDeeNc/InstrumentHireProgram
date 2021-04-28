@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
+
 body {
   background-color: #232F3E;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -27,3 +28,23 @@ button a {
 .btn-lg {
   min-width: 120px !important;
 }
+
+/* --- Custom Styling  ---------------- */
+.panel-hdr h2 {font-size: 1.2rem !important; text-transform: uppercase; font-weight: 300 !important;    }
+
+.nav-link.h2 {font-size: 1rem !important; text-transform: uppercase; font-weight: 300 !important;}
+
+.subheader-title {font-size: 1.875rem ; font-weight: 300; letter-spacing: -0.5px;  color: #00adee;}
+
+.btn-primary {background-color: #00adee !important; border:none !important;}
+
+html body a { color: #0068c9 ; }
+
+.page-sidebar, .page-logo, .nav-footer  {background-color:#0068c9;}
+
+.nav-menu li > ul li a {color: #FFFFFF !important;}
+
+.nav-footer .nav-footer-buttons > li > a {color:#FFFFFF;}
+.nav-menu li a > [class*='fa-'], .nav-menu li a > .ni {color: rgba(255,255,255, 0.5);}
+.breadcrumb {background-color: transparent ; border-bottom: 1px solid  rgba(0,0,0, 0.1); font-size: 12px;}
+.txt-red {color: red;}
