@@ -124,7 +124,6 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllTodos();
-      //window.location.href = '/';
       name = '';
       code = '';
       instrument = '';
@@ -132,6 +131,7 @@ function App() {
       rate = '';
       owner = '';
       dueDate = '';
+      window.location.href = '/';
     }
   }
 
@@ -194,7 +194,6 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllInstruments();
-      //window.location.href = "/instrumentlist";
       code = '';
       type = '';
       object = '';
@@ -203,6 +202,7 @@ function App() {
       purchVal = '';
       depreciation = '';
       owner = '';
+      window.location.href = "/instrumentlist";
     }
   }
 
@@ -271,11 +271,11 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllStudents();
-      //window.location.href = '/studentlist';
       firstName = '';
       lastName = '';
       phone = '';
       email = '';
+      window.location.href = '/studentlist';
     }
   }
 

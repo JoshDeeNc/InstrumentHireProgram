@@ -99,30 +99,30 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                     <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                       <thead>
                         <tr>
-                          <th>Date Hired</th>
+                          <th>Due Date </th>
+                          <th>No. of Days</th>
                           <th>Name</th>
                           <th>Code</th>
                           <th>Instrument</th>
                           <th>Brand</th>
                           <th>Rate</th>
+                          <th>Date Hired</th>
                           <th>Owner</th>
-                          <th>Due Date </th>
-                          <th>No. of Days</th>
                           <th>Details</th>
                         </tr>
                       </thead>
                       <tbody>
                         {toDos.filter(item => new Date(item.due) < new Date()).map((item, index) => (
                           <tr role="row" key={item.id}>
-                            <td>{new Date(item.creation_date).toLocaleDateString()}</td>
+                            <td>{new Date(item.due).toLocaleDateString()}</td>
+                            <td> <span class="txt-red">{Math.floor((new Date().getTime() - new Date(item.due).getTime())/(1000 * 60 * 60 * 24))}</span></td>
                             <td>{item.name}</td>
                             <td>{item.code}</td>
                             <td>{item.instrument}</td>
                             <td>{item.brand}</td>
                             <td>{item.rate}</td>
+                            <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                             <td>{item.owner}</td>
-                            <td>{new Date(item.due).toLocaleDateString()}</td>
-                            <td> <span class="txt-red">{Math.floor((new Date().getTime() - new Date(item.due).getTime())/(1000 * 60 * 60 * 24))}</span>  </td>
                             <td><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                           </tr>
                         ))}
