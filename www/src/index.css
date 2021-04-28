@@ -55,6 +55,6 @@ body {font-size: 0.85rem;}
 .table-bordered thead th, .table-bordered thead td {background: #f0f8ff63}
 .table-bordered, .table-bordered td, .table-bordered th { border:none; border-bottom: 1px solid #ececec;}
 table tr td a .fa-2x {font-size: 1.5em; color: #aaa;}
-.dropdown-icon-menu > ul > li .btn:hover, .header-btn:hover {background: #00adee; border-color:none;}
+.dropdown-icon-menu > ul > li .btn:hover, .header-btn:hover {background: #004d40;     border-color:#004d40; color: #ffffff !important;}
 
 .nav-link {padding: 0.8rem 1rem;}
