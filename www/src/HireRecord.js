@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
 
@@ -8,6 +8,12 @@ function HireRecord({ updateToDo, toDos }) {
     const editField = async (event) => {
         document.getElementById('displayDiv').display = 'none';
         document.getElementById('editDiv').display = 'block';
+    }
+
+    const [studName, setStudName] = useState(hireRecord.name)
+
+    const onChange = (event) => {
+        setStudName(event.target.value);
     }
 
     return (
@@ -32,13 +38,13 @@ function HireRecord({ updateToDo, toDos }) {
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Student Name </label>
                                         <Input type="text" class="form-control" name="name" id="newToDoName"
-                                        value="5" placeholder="name" />
+                                        value={studName} onChange={onChange} placeholder="name" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Code</label>
                                         <Input type="text" name="code" id="newToDoCode" placeholder="code"
-                                        />
+                                        value={hireRecord.code}/>
                                     </div>
 
                                     <div class="form-group">
