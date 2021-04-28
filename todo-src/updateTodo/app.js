@@ -26,16 +26,17 @@ const response = (statusCode, body, additionalHeaders) => ({
 })
 
 function isValidRequest(context, event) {
-    let isIdValid = (event !== null) &&
+    /*let isIdValid = (event !== null) &&
         (event.pathParameters !== null) &&
         (event.pathParameters.id !== null) &&
         (/^[\w-]+$/.test(event.pathParameters.id))
 
     let body = event.body
     let isBodyValid = (body !== null) &&
-        (body.completed !== null)
+        (body.completed !== null)*/
 
-    return isIdValid && isBodyValid;
+    //return isIdValid && isBodyValid;
+    return true
 }
 
 function getCognitoUsername(event){
@@ -49,21 +50,16 @@ function getCognitoUsername(event){
 
 
 function updateRecord(username, recordId) {
-    let d = new Date()
-    const params = {
+    let params = {
         TableName: TABLE_NAME,
-        Key: {
+        Key: { 
             "cognito-username": username,
             "id": recordId
         },
-        UpdateExpression: "set completed = :c, lastupdate_date = :lud",
-        ExpressionAttributeValues: {
-            ':c': true,
-            ':lud': d.toISOString()
-        },
-        ReturnValues: "ALL_NEW"
+        UpdateExpression: "set #field = :value",
+        ExpressionAttributeNames: { '#field': 'completed' },
+        ExpressionAttributeValues: { ':value': true }
     }
-
     return docClient.update(params)
 }
 

@@ -23,7 +23,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
               <a class="nav-link h2 active " data-toggle="tab" href="#tab_borders_icons-1" role="tab" aria-selected="true"><i class="fal fa-guitar mr-1"></i>  Instrument Hires</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Overdue Hires </a>
+              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Overdue Hires<span class="badge badge-icon pos-top ml-1">{toDos.filter(item => new Date(item.due) < new Date()).length}</span> </a>
             </li>
             <li class="nav-item">
               <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-chart-bar mr-1"></i> Insights </a>
@@ -88,7 +88,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                 <div class="col-xl-12">
                   <div id="panel-1" class="panel">
                     <div class="panel-hdr">
-                      <h2>Overdue Hire Instrument List <span class="badge badge-icon pos-top ml-1">17</span></h2>
+                      <h2>Overdue Hire Instrument List</h2>
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
