@@ -61,6 +61,10 @@ function App() {
     window.location.href = '/';
   }
 
+  const studentListPage = () => {
+    window.location.href = '/studentlist';
+  }
+
   const getIdToken = () => {
     const hash = window.location.hash.substr(1);
     const objects = hash.split("&");
@@ -198,6 +202,7 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllInstruments();
+      window.location.href = "/instrumentlist";
       code = '';
       type = '';
       object = '';
@@ -207,8 +212,6 @@ function App() {
       depreciation = '';
       owner = '';
     }
-
-    window.location.href = "/instrumentlist";
   }
 
   const deleteToDo = async (indexToRemove, itemId) => {
@@ -276,13 +279,12 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllStudents();
+      studentListPage();
       firstName = '';
       lastName = '';
       phone = '';
       email = '';
     }
-
-    window.location.href = '/studentlist'
   }
 
   const getAllStudents = async () => {
