@@ -76,7 +76,7 @@ function HireRecord({ completeToDo, updateToDo, toDos }) {
                                         <Input class="form-control" id="editToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" value={hireRecord.due}/>
                                     </div>
 
-                                    <Button data-item-id={hireRecord.id} onClick={(e) => completeToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
+                                    <Button data-item-id={hireRecord.id} onClick={(e) => updateToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
                                     <Link to="/"><Button class="btn btn-lg btn-default waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
 
                                 </form>
