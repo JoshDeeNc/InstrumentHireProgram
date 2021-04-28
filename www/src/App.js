@@ -57,14 +57,6 @@ function App() {
     window.location.href = config.redirect_url;
   }
 
-  const homePage = () => {
-    window.location.href = '/';
-  }
-
-  const studentListPage = () => {
-    window.location.href = '/studentlist';
-  }
-
   const getIdToken = () => {
     const hash = window.location.hash.substr(1);
     const objects = hash.split("&");
@@ -132,7 +124,7 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllTodos();
-      homePage();
+      //window.location.href = '/';
       name = '';
       code = '';
       instrument = '';
@@ -202,7 +194,7 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllInstruments();
-      window.location.href = "/instrumentlist";
+      //window.location.href = "/instrumentlist";
       code = '';
       type = '';
       object = '';
@@ -279,7 +271,7 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllStudents();
-      studentListPage();
+      //window.location.href = '/studentlist';
       firstName = '';
       lastName = '';
       phone = '';
