@@ -353,7 +353,7 @@ function App() {
       </Alert>
       <Row>
         <Col md="12">
-          {idToken.length == 0 ? (
+          {idToken.length > 0 ? (
             <BrowserRouter>
               <Switch>
                 <Route path="/newhire"><NewHire toDos={toDos} addToDo={addToDo} /></Route>
