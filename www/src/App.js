@@ -359,7 +359,7 @@ function App() {
             <BrowserRouter>
               <Switch>
                 <Route path="/newhire"><NewHire toDos={toDos} addToDo={addToDo} /></Route>
-                <Route path="/hirerecord"><HireRecord updateToDo={updateToDo} toDos={toDos} /></Route>
+                <Route path="/hirerecord"><HireRecord completeToDo={completeToDo} updateToDo={updateToDo} toDos={toDos} /></Route>
                 <Route path="/instrumentrecord"><InstrumentRecord instInventory={instInventory} /></Route>
                 <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
                 <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
