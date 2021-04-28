@@ -48,3 +48,4 @@ html body a { color: #0068c9 ; }
 .nav-menu li a > [class*='fa-'], .nav-menu li a > .ni {color: rgba(255,255,255, 0.5);}
 .breadcrumb {background-color: transparent ; border-bottom: 1px solid  rgba(0,0,0, 0.1); font-size: 12px;}
 .txt-red {color: red;}
+.editDiv {display: none;}

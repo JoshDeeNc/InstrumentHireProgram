@@ -5,8 +5,8 @@ function HireRecord({ updateToDo, toDos }) {
     const id = /[^/]*$/.exec(window.location.href)[0];
     const hireRecord = toDos.find(item => item.id === id);
     const editField = async (event) => {
-        document.getElementsByClassName('displayDiv').display = 'none';
-        document.getElementsByClassName('editDiv').display = 'block';
+        document.getElementsById('displayDiv').display = 'none';
+        document.getElementsById('editDiv').display = 'block';
     }
 
     return (
@@ -26,12 +26,12 @@ function HireRecord({ updateToDo, toDos }) {
                         <div class="panel-container show">
                             <div class="panel-content">
 
-                                <div class="row displayDiv" >
+                                <div class="row" id="displayDiv">
                                     <div class="col-md-3 fw-700 "> Date hired </div>
                                     <div class="col-md-9">{new Date(hireRecord.creation_date).toLocaleDateString()}</div>
                                 </div>
 
-                                <div class="form-group editDiv">
+                                <div class="form-group editDiv" id="editDiv" >
                                         <label class="form-label" for="simpleinput">  Date hired  </label>
                                         <Input type="text" class="form-control" name="name" id="newToDoName" placeholder="name" />
                                     </div>
