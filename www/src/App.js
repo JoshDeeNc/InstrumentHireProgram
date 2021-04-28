@@ -134,6 +134,53 @@ function App() {
       window.location.href = '/';
     }
   }
+  const updateTodo = async (itemId) => {
+    if (itemId === null) return;
+    const name = document.getElementById('newToDoName').value;
+    const code = document.getElementById('newToDoCode').value;
+    const instrument = document.getElementById('newToDoInstrument').value;
+    const brand = document.getElementById('newToDoBrand').value;
+    const rate = document.getElementById('newToDoRate').value;
+    const owner = document.getElementById('newToDoOwner').value;
+    const dueDate = document.getElementById('newToDoDueDate').value;
+    console.log(name);
+    if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
+      || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
+
+    const updateTodo = {
+      "name": name,
+      "code": code,
+      "instrument": instrument,
+      "brand": brand,
+      "rate": rate,
+      "owner": owner,
+      "due": dueDate,
+      "completed": false
+    };
+
+    const result = await axios({
+      method: 'PUT',
+      url: `${config.api_base_url}/item/${itemId}`,
+      headers: {
+        Authorization: idToken
+      },
+      data: updateTodo
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      getAllTodos();
+      name = '';
+      code = '';
+      instrument = '';
+      brand = '';
+      rate = '';
+      owner = '';
+      dueDate = '';
+      window.location.href = '/';
+    }
+  }
 
   const getAllInstruments = async () => {
     const result = await axios({
@@ -306,11 +353,11 @@ function App() {
       </Alert>
       <Row>
         <Col md="12">
-          {idToken.length > 0 ? (
+          {idToken.length == 0 ? (
             <BrowserRouter>
               <Switch>
                 <Route path="/newhire"><NewHire toDos={toDos} addToDo={addToDo} /></Route>
-                <Route path="/hirerecord"><HireRecord toDos={toDos} /></Route>
+                <Route path="/hirerecord"><HireRecord updateTodo={updateTodo} toDos={toDos} /></Route>
                 <Route path="/instrumentrecord"><InstrumentRecord instInventory={instInventory} /></Route>
                 <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
                 <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
