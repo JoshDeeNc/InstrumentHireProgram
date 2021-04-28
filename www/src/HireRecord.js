@@ -5,7 +5,6 @@ import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 're
 function HireRecord({ updateToDo, toDos }) {
     const id = /[^/]*$/.exec(window.location.href)[0];
     const hireRecord = toDos.find(item => item.id === id);
-    const hireName = hireRecord.name;
     const editField = async (event) => {
         document.getElementById('displayDiv').display = 'none';
         document.getElementById('editDiv').display = 'block';
@@ -33,13 +32,13 @@ function HireRecord({ updateToDo, toDos }) {
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Student Name </label>
                                         <Input type="text" class="form-control" name="name" id="newToDoName"
-                                        value={hireName} placeholder="name" />
+                                        value="5" placeholder="name" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Code</label>
                                         <Input type="text" name="code" id="newToDoCode" placeholder="code"
-                                        value={hireRecord.code}/>
+                                        />
                                     </div>
 
                                     <div class="form-group">
