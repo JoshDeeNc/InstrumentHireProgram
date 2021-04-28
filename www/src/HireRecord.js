@@ -31,7 +31,7 @@ function HireRecord({ updateToDo, toDos }) {
                                     <div class="col-md-9">{new Date(hireRecord.creation_date).toLocaleDateString()}</div>
                                 </div>
 
-                                <div class="form-group editDiv">
+                                <div class="form-group editDiv" style='display:none'>
                                         <label class="form-label" for="simpleinput">  Date hired  </label>
                                         <Input type="text" class="form-control" name="name" id="newToDoName" placeholder="name" />
                                     </div>
