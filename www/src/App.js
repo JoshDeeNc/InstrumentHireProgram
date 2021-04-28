@@ -132,6 +132,7 @@ function App() {
       owner = '';
       dueDate = '';
     }
+
     window.location.href = "/";
   }
 
@@ -203,7 +204,8 @@ function App() {
       depreciation = '';
       owner = '';
     }
-    window.location.href = "/";
+
+    window.location.href = "/instrumentlist";
   }
 
   const deleteToDo = async (indexToRemove, itemId) => {
@@ -276,7 +278,8 @@ function App() {
       phone = '';
       email = '';
     }
-    
+
+    window.location.href = '/studentlist'
   }
 
   const getAllStudents = async () => {
