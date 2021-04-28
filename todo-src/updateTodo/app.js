@@ -89,7 +89,7 @@ exports.updateToDoItem =
 
             try {
                 let username = getCognitoUsername(event);
-                let data = await updateRecord(event.pathParameters.id, event.body).promise()
+                let data = await updateRecord(username, event.pathParameters.id, event.body).promise()
                 metrics.putMetric("Success", 1, Unit.Count)
                 return response(200, data)
             } catch (err) {

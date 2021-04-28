@@ -147,7 +147,7 @@ function App() {
     if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
 
-    const updateTodo = {
+    const updateToDo = {
       "name": name,
       "code": code,
       "instrument": instrument,
@@ -164,7 +164,7 @@ function App() {
       headers: {
         Authorization: idToken
       },
-      data: updateTodo
+      data: updateToDo
     });
 
     if (result && result.status === 401) {
