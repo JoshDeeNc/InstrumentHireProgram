@@ -134,7 +134,7 @@ function App() {
       window.location.href = '/';
     }
   }
-  const updateTodo = async (itemId) => {
+  const updateToDo = async (itemId) => {
     if (itemId === null) return;
     const name = document.getElementById('newToDoName').value;
     const code = document.getElementById('newToDoCode').value;
@@ -357,7 +357,7 @@ function App() {
             <BrowserRouter>
               <Switch>
                 <Route path="/newhire"><NewHire toDos={toDos} addToDo={addToDo} /></Route>
-                <Route path="/hirerecord"><HireRecord updateTodo={updateTodo} toDos={toDos} /></Route>
+                <Route path="/hirerecord"><HireRecord updateToDo={updateToDo} toDos={toDos} /></Route>
                 <Route path="/instrumentrecord"><InstrumentRecord instInventory={instInventory} /></Route>
                 <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
                 <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
