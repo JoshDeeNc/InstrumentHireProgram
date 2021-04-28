@@ -193,6 +193,15 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
+      getAllInstruments();
+      code = '';
+      type = '';
+      object = '';
+      brand = '';
+      rate = '';
+      purchVal = '';
+      depreciation = '';
+      owner = '';
       window.location.href = "/instrumentlist";
     }
   }
