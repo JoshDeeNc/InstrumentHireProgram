@@ -5,8 +5,8 @@ function HireRecord({ updateToDo, toDos }) {
     const id = /[^/]*$/.exec(window.location.href)[0];
     const hireRecord = toDos.find(item => item.id === id);
     const editField = async (event) => {
-        document.getElementsById('displayDiv').display = 'none';
-        document.getElementsById('editDiv').display = 'block';
+        document.getElementById('displayDiv').display = 'none';
+        document.getElementById('editDiv').display = 'block';
     }
 
     return (
