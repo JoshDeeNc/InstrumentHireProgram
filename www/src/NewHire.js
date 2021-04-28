@@ -29,12 +29,12 @@ function NewHire({ addToDo, toDos }) {
                                 <form>
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Student Name </label>
-                                        <Input type="text" class="form-control" name="name" id="newToDoName" placeholder="new name" />
+                                        <Input type="text" class="form-control" name="name" id="newToDoName" placeholder="name" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Code</label>
-                                        <Input type="text" name="code" id="newToDoCode" placeholder="new code" />
+                                        <Input type="text" name="code" id="newToDoCode" placeholder="code" />
                                     </div>
 
                                     <div class="form-group">
@@ -47,17 +47,17 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
-                                        <Input type="text" name="brand" id="newToDoBrand" placeholder="new brand" />
+                                        <Input type="text" name="brand" id="newToDoBrand" placeholder=" brand" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Rate</label>
-                                        <Input type="text" name="rate" id="newToDoRate" placeholder="new rate" />
+                                        <Input type="text" name="rate" id="newToDoRate" placeholder="rate" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Owner</label>
-                                        <Input type="text" name="owner" id="newToDoOwner" placeholder="new owner" />
+                                        <Input type="text" name="owner" id="newToDoOwner" placeholder="owner" />
                                     </div>
 
                                     <div class="form-group">

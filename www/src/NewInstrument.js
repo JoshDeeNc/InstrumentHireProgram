@@ -26,42 +26,42 @@ function NewInstrument({ addInstrument }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Code</label>
-                                        <Input type="text" name="code" id="newInstCode" placeholder="new code" />
+                                        <Input type="text" name="code" id="newInstCode" placeholder="code" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument/Add-on Type </label>
-                                        <Input type="text" class="form-control" name="name" id="newInstType" placeholder="new name" />
+                                        <Input type="text" class="form-control" name="name" id="newInstType" placeholder="type" />
                                     </div>
                                     
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Object Name </label>
-                                        <Input type="text" class="form-control" name="name" id="newInstName" placeholder="new name" />
+                                        <Input type="text" class="form-control" name="name" id="newInstName" placeholder="instrument/add-on" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
-                                        <Input type="text" name="brand" id="newInstBrand" placeholder="new brand" />
+                                        <Input type="text" name="brand" id="newInstBrand" placeholder="brand" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Rate</label>
-                                        <Input type="text" name="rate" id="newInstRate" placeholder="new rate" />
+                                        <Input type="text" name="rate" id="newInstRate" placeholder="rate" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Purchase Cost</label>
-                                        <Input type="text" name="rate" id="newInstPurchVal" placeholder="new rate" />
+                                        <Input type="text" name="rate" id="newInstPurchVal" placeholder="cost" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Depreciation Rate</label>
-                                        <Input type="text" name="rate" id="newInstDepr" placeholder="new rate" />
+                                        <Input type="text" name="rate" id="newInstDepr" placeholder="depreciation" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Owner</label>
-                                        <Input type="text" name="owner" id="newInstOwner" placeholder="new owner" />
+                                        <Input type="text" name="owner" id="newInstOwner" placeholder="owner" />
                                     </div>
 
                                     <Button onClick={addInstrument} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>

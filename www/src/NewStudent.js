@@ -26,22 +26,22 @@ function NewStudent({ addStudent }) {
                                 <form>
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Student First Name </label>
-                                        <Input type="text" class="form-control" name="name" id="newFirstName" placeholder="new name" />
+                                        <Input type="text" class="form-control" name="name" id="newFirstName" placeholder="first name" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Student Last Name </label>
-                                        <Input type="text" class="form-control" name="name" id="newLastName" placeholder="new name" />
+                                        <Input type="text" class="form-control" name="name" id="newLastName" placeholder="last name" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Phone</label>
-                                        <Input type="text" name="code" id="newPhoneNumber" placeholder="new code" />
+                                        <Input type="text" name="code" id="newPhoneNumber" placeholder="phone number" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Email</label>
-                                        <Input type="text" name="code" id="newEmail" placeholder="new code" />
+                                        <Input type="text" name="code" id="newEmail" placeholder="email" />
                                     </div>
 
                                     <Button onClick={addStudent} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
