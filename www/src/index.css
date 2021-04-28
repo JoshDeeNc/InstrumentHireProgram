@@ -52,3 +52,4 @@ body {font-size: 0.85rem;}
 .table td, .table th { padding: .45rem; }
 .table-striped tbody tr:nth-of-type(odd) {background-color: rgba(0,0,0,.02);}
 .table-bordered thead th, .table-bordered thead td {background: #f0f8ff63}
+.table-bordered, .table-bordered td, .table-bordered th { border:none; border-bottom: 1px solid #ececec;}
