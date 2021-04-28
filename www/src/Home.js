@@ -107,7 +107,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                           <th>Rate</th>
                           <th>Owner</th>
                           <th>Due Date </th>
-                          <th>Due Days</th>
+                          <th>No. of Days</th>
                           <th>Details</th>
                         </tr>
                       </thead>
