@@ -33,8 +33,7 @@ function isValidRequest(context, event) {
 
     let body = event.body
     let isBodyValid = (body !== null) &&
-        (body.completed !== null) &&
-        (body.item !== null);
+        (body.completed !== null)
 
     return isIdValid && isBodyValid;
 }
@@ -57,16 +56,22 @@ function updateRecord(username, recordId, eventBody) {
             "cognito-username": username,
             "id": recordId
         },
-        UpdateExpression: "set completed = :c, lastupdate_date = :lud, #i = :i",
+        UpdateExpression: "set completed = :c, lastupdate_date = :lud, #n = :n, code = :cde, instrument = :instr, brand = :brd, rate = :r, owner = :own, due = :due",
         ExpressionAttributeNames: {
             // using ExpressionAttributeNames to show how to
             // overcome reserved names, in this case <item>
-            '#i': 'item'
+            '#n': 'name'
         },
         ExpressionAttributeValues: {
             ':c': eventBody.completed,
             ':lud': d.toISOString(),
-            ':i': eventBody.item
+            ':n': eventBody.name,
+            ':cde': eventBody.code,
+            ':instr': eventBody.instrument,
+            ':brd': eventBody.brand,
+            ':r': eventBody.rate,
+            ':own': eventBody.own,
+            ':due': eventBody.due
         },
         ReturnValues: "ALL_NEW"
     }
