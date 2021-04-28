@@ -137,7 +137,7 @@ function App() {
 
   const updateToDo = async (itemId) => {
     if (itemId === null) return;
-    const name = document.getElementById('editToDoName').value;
+    /*const name = document.getElementById('editToDoName').value;
     const code = document.getElementById('editToDoCode').value;
     const instrument = document.getElementById('editToDoInstrument').value;
     const brand = document.getElementById('editToDoBrand').value;
@@ -157,7 +157,7 @@ function App() {
       "owner": owner,
       "due": dueDate,
       "completed": false
-    };
+    };*/
 
     const result = await axios({
       method: 'PUT',
