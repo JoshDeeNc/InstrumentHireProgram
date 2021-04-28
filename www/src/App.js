@@ -169,6 +169,7 @@ function App() {
 
     if (result && result.status === 401) {
       clearCredentials();
+      console.log(result)
     } else if (result && result.status === 200) {
       getAllTodos();
       name = '';
