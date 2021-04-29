@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
 function NewHire({ addToDo, toDos }) {
@@ -10,6 +10,9 @@ function NewHire({ addToDo, toDos }) {
 
     const [instr, setInstrument] = useState('')
     const [brand, setBrand] = useState('')
+    useEffect(() => {
+        console.log(instr); // add whatever functions use new `college` value here.
+    }, [instr])
 
     const onChangeInstrument = (event) => {
         setInstrument(event.target.value);
@@ -20,10 +23,6 @@ function NewHire({ addToDo, toDos }) {
     const onChangeBrand = (event) => {
         setBrand(event.target.value);
     }
-
-    useEffect(() => {
-        console.log(instr); // add whatever functions use new `college` value here.
-    }, [instr])
 
     return (
         <div>
