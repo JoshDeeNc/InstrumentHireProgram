@@ -135,7 +135,7 @@ function App() {
     }
   }
 
-  const updateToDo = async (itemId) => {
+  const updateToDo = async (itemId, event) => {
     if (itemId === null) return;
     /*const name = document.getElementById('editToDoName').value;
     const code = document.getElementById('editToDoCode').value;
@@ -159,7 +159,7 @@ function App() {
       "completed": false
     };*/
     const updateToDo = {
-      "name": 'Jua'
+      "name": "Jua"
     }
 
     const result = await axios({
