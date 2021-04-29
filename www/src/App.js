@@ -149,12 +149,13 @@ function App() {
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
       */
     const updateToDo = {
-      "name": 'juanChanged8',
+      "name": 'juanChanged9',
       "completed": true,
       "code": '123456',
       "instrument": 'Euphonium',
       "brand": 'Jupiter',
       "rate": '$560',
+      "owner": "Dayspring Church",
       "due": '30/04/2021'
     };
 
