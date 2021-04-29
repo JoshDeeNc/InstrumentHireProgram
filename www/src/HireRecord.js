@@ -61,59 +61,60 @@ function HireRecord({ completeToDo, updateToDo, toDos }) {
   
  
                                 <form>
-
-                                <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com" />
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password" />
-    </div>
-  </div>
                                     <div class="form-group row">
-                                        <label class="form-label" for="simpleinput">Student Name </label>
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Student Name </label>
+                                        <div class="col-sm-10">
                                         <Input type="text" class="form-control" name="name" id="editToDoName"
                                         value={studName} onChange={onChangeStud} placeholder="name" />
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="form-label" for="simpleinput">Code</label>
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Code</label>
+                                        <div class="col-sm-10">
                                         <Input type="text" name="code" id="editToDoCode" placeholder="code"
                                         value={code} onChange={onChangeCode}/>
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label class="form-label" for="simpleinput">Instrument</label>
+                                        <div class="col-sm-10">
                                         <Input type="text" name="code" id="editToDoInstrument" placeholder="instrument"
                                         value={instrument} onChange={onChangeInstr}/>
+                                        </div>
                                     </div>
 
                                     <div class="form-group row ">
-                                        <label class="form-label" for="simpleinput">Brand</label>
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Brand</label>
+                                        <div class="col-sm-10">
                                         <Input type="text" name="brand" id="editToDoBrand" placeholder="brand" 
                                         value={brand} onChange={onChangeBrand}/>
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label class="form-label" for="simpleinput">Rate</label>
+                                        <div class="col-sm-10">
                                         <Input type="text" name="rate" id="editToDoRate" placeholder="rate"
                                         value={rate} onChange={onChangeRate}/>
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="form-label" for="simpleinput">Owner</label>
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Owner</label>
+                                        <div class="col-sm-10">
                                         <Input type="text" name="owner" id="editToDoOwner" placeholder="owner" 
                                         value={owner} onChange={onChangeOwner}/>
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="form-label" for="simpleinput">Due Date</label>
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Due Date</label>
+                                        <div class="col-sm-10">
                                         <Input class="form-control" id="editToDoDueDate" type="date" name="date" 
                                         placeholder="dd/mm/yyyy" value={dueDate} onChange={onChangeDue}/>
+                                        </div>
                                     </div>
 
                                     <Button data-item-id={hireRecord.id} onClick={(e) => updateToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
