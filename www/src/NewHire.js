@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
 function NewHire({ addToDo, toDos }) {
@@ -6,6 +6,21 @@ function NewHire({ addToDo, toDos }) {
         return self.indexOf(value) === index
     }
     const availInstruments = toDos.map(item => item.instrument).filter(unique)
+    const [availBrands, setAvailBrands] = useState(toDos.map(item => item.brand).filter(unique))
+
+    const [instr, setInstrument] = useState('')
+    const [brand, setBrand] = useState('')
+
+    const onChangeInstrument = (event) => {
+        setInstrument(event.target.value);
+        setAvailBrands(toDos.filter(item => item.instrument === instr).map(item => item.brand).filter(unique))
+        console.log(availBrands)
+    }
+
+    const onChangeBrand = (event) => {
+        setBrand(event.target.value);
+    }
+
     return (
         <div>
             
@@ -39,7 +54,7 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument</label>
-                                        <select class="form-control" id="newToDoInstrument">
+                                        <select class="form-control" id="newToDoInstrument" value={instr} onChange={onChangeInstrument}>
                                         {availInstruments.map((item, index) => (
                                                         <option>{item}</option>))}
                                                         </select>
@@ -47,7 +62,10 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
-                                        <Input type="text" name="brand" id="newToDoBrand" placeholder=" brand" />
+                                        <select class="form-control" id="newToDoBrand">
+                                        {availBrands.map((item, index) => (
+                                                        <option>{item}</option>))}
+                                                        </select>
                                     </div>
 
                                     <div class="form-group">

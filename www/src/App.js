@@ -137,7 +137,7 @@ function App() {
 
   const updateToDo = async (itemId, event) => {
     if (itemId === null) return;
-    /*const name = document.getElementById('editToDoName').value;
+    const name = document.getElementById('editToDoName').value;
     const code = document.getElementById('editToDoCode').value;
     const instrument = document.getElementById('editToDoInstrument').value;
     const brand = document.getElementById('editToDoBrand').value;
@@ -147,16 +147,16 @@ function App() {
     console.log(name);
     if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
-      */
+      
     const updateToDo = {
-      "name": 'juanChanged4',
+      "name": name,
       "completed": true,
-      "code": '123456',
-      "instrument": 'Euphonium',
-      "brand": 'Jupiter'
-      /*"rate": '$560',
-      "owner": 'OMA',
-      "due": '30/04/2021'*/
+      "code": code,
+      "instrument": instrument,
+      "brand": brand,
+      "rate": rate,
+      "owner": owner,
+      "due": dueDate
     };
 
     const result = await axios({
@@ -173,14 +173,14 @@ function App() {
       console.log(result)
     } else if (result && result.status === 200) {
       getAllTodos();
-      //name = '';
-      //code = '';
-      //instrument = '';
-      //brand = '';
-      //rate = '';
-      //owner = '';
-      //dueDate = '';
-      //window.location.href = '/';
+      name = '';
+      code = '';
+      instrument = '';
+      brand = '';
+      rate = '';
+      owner = '';
+      dueDate = '';
+      window.location.href = '/';
     }
   }
 
