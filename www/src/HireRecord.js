@@ -59,43 +59,43 @@ function HireRecord({ completeToDo, updateToDo, toDos }) {
                             <div class="panel-content">
 
                                 <form>
-                                    <div class="form-group">
+                                    <div class="form-group row">
                                         <label class="form-label" for="simpleinput">Student Name </label>
                                         <Input type="text" class="form-control" name="name" id="editToDoName"
                                         value={studName} onChange={onChangeStud} placeholder="name" />
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group row">
                                         <label class="form-label" for="simpleinput">Code</label>
                                         <Input type="text" name="code" id="editToDoCode" placeholder="code"
                                         value={code} onChange={onChangeCode}/>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group row">
                                         <label class="form-label" for="simpleinput">Instrument</label>
                                         <Input type="text" name="code" id="editToDoInstrument" placeholder="instrument"
                                         value={instrument} onChange={onChangeInstr}/>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group row ">
                                         <label class="form-label" for="simpleinput">Brand</label>
                                         <Input type="text" name="brand" id="editToDoBrand" placeholder="brand" 
                                         value={brand} onChange={onChangeBrand}/>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group row">
                                         <label class="form-label" for="simpleinput">Rate</label>
                                         <Input type="text" name="rate" id="editToDoRate" placeholder="rate"
                                         value={rate} onChange={onChangeRate}/>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group row">
                                         <label class="form-label" for="simpleinput">Owner</label>
                                         <Input type="text" name="owner" id="editToDoOwner" placeholder="owner" 
                                         value={owner} onChange={onChangeOwner}/>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group row">
                                         <label class="form-label" for="simpleinput">Due Date</label>
                                         <Input class="form-control" id="editToDoDueDate" type="date" name="date" 
                                         placeholder="dd/mm/yyyy" value={dueDate} onChange={onChangeDue}/>

@@ -83,3 +83,4 @@ body:not(.mod-pace-custom) .pace .pace-progress {background: #8bc34a; }
 .nav-function-minify .nav-footer:hover {background-color: #319c36;}
 .nav-function-minify .nav-footer [data-class="nav-function-minify"],.nav-function-minify .nav-footer [data-class="nav-function-minify"]:hover {color: #ffffff;}
 .view-flds .row {border-bottom: 1px solid rgba(0,0,0, 0.1); padding: 10px;}
+.no-edit {border: none; pointer-events: none; padding-left: 0}
