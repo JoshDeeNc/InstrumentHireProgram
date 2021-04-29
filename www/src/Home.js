@@ -207,5 +207,4 @@ function Home({ toDos, deleteToDo, completeToDo }) {
   );
 }
 
-
 export default Home;
