@@ -158,14 +158,17 @@ function App() {
       "due": dueDate,
       "completed": false
     };*/
+    const updateToDo = {
+      "name": 'Jua'
+    }
 
     const result = await axios({
       method: 'PUT',
       url: `${config.api_base_url}/item/${itemId}`,
       headers: {
         Authorization: idToken
-      }//,
-      //data: updateToDo
+      },
+      data: updateToDo
     });
 
     if (result && result.status === 401) {

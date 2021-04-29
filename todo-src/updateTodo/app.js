@@ -49,7 +49,7 @@ function getCognitoUsername(event){
 }
 
 
-function updateRecord(username, recordId) {
+function updateRecord(username, recordId, eventBody) {
     let d = new Date()
     let params = {
         TableName: TABLE_NAME,
@@ -65,7 +65,7 @@ function updateRecord(username, recordId) {
         ExpressionAttributeValues: { 
             ':value': true,
             ':lud': d.toISOString(),
-            ':n': 'JuanChanged'
+            ':n': eventBody.name
         }
     }
     return docClient.update(params)
@@ -86,7 +86,7 @@ exports.updateToDoItem =
 
             try {
                 let username = getCognitoUsername(event);
-                let data = await updateRecord(username, event.pathParameters.id).promise()
+                let data = await updateRecord(username, event.pathParameters.id, event.body).promise()
                 metrics.putMetric("Success", 1, Unit.Count)
                 return response(200, data)
             } catch (err) {
