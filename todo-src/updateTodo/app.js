@@ -63,7 +63,7 @@ function updateRecord(username, recordId, eventBody) {
             '#n': 'name' 
         },
         ExpressionAttributeValues: { 
-            ':value': eventBody.completed,
+            ':value': JSON.parse(eventBody).completed,
             ':lud': d.toISOString(),
             ':n': 'JuanChanged'
         }
