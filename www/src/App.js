@@ -147,20 +147,17 @@ function App() {
     console.log(name);
     if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
-
+      */
     const updateToDo = {
-      "name": name,
-      "code": code,
-      "instrument": instrument,
-      "brand": brand,
-      "rate": rate,
-      "owner": owner,
-      "due": dueDate,
-      "completed": false
-    };*/
-    const updateToDo = {
-      "completed": false
-    }
+      "name": 'juanChanged',
+      "code": '123456',
+      "instrument": 'Euphonium',
+      "brand": 'Jupiter',
+      "rate": '$560',
+      "owner": 'OMA',
+      "due": '30/04/2021',
+      "completed": true
+    };
 
     const result = await axios({
       method: 'PUT',
