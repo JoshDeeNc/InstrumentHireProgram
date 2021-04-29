@@ -6,14 +6,14 @@ function NewHire({ addToDo, toDos }) {
         return self.indexOf(value) === index
     }
     const availInstruments = toDos.map(item => item.instrument).filter(unique)
-    const availBrands = toDos.map(item => item.brand).filter(unique)
+    const [availBrands, setAvailBrands] = useState(toDos.map(item => item.brand).filter(unique))
 
     const [instr, setInstrument] = useState('')
     const [brand, setBrand] = useState('')
 
     const onChangeInstrument = (event) => {
         setInstrument(event.target.value);
-        availBrands = toDos.filter(item => item.instrument === instr).map(item => item.brand).filter(unique)
+        setAvailBrands(toDos.filter(item => item.instrument === instr).map(item => item.brand).filter(unique))
         console.log(availBrands)
     }
 
