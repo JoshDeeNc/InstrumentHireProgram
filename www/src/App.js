@@ -155,8 +155,8 @@ function App() {
       "instrument": 'Euphonium',
       "brand": 'Jupiter',
       "rate": '$560',
-      "owner": 'OMA',
-      "due": '30/04/2021'
+      "owner": 'OMA'
+      //"due": '30/04/2021'
     };
 
     const result = await axios({
