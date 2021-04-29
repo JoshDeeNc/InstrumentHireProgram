@@ -63,9 +63,9 @@ function updateRecord(username, recordId, eventBody) {
             '#n': 'name' 
         },
         ExpressionAttributeValues: { 
-            ':value': true,
+            ':value': eventBody.completed,
             ':lud': d.toISOString(),
-            ':n': eventBody.name
+            ':n': 'JuanChanged'
         }
     }
     return docClient.update(params)
