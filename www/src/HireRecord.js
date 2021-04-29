@@ -11,9 +11,33 @@ function HireRecord({ completeToDo, updateToDo, toDos }) {
     }
 
     const [studName, setStudName] = useState(hireRecord.name)
+    const [code, setCode] = useState(hireRecord.code)
+    const [instrument, setInstrument] = useState(hireRecord.instrument)
+    const [brand, setBrand] = useState(hireRecord.brand)
+    const [rate, setRate] = useState(hireRecord.rate)
+    const [owner, setOwner] = useState(hireRecord.owner)
+    const [dueDate, setDue] = useState(hireRecord.due)
 
-    const onChange = (event) => {
+    const onChangeStud = (event) => {
         setStudName(event.target.value);
+    }
+    const onChangeCode = (event) => {
+        setCode(event.target.value);
+    }
+    const onChangeInstr = (event) => {
+        setInstrument(event.target.value);
+    }
+    const onChangeBrand = (event) => {
+        setBrand(event.target.value);
+    }
+    const onChangeRate = (event) => {
+        setRate(event.target.value);
+    }
+    const onChangeOwner = (event) => {
+        setOwner(event.target.value);
+    }
+    const onChangeDue = (event) => {
+        setDue(event.target.value);
     }
 
     return (
@@ -38,42 +62,43 @@ function HireRecord({ completeToDo, updateToDo, toDos }) {
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Student Name </label>
                                         <Input type="text" class="form-control" name="name" id="editToDoName"
-                                        value={studName} onChange={onChange} placeholder="name" />
+                                        value={studName} onChange={onChangeStud} placeholder="name" />
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Code</label>
                                         <Input type="text" name="code" id="editToDoCode" placeholder="code"
-                                        value={hireRecord.code}/>
+                                        value={code} onChange={onChangeCode}/>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Instrument</label>
                                         <Input type="text" name="code" id="editToDoInstrument" placeholder="instrument"
-                                        value={hireRecord.instrument}/>
+                                        value={instrument} onChange={onChangeInstr}/>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
                                         <Input type="text" name="brand" id="editToDoBrand" placeholder="brand" 
-                                        value={hireRecord.brand}/>
+                                        value={brand} onChange={onChangeBrand}/>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Rate</label>
                                         <Input type="text" name="rate" id="editToDoRate" placeholder="rate"
-                                        value={hireRecord.rate}/>
+                                        value={rate} onChange={onChangeRate}/>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Owner</label>
                                         <Input type="text" name="owner" id="editToDoOwner" placeholder="owner" 
-                                        value={hireRecord.owner}/>
+                                        value={owner} onChange={onChangeOwner}/>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Due Date</label>
-                                        <Input class="form-control" id="editToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" value={hireRecord.due}/>
+                                        <Input class="form-control" id="editToDoDueDate" type="date" name="date" 
+                                        placeholder="dd/mm/yyyy" value={dueDate} onChange={onChangeDue}/>
                                     </div>
 
                                     <Button data-item-id={hireRecord.id} onClick={(e) => updateToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
