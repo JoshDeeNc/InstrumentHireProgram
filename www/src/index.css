@@ -46,6 +46,7 @@ html body a { color: #43a047 ; }
 
 .nav-footer .nav-footer-buttons > li > a {color:#FFFFFF;}
 .nav-menu li a > [class*='fa-'], .nav-menu li a > .ni {color: rgba(255,255,255, 0.5);}
+.nav-menu li.active > a {-webkit-box-shadow: inset 3px 0 0 #8bc34a;  box-shadow: inset 3px 0 0 #8bc34a;}
 .breadcrumb {background-color: transparent ; border-bottom: 1px solid rgba(0,0,0, 0.1); font-size: 12px;}
 .txt-red {color: red;}
 
@@ -59,3 +60,4 @@ table tr td a .fa-2x {font-size: 1.5em; color: #aaa;}
 .badge.badge-icon {height: 15px;}
 .nav-link {padding: 0.8rem 1rem;}
 .page-logo img {width: auto; height: auto; max-width: 200px;}
+.badge.badge-icon {font-weight: 700;}
