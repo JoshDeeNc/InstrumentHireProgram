@@ -153,9 +153,9 @@ function App() {
       "completed": true,
       "code": '123456',
       "instrument": 'Euphonium',
-      "brand": 'Jupiter'
-      /*"rate": '$560',
-      "owner": 'OMA',
+      "brand": 'Jupiter',
+      "rate": '$560'
+      /*"owner": 'OMA',
       "due": '30/04/2021'*/
     };
 
