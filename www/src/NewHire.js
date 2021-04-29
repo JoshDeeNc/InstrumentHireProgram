@@ -13,13 +13,17 @@ function NewHire({ addToDo, toDos }) {
 
     const onChangeInstrument = (event) => {
         setInstrument(event.target.value);
-        console.log(instr)
-        availBrands = toDos.filter(item => item.instrument === instr).map(item => item.brand).filter(unique)
+        //console.log(instr)
+        //availBrands = toDos.filter(item => item.instrument === instr).map(item => item.brand).filter(unique)
     }
 
     const onChangeBrand = (event) => {
         setBrand(event.target.value);
     }
+
+    useEffect(() => {
+        console.log(instr); // add whatever functions use new `college` value here.
+    }, [instr])
 
     return (
         <div>
@@ -62,7 +66,7 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
-                                        <select class="form-control" id="newToDoBrand" value={brand} onChange={onChangeBrand}>
+                                        <select class="form-control" id="newToDoBrand">
                                         {availBrands.map((item, index) => (
                                                         <option>{item}</option>))}
                                                         </select>
