@@ -156,7 +156,7 @@ function App() {
       "brand": 'Jupiter',
       "rate": '$560',
       "owner": "Dayspring Church",
-      "due": '2021/05/12'
+      "due": '2021-05-12'
     };
 
     const result = await axios({
