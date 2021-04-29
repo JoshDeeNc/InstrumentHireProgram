@@ -62,7 +62,7 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
-                                        <select class="form-control" id="newToDoBrand" value={brand} onChange={onChangeBrand}>
+                                        <select class="form-control" id="newToDoBrand">
                                         {availBrands.map((item, index) => (
                                                         <option>{item}</option>))}
                                                         </select>
