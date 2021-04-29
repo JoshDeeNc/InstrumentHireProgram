@@ -13,8 +13,13 @@ function NewHire({ addToDo, toDos }) {
 
     const onChangeInstrument = (event) => {
         setInstrument(event.target.value);
+        getBrands()
+    }
+
+    const getBrands = (event) => {
         setAvailBrands(toDos.filter(item => item.instrument === instr).map(item => item.brand).filter(unique))
         console.log(availBrands)
+
     }
 
     const onChangeBrand = (event) => {
