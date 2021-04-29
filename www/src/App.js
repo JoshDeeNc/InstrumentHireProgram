@@ -149,11 +149,11 @@ function App() {
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
       */
     const updateToDo = {
-      "name": 'juanChanged3',
-      "completed": true
-      /*"code": '123456',
-      "instrument": 'Euphonium',
-      "brand": 'Jupiter',
+      "name": 'juanChanged4',
+      "completed": true,
+      "code": '123456',
+      "instrument": 'Euphonium'
+      /*"brand": 'Jupiter',
       "rate": '$560',
       "owner": 'OMA',
       "due": '30/04/2021',*/
