@@ -89,13 +89,13 @@ function App() {
   };
 
   const addToDo = async (event) => {
-    const name = document.getElementById('newToDoName').value;
-    const code = document.getElementById('newToDoCode').value;
-    const instrument = document.getElementById('newToDoInstrument').value;
-    const brand = document.getElementById('newToDoBrand').value;
-    const rate = document.getElementById('newToDoRate').value;
-    const owner = document.getElementById('newToDoOwner').value;
-    const dueDate = document.getElementById('newToDoDueDate').value;
+    let name = document.getElementById('newToDoName').value;
+    let code = document.getElementById('newToDoCode').value;
+    let instrument = document.getElementById('newToDoInstrument').value;
+    let brand = document.getElementById('newToDoBrand').value;
+    let rate = document.getElementById('newToDoRate').value;
+    let owner = document.getElementById('newToDoOwner').value;
+    let dueDate = document.getElementById('newToDoDueDate').value;
     console.log(name);
     if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
