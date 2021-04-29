@@ -131,7 +131,6 @@ function App() {
       rate = '';
       owner = '';
       dueDate = '';
-      window.location.href = '/instrumentlist';
     }
   }
 
