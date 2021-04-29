@@ -78,3 +78,5 @@ table tr td a .fa-2x {font-size: 1.5em; color: #aaa;}
 .phcs-logo {width:50px;}
 .nav-menu li a .dl-ref {    border-radius: 25px;    padding: 0 5px;}
 .bg-red {background: #dc3545 !important;}
+body:not(.mod-pace-custom) .pace .pace-progress {
+  background: #8bc34a; }
