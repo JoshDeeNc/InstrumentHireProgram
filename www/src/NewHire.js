@@ -9,14 +9,19 @@ function NewHire({ addToDo, toDos }) {
     const [availBrands, setAvailBrands] = useState([])
 
     const [instr, setInstrument] = useState('')
-    
+    const [brand, setBrand] = useState('')
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
         setAvailBrands(toDos.filter(item => item.instrument === instr).map(item => item.brand).filter(unique))
+        console.log(availBrands)
     }, [instr])
 
     const onChangeInstrument = (event) => {
         setInstrument(event.target.value);
+    }
+
+    const onChangeBrand = (event) => {
+        setBrand(event.target.value);
     }
 
     return (
