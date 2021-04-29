@@ -159,7 +159,7 @@ function App() {
       "completed": false
     };*/
     const updateToDo = {
-      "completed": true
+      "completed": false
     }
 
     const result = await axios({
