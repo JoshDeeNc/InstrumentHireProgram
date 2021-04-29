@@ -149,7 +149,7 @@ function App() {
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
       */
     const updateToDo = {
-      "name": 'juanChanged5',
+      "name": 'juanChanged7',
       "completed": true,
       "code": '123456',
       "instrument": 'Euphonium',
