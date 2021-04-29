@@ -19,7 +19,7 @@ function InstrumentRecord({ instInventory }) {
                                                 </button>
                         </div>
                         <div class="panel-container show">
-                            <div class="panel-content">
+                            <div class="panel-content view-flds">
                                 <div class="row" >
                                     <div class="col-md-3 fw-700"> Code </div>
                                     <div class="col-md-9">{instrumentRecord.code}</div>
