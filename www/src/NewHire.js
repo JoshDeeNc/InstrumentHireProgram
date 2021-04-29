@@ -5,14 +5,14 @@ function NewHire({ addToDo, toDos }) {
     const unique = (value, index, self) => {
         return self.indexOf(value) === index
     }
-    let availInstruments = toDos.map(item => item.instrument).filter(unique)
-    let availBrands = toDos.map(item => item.brand).filter(unique)
+    const availInstruments = toDos.map(item => item.instrument).filter(unique)
+    const [availBrands, setAvailBrands] = useState([])
 
     const [instr, setInstrument] = useState('')
     const [brand, setBrand] = useState('')
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
-        availBrands = toDos.filter(item => item.instrument === instr).map(item => item.brand).filter(unique)
+        setAvailBrands(toDos.filter(item => item.instrument === instr).map(item => item.brand).filter(unique))
         console.log(availBrands)
     }, [instr])
 
