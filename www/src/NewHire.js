@@ -5,21 +5,16 @@ function NewHire({ addToDo, toDos }) {
     const unique = (value, index, self) => {
         return self.indexOf(value) === index
     }
-    const availInstruments = toDos.map(item => item.instrument).filter(unique)
-    const [availBrands, setAvailBrands] = useState(toDos.map(item => item.brand).filter(unique))
+    let availInstruments = toDos.map(item => item.instrument).filter(unique)
+    let availBrands = useState(toDos.map(item => item.brand).filter(unique))
 
     const [instr, setInstrument] = useState('')
     const [brand, setBrand] = useState('')
 
     const onChangeInstrument = (event) => {
         setInstrument(event.target.value);
-        getBrands()
-    }
-
-    const getBrands = (event) => {
-        setAvailBrands(toDos.filter(item => item.instrument === instr).map(item => item.brand).filter(unique))
-        console.log(availBrands)
-
+        console.log(instr)
+        availBrands = toDos.filter(item => item.instrument === instr).map(item => item.brand).filter(unique)
     }
 
     const onChangeBrand = (event) => {
@@ -67,7 +62,7 @@ function NewHire({ addToDo, toDos }) {
 
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Brand</label>
-                                        <select class="form-control" id="newToDoBrand">
+                                        <select class="form-control" id="newToDoBrand" value={brand} onChange={onChangeBrand}>
                                         {availBrands.map((item, index) => (
                                                         <option>{item}</option>))}
                                                         </select>
