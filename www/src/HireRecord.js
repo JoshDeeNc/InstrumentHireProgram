@@ -40,6 +40,13 @@ function HireRecord({ updateToDo, toDos }) {
         setDue(event.target.value);
     }
 
+    const editToggle = (event) => {
+        var textFields = document.getElementsByClassName("no-edit"); 
+        for (var i = 0; i < textFields.length; i++) { 
+            textFields[i].disabled = true;
+        }
+    }
+
     return (
         <div>
             <div class="row">
@@ -49,7 +56,7 @@ function HireRecord({ updateToDo, toDos }) {
                             <h2>
                                 Hire Details
                                         </h2>
-                            <Button onClick={editField} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
+                            <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
                                 <span class="fal fa-pencil mr-1"></span>
                                                     Edit
                                                 </Button>
