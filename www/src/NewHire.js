@@ -5,7 +5,8 @@ function NewHire({ addToDo, toDos }) {
     const unique = (value, index, self) => {
         return self.indexOf(value) === index
     }
-    /*const availInstruments = toDos.map(item => item.instrument).filter(unique)
+
+    const availInstruments = toDos.map(item => item.instrument).filter(unique)
     const [availBrands, setAvailBrands] = useState([])
 
     const [instr, setInstrument] = useState('')
@@ -17,9 +18,7 @@ function NewHire({ addToDo, toDos }) {
 
     const onChangeInstrument = (event) => {
         setInstrument(event.target.value);
-    }*/
-    const availInstruments = ['Guitar', 'Bass', 'Drums', 'Piano', 'Saxaphone', 'Trumpet', 'Bass']
-    const availBrands = ['Pearl', 'Fender', 'Crafter', 'Ashton', 'Yamaha', 'Jupiter', 'Kawai']
+    }
 
     return (
         <div>
@@ -59,7 +58,7 @@ function NewHire({ addToDo, toDos }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Instrument</label>
                                         <div class="col-sm-10">
-                                            <select class="form-control" id="newToDoInstrument" /*value={instr} onChange={onChangeInstrument}*/>
+                                            <select class="form-control" id="newToDoInstrument" value={instr} onChange={onChangeInstrument}>
                                                 {availInstruments.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </select>
