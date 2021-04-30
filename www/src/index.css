@@ -75,7 +75,7 @@ table tr td a .fa-2x {font-size: 1.5em; color: #aaa;}
 .header-icon:not(.btn) > [class*='fa-']:first-child, .header-icon:not(.btn) > .ni:first-child {color: #777777;}
 .badge.badge-icon, .bg-info-900, .pull-trigger-btn:hover {background-color:#8bc34a;}
  .btn {border-radius: 0.15rem; text-transform: uppercase;     font-size: 0.8rem;}
-.phcs-logo {width:50px;}
+.phcs-logo {width: 50px;position: fixed;bottom: 11px;z-index: 99999;left: 12px;}
 .nav-menu li a .dl-ref {    border-radius: 25px;    padding: 0 5px;}
 .bg-red {background: #dc3545 !important;}
 body:not(.mod-pace-custom) .pace .pace-progress {background: #8bc34a; }
