@@ -61,7 +61,7 @@ function HireRecord({ updateToDo, toDos }) {
                                     <div class="row">
                                         <label class="col-sm-2" for="simpleinput">Student Name </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control nox" name="name" id="editToDoName"
+                                            <input type="text" class="form-control nox" name="name" id="editToDoName"
                                                 value={studName} onChange={onChangeStud} placeholder="name" />
                                         </div>
                                     </div>
@@ -69,7 +69,7 @@ function HireRecord({ updateToDo, toDos }) {
                                     <div class="row">
                                         <label class="col-sm-2" for="simpleinput">Code</label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="nox" name="code" id="editToDoCode" placeholder="code"
+                                            <input type="text" class="nox" name="code" id="editToDoCode" placeholder="code"
                                                 value={code} onChange={onChangeCode} />
                                         </div>
                                     </div>
@@ -77,7 +77,7 @@ function HireRecord({ updateToDo, toDos }) {
                                     <div class="row">
                                         <label class="col-sm-2" for="simpleinput">Instrument</label>
                                         <div class="col-sm-10">
-                                            <Input class="nox" type="text" name="code" id="editToDoInstrument" placeholder="instrument"
+                                            <input class="nox" type="text" name="code" id="editToDoInstrument" placeholder="instrument"
                                                 value={instrument} onChange={onChangeInstr} />
                                         </div>
                                     </div>
@@ -85,7 +85,7 @@ function HireRecord({ updateToDo, toDos }) {
                                     <div class="row">
                                         <label class="col-sm-2" for="simpleinput">Brand</label>
                                         <div class="col-sm-10">
-                                            <Input class="nox" type="text" name="brand" id="editToDoBrand" placeholder="brand"
+                                            <input class="nox" type="text" name="brand" id="editToDoBrand" placeholder="brand"
                                                 value={brand} onChange={onChangeBrand} />
                                         </div>
                                     </div>
@@ -93,7 +93,7 @@ function HireRecord({ updateToDo, toDos }) {
                                     <div class="row">
                                         <label class="col-sm-2" for="simpleinput">Rate</label>
                                         <div class="col-sm-10">
-                                            <Input class="nox" type="text" name="rate" id="editToDoRate" placeholder="rate"
+                                            <input class="nox" type="text" name="rate" id="editToDoRate" placeholder="rate"
                                                 value={rate} onChange={onChangeRate} />
                                         </div>
                                     </div>
