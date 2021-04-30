@@ -89,25 +89,25 @@ function App() {
   };
 
   const addToDo = async (event) => {
-    /*let name = document.getElementById('newToDoName').value;
-    let code = document.getElementById('newToDoCode').value;
-    let instrument = document.getElementById('newToDoInstrument').value;
-    let brand = document.getElementById('newToDoBrand').value;
-    let rate = document.getElementById('newToDoRate').value;
-    let owner = document.getElementById('newToDoOwner').value;
-    let dueDate = document.getElementById('newToDoDueDate').value;
+    const name = document.getElementById('newToDoName').value;
+    const code = document.getElementById('newToDoCode').value;
+    const instrument = document.getElementById('newToDoInstrument').value;
+    const brand = document.getElementById('newToDoBrand').value;
+    const rate = document.getElementById('newToDoRate').value;
+    const owner = document.getElementById('newToDoOwner').value;
+    const dueDate = document.getElementById('newToDoDueDate').value;
     console.log(name);
     if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
-      || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;*/
+      || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
 
     const newToDo = {
-      "name": 'Hello',
-      "code": '1532',
-      "instrument": 'Guitar',
-      "brand": 'Fender 560',
-      "rate": '$400',
-      "owner": 'OMA',
-      "due": '2021-04-12',
+      "name": name,
+      "code": code,
+      "instrument": instrument,
+      "brand": brand,
+      "rate": rate,
+      "owner": owner,
+      "due": dueDate,
     };
 
     const result = await axios({
@@ -123,13 +123,13 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllTodos();
-      /*name = '';
+      name = '';
       code = '';
       instrument = '';
       brand = '';
       rate = '';
       owner = '';
-      dueDate = '';*/
+      dueDate = '';
     }
   }
 
