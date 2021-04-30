@@ -257,3 +257,5 @@ body:not(.mod-pace-custom) .pace .pace-progress {
 }
 
 .btn-div .btn {margin: 0 5px;}
+.panel {box-shadow: none; -webkit-box-shadow: none;}
+.page-content {background: #f8f8f8;}
