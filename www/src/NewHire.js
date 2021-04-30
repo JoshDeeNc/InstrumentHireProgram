@@ -29,7 +29,7 @@ function NewHire({ addToDo, toDos }) {
                     </h1>
                 </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-10">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr">
                             <h2>New Hire</h2>
@@ -40,45 +40,59 @@ function NewHire({ addToDo, toDos }) {
                             <div class="panel-content">
 
                                 <form>
-                                    <div class="form-group">
-                                        <label class="form-label" for="simpleinput">Student Name </label>
-                                        <Input type="text" class="form-control" name="name" id="newToDoName" placeholder="name" />
+                                    <div class=" form-group row">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Student Name </label>
+                                        <div class="col-sm-10">
+                                        <Input type="text" class="form-control" name="name" id=" " placeholder="name" />
+                                        </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="form-label" for="simpleinput">Code</label>
+                                    <div class=" form-group row">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Code</label>
+                                        <div class="col-sm-10">
                                         <Input type="text" name="code" id="newToDoCode" placeholder="code" />
+                                        </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="form-label" for="simpleinput">Instrument</label>
+                                    <div class=" form-group row">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Instrument</label>
+                                        <div class="col-sm-10">
                                         <select class="form-control" id="newToDoInstrument" value={instr} onChange={onChangeInstrument}>
                                         {availInstruments.map((item, index) => (
                                                         <option>{item}</option>))}
                                                         </select>
+                                        </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="form-label" for="simpleinput">Brand</label>
+                                    <div class=" form-group row">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Brand</label>
+                                        <div class="col-sm-10">
                                         <select class="form-control" id="newToDoBrand">
                                         {availBrands.map((item, index) => (
                                                         <option>{item}</option>))}
                                                         </select>
+                                        </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="form-label" for="simpleinput">Rate</label>
+                                    <div class=" form-group row">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Rate</label>
+                                        <div class="col-sm-10">
                                         <Input type="text" name="rate" id="newToDoRate" placeholder="rate" />
+                                        </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="form-label" for="simpleinput">Owner</label>
+                                    <div class=" form-group row">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Owner</label>
+                                        <div class="col-sm-10">
                                         <Input type="text" name="owner" id="newToDoOwner" placeholder="owner" />
+                                        </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="form-label" for="simpleinput">Due Date</label>
+                                    <div class=" form-group row">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Due Date</label>
+                                        <div class="col-sm-10">
                                         <Input class="form-control" id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy"/>
+                                        </div>
                                     </div>
 
                                     <Button onClick={addToDo} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
