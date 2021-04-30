@@ -41,8 +41,8 @@ function HireRecord({ updateToDo, toDos }) {
     }
 
     const editToggle = (event) => {
-        var textFields = document.getElementsByClassName("no-edit"); 
-        for (var i = 0; i < textFields.length; i++) { 
+        //var textFields = document.getElementsByClassName("no-edit"); 
+        for (var i = 0; i < 5; i++) { 
             //textFields[i].disabled = true;
             console.log('disabled')
         }
