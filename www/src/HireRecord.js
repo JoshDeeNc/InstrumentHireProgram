@@ -36,6 +36,16 @@ function HireRecord({ updateToDo, toDos }) {
         setDue(event.target.value);
     }
 
+    const editToggle = (event) => {
+        var a = document.getElementsByTagName('input');
+        // loop through all 'a' elements
+        for (var i = 0; i < a.length; i++) {
+        // Remove the class 'active' if it exists
+            a[i].classList.remove('nox');
+        }
+        // add 'active' classs to the element that was clicked
+        //elem.classList.add('active');
+    }
 
     return (
         <div>
@@ -44,12 +54,12 @@ function HireRecord({ updateToDo, toDos }) {
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr">
                             <h2>
-                                Hire Details787
+                                Hire Details
                                         </h2>
-                            <Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
+                            <button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
                                 <span class="fal fa-pencil mr-1"></span>
                                                     Edit
-                                                </Button>
+                                                </button>
                         </div>
 
                         <div class="panel-container show">
@@ -57,67 +67,67 @@ function HireRecord({ updateToDo, toDos }) {
 
 
 
-                              
-                                    <div class="row">
-                                        <label class="col-sm-2" for="simpleinput">Student Name </label>
+                                <form>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Student Name </label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control nox" name="name" id="editToDoName"
                                                 value={studName} onChange={onChangeStud} placeholder="name" />
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <label class="col-sm-2" for="simpleinput">Code</label>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Code</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="nox" name="code" id="editToDoCode" placeholder="code"
+                                            <input type="text" class="form-control nox" name="code" id="editToDoCode" placeholder="code"
                                                 value={code} onChange={onChangeCode} />
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <label class="col-sm-2" for="simpleinput">Instrument</label>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Instrument</label>
                                         <div class="col-sm-10">
-                                            <input class="nox" type="text" name="code" id="editToDoInstrument" placeholder="instrument"
+                                            <input class="form-control nox" type="text" name="code" id="editToDoInstrument" placeholder="instrument"
                                                 value={instrument} onChange={onChangeInstr} />
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <label class="col-sm-2" for="simpleinput">Brand</label>
+                                    <div class="form-group row ">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Brand</label>
                                         <div class="col-sm-10">
                                             <input class="nox" type="text" name="brand" id="editToDoBrand" placeholder="brand"
                                                 value={brand} onChange={onChangeBrand} />
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <label class="col-sm-2" for="simpleinput">Rate</label>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Rate</label>
                                         <div class="col-sm-10">
                                             <input class="nox" type="text" name="rate" id="editToDoRate" placeholder="rate"
                                                 value={rate} onChange={onChangeRate} />
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <label class="col-sm-2" for="simpleinput">Owner</label>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Owner</label>
                                         <div class="col-sm-10">
-                                            <Input class="nox" type="text" name="owner" id="editToDoOwner" placeholder="owner"
+                                            <input class="form-control nox" type="text" name="owner" id="editToDoOwner" placeholder="owner"
                                                 value={owner} onChange={onChangeOwner} />
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <label class="col-sm-2" for="simpleinput">Due Date</label>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Due Date</label>
                                         <div class="col-sm-10">
-                                            <Input class="nox"  id="editToDoDueDate" type="date" name="date"
+                                            <input class="form-control nox"  id="editToDoDueDate" type="date" name="date"
                                                 placeholder="dd/mm/yyyy" value={dueDate} onChange={onChangeDue} />
                                         </div>
                                     </div>
                                     <div class="btn-div">
-                                        <Button data-item-id={hireRecord.id} onClick={(e) => updateToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
-                                        <Link to="/"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
+                                        <button data-item-id={hireRecord.id} onClick={(e) => updateToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</button>
+                                        <Link to="/"><button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</button></Link>
                                     </div>
-                            
+                                </form>
                             </div>
                         </div>
 
