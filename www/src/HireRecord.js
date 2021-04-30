@@ -50,7 +50,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
 
     const deletion = (itemId, event) => {
         deleteToDo(itemId);
-        history.push('/instrumentlist')
+        history.push('/')
     }
 
     return (
