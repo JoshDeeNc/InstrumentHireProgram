@@ -278,3 +278,7 @@ body:not(.mod-pace-custom) .pace .pace-progress {
 .al-ctr {
   text-align: center;
 }
+
+.col-form-label {font-size: 14px; font-weight: 500;}
+.form-control {font-size: 14px;}
+.hr {border-top: 1px solid #eeeeee; height:1px; margin: 5px 0;}
