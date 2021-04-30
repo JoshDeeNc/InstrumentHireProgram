@@ -487,6 +487,30 @@ Resources:
             Auth:
               Authorizer: CognitoAuthorizer
 
+  UpdateStudentFunction:
+      Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+      Properties:
+        CodeUri: todo-src/updateStudent/
+        Handler: app.updateStudent
+        Tracing: Active
+        Policies:
+          - DynamoDBCrudPolicy:
+              TableName: !Ref StudentTable
+          - CloudWatchPutMetricPolicy: {}
+        Environment:
+          Variables:
+            TABLE_NAME: !Ref StudentTable
+            AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+        Events:
+          UpdateItem:
+            Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+            Properties:
+              Path: /student/{id}
+              Method: PUT
+              RestApiId: !Ref TodoApi
+              Auth:
+                Authorizer: CognitoAuthorizer
+
   # This role allows API Gateway to push execution and access logs to CloudWatch logs
   ApiGatewayPushToCloudWatchRole:
     Type: "AWS::IAM::Role"
