@@ -244,7 +244,7 @@ body:not(.mod-pace-custom) .pace .pace-progress {
 }
 
 .nox {
-  border: 1px solid #dc3545;
+  border: 1px solid #dc3545 !important;
   /* pointer-events: none; */
   padding-left: 0
 }
