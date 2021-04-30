@@ -79,7 +79,7 @@ table tr td a .fa-2x {font-size: 1.5em; color: #aaa;}
 .nav-menu li a .dl-ref {    border-radius: 25px;    padding: 0 5px;}
 .bg-red {background: #dc3545 !important;}
 body:not(.mod-pace-custom) .pace .pace-progress {background: #8bc34a; }
-.nav-function-minify .nav-footer {background-color:#2e7d32; color: #ffffff !important;}
+.nav-function-minify .nav-footer, .nav-function-fixed .nav-footer {background-color:#2e7d32; color: #ffffff !important;}
 .nav-function-minify .nav-footer:hover {background-color: #319c36;}
 .nav-function-minify .nav-footer [data-class="nav-function-minify"],.nav-function-minify .nav-footer [data-class="nav-function-minify"]:hover {color: #ffffff;}
 .view-flds .row {border-bottom: 1px solid rgba(0,0,0, 0.1); padding: 10px;}
