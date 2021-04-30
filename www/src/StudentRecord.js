@@ -24,6 +24,17 @@ function StudentRecord({ updateStudent, studentList }) {
         setEmail(event.target.value);
     }
 
+    const editToggle = (event) => {
+        var a = document.getElementsByTagName('input');
+        // loop through all 'a' elements
+        for (var i = 0; i < a.length; i++) {
+        // Remove the class 'active' if it exists
+            a[i].classList.remove('nox');
+        }
+        // add 'active' classs to the element that was clicked
+        //elem.classList.add('active');
+    }
+
     return (
         <div>
             <div class="row">
@@ -33,10 +44,10 @@ function StudentRecord({ updateStudent, studentList }) {
                             <h2>
                                 Student Details
                                         </h2>
-                            <button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
+                            <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
                                 <span class="fal fa-pencil mr-1"></span>
                                                     Edit
-                                                </button>
+                                                </Button>
                         </div>
                         <div class="panel-container show">
                             <div class="panel-content">
@@ -44,7 +55,7 @@ function StudentRecord({ updateStudent, studentList }) {
                                     <div class="form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" ">First Name </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control no-edit" name="name" id="editFirstName"
+                                            <input type="text" class="form-control nox" name="name" id="editFirstName"
                                                 value={studFirst} onChange={onChangeFirst} placeholder="Name" />
                                         </div>
 
@@ -53,7 +64,7 @@ function StudentRecord({ updateStudent, studentList }) {
                                         <label class="col-sm-2 col-form-label" for=" ">Last Name </label>
 
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control no-edit" name="name" id="editLastName"
+                                            <input type="text" class="form-control nox" name="name" id="editLastName"
                                                 value={studLast} onChange={onChangeLast} placeholder="Last Name " />
                                         </div>
                                     </div>
@@ -61,7 +72,7 @@ function StudentRecord({ updateStudent, studentList }) {
                                         <label class="col-sm-2 col-form-label" for=" "> Phone Number  </label>
 
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control no-edit" name="name" id="editPhoneNumber"
+                                            <input type="text" class="form-control nox" name="name" id="editPhoneNumber"
                                                 value={phone} onChange={onChangePhone} placeholder="Phone Number" />
                                         </div>
                                     </div>
@@ -69,13 +80,14 @@ function StudentRecord({ updateStudent, studentList }) {
                                         <label class="col-sm-2 col-form-label" for=" ">Email</label>
 
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control no-edit" name="name" id="editEmail"
+                                            <input type="text" class="form-control nox" name="name" id="editEmail"
                                                 value={email} onChange={onChangeEmail} placeholder="Email" />
                                         </div>
                                     </div>
-
-                                    <Button data-item-id={studentRecord.id} onClick={(e) => updateStudent(studentRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
-                                    <Link to="/studentlist"><Button class="btn btn-lg btn-default waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
+                                    <div class="btn-div">
+                                    <Button data-item-id={studentRecord.id} onClick={(e) => updateStudent(studentRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 ">Update</Button>
+                                    <Link to="/studentlist"><button class="btn btn-lg btn-secondary waves-effect waves-themed ">Cancel</button></Link>
+                                    </div>
                                 </form>
                             </div>
                         </div>

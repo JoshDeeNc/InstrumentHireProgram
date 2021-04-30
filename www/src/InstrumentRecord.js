@@ -41,10 +41,14 @@ function InstrumentRecord({ updateInstrument, instInventory }) {
     }
 
     const editToggle = (event) => {
-        var textFields = document.getElementsByClassName("no-edit"); 
-        for (var i = 0; i < textFields.length; i++) { 
-            textFields[i].disabled = true;
+        var a = document.getElementsByTagName('input');
+        // loop through all 'a' elements
+        for (var i = 0; i < a.length; i++) {
+        // Remove the class 'active' if it exists
+            a[i].classList.remove('nox');
         }
+        // add 'active' classs to the element that was clicked
+        //elem.classList.add('active');
     }
 
 
@@ -69,56 +73,56 @@ function InstrumentRecord({ updateInstrument, instInventory }) {
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" ">Code </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control no-edit" name=" " id="editInstCode"
+                                            <input type="text" class="form-control no-edit" name=" " id="editInstCode"
                                                 value={code} onChange={onChangeCode} placeholder=" Code" />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" "> Instrument Type </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control no-edit" name=" " id="editInstType"
+                                            <input type="text" class="form-control no-edit" name=" " id="editInstType"
                                                 value={type} onChange={onChangeType} placeholder="Instrument Type " />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" "> Instrument Name </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control no-edit" name=" " id="editInstName"
+                                            <input type="text" class="form-control no-edit" name=" " id="editInstName"
                                                 value={object} onChange={onChangeObject} placeholder="Instrument Name " />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" ">Brand </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control no-edit" name=" " id="editInstBrand"
+                                            <input type="text" class="form-control no-edit" name=" " id="editInstBrand"
                                                 value={brand} onChange={onChangeBrand} placeholder="Brand " />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" "> Rate </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control no-edit" name=" " id="editInstRate"
+                                            <input type="text" class="form-control no-edit" name=" " id="editInstRate"
                                                 value={rate} onChange={onChangeRate} placeholder="Rate " />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" "> Purchase Value </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control no-edit" name=" " id="editInstPurchVal"
+                                            <input type="text" class="form-control no-edit" name=" " id="editInstPurchVal"
                                                 value={purchVal} onChange={onChangePurch} placeholder="Purchase Value  " />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" ">Depreciation </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control no-edit" name=" " id="editInstDepr"
+                                            <input type="text" class="form-control no-edit" name=" " id="editInstDepr"
                                                 value={depr} onChange={onChangeDepreciation} placeholder=" Depreciation" />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" "> Owner </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control no-edit" name=" " id="editInstOwner"
+                                            <input type="text" class="form-control no-edit" name=" " id="editInstOwner"
                                                 value={owner} onChange={onChangeOwner} placeholder="Owner " />
                                         </div>
                                     </div>
