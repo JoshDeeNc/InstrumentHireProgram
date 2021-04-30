@@ -80,7 +80,9 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                             <input type="text" class="form-control nox" name="name" id="editToDoName"
                                                 value={studName} onChange={onChangeStud} placeholder="name" />
                                         </div>
-                                        <div class="col-sm-12 hr"></div>    
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>  
                                     </div>
 
                                     <div class="form-group row">
@@ -89,7 +91,9 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                             <input type="text" class="form-control nox" name="code" id="editToDoCode" placeholder="code"
                                                 value={code} onChange={onChangeCode} />
                                         </div>
-                                        <div class="col-sm-12 hr"></div>  
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
@@ -98,7 +102,9 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                             <input class="form-control nox" type="text" name="code" id="editToDoInstrument" placeholder="instrument"
                                                 value={instrument} onChange={onChangeInstr} />
                                         </div>
-                                        <div class="col-sm-12 hr"></div>  
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class="form-group row ">
@@ -107,7 +113,9 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                             <input class="form-control nox" type="text" name="brand" id="editToDoBrand" placeholder="brand"
                                                 value={brand} onChange={onChangeBrand} />
                                         </div>
-                                        <div class="col-sm-12 hr"></div>  
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
@@ -116,7 +124,9 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                             <input class="form-control nox" type="text" name="rate" id="editToDoRate" placeholder="rate"
                                                 value={rate} onChange={onChangeRate} />
                                         </div>
-                                        <div class="col-sm-12 hr"></div>  
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
@@ -125,7 +135,9 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                             <input class="form-control nox" type="text" name="owner" id="editToDoOwner" placeholder="owner"
                                                 value={owner} onChange={onChangeOwner} />
                                         </div>
-                                        <div class="col-sm-12 hr"></div>  
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
@@ -134,7 +146,9 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                             <input class="form-control nox"  id="editToDoDueDate" type="date" name="date"
                                                 placeholder="dd/mm/yyyy" value={dueDate} onChange={onChangeDue} />
                                         </div>
-                                        <div class="col-sm-12 hr"></div>  
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
                                     <div class="btn-div">
                                         <Button data-item-id={hireRecord.id} onClick={(e) => updateToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Update</Button>
