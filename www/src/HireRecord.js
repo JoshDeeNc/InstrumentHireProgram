@@ -42,6 +42,7 @@ function HireRecord({ updateToDo, toDos }) {
 
     const editToggle = (event) => {
         var a = document.getElementsByTagName('input');
+        console.log(a.length)
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
         // Remove the class 'active' if it exists
