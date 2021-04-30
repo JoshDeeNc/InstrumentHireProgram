@@ -101,13 +101,13 @@ function App() {
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
 
     const newToDo = {
-      "name": name,
-      "code": code,
-      "instrument": instrument,
-      "brand": brand,
-      "rate": rate,
-      "owner": owner,
-      "due": dueDate,
+      "name": 'Hello',
+      "code": '1532',
+      "instrument": 'Guitar',
+      "brand": 'Fender 560',
+      "rate": '$400',
+      "owner": 'OMA',
+      "due": '2021-04-12',
       "completed": false
     };
 
