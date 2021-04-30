@@ -44,7 +44,7 @@ function StudentRecord({ updateStudent, studentList }) {
                                     <div class="form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" ">First Name </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control" name="name" id="editFirstName"
+                                            <Input type="text" class="form-control no-edit" name="name" id="editFirstName"
                                                 value={studFirst} onChange={onChangeFirst} placeholder="Name" />
                                         </div>
 
@@ -53,7 +53,7 @@ function StudentRecord({ updateStudent, studentList }) {
                                         <label class="col-sm-2 col-form-label" for=" ">Last Name </label>
 
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control" name="name" id="editLastName"
+                                            <Input type="text" class="form-control no-edit" name="name" id="editLastName"
                                                 value={studLast} onChange={onChangeLast} placeholder="Last Name " />
                                         </div>
                                     </div>
@@ -61,7 +61,7 @@ function StudentRecord({ updateStudent, studentList }) {
                                         <label class="col-sm-2 col-form-label" for=" "> Phone Number  </label>
 
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control" name="name" id="editPhoneNumber"
+                                            <Input type="text" class="form-control no-edit" name="name" id="editPhoneNumber"
                                                 value={phone} onChange={onChangePhone} placeholder="Phone Number" />
                                         </div>
                                     </div>
@@ -69,7 +69,7 @@ function StudentRecord({ updateStudent, studentList }) {
                                         <label class="col-sm-2 col-form-label" for=" ">Email</label>
 
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control" name="name" id="editEmail"
+                                            <Input type="text" class="form-control no-edit" name="name" id="editEmail"
                                                 value={email} onChange={onChangeEmail} placeholder="Email" />
                                         </div>
                                     </div>

@@ -45,7 +45,7 @@ function NewHire({ addToDo, toDos }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Student Name </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class=" form-control no-edit" name="name" id="newToDoName" placeholder="name" />
+                                            <Input type="text" class="  form-control " name="name" id="newToDoName" placeholder="name" />
                                         </div>
                                     </div>
 
@@ -93,7 +93,7 @@ function NewHire({ addToDo, toDos }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Due Date</label>
                                         <div class="col-sm-10">
-                                            <Input class=" form-control no-edit" id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" />
+                                            <Input class="  form-control " id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" />
                                         </div>
                                     </div>
                                     <div class="btn-div">
