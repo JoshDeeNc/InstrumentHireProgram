@@ -242,3 +242,7 @@ body:not(.mod-pace-custom) .pace .pace-progress {
   pointer-events: none;
   padding-left: 0
 }
+
+.btn-div {
+  padding: 20px 0;
+}
