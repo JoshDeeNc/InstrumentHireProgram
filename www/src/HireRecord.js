@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
 
 function HireRecord({ deleteToDo, updateToDo, toDos }) {
+    const history = useHistory();
     const id = /[^/]*$/.exec(window.location.href)[0];
     const hireRecord = toDos.find(item => item.id === id);
 
@@ -45,6 +46,11 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
         }
         // add 'active' classs to the element that was clicked
         //elem.classList.add('active');
+    }
+
+    const deletion = (itemId, event) => {
+        deleteToDo(itemId);
+        history.push('/instrumentlist')
     }
 
     return (
@@ -133,7 +139,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                     <div class="btn-div">
                                         <Button data-item-id={hireRecord.id} onClick={(e) => updateToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Update</Button>
                                         <Link to="/"><button class="btn btn-lg btn-secondary waves-effect waves-themed">Cancel</button></Link>
-                                        <Button data-item-id={hireRecord.id} onClick={(e) => deleteToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
+                                        <Button data-item-id={hireRecord.id} onClick={(e) => deletion(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
                                     </div>
                                 </form>
                             </div>
