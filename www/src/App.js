@@ -218,15 +218,16 @@ function App() {
       || !depreciation || depreciation === '' || !owner || owner === '') return;
 
     const newInstrument = {
-      "code": '123',
+      "available": true
+      /*"code": '123',
       "type": '123',
       "object": '123',
       "brand": '123',
       "rate": '123',
       "purchaseValue": '123',
       "depreciation": '123',
-      "owner": '123',
-      "available": true
+      "owner": '123',*/
+      
     };
 
     const result = await axios({
