@@ -108,7 +108,6 @@ function App() {
       "rate": '$400',
       "owner": 'OMA',
       "due": '2021-04-12',
-      "completed": false
     };
 
     const result = await axios({
