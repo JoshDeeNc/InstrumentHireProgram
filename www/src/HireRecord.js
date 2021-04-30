@@ -36,7 +36,7 @@ function HireRecord({ updateToDo, toDos }) {
         setDue(event.target.value);
     }
 
-    const editToggle = (event) => {
+    /*const editToggle = (event) => {
         var a = document.getElementsByTagName('input');
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
@@ -45,7 +45,7 @@ function HireRecord({ updateToDo, toDos }) {
         }
         // add 'active' classs to the element that was clicked
         //elem.classList.add('active');
-    }
+    }*/
 
     return (
         <div>
