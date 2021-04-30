@@ -268,7 +268,7 @@ function App() {
       || !depreciation || depreciation === '' || !owner || owner === '') return;
 
     const updateInstrument = {
-      "code": '1424',
+      //"code": '1424',
       /*"type": type,
       "object": object,
       "brand": brand,
