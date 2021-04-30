@@ -269,7 +269,7 @@ function App() {
       || !depreciation || depreciation === '' || !owner || owner === '') return;
 
     const updateInstrument = {
-      "available": true
+      "available": false
       /*"code": code,
       "type": type,
       "object": object,
@@ -282,7 +282,7 @@ function App() {
 
     const result = await axios({
       method: 'PUT',
-      url: `${config.api_base_url}/instrument/`,
+      url: `${config.api_base_url}/instrument/${itemId}`,
       headers: {
         Authorization: idToken
       },

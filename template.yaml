@@ -355,30 +355,6 @@ Resources:
             Auth:
               Authorizer: CognitoAuthorizer
 
-  UpdateInstrumentFunction:
-      Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-      Properties:
-        CodeUri: todo-src/updateInstrument/
-        Handler: app.updateInstrument
-        Tracing: Active
-        Policies:
-          - DynamoDBCrudPolicy:
-              TableName: !Ref InstrumentTable
-          - CloudWatchPutMetricPolicy: {}
-        Environment:
-          Variables:
-            TABLE_NAME: !Ref InstrumentTable
-            AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
-        Events:
-          UpdateItem:
-            Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
-            Properties:
-              Path: /instrument/{id}
-              Method: PUT
-              RestApiId: !Ref TodoApi
-              Auth:
-                Authorizer: CognitoAuthorizer
-
   GetAllInstrumentsFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
@@ -431,6 +407,30 @@ Resources:
             RestApiId: !Ref TodoApi
             Auth:
               Authorizer: CognitoAuthorizer
+
+  UpdateInstrumentFunction:
+      Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+      Properties:
+        CodeUri: todo-src/updateInstrument/
+        Handler: app.updateInstrument
+        Tracing: Active
+        Policies:
+          - DynamoDBCrudPolicy:
+              TableName: !Ref InstrumentTable
+          - CloudWatchPutMetricPolicy: {}
+        Environment:
+          Variables:
+            TABLE_NAME: !Ref InstrumentTable
+            AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+        Events:
+          UpdateItem:
+            Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+            Properties:
+              Path: /instrument/{id}
+              Method: PUT
+              RestApiId: !Ref TodoApi
+              Auth:
+                Authorizer: CognitoAuthorizer
 
   GetAllStudentsFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
