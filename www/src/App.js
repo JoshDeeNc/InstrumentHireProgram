@@ -89,7 +89,7 @@ function App() {
   };
 
   const addToDo = async (event) => {
-    let name = document.getElementById('newToDoName').value;
+    /*let name = document.getElementById('newToDoName').value;
     let code = document.getElementById('newToDoCode').value;
     let instrument = document.getElementById('newToDoInstrument').value;
     let brand = document.getElementById('newToDoBrand').value;
@@ -98,7 +98,7 @@ function App() {
     let dueDate = document.getElementById('newToDoDueDate').value;
     console.log(name);
     if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
-      || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
+      || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;*/
 
     const newToDo = {
       "name": 'Hello',
@@ -124,13 +124,13 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllTodos();
-      name = '';
+      /*name = '';
       code = '';
       instrument = '';
       brand = '';
       rate = '';
       owner = '';
-      dueDate = '';
+      dueDate = '';*/
     }
   }
 
