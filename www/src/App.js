@@ -182,6 +182,42 @@ function App() {
     }
   }
 
+  const deleteToDo = async (itemId) => {
+    if (itemId === null) return;
+
+    const result = await axios({
+      method: 'DELETE',
+      url: `${config.api_base_url}/item/${itemId}`,
+      headers: {
+        Authorization: idToken
+      }
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      getAllTodos();
+      //const newToDos = toDos.filter((item, index) => index !== indexToRemove);
+      //setToDos(newToDos);
+    }
+  }
+
+  const completeToDo = async (itemId) => {
+    if (itemId === null) return;
+
+    const result = await axios({
+      method: 'POST',
+      url: `${config.api_base_url}/item/${itemId}/done`,
+      headers: {
+        Authorization: idToken
+      }
+    });
+
+    if (result && result.status === 200) {
+      getAllTodos();
+    }
+  }
+
   const getAllInstruments = async () => {
     const result = await axios({
       url: `${config.api_base_url}/instrument/`,
@@ -304,42 +340,6 @@ function App() {
     }
   }
 
-  const deleteToDo = async (indexToRemove, itemId) => {
-    if (indexToRemove === null) return;
-    if (itemId === null) return;
-
-    const result = await axios({
-      method: 'DELETE',
-      url: `${config.api_base_url}/item/${itemId}`,
-      headers: {
-        Authorization: idToken
-      }
-    });
-
-    if (result && result.status === 401) {
-      clearCredentials();
-    } else if (result && result.status === 200) {
-      const newToDos = toDos.filter((item, index) => index !== indexToRemove);
-      setToDos(newToDos);
-    }
-  }
-
-  const completeToDo = async (itemId) => {
-    if (itemId === null) return;
-
-    const result = await axios({
-      method: 'POST',
-      url: `${config.api_base_url}/item/${itemId}/done`,
-      headers: {
-        Authorization: idToken
-      }
-    });
-
-    if (result && result.status === 200) {
-      getAllTodos();
-    }
-  }
-
   const addStudent = async (event) => {
     const firstName = document.getElementById('newFirstName').value;
     const lastName = document.getElementById('newLastName').value;
@@ -447,7 +447,7 @@ function App() {
             <BrowserRouter>
               <Switch>
                 <Route path="/newhire"><NewHire toDos={toDos} addToDo={addToDo} /></Route>
-                <Route path="/hirerecord"><HireRecord updateToDo={updateToDo} toDos={toDos} /></Route>
+                <Route path="/hirerecord"><HireRecord deleteToDo={deleteToDo} updateToDo={updateToDo} toDos={toDos} /></Route>
                 <Route path="/instrumentrecord"><InstrumentRecord updateInstrument={updateInstrument} instInventory={instInventory} /></Route>
                 <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
                 <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
