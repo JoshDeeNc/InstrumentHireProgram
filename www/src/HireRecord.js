@@ -36,16 +36,6 @@ function HireRecord({ updateToDo, toDos }) {
         setDue(event.target.value);
     }
 
-    const editToggle = (event) => {
-        var a = document.getElementsByTagName('input');
-        // loop through all 'a' elements
-        for (var i = 0; i < a.length; i++) {
-        // Remove the class 'active' if it exists
-            a[i].classList.remove('nox');
-        }
-        // add 'active' classs to the element that was clicked
-        //elem.classList.add('active');
-    }
 
     return (
         <div>
@@ -95,7 +85,7 @@ function HireRecord({ updateToDo, toDos }) {
                                     <div class="form-group row ">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Brand</label>
                                         <div class="col-sm-10">
-                                            <Input class="form-control nox" type="text" name="brand" id="editToDoBrand" placeholder="brand"
+                                            <Input class="nox" type="text" name="brand" id="editToDoBrand" placeholder="brand"
                                                 value={brand} onChange={onChangeBrand} />
                                         </div>
                                     </div>
@@ -103,7 +93,7 @@ function HireRecord({ updateToDo, toDos }) {
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Rate</label>
                                         <div class="col-sm-10">
-                                            <Input class="form-control nox" type="text" name="rate" id="editToDoRate" placeholder="rate"
+                                            <Input class="nox" type="text" name="rate" id="editToDoRate" placeholder="rate"
                                                 value={rate} onChange={onChangeRate} />
                                         </div>
                                     </div>
