@@ -57,7 +57,7 @@ function HireRecord({ updateToDo, toDos }) {
 
 
 
-                                <form>
+                              
                                     <div class="row">
                                         <label class="col-sm-2" for="simpleinput">Student Name </label>
                                         <div class="col-sm-10">
@@ -117,7 +117,7 @@ function HireRecord({ updateToDo, toDos }) {
                                         <Button data-item-id={hireRecord.id} onClick={(e) => updateToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
                                         <Link to="/"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
                                     </div>
-                                </form>
+                            
                             </div>
                         </div>
 
