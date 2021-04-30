@@ -255,6 +255,7 @@ body:not(.mod-pace-custom) .pace .pace-progress {
   padding: 20px 0;
   text-align: center;
 }
+.header-btn .btn {min-width: auto !important;}
 
 .btn-div .btn {margin: 0 5px;}
 .panel {box-shadow: none; -webkit-box-shadow: none;}
