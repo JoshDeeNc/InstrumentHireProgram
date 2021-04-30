@@ -58,7 +58,7 @@ function updateRecord(username, recordId, eventBody) {
             "cognito-username": username,
             "id": recordId
         },
-        UpdateExpression: "set #avail = :avl lastupdate_date = :lud, #cde = :cde",// #tipe = :tipe, #obj = :obj, brand = :brd, rate = :rte, #prchVal = :prchVal, #dpr = :dpr, #owon = :odh",
+        UpdateExpression: "set #avail = :avl, lastupdate_date = :lud, #cde = :cde",// #tipe = :tipe, #obj = :obj, brand = :brd, rate = :rte, #prchVal = :prchVal, #dpr = :dpr, #owon = :odh",
         ExpressionAttributeNames: {
             '#avail': 'available',
             '#cde': 'code'
