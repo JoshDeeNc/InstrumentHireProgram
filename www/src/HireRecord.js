@@ -56,7 +56,7 @@ function HireRecord({ updateToDo, toDos }) {
                             <h2>
                                 Hire Details
                                         </h2>
-                            <button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
+                            <button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
                                 <span class="fal fa-pencil mr-1"></span>
                                                     Edit
                                                 </button>
@@ -95,7 +95,7 @@ function HireRecord({ updateToDo, toDos }) {
                                     <div class="form-group row ">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Brand</label>
                                         <div class="col-sm-10">
-                                            <input class="nox" type="text" name="brand" id="editToDoBrand" placeholder="brand"
+                                            <input class="form-control nox" type="text" name="brand" id="editToDoBrand" placeholder="brand"
                                                 value={brand} onChange={onChangeBrand} />
                                         </div>
                                     </div>
@@ -103,7 +103,7 @@ function HireRecord({ updateToDo, toDos }) {
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Rate</label>
                                         <div class="col-sm-10">
-                                            <input class="nox" type="text" name="rate" id="editToDoRate" placeholder="rate"
+                                            <input class="form-control nox" type="text" name="rate" id="editToDoRate" placeholder="rate"
                                                 value={rate} onChange={onChangeRate} />
                                         </div>
                                     </div>
