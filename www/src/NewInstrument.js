@@ -54,7 +54,7 @@ function NewInstrument({ addInstrument }) {
 
                                     <div class=" form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Rate</label>
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-3">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">$</span>
@@ -66,7 +66,7 @@ function NewInstrument({ addInstrument }) {
 
                                     <div class=" form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Purchase Cost</label>
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-3">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">$</span>
@@ -78,7 +78,7 @@ function NewInstrument({ addInstrument }) {
 
                                     <div class=" form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Depreciation Rate</label>
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-3">
                                             <div class="input-group">
                                                 <Input type="text" class="form-control" name="rate" id="newInstDepr" placeholder="depreciation" />
                                                 <div class="input-group-append">
