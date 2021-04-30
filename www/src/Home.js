@@ -60,7 +60,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                               <th>Rate</th>
                               <th>Owner</th>
                               <th>Due Date</th>
-                              <th class="dtl-cel">Details</th>
+                              <th  >Details</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -74,8 +74,8 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                 <td>{item.rate}</td>
                                 <td>{item.owner}</td>
                                 <td>{new Date(item.due).toLocaleDateString()}</td>
-                                <td><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
-                              </tr>
+                                <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
+                              </tr >
                             ))}
 
                           </tbody>
@@ -116,7 +116,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                             {toDos.filter(item => new Date(item.due) < new Date()).map((item, index) => (
                               <tr role="row" key={item.id}>
                                 <td>{new Date(item.due).toLocaleDateString()}</td>
-                                <td> <span class="txt-red">{Math.floor((new Date().getTime() - new Date(item.due).getTime()) / (1000 * 60 * 60 * 24))}</span></td>
+                                <td class="al-ctr"> <span class="txt-red">{Math.floor((new Date().getTime() - new Date(item.due).getTime()) / (1000 * 60 * 60 * 24))}</span></td>
                                 <td>{item.name}</td>
                                 <td>{item.code}</td>
                                 <td>{item.instrument}</td>
@@ -124,7 +124,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                 <td>{item.rate}</td>
                                 <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                 <td>{item.owner}</td>
-                                <td><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
+                                <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                               </tr>
                             ))}
 

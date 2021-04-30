@@ -49,7 +49,7 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
                             <td>{item.lastName}</td>
                             <td>{item.phone}</td>
                             <td>{item.email}</td>
-                            <td><Link to={`/studentrecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
+                            <td class="al-ctr"><Link to={`/studentrecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                           </tr>
                         ))}
 
