@@ -40,6 +40,15 @@ function InstrumentRecord({ updateInstrument, instInventory }) {
         setOwner(event.target.value);
     }
 
+    const editToggle = (event) => {
+        var textFields = document.getElementsByClassName("no-edit"); 
+        for (var i = 0; i < textFields.length; i++) { 
+            textFields[i].disabled = true;
+        }
+    }
+
+
+
     return (
         <div>
             <div class="row">
@@ -49,7 +58,7 @@ function InstrumentRecord({ updateInstrument, instInventory }) {
                             <h2>
                                 Hire Details
                                         </h2>
-                            <button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
+                            <button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
                                 <span class="fal fa-pencil mr-1"></span>
                                                     Edit
                                                 </button>
