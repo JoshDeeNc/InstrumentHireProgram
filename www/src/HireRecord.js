@@ -78,7 +78,7 @@ function HireRecord({ completeToDo, updateToDo, toDos }) {
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="form-label" for="simpleinput">Instrument</label>
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Instrument</label>
                                         <div class="col-sm-10">
                                         <Input type="text" name="code" id="editToDoInstrument" placeholder="instrument"
                                         value={instrument} onChange={onChangeInstr}/>
@@ -94,7 +94,7 @@ function HireRecord({ completeToDo, updateToDo, toDos }) {
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="form-label" for="simpleinput">Rate</label>
+                                        <label class="col-sm-2 col-form-label" for="simpleinput">Rate</label>
                                         <div class="col-sm-10">
                                         <Input type="text" name="rate" id="editToDoRate" placeholder="rate"
                                         value={rate} onChange={onChangeRate}/>
