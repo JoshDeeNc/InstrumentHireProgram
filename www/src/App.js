@@ -254,7 +254,7 @@ function App() {
     }
   }
 
-  const updateInstrument = async (event) => {
+  const updateInstrument = async (itemId, event) => {
     const code = document.getElementById('editInstCode').value;
     const type = document.getElementById('editInstType').value;
     const object = document.getElementById('editInstName').value;
