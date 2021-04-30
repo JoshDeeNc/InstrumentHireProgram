@@ -269,14 +269,14 @@ function App() {
 
     const updateInstrument = {
       "available": false,
-      "code": '1424'
-      /*"type": type,
-      "object": object,
-      "brand": brand,
-      "rate": rate,
-      "purchaseValue": purchVal,
-      "depreciation": depreciation,
-      "owner": owner,*/
+      "code": '1424',
+      "type": 'Instrument',
+      "object": 'Guitar',
+      "brand": 'Fender 360',
+      "rate": '534'
+      /*"purchaseValue": '1500',
+      "depreciation": '5029',
+      "owner": 'OMA'*/
     };
 
     const result = await axios({
