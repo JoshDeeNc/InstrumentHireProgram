@@ -178,7 +178,7 @@ function App() {
       rate = '';
       owner = '';
       dueDate = '';
-      window.location.href = '/';
+      //window.location.href = '/';
     }
   }
 
