@@ -60,7 +60,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                               <th>Rate</th>
                               <th>Owner</th>
                               <th>Due Date</th>
-                              <th>Details</th>
+                              <th class="dtl-cel">Details</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -109,7 +109,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                               <th>Rate</th>
                               <th>Date Hired</th>
                               <th>Owner</th>
-                              <th>Details</th>
+                              <th class="dtl-cel">Details</th>
                             </tr>
                           </thead>
                           <tbody>

@@ -42,7 +42,7 @@ function InstrumentList({ instInventory, deleteToDo, completeToDo }) {
                           <th>Brand</th>
                           <th>Rate</th>
                           <th>Owner</th>
-                          <th>Details</th>
+                          <th class="dtl-cel">Details</th>
                         </tr>
                       </thead>
                       <tbody>

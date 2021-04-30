@@ -39,7 +39,7 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
                           <th>Last Name</th>
                           <th>Phone Number</th>
                           <th>Email</th>
-                          <th>Details</th>
+                          <th class="dtl-cel">Details</th>
                         </tr>
                       </thead>
                       <tbody>
