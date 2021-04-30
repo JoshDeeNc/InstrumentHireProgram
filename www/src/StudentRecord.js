@@ -20,26 +20,47 @@ function StudentRecord({ studentList }) {
                         </div>
                         <div class="panel-container show">
                             <div class="panel-content">
-                                <div class="row" >
-                                    <div class="col-md-3 fw-700"> First Name </div>
-                                    <div class="col-md-9">{studentRecord.firstName}</div>
+                            <form>
+                                <div class="form-group row" >
+                                <label class="col-sm-2 col-form-label" for=" ">First Name </label>
+                                <div class="col-sm-10">
+                                        <Input type="text" class="form-control" name="name" id=" "
+                                        value={studentRecord.firstName} onChange={ } placeholder="Name" />
                                 </div>
-                                <div class="row" >
-                                    <div class="col-md-3 fw-700"> Last Name </div>
-                                    <div class="col-md-9">{studentRecord.lastName}</div>
+                                   
                                 </div>
-                                <div class="row" >
-                                    <div class="col-md-3 fw-700"> Phone Number </div>
-                                    <div class="col-md-9">{studentRecord.phone}</div>
+                                <div class="row form-group" >
+                                <label class="col-sm-2 col-form-label" for=" ">Last Name </label>
+                                   
+                                    <div class="col-sm-10">
+                                        <Input type="text" class="form-control" name="name" id=" "
+                                        value={studentRecord.lastName} onChange={ } placeholder="Last Name " />
+                                    </div>
                                 </div>
-                                <div class="row" >
-                                    <div class="col-md-3 fw-700"> Email </div>
-                                    <div class="col-md-9">{studentRecord.email}</div>
+                                <div class="row form-group" >
+                                <label class="col-sm-2 col-form-label" for=" "> Phone Number  </label>   
+                                    
+                                    <div class="col-sm-10">
+                                        <Input type="text" class="form-control" name="name" id=" "
+                                        value={studentRecord.phone} onChange={ } placeholder="Phone Number" />
                                 </div>
-                                <div class="row" >
-                                    <div class="col-md-3 fw-700"> Date Added </div>
-                                    <div class="col-md-9">{new Date(studentRecord.creation_date).toLocaleDateString()}</div>
                                 </div>
+                                <div class="row form-group" >
+                                <label class="col-sm-2 col-form-label" for=" ">Email</label> 
+                                    
+                                    <div class="col-sm-10">
+                                        <Input type="text" class="form-control" name="name" id=" "
+                                        value={studentRecord.email} onChange={ } placeholder="Email" />
+                                </div>
+                                </div>
+                                <div class="row form-group" >
+                                <label class="col-sm-2 col-form-label" for=" ">Date Added </label>
+                                     <div class="col-sm-10">
+                                        <Input type="text" class="form-control" name="name" id=" "
+                                        value={studentRecord.creation_date} onChange={ } placeholder="Date Added" />
+                                </div>
+                                </div>
+                            </form>
                             </div>
                         </div>
                     </div>
