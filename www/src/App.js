@@ -254,6 +254,57 @@ function App() {
     }
   }
 
+  const updateInstrument = async (event) => {
+    const code = document.getElementById('editInstCode').value;
+    const type = document.getElementById('editInstType').value;
+    const object = document.getElementById('editInstName').value;
+    const brand = document.getElementById('editInstBrand').value;
+    const rate = document.getElementById('editInstRate').value;
+    const purchVal = document.getElementById('editInstPurchVal').value
+    const depreciation = document.getElementById('editInstDepr').value;
+    const owner = document.getElementById('editInstOwner').value;
+    
+    if (!code || code === '' || !type || type === '' || !object || object === ''
+      || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === '' 
+      || !depreciation || depreciation === '' || !owner || owner === '') return;
+
+    const updateInstrument = {
+      "code": code,
+      "type": type,
+      "object": object,
+      "brand": brand,
+      "rate": rate,
+      "purchaseValue": purchVal,
+      "depreciation": depreciation,
+      "owner": owner,
+      "available": true
+    };
+
+    const result = await axios({
+      method: 'PUT',
+      url: `${config.api_base_url}/instrument/`,
+      headers: {
+        Authorization: idToken
+      },
+      data: updateInstrument
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      getAllInstruments();
+      code = '';
+      type = '';
+      object = '';
+      brand = '';
+      rate = '';
+      purchVal = '';
+      depreciation = '';
+      owner = '';
+      window.location.href = "/instrumentlist";
+    }
+  }
+
   const deleteToDo = async (indexToRemove, itemId) => {
     if (indexToRemove === null) return;
     if (itemId === null) return;
@@ -398,7 +449,7 @@ function App() {
               <Switch>
                 <Route path="/newhire"><NewHire toDos={toDos} addToDo={addToDo} /></Route>
                 <Route path="/hirerecord"><HireRecord updateToDo={updateToDo} toDos={toDos} /></Route>
-                <Route path="/instrumentrecord"><InstrumentRecord instInventory={instInventory} /></Route>
+                <Route path="/instrumentrecord"><InstrumentRecord updateInstrument={updateInstrument} instInventory={instInventory} /></Route>
                 <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
                 <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
                 <Route path="/studentrecord"><StudentRecord updateStudent={updateStudent} studentList={studentList} /></Route>
