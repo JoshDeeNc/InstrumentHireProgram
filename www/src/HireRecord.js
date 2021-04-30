@@ -154,8 +154,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                         <Button data-item-id={hireRecord.id} onClick={(e) => updateToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Update</Button>
                                         <Link to="/"><button class="btn btn-lg btn-secondary waves-effect waves-themed">Cancel</button></Link>
                                         <Button data-item-id={hireRecord.id} onClick={(e) => deletion(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
-                                        <a href="javascript:void(0);" class="btn btn-outline-primary waves-effect waves-themed" id="js-sweetalert2-example-8">Try me!</a>
-                                   
+                                        <button type="button" class="btn btn-default waves-effect waves-themed" data-toggle="modal" data-target="#example-modal-alert">Modal Alert</button>
                                     </div>
                                 </form>
                             </div>
