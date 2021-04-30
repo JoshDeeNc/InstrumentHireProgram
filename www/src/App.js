@@ -268,15 +268,15 @@ function App() {
       || !depreciation || depreciation === '' || !owner || owner === '') return;
 
     const updateInstrument = {
-      "available": false,
-      "code": '1424',
-      "type": 'Instrument',
-      "object": 'Guitar',
-      "brand": 'Fender 360',
-      "rate": '534'
-      /*"purchaseValue": '1500',
-      "depreciation": '5029',
-      "owner": 'OMA'*/
+      "code": code,
+      "type": type,
+      "object": object,
+      "brand": brand,
+      "rate": rate,
+      "purchaseValue": purchVal,
+      "depreciation": depreciation,
+      "owner": owner,
+      "available": true
     };
 
     const result = await axios({
@@ -292,7 +292,7 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllInstruments();
-      /*code = '';
+      code = '';
       type = '';
       object = '';
       brand = '';
@@ -300,7 +300,7 @@ function App() {
       purchVal = '';
       depreciation = '';
       owner = '';
-      window.location.href = "/instrumentlist";*/
+      window.location.href = "/instrumentlist";
     }
   }
 
