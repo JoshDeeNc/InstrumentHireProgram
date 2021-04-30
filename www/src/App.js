@@ -273,10 +273,10 @@ function App() {
       "type": 'Instrument',
       "object": 'Guitar',
       "brand": 'Fender 360',
-      "rate": '534'
-      /*"purchaseValue": '1500',
+      "rate": '534',
+      "purchaseValue": '1500',
       "depreciation": '5029',
-      "owner": 'OMA'*/
+      "owner": 'Polygon'
     };
 
     const result = await axios({

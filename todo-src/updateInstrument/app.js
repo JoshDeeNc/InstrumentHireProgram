@@ -58,17 +58,17 @@ function updateRecord(username, recordId, eventBody) {
             "cognito-username": username,
             "id": recordId
         },
-        UpdateExpression: "set #avail = :avl, lastupdate_date = :lud, #cod = :cod, #tipe = :tipe, #obej = :obej, #brnd = :brd, #rtes = :rtes",// #prchVal = :prchVal, #dpr = :dpr, #owon = :odh",
+        UpdateExpression: "set #avail = :avl, lastupdate_date = :lud, #cod = :cod, #tipe = :tipe, #obej = :obej, #brnd = :brd, #rtes = :rtes, #prchVal = :prchVal, #dpr = :dpr, #owone = :odhe",
         ExpressionAttributeNames: {
             '#avail': 'available',
             '#cod': 'code',
             '#tipe': 'type',
             '#obej': 'object',
             '#brnd': 'brand',
-            '#rtes': 'rate'
-            /*'#prchVal': 'purchaseValue',
+            '#rtes': 'rate',
+            '#prchVal': 'purchaseValue',
             '#dpr': 'depreciation',
-            '#owon': 'owner'*/
+            '#owone': 'owner'
         },
         ExpressionAttributeValues: {
             ':lud': d.toISOString(),
@@ -77,11 +77,10 @@ function updateRecord(username, recordId, eventBody) {
             ':tipe': item.type,
             ':obej': item.object,
             ':brd': item.brand,
-            ':rtes': item.rate
-            /*':prchVal': item.purchVal,
+            ':rtes': item.rate,
+            ':prchVal': item.purchaseValue,
             ':dpr': item.depreciation,
-            ':odh': item.owner*/
-            
+            ':odhe': item.owner            
         }
     }
     return docClient.update(params)
