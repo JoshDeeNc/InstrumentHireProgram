@@ -44,7 +44,7 @@ function HireRecord({ updateToDo, toDos }) {
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr">
                             <h2>
-                                Hire Details
+                                Hire Details787
                                         </h2>
                             <Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
                                 <span class="fal fa-pencil mr-1"></span>
@@ -66,10 +66,10 @@ function HireRecord({ updateToDo, toDos }) {
                                         </div>
                                     </div>
 
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Code</label>
+                                    <div class="form-groupx row">
+                                        <label class="col-sm-2 col-form-labelx" for="simpleinput">Code</label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control nox" name="code" id="editToDoCode" placeholder="code"
+                                            <Input type="text" class=" nox" name="code" id="editToDoCode" placeholder="code"
                                                 value={code} onChange={onChangeCode} />
                                         </div>
                                     </div>
