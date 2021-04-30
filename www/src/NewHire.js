@@ -43,7 +43,7 @@ function NewHire({ addToDo, toDos }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Student Name </label>
                                         <div class="col-sm-10">
-                                        <Input type="text" class="form-control" name="name" id=" " placeholder="name" />
+                                        <Input type="text" class="form-control" name="name" id="newToDoName" placeholder="name" />
                                         </div>
                                     </div>
 
