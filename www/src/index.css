@@ -245,7 +245,8 @@ body:not(.mod-pace-custom) .pace .pace-progress {
 
 .nox {
   border: none;
-  padding-left: 0
+  pointer-events: none;
+  padding-left: 0;
 }
 
 .btn-div {
