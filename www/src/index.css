@@ -50,10 +50,7 @@ button {
   font-size: 12px !important;
 }
 
-.btn-primary {
-  background-color: #78909c !important;
-  border: none !important;
-}
+
 
 html body a {
   color: #43a047;
@@ -198,6 +195,17 @@ table tr td a .fa-2x {
   min-width: 100px;
 }
 
+.btn-primary {
+  background-color: #78909c !important;
+  border: none !important;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #9ba8b4 !important;
+  border: none !important;
+}
+
 .phcs-logo {
   width: 50px;
   position: fixed;
@@ -245,4 +253,7 @@ body:not(.mod-pace-custom) .pace .pace-progress {
 
 .btn-div {
   padding: 20px 0;
+  text-align: center;
 }
+
+.btn-div .btn {margin: 0 5px;}
