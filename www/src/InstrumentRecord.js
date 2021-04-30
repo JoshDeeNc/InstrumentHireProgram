@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
 
 function InstrumentRecord({ instInventory }) {
     const id = /[^/]*$/.exec(window.location.href)[0];
@@ -25,63 +27,63 @@ function InstrumentRecord({ instInventory }) {
                                         <label class="col-sm-2 col-form-label" for=" ">Code </label>
                                         <div class="col-sm-10">
                                             <Input type="text" class="form-control" name=" " id=" "
-                                                value={instrumentRecord.code} onChange={ } placeholder=" Code" />
+                                                value={instrumentRecord.code} placeholder=" Code" />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" "> Instrument Type </label>
                                         <div class="col-sm-10">
                                             <Input type="text" class="form-control" name=" " id=" "
-                                                value={instrumentRecord.type} onChange={ } placeholder="Instrument Type " />
+                                                value={instrumentRecord.type} placeholder="Instrument Type " />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" "> Instrument Name </label>
                                         <div class="col-sm-10">
                                             <Input type="text" class="form-control" name=" " id=" "
-                                                value={instrumentRecord.object} onChange={ } placeholder="Instrument Name " />
+                                                value={instrumentRecord.object} placeholder="Instrument Name " />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" ">Brand </label>
                                         <div class="col-sm-10">
                                             <Input type="text" class="form-control" name=" " id=" "
-                                                value={instrumentRecord.brand} onChange={ } placeholder="Brand " />
+                                                value={instrumentRecord.brand} placeholder="Brand " />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" "> Rate </label>
                                         <div class="col-sm-10">
                                             <Input type="text" class="form-control" name=" " id=" "
-                                                value={instrumentRecord.rate} onChange={ } placeholder="Rate " />
+                                                value={instrumentRecord.rate} placeholder="Rate " />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" "> Purchase Value </label>
                                         <div class="col-sm-10">
                                             <Input type="text" class="form-control" name=" " id=" "
-                                                value={instrumentRecord.purchVal} onChange={ } placeholder="Purchase Value  " />
+                                                value={instrumentRecord.purchVal} placeholder="Purchase Value  " />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" ">Depreciation </label>
                                         <div class="col-sm-10">
                                             <Input type="text" class="form-control" name=" " id=" "
-                                                value={instrumentRecord.depreciation} onChange={ } placeholder=" Depreciation" />
+                                                value={instrumentRecord.depreciation} placeholder=" Depreciation" />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" "> Owner </label>
                                         <div class="col-sm-10">
                                             <Input type="text" class="form-control" name=" " id=" "
-                                                value={instrumentRecord.owner} onChange={ } placeholder="Owner " />
+                                                value={instrumentRecord.owner} placeholder="Owner " />
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-2 col-form-label" for=" "> Available </label>
                                         <div class="col-sm-10">
                                             <Input type="text" class="form-control" name=" " id=" "
-                                                value={instrumentRecord.available} onChange={ } placeholder="Available " />
+                                                value={instrumentRecord.available} placeholder="Available " />
                                         </div>
                                     </div>
                                 </form>
