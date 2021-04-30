@@ -55,7 +55,7 @@ function NewStudent({ addStudent }) {
                                     </div>
                                 </form>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
 
