@@ -25,28 +25,28 @@ function NewStudent({ addStudent }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Student First Name </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control" name="name" id="newFirstName" placeholder="First name" />
+                                            <Input type="text" class="form-control no-edit" name="name" id="newFirstName" placeholder="First name" />
                                         </div>
                                     </div>
 
                                     <div class=" form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Student Last Name </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="form-control" name="name" id="newLastName" placeholder="Last name" />
+                                            <Input type="text" class="form-control no-edit" name="name" id="newLastName" placeholder="Last name" />
                                         </div>
                                     </div>
 
                                     <div class=" form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Phone</label>
                                         <div class="col-sm-10">
-                                            <Input type="text" name="code" id="newPhoneNumber" placeholder="Phone number" />
+                                            <Input type="text" class="form-control no-edit" name="code" id="newPhoneNumber" placeholder="Phone number" />
                                         </div>
                                     </div>
 
                                     <div class=" form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Email</label>
                                         <div class="col-sm-10">
-                                            <Input type="text" name="code" id="newEmail" placeholder="Email" />
+                                            <Input type="text" class="form-control no-edit" name="code" id="newEmail" placeholder="Email" />
                                         </div>
                                     </div>
                                     <div class="btn-div">
