@@ -41,11 +41,14 @@ function HireRecord({ updateToDo, toDos }) {
     }
 
     const editToggle = (event) => {
-        //var textFields = document.getElementsByClassName("no-edit"); 
-        for (var i = 0; i < 5; i++) { 
-            //textFields[i].disabled = true;
-            console.log('disabled')
+        var a = document.getElementsByTagName('input');
+        // loop through all 'a' elements
+        for (var i = 0; i < a.length; i++) {
+        // Remove the class 'active' if it exists
+            a[i].classList.remove('no-edit');
         }
+        // add 'active' classs to the element that was clicked
+        //elem.classList.add('active');
     }
 
     return (
