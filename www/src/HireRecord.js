@@ -124,7 +124,7 @@ function HireRecord({ updateToDo, toDos }) {
                                         </div>
                                     </div>
                                     <div class="btn-div">
-                                        <button data-item-id={hireRecord.id} onClick={(e) => updateToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</button>
+                                        <button data-item-id={hireRecord.id} onClick={(e) => updateToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Update</button>
                                         <Link to="/"><button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</button></Link>
                                     </div>
                                 </form>
