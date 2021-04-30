@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
 
-function StudentRecord({ studentList }) {
+function StudentRecord({ updateStudent, studentList }) {
     const id = /[^/]*$/.exec(window.location.href)[0];
     const studentRecord = studentList.find(item => item.id === id);
+
+    const [studFirst, setStudFirst] = useState(studentRecord.firstName)
+    const [studLast, setStudLast] = useState(studentRecord.lastName)
+    const [phone, setPhone] = useState(studentRecord.phone)
+    const [email, setEmail] = useState(studentRecord.email)
+
+    const onChangeFirst = (event) => {
+        setStudFirst(event.target.value);
+    }
+    const onChangeLast = (event) => {
+        setStudLast(event.target.value);
+    }
+    const onChangePhone = (event) => {
+        setPhone(event.target.value);
+    }
+    const onChangeEmail = (event) => {
+        setEmail(event.target.value);
+    }
 
     return (
         <div>
@@ -20,47 +40,43 @@ function StudentRecord({ studentList }) {
                         </div>
                         <div class="panel-container show">
                             <div class="panel-content">
-                            <form>
-                                <div class="form-group row" >
-                                <label class="col-sm-2 col-form-label" for=" ">First Name </label>
-                                <div class="col-sm-10">
-                                        <Input type="text" class="form-control" name="name" id=" "
-                                        value={studentRecord.firstName} onChange={ } placeholder="Name" />
-                                </div>
-                                   
-                                </div>
-                                <div class="row form-group" >
-                                <label class="col-sm-2 col-form-label" for=" ">Last Name </label>
-                                   
-                                    <div class="col-sm-10">
-                                        <Input type="text" class="form-control" name="name" id=" "
-                                        value={studentRecord.lastName} onChange={ } placeholder="Last Name " />
+                                <form>
+                                    <div class="form-group row" >
+                                        <label class="col-sm-2 col-form-label" for=" ">First Name </label>
+                                        <div class="col-sm-10">
+                                            <Input type="text" class="form-control" name="name" id="editFirstName"
+                                                value={studFirst} onChange={onChangeFirst} placeholder="Name" />
+                                        </div>
+
                                     </div>
-                                </div>
-                                <div class="row form-group" >
-                                <label class="col-sm-2 col-form-label" for=" "> Phone Number  </label>   
-                                    
-                                    <div class="col-sm-10">
-                                        <Input type="text" class="form-control" name="name" id=" "
-                                        value={studentRecord.phone} onChange={ } placeholder="Phone Number" />
-                                </div>
-                                </div>
-                                <div class="row form-group" >
-                                <label class="col-sm-2 col-form-label" for=" ">Email</label> 
-                                    
-                                    <div class="col-sm-10">
-                                        <Input type="text" class="form-control" name="name" id=" "
-                                        value={studentRecord.email} onChange={ } placeholder="Email" />
-                                </div>
-                                </div>
-                                <div class="row form-group" >
-                                <label class="col-sm-2 col-form-label" for=" ">Date Added </label>
-                                     <div class="col-sm-10">
-                                        <Input type="text" class="form-control" name="name" id=" "
-                                        value={studentRecord.creation_date} onChange={ } placeholder="Date Added" />
-                                </div>
-                                </div>
-                            </form>
+                                    <div class="row form-group" >
+                                        <label class="col-sm-2 col-form-label" for=" ">Last Name </label>
+
+                                        <div class="col-sm-10">
+                                            <Input type="text" class="form-control" name="name" id="editLastName"
+                                                value={studLast} onChange={onChangeLast} placeholder="Last Name " />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group" >
+                                        <label class="col-sm-2 col-form-label" for=" "> Phone Number  </label>
+
+                                        <div class="col-sm-10">
+                                            <Input type="text" class="form-control" name="name" id="editPhoneNumber"
+                                                value={phone} onChange={onChangePhone} placeholder="Phone Number" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group" >
+                                        <label class="col-sm-2 col-form-label" for=" ">Email</label>
+
+                                        <div class="col-sm-10">
+                                            <Input type="text" class="form-control" name="name" id="editEmail"
+                                                value={email} onChange={onChangeEmail} placeholder="Email" />
+                                        </div>
+                                    </div>
+
+                                    <Button data-item-id={studentRecord.id} onClick={(e) => updateStudent(studentRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
+                                    <Link to="/studentlist"><Button class="btn btn-lg btn-default waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
+                                </form>
                             </div>
                         </div>
                     </div>

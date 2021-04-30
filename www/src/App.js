@@ -347,6 +347,45 @@ function App() {
     }
   };
 
+  const updateStudent = async (itemId, event) => {
+    if (itemId === null) return;
+    const firstName = document.getElementById('editFirstName').value;
+    const lastName = document.getElementById('editLastName').value;
+    const phone = document.getElementById('editPhoneNumber').value;
+    const email = document.getElementById('editEmail').value;
+    
+    if (!firstName || firstName === '' || !lastName || lastName === '' || !phone || phone === ''
+      || !email || email === '') return;
+
+    const updateStudent = {
+      "firstName": firstName,
+      "lastName": lastName,
+      "phone": phone,
+      "email": email,
+    };
+
+    const result = await axios({
+      method: 'PUT',
+      url: `${config.api_base_url}/student/${itemId}`,
+      headers: {
+        Authorization: idToken
+      },
+      data: updateStudent
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+      console.log(result)
+    } else if (result && result.status === 200) {
+      getAllStudents();
+      firstName = '';
+      lastName = '';
+      phone = '';
+      email = '';
+      window.location.href = '/';
+    }
+  }
+
   return (
     <div className="App">
       <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
@@ -358,11 +397,11 @@ function App() {
             <BrowserRouter>
               <Switch>
                 <Route path="/newhire"><NewHire toDos={toDos} addToDo={addToDo} /></Route>
-                <Route path="/hirerecord"><HireRecord completeToDo={completeToDo} updateToDo={updateToDo} toDos={toDos} /></Route>
+                <Route path="/hirerecord"><HireRecord updateToDo={updateToDo} toDos={toDos} /></Route>
                 <Route path="/instrumentrecord"><InstrumentRecord instInventory={instInventory} /></Route>
                 <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
                 <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
-                <Route path="/studentrecord"><StudentRecord studentList={studentList} /></Route>
+                <Route path="/studentrecord"><StudentRecord updateStudent={updateStudent} studentList={studentList} /></Route>
                 <Route path="/studentlist"><StudentList studentList={studentList} /></Route>
                 <Route path="/newstudent"><NewStudent addStudent={addStudent} /></Route>
                 <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
