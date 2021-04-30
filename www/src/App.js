@@ -268,14 +268,14 @@ function App() {
       || !depreciation || depreciation === '' || !owner || owner === '') return;
 
     const updateInstrument = {
-      "code": code,
+      /*"code": code,
       "type": type,
       "object": object,
       "brand": brand,
       "rate": rate,
       "purchaseValue": purchVal,
       "depreciation": depreciation,
-      "owner": owner,
+      "owner": owner,*/
       "available": true
     };
 
@@ -292,7 +292,7 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllInstruments();
-      code = '';
+      /*code = '';
       type = '';
       object = '';
       brand = '';
@@ -300,7 +300,7 @@ function App() {
       purchVal = '';
       depreciation = '';
       owner = '';
-      window.location.href = "/instrumentlist";
+      window.location.href = "/instrumentlist";*/
     }
   }
 
