@@ -5,10 +5,6 @@ import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 're
 function HireRecord({ updateToDo, toDos }) {
     const id = /[^/]*$/.exec(window.location.href)[0];
     const hireRecord = toDos.find(item => item.id === id);
-    const editField = async (event) => {
-        document.getElementById('displayDiv').display = 'none';
-        document.getElementById('editDiv').display = 'block';
-    }
 
     const [studName, setStudName] = useState(hireRecord.name)
     const [code, setCode] = useState(hireRecord.code)
@@ -42,7 +38,6 @@ function HireRecord({ updateToDo, toDos }) {
 
     const editToggle = (event) => {
         var a = document.getElementsByTagName('input');
-        console.log(a.length)
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
         // Remove the class 'active' if it exists
@@ -61,7 +56,7 @@ function HireRecord({ updateToDo, toDos }) {
                             <h2>
                                 Hire Details
                                         </h2>
-                            <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
+                            <Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
                                 <span class="fal fa-pencil mr-1"></span>
                                                     Edit
                                                 </Button>
