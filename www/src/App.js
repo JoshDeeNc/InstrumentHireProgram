@@ -172,7 +172,6 @@ function App() {
     } else if (result && result.status === 200) {
       getAllTodos();
     }
-    return result;
   }
 
   const deleteToDo = async (itemId) => {
@@ -190,9 +189,8 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllTodos();
-      //const newToDos = toDos.filter((item, index) => index !== indexToRemove);
-      //setToDos(newToDos);
     }
+    return result;
   }
 
   const completeToDo = async (itemId) => {
@@ -322,7 +320,6 @@ function App() {
     } else if (result && result.status === 200) {
       getAllInstruments();
     }
-    return result;
   }
 
   const deleteInstrument = async (itemId) => {
@@ -433,7 +430,6 @@ function App() {
     } else if (result && result.status === 200) {
       getAllStudents();
     }
-    return result;
   }
 
   const deleteStudent = async (itemId) => {
@@ -452,6 +448,7 @@ function App() {
     } else if (result && result.status === 200) {
       getAllStudents();
     }
+    return result;
   }
 
   return (
