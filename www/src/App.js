@@ -171,15 +171,8 @@ function App() {
       console.log(result)
     } else if (result && result.status === 200) {
       getAllTodos();
-      name = '';
-      code = '';
-      instrument = '';
-      brand = '';
-      rate = '';
-      owner = '';
-      dueDate = '';
-      //window.location.href = '/';
     }
+    return result;
   }
 
   const deleteToDo = async (itemId) => {
@@ -328,16 +321,8 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllInstruments();
-      code = '';
-      type = '';
-      object = '';
-      brand = '';
-      rate = '';
-      purchVal = '';
-      depreciation = '';
-      owner = '';
-      window.location.href = "/instrumentlist";
     }
+    return result;
   }
 
   const deleteInstrument = async (itemId) => {
@@ -447,12 +432,8 @@ function App() {
       console.log(result)
     } else if (result && result.status === 200) {
       getAllStudents();
-      firstName = '';
-      lastName = '';
-      phone = '';
-      email = '';
-      window.location.href = '/';
     }
+    return result;
   }
 
   const deleteStudent = async (itemId) => {
