@@ -109,7 +109,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
             <Modal isOpen={modal} toggle={toggle} >
                 <ModalHeader toggle={toggle}> Delete</ModalHeader>
                 <ModalBody>
-                    Are you sure you want to delete this student's record?
+                    Are you sure you want to delete {studFirst + " " + studLast}'s record?
         </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={(e) => deletion(studentRecord.id)}>Yes</Button>

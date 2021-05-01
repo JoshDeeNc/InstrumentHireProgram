@@ -171,7 +171,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
             <Modal isOpen={modal} toggle={toggle} >
                 <ModalHeader toggle={toggle}> Delete</ModalHeader>
                 <ModalBody>
-                    Are you sure you want to delete this hire record?
+                    Are you sure you want to delete {studName}'s {instrument + " " + brand} hire record?
         </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={(e) => deletion(hireRecord.id)}>Yes</Button>
