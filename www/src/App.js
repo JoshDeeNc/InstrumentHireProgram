@@ -340,6 +340,24 @@ function App() {
     }
   }
 
+  const deleteInstrument = async (itemId) => {
+    if (itemId === null) return;
+
+    const result = await axios({
+      method: 'DELETE',
+      url: `${config.api_base_url}/instrument/${itemId}`,
+      headers: {
+        Authorization: idToken
+      }
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      getAllInstruments();
+    }
+  }
+
   const addStudent = async (event) => {
     const firstName = document.getElementById('newFirstName').value;
     const lastName = document.getElementById('newLastName').value;
@@ -448,7 +466,7 @@ function App() {
               <Switch>
                 <Route path="/newhire"><NewHire toDos={toDos} addToDo={addToDo} /></Route>
                 <Route path="/hirerecord"><HireRecord deleteToDo={deleteToDo} updateToDo={updateToDo} toDos={toDos} /></Route>
-                <Route path="/instrumentrecord"><InstrumentRecord updateInstrument={updateInstrument} instInventory={instInventory} /></Route>
+                <Route path="/instrumentrecord"><InstrumentRecord deleteInstrument={deleteInstrument} updateInstrument={updateInstrument} instInventory={instInventory} /></Route>
                 <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
                 <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
                 <Route path="/studentrecord"><StudentRecord updateStudent={updateStudent} studentList={studentList} /></Route>
