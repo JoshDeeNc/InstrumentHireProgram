@@ -19,7 +19,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
         setInstrument(event.target.value);
     }
 
-    const studentConcat = studentList.map(item => item.firstName + item.lastName)
+    const studentConcat = studentList.map(item => item.firstName + " " + item.lastName)
     const [student, setStudent] = useState('')
 
     const onChangeStudent = (event) => {
