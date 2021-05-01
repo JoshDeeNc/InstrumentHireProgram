@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
-function NewHire({ addToDo, toDos }) {
+function NewHire({ toDos, studentList, instInventory, addToDo }) {
     const unique = (value, index, self) => {
         return self.indexOf(value) === index
     }
 
-    const availInstruments = toDos.map(item => item.instrument).filter(unique)
+    const availInstruments = instInventory.filter(item => item.type === "instrument").filter(unique)
     const [availBrands, setAvailBrands] = useState([])
-
     const [instr, setInstrument] = useState('')
-    
+
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
         setAvailBrands(toDos.filter(item => item.instrument === instr).map(item => item.brand).filter(unique))
@@ -18,6 +17,13 @@ function NewHire({ addToDo, toDos }) {
 
     const onChangeInstrument = (event) => {
         setInstrument(event.target.value);
+    }
+
+    const studentConcat = studentList.map(item => item.firstName + item.lastName)
+    const [student, setStudent] = useState('')
+
+    const onChangeStudent = (event) => {
+        setStudent(event.target.value);
     }
 
     return (
@@ -44,7 +50,10 @@ function NewHire({ addToDo, toDos }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Student Name </label>
                                         <div class="col-sm-10">
-                                            <Input type="text" class="  form-control " name="name" id="newToDoName" placeholder="name" />
+                                        <select class="form-control" id="newToDoName" value={student} onChange={onChangeStudent}>
+                                                {studentConcat.map((item, index) => (
+                                                    <option>{item}</option>))}
+                                            </select>
                                         </div>
                                     </div>
 

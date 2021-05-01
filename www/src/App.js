@@ -461,7 +461,7 @@ function App() {
           {idToken.length > 0 ? (
             <BrowserRouter>
               <Switch>
-                <Route path="/newhire"><NewHire toDos={toDos} addToDo={addToDo} /></Route>
+                <Route path="/newhire"><NewHire toDos={toDos} studentList={studentList} instInventory={instInventory} addToDo={addToDo} /></Route>
                 <Route path="/hirerecord"><HireRecord deleteToDo={deleteToDo} updateToDo={updateToDo} toDos={toDos} /></Route>
                 <Route path="/instrumentrecord"><InstrumentRecord deleteInstrument={deleteInstrument} updateInstrument={updateInstrument} instInventory={instInventory} /></Route>
                 <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
