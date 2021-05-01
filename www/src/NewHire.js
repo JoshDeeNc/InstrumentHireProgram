@@ -6,7 +6,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
         return self.indexOf(value) === index
     }
 
-    const availInstruments = instInventory.filter(item => item.type === "instrument").filter(unique)
+    const availInstruments = instInventory.filter(item => item.type === "instrument").map(item => item.instrument).filter(unique)
     const [availBrands, setAvailBrands] = useState([])
     const [instr, setInstrument] = useState('')
 
