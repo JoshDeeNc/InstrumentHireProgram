@@ -150,7 +150,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
             <Modal isOpen={modal} toggle={toggle} >
                 <ModalHeader toggle={toggle}> Delete</ModalHeader>
                 <ModalBody>
-                    Are you sure you want to delete this instrument record?
+                    Are you sure you want to delete {instrumentRecord.object + " " + instrumentRecord.brand}?
         </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={(e) => deletion(instrumentRecord.id)}>Yes</Button>
