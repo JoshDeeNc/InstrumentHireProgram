@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
-import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
+import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col,  Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 function HireRecord({ deleteToDo, updateToDo, toDos }) {
     const history = useHistory();
@@ -41,7 +41,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
         var a = document.getElementsByTagName('input');
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
-        // Remove the class 'active' if it exists
+            // Remove the class 'active' if it exists
             a[i].classList.remove('nox');
         }
         // add 'active' classs to the element that was clicked
@@ -52,6 +52,10 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
         deleteToDo(itemId);
         history.push('/')
     }
+
+    const [modal, setModal] = useState(false);
+
+    const toggle = () => setModal(!modal);
 
     return (
         <div>
@@ -82,7 +86,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
-                                        </div>  
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
@@ -143,7 +147,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label" for="simpleinput">Due Date</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control nox"  id="editToDoDueDate" type="date" name="date"
+                                            <input class="form-control nox" id="editToDoDueDate" type="date" name="date"
                                                 placeholder="dd/mm/yyyy" value={dueDate} onChange={onChangeDue} />
                                         </div>
                                         <div class="col-sm-12 ">
@@ -153,8 +157,8 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                     <div class="btn-div">
                                         <Button data-item-id={hireRecord.id} onClick={(e) => updateToDo(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Update</Button>
                                         <Link to="/"><button class="btn btn-lg btn-secondary waves-effect waves-themed">Cancel</button></Link>
-                                        <Button data-item-id={hireRecord.id} onClick={(e) => deletion(hireRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
-                                        <button type="button" class="btn btn-default waves-effect waves-themed" data-toggle="modal" data-target="#example-modal-alert">Modal Alert</button>
+                                        <Button data-item-id={hireRecord.id} color="danger" onClick={toggle} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
+                                        <Button type="button" class="btn btn-default waves-effect waves-themed" data-toggle="modal" data-target="#example-modal-alert">Modal Alert</Button>
                                     </div>
                                 </form>
                             </div>
@@ -163,28 +167,20 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                     </div>
                 </div>
             </div>
+            <Modal isOpen={modal} toggle={toggle} >
+                <ModalHeader toggle={toggle}> Delete</ModalHeader>
+                <ModalBody>
+                    Are you sure you want to delete this record?
+        </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onClick={(e) => deletion(hireRecord.id)}>Yes</Button>
+                    <Button color="secondary" onClick={toggle}>No</Button>
+                </ModalFooter>
+            </Modal>
         </div>
     )
 }
 
-<div class="modal modal-alert fade" id="example-modal-alert" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Delete Hire Record </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><i class="fal fa-times"></i></span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Text description...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Are you sure? </button>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 export default HireRecord;
