@@ -52,7 +52,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
         //elem.classList.add('active');
     }
 
-    const deletion = (itemId, event) => {
+    const deletion = async (itemId, event) => {
         deleteInstrument(itemId);
         history.push('/instrumentlist')
     }
