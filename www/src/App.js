@@ -356,6 +356,7 @@ function App() {
     } else if (result && result.status === 200) {
       getAllInstruments();
     }
+    return result;
   }
 
   const addStudent = async (event) => {

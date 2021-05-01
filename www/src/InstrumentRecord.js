@@ -53,8 +53,11 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
     }
 
     const deletion = async (itemId, event) => {
-        deleteInstrument(itemId);
-        history.push('/instrumentlist')
+        const result = await deleteInstrument(itemId);
+        if(result.status === 200 ) {
+            history.push('/instrumentlist');
+        }
+        console.log(result.status)
     }
 
 
