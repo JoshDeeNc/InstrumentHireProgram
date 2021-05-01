@@ -432,6 +432,32 @@ Resources:
               Auth:
                 Authorizer: CognitoAuthorizer
 
+  DeleteInstrumentFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: todo-src/deleteInstrument
+      Handler: app.deleteInstrument
+      Tracing: Active
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref InstrumentTable
+        - CloudWatchPutMetricPolicy: {}
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref InstrumentTable
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+          ENDPOINT_OVERRIDE: ""
+
+      Events:
+        DeleteItem:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /instrument/{id}
+            Method: DELETE
+            RestApiId: !Ref TodoApi
+            Auth:
+              Authorizer: CognitoAuthorizer
+
   GetAllStudentsFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:

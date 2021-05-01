@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
 
-function InstrumentRecord({ updateInstrument, instInventory }) {
+function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory }) {
+    const history = useHistory();
     const id = /[^/]*$/.exec(window.location.href)[0];
     const instrumentRecord = instInventory.find(item => item.id === id);
 
@@ -51,6 +52,10 @@ function InstrumentRecord({ updateInstrument, instInventory }) {
         //elem.classList.add('active');
     }
 
+    const deletion = (itemId, event) => {
+        deleteInstrument(itemId);
+        history.push('/instrumentlist')
+    }
 
 
     return (
@@ -129,6 +134,7 @@ function InstrumentRecord({ updateInstrument, instInventory }) {
                                     <div class="btn-div">
                                         <Button data-item-id={instrumentRecord.id} onClick={(e) => updateInstrument(instrumentRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
                                         <Link to="/instrumentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
+                                        <Button data-item-id={instrumentRecord.id} onClick={(e) => deletion(instrumentRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
                                     </div>
                                 </form>
                             </div>
