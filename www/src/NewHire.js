@@ -12,7 +12,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
-        setAvailBrands(instInventory.filter(item => item.object === instr).map(item => item.brand).filter(unique))
+        setAvailBrands(instInventory.filter(item => item.object === instr && item.type === "Instrument").map(item => item.brand).filter(unique))
     }, [instr])
 
     const onChangeInstrument = (event) => {
