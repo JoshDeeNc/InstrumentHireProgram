@@ -454,6 +454,24 @@ function App() {
     }
   }
 
+  const deleteStudent = async (itemId) => {
+    if (itemId === null) return;
+
+    const result = await axios({
+      method: 'DELETE',
+      url: `${config.api_base_url}/student/${itemId}`,
+      headers: {
+        Authorization: idToken
+      }
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      getAllStudents();
+    }
+  }
+
   return (
     <div className="App">
       <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
@@ -469,7 +487,7 @@ function App() {
                 <Route path="/instrumentrecord"><InstrumentRecord deleteInstrument={deleteInstrument} updateInstrument={updateInstrument} instInventory={instInventory} /></Route>
                 <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
                 <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
-                <Route path="/studentrecord"><StudentRecord updateStudent={updateStudent} studentList={studentList} /></Route>
+                <Route path="/studentrecord"><StudentRecord deleteStudent={deleteStudent} updateStudent={updateStudent} studentList={studentList} /></Route>
                 <Route path="/studentlist"><StudentList studentList={studentList} /></Route>
                 <Route path="/newstudent"><NewStudent addStudent={addStudent} /></Route>
                 <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>

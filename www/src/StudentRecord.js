@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
 
-function StudentRecord({ updateStudent, studentList }) {
+function StudentRecord({ deleteStudent, updateStudent, studentList }) {
+    const history = useHistory();
     const id = /[^/]*$/.exec(window.location.href)[0];
     const studentRecord = studentList.find(item => item.id === id);
 
@@ -33,6 +34,11 @@ function StudentRecord({ updateStudent, studentList }) {
         }
         // add 'active' classs to the element that was clicked
         //elem.classList.add('active');
+    }
+
+    const deletion = (itemId, event) => {
+        deleteStudent(itemId);
+        history.push('/studentlist')
     }
 
     return (
@@ -87,6 +93,7 @@ function StudentRecord({ updateStudent, studentList }) {
                                     <div class="btn-div">
                                     <Button data-item-id={studentRecord.id} onClick={(e) => updateStudent(studentRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 ">Update</Button>
                                     <Link to="/studentlist"><button class="btn btn-lg btn-secondary waves-effect waves-themed ">Cancel</button></Link>
+                                    <Button data-item-id={studentRecord.id} onClick={(e) => deletion(studentRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
                                     </div>
                                 </form>
                             </div>
