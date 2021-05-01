@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
-import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
+import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 function StudentRecord({ deleteStudent, updateStudent, studentList }) {
     const history = useHistory();
@@ -29,17 +29,22 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
         var a = document.getElementsByTagName('input');
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
-        // Remove the class 'active' if it exists
+            // Remove the class 'active' if it exists
             a[i].classList.remove('nox');
         }
         // add 'active' classs to the element that was clicked
         //elem.classList.add('active');
     }
 
-    const deletion = (itemId, event) => {
-        deleteStudent(itemId);
-        history.push('/studentlist')
+    const deletion = async (itemId, event) => {
+        const result = await deleteStudent(itemId);
+        if (result.status === 200) {
+            history.push('/studentlist');
+        }
     }
+
+    const [modal, setModal] = useState(false);
+    const toggle = () => setModal(!modal);
 
     return (
         <div>
@@ -91,9 +96,9 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                         </div>
                                     </div>
                                     <div class="btn-div">
-                                    <Button data-item-id={studentRecord.id} onClick={(e) => updateStudent(studentRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 ">Update</Button>
-                                    <Link to="/studentlist"><button class="btn btn-lg btn-secondary waves-effect waves-themed ">Cancel</button></Link>
-                                    <Button data-item-id={studentRecord.id} onClick={(e) => deletion(studentRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
+                                        <Button data-item-id={studentRecord.id} onClick={(e) => updateStudent(studentRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 ">Update</Button>
+                                        <Link to="/studentlist"><button class="btn btn-lg btn-secondary waves-effect waves-themed ">Cancel</button></Link>
+                                        <Button data-item-id={studentRecord.id} color="danger" onClick={toggle} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
                                     </div>
                                 </form>
                             </div>
@@ -101,6 +106,16 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                     </div>
                 </div>
             </div>
+            <Modal isOpen={modal} toggle={toggle} >
+                <ModalHeader toggle={toggle}> Delete</ModalHeader>
+                <ModalBody>
+                    Are you sure you want to delete this student's record?
+        </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onClick={(e) => deletion(studentRecord.id)}>Yes</Button>
+                    <Button color="secondary" onClick={toggle}>No</Button>
+                </ModalFooter>
+            </Modal>
         </div>
     )
 }

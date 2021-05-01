@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
-import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col,  Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 function HireRecord({ deleteToDo, updateToDo, toDos }) {
     const history = useHistory();
@@ -48,13 +48,14 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
         //elem.classList.add('active');
     }
 
-    const deletion = (itemId, event) => {
-        deleteToDo(itemId);
-        history.push('/')
+    const deletion = async (itemId, event) => {
+        const result = await deleteToDo(itemId);
+        if(result.status === 200 ) {
+            history.push('/');
+        }
     }
 
     const [modal, setModal] = useState(false);
-
     const toggle = () => setModal(!modal);
 
     return (
@@ -170,7 +171,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
             <Modal isOpen={modal} toggle={toggle} >
                 <ModalHeader toggle={toggle}> Delete</ModalHeader>
                 <ModalBody>
-                    Are you sure you want to delete this record?
+                    Are you sure you want to delete this hire record?
         </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={(e) => deletion(hireRecord.id)}>Yes</Button>
