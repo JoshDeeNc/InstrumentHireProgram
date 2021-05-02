@@ -48,8 +48,8 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
                                 <form>
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Student Name </label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Student Name </label>
+                                        <div class="col-sm-9">
                                         <select class="form-control" id="newToDoName" value={student} onChange={onChangeStudent}>
                                                 {studentConcat.map((item, index) => (
                                                     <option>{item}</option>))}
@@ -58,15 +58,15 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Code</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
+                                        <div class="col-sm-9">
                                             <Input type="text" name="code" id="newToDoCode" placeholder="code" />
                                         </div>
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Instrument</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Instrument</label>
+                                        <div class="col-sm-9">
                                             <select class="form-control" id="newToDoInstrument" value={instr} onChange={onChangeInstrument}>
                                                 {availInstruments.map((item, index) => (
                                                     <option>{item}</option>))}
@@ -75,8 +75,8 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Brand</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Brand</label>
+                                        <div class="col-sm-9">
                                             <select class="form-control" id="newToDoBrand">
                                                 {availBrands.map((item, index) => (
                                                     <option>{item}</option>))}
@@ -85,15 +85,15 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Rate</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Rate</label>
+                                        <div class="col-sm-9">
                                             <Input type="text" name="rate" id="newToDoRate" placeholder="rate" />
                                         </div>
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Owner</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Owner</label>
+                                        <div class="col-sm-9">
                                             <select class="form-control" id="newToDoOwner">
                                                     <option>OMA</option>
                                                     <option>Polygon</option>
@@ -102,8 +102,8 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Due Date</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Due Date</label>
+                                        <div class="col-sm-9">
                                             <Input class="  form-control " id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" />
                                         </div>
                                     </div>

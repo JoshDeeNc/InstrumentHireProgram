@@ -64,33 +64,33 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                             <div class="panel-content">
                                 <form>
                                     <div class="form-group row" >
-                                        <label class="col-sm-2 col-form-label" for=" ">First Name </label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-3 col-form-label" for=" ">First Name </label>
+                                        <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="name" id="editFirstName"
                                                 value={studFirst} onChange={onChangeFirst} placeholder="Name" />
                                         </div>
 
                                     </div>
                                     <div class="row form-group" >
-                                        <label class="col-sm-2 col-form-label" for=" ">Last Name </label>
+                                        <label class="col-sm-3 col-form-label" for=" ">Last Name </label>
 
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="name" id="editLastName"
                                                 value={studLast} onChange={onChangeLast} placeholder="Last Name " />
                                         </div>
                                     </div>
                                     <div class="row form-group" >
-                                        <label class="col-sm-2 col-form-label" for=" "> Phone Number  </label>
+                                        <label class="col-sm-3 col-form-label" for=" "> Phone Number  </label>
 
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="name" id="editPhoneNumber"
                                                 value={phone} onChange={onChangePhone} placeholder="Phone Number" />
                                         </div>
                                     </div>
                                     <div class="row form-group" >
-                                        <label class="col-sm-2 col-form-label" for=" ">Email</label>
+                                        <label class="col-sm-3 col-form-label" for=" ">Email</label>
 
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="name" id="editEmail"
                                                 value={email} onChange={onChangeEmail} placeholder="Email" />
                                         </div>

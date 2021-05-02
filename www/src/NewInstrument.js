@@ -25,36 +25,36 @@ function NewInstrument({ addInstrument }) {
                                 <form>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Code</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
+                                        <div class="col-sm-9">
                                             <Input type="text" class="  form-control " name="code" id="newInstCode" placeholder="Instrument code" />
                                         </div>
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Instrument/Add-on Type </label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Instrument/Add-on Type </label>
+                                        <div class="col-sm-9">
                                             <Input type="text" class="  form-control " name="name" id="newInstType" placeholder="Instrument/Add-on Type" />
                                         </div>
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Instrument Name </label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Instrument Name </label>
+                                        <div class="col-sm-9">
                                             <Input type="text" class="  form-control " name="name" id="newInstName" placeholder="Instrument/add-on" />
                                         </div>
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Brand</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Brand</label>
+                                        <div class="col-sm-9">
                                             <Input type="text" class="  form-control " name="brand" id="newInstBrand" placeholder="Brand" />
                                         </div>
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Rate</label>
-                                        <div class="col-sm-3">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Rate</label>
+                                        <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">$</span>
@@ -65,8 +65,8 @@ function NewInstrument({ addInstrument }) {
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Purchase Cost</label>
-                                        <div class="col-sm-3">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Purchase Cost</label>
+                                        <div class="col-sm-9">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">$</span>
@@ -77,8 +77,8 @@ function NewInstrument({ addInstrument }) {
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Depreciation Rate</label>
-                                        <div class="col-sm-3">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Depreciation Rate</label>
+                                        <div class="col-sm-9">
                                             <div class="input-group">
                                                 <Input type="text" class="  form-control " name="rate" id="newInstDepr" placeholder=" " />
                                                 <div class="input-group-append">
@@ -91,8 +91,8 @@ function NewInstrument({ addInstrument }) {
 
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-2 col-form-label" for="simpleinput">Owner</label>
-                                        <div class="col-sm-10">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Owner</label>
+                                        <div class="col-sm-9">
                                             <Input type="text" name="owner" id="newInstOwner" placeholder="owner" />
                                         </div>
                                     </div>
