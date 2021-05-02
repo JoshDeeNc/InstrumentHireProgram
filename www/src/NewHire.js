@@ -46,48 +46,55 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                         <div class="panel-container show">
                             <div class="panel-content">
 
-                                <form>
+                                <form class="needs-validation" novalidate>
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Student Name </label>
                                         <div class="col-sm-9">
-                                        <select class="form-control" id="newToDoName" value={student} onChange={onChangeStudent}>
+                                        <select class="form-control" id="newToDoName" value={student} onChange={onChangeStudent} required>
                                                 {studentConcat.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </select>
+                                            <div class="invalid-tooltip">  Please enter the student name </div>
                                         </div>
                                     </div>
 
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
                                         <div class="col-sm-9">
-                                            <Input type="text" name="code" id="newToDoCode" placeholder="code" />
+                                            <Input type="text" name="code" id="newToDoCode" placeholder="code" required />
+                                        <div class="invalid-tooltip">  Please enter the code </div>
                                         </div>
+                                        
                                     </div>
 
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newToDoInstrument" value={instr} onChange={onChangeInstrument}>
+                                            <select class="form-control" id="newToDoInstrument" value={instr} onChange={onChangeInstrument} required>
                                                 {availInstruments.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </select>
+                                        <div class="invalid-tooltip">  Please select an instrument </div>
                                         </div>
+                                        
                                     </div>
 
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Brand</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newToDoBrand">
+                                            <select class="form-control" id="newToDoBrand" required>
                                                 {availBrands.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </select>
+                                            <div class="invalid-tooltip">  Please select a brand </div>
                                         </div>
                                     </div>
 
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Rate</label>
                                         <div class="col-sm-9">
-                                            <Input type="text" name="rate" id="newToDoRate" placeholder="rate" />
+                                            <Input type="text" name="rate" id="newToDoRate" placeholder="rate" required />
+                                            <div class="invalid-tooltip">  Please enter rate </div>
                                         </div>
                                     </div>
 
@@ -98,13 +105,15 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                                     <option>OMA</option>
                                                     <option>Polygon</option>
                                             </select>
+                                            <div class="invalid-tooltip">  Please select owner </div>
                                         </div>
                                     </div>
 
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Due Date</label>
                                         <div class="col-sm-9">
-                                            <Input class="  form-control " id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" />
+                                            <Input class="  form-control " id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" required />
+                                            <div class="invalid-tooltip">  Please select the due date </div>
                                         </div>
                                     </div>
                                     <div class="btn-div">
