@@ -16,12 +16,15 @@ function Home({ toDos, deleteToDo, completeToDo }) {
   };
 
   const [q, setQ] = useState("")
-  const [filterRec, setFiltRec] = useState(toDos)
+  //const [filterRec, setFiltRec] = useState(toDos)
 
-  useEffect(() => {
+  function search() {
     console.log(q); // add whatever functions use new `college` value here.
-    setFiltRec(toDos.filter(item => item.name.toLowerCase().indexOf(q) > -1))
-  }, [q])
+    if (q != "") {
+      return toDos.filter((item, index) => item[index].toString().toLowerCase().indexOf(q.toLowerCase()) > -1)
+    }
+    else return toDos
+  }
 
   return (
     <div className="ToDo">
@@ -80,7 +83,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                 </tr>
                               </thead>
                               <tbody>
-                                {filterRec.map((item, index) => (
+                                {search().map((item, index) => (
                                   <tr role="row" key={item.id}>
                                     <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                     <td> {item.name}</td>
