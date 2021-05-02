@@ -16,7 +16,8 @@ function Home({ toDos, deleteToDo, completeToDo }) {
   };
 
   const [q, setQ] = useState("")
-  const [filterRec, setFiltRec] = useState(toDos)
+  const [filterRec, setFiltRec] = useState([])
+  setFiltRec(toDos);
 
   useEffect(() => {
     console.log(q); // add whatever functions use new `college` value here.
