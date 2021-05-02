@@ -77,7 +77,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                     Edit
                                                 </Button>
 
-                            <Button onClick={ } type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
+                            <Button  type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
                                 <span class="fal fa-pencil mr-1"></span>
                                                     Book Now
                                                 </Button>
