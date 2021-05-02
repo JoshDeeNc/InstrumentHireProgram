@@ -51,10 +51,10 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                   <div id="panel-1" class="panel mb-0">
                     <div class="panel-hdr">
                       <div class="row  ">
-                        <div class="col-md-4"> <h2> Hired Instrument List</h2></div>
-                        <div class="col-md-3"> <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                        <div class="col-md-12"> <h2> Hired Instrument List</h2></div>
+                        <div class="col-md-12"> <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control mt-2" placeholder="search..." />
                         </div>
-                        <div class="col-md-5    mt-2">   
+                        <div class="col-md-12    mt-2">   
                          <Link to="/newhire"><Button color="primary" className="ml-1 ">New Hire</Button></Link>
                           <Link to="/studentlist"><Button color="primary" className="ml-1 ">Students</Button></Link>
                           <Link to="/instrumentlist"><Button color="primary" className="ml-1 ">Instruments</Button></Link>
