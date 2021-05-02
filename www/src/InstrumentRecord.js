@@ -99,11 +99,17 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 value={type} onChange={onChangeType} placeholder="Instrument Type " />
                                         </div>
                                     </div>
+                                    <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-3 col-form-label" for=" "> Instrument Name </label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name=" " id="editInstName"
                                                 value={object} onChange={onChangeObject} placeholder="Instrument Name " />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
@@ -112,12 +118,18 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             <input type="text" class="form-control nox" name=" " id="editInstBrand"
                                                 value={brand} onChange={onChangeBrand} placeholder="Brand " />
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-3 col-form-label" for=" "> Rate </label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name=" " id="editInstRate"
                                                 value={rate} onChange={onChangeRate} placeholder="Rate " />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
                                         </div>
                                     </div>
                                     <div class=" form-group row" >
@@ -126,6 +138,9 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             <input type="text" class="form-control nox" name=" " id="editInstPurchVal"
                                                 value={purchVal} onChange={onChangePurch} placeholder="Purchase Value  " />
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-3 col-form-label" for=" ">Depreciation </label>
@@ -133,12 +148,18 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             <input type="text" class="form-control nox" name=" " id="editInstDepr"
                                                 value={depr} onChange={onChangeDepreciation} placeholder=" Depreciation" />
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-3 col-form-label" for=" "> Owner </label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name=" " id="editInstOwner"
                                                 value={owner} onChange={onChangeOwner} placeholder="Owner " />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
                                         </div>
                                     </div>
                                     <div class="btn-div">

@@ -56,7 +56,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                 Student Details
                                         </h2>
                             <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
-                                <span class="fal fa-pencil mr-1"></span>
+                                <span class="fal fa-pencil mr-2"></span>
                                                     Edit
                                                 </Button>
                         </div>
@@ -69,6 +69,9 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                             <input type="text" class="form-control nox" name="name" id="editFirstName"
                                                 value={studFirst} onChange={onChangeFirst} placeholder="Name" />
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
 
                                     </div>
                                     <div class="row form-group" >
@@ -78,6 +81,9 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                             <input type="text" class="form-control nox" name="name" id="editLastName"
                                                 value={studLast} onChange={onChangeLast} placeholder="Last Name " />
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
                                     <div class="row form-group" >
                                         <label class="col-sm-3 col-form-label" for=" "> Phone Number  </label>
@@ -86,6 +92,9 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                             <input type="text" class="form-control nox" name="name" id="editPhoneNumber"
                                                 value={phone} onChange={onChangePhone} placeholder="Phone Number" />
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
                                     <div class="row form-group" >
                                         <label class="col-sm-3 col-form-label" for=" ">Email</label>
@@ -93,6 +102,9 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="name" id="editEmail"
                                                 value={email} onChange={onChangeEmail} placeholder="Email" />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
                                         </div>
                                     </div>
                                     <div class="btn-div">
