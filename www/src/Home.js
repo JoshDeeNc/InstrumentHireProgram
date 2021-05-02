@@ -16,8 +16,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
   };
 
   const [q, setQ] = useState("")
-  const [filterRec, setFiltRec] = useState([])
-  setFiltRec(toDos);
+  const [filterRec, setFiltRec] = useState(toDos)
 
   useEffect(() => {
     console.log(q); // add whatever functions use new `college` value here.
@@ -60,7 +59,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
-                      <input type="text" value={q} onChange={(e) => setQ(e.target.value)} />
+                      <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control" />
                       <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                                                 <thead>
                                                     <tr>
