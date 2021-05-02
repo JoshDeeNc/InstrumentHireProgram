@@ -34,6 +34,9 @@ function NewStudent({ addStudent }) {
                                         <div class="col-sm-9">
                                             <Input type="text" class="form-control no-edit" name="name" id="newLastName" placeholder="Last name" />
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class=" form-group row">
@@ -41,12 +44,18 @@ function NewStudent({ addStudent }) {
                                         <div class="col-sm-9">
                                             <Input type="text" class="form-control no-edit" name="code" id="newPhoneNumber" placeholder="Phone number" />
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Email</label>
                                         <div class="col-sm-9">
                                             <Input type="text" class="form-control no-edit" name="code" id="newEmail" placeholder="Email" />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
                                         </div>
                                     </div>
                                     <div class="btn-div">

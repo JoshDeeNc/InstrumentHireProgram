@@ -29,12 +29,18 @@ function NewInstrument({ addInstrument }) {
                                         <div class="col-sm-9">
                                             <Input type="text" class="  form-control " name="code" id="newInstCode" placeholder="Instrument code" />
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument/Add-on Type </label>
                                         <div class="col-sm-9">
                                             <Input type="text" class="  form-control " name="name" id="newInstType" placeholder="Instrument/Add-on Type" />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
                                         </div>
                                     </div>
 
@@ -43,12 +49,18 @@ function NewInstrument({ addInstrument }) {
                                         <div class="col-sm-9">
                                             <Input type="text" class="  form-control " name="name" id="newInstName" placeholder="Instrument/add-on" />
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Brand</label>
                                         <div class="col-sm-9">
                                             <Input type="text" class="  form-control " name="brand" id="newInstBrand" placeholder="Brand" />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
                                         </div>
                                     </div>
 
@@ -62,6 +74,9 @@ function NewInstrument({ addInstrument }) {
                                                 <Input type="text" class="  form-control " name="rate" id="newInstRate" placeholder=" " />
                                             </div>
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class=" form-group row">
@@ -73,6 +88,9 @@ function NewInstrument({ addInstrument }) {
                                                 </div>
                                                 <Input type="text" class="  form-control " name="rate" id="newInstPurchVal" placeholder=" " />
                                             </div>
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
                                         </div>
                                     </div>
 
@@ -86,6 +104,9 @@ function NewInstrument({ addInstrument }) {
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
 
@@ -94,6 +115,9 @@ function NewInstrument({ addInstrument }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Owner</label>
                                         <div class="col-sm-9">
                                             <Input type="text" name="owner" id="newInstOwner" placeholder="owner" />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
                                         </div>
                                     </div>
                                     <div class="btn-div">

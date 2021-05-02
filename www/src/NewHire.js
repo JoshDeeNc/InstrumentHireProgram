@@ -56,6 +56,9 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                             </select>
                                             <div class="invalid-tooltip">  Please enter the student name </div>
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class=" form-group row">
@@ -64,7 +67,9 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                             <Input type="text" name="code" id="newToDoCode" placeholder="code" required />
                                         <div class="invalid-tooltip">  Please enter the code </div>
                                         </div>
-                                        
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class=" form-group row">
@@ -76,7 +81,9 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                             </select>
                                         <div class="invalid-tooltip">  Please select an instrument </div>
                                         </div>
-                                        
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class=" form-group row">
@@ -88,6 +95,9 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                             </select>
                                             <div class="invalid-tooltip">  Please select a brand </div>
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class=" form-group row">
@@ -95,6 +105,9 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                         <div class="col-sm-9">
                                             <Input type="text" name="rate" id="newToDoRate" placeholder="rate" required />
                                             <div class="invalid-tooltip">  Please enter rate </div>
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
                                         </div>
                                     </div>
 
@@ -107,6 +120,9 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                             </select>
                                             <div class="invalid-tooltip">  Please select owner </div>
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     </div>
 
                                     <div class=" form-group row">
@@ -114,6 +130,9 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                         <div class="col-sm-9">
                                             <Input class="  form-control " id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" required />
                                             <div class="invalid-tooltip">  Please select the due date </div>
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
                                         </div>
                                     </div>
                                     <div class="btn-div">
