@@ -23,9 +23,11 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     if (qry != "") {
       const columns = toDos[0] && Object.keys(toDos[0])
       console.log(qry)
-      return toDos.filter((row) => row.name.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      return toDos.filter((row) => row.code.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+                                  row.name.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
                                   row.instrument.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
                                   row.brand.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+                                  row.rate.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
                                   row.owner.toLowerCase().indexOf(qry.toLowerCase()) > -1)
     }
     return toDos
