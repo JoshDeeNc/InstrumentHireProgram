@@ -50,24 +50,14 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                 <div class="col-xl-12">
                   <div id="panel-1" class="panel mb-0">
                     <div class="panel-hdr">
-                      <div class="row  ">
-                        <div class="col-md-12"> <h2> Hired Instrument List</h2></div>
-                        <div class="col-md-12"> <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control mt-2" placeholder="search..." />
-                        </div>
-                        <div class="col-md-12    mt-2">   
-                         <Link to="/newhire"><Button color="primary" className="ml-1 ">New Hire</Button></Link>
-                          <Link to="/studentlist"><Button color="primary" className="ml-1 ">Students</Button></Link>
-                          <Link to="/instrumentlist"><Button color="primary" className="ml-1 ">Instruments</Button></Link>
-                        </div>
-                        </div>
+                    <h2> Hired Instrument List</h2> 
                       </div>
                       <div class="panel-container show">
                         <div class="panel-content">
-                        <div class="row  ">
-                        <div class="col-md-12"> <h2> Hired Instrument List</h2></div>
-                        <div class="col-md-12"> <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                        <div class="row  ">  
+                        <div class="col-md-3"> <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control mt-2" placeholder="search..." />
                         </div>
-                        <div class="col-md-12    mt-2">   
+                        <div class="col-md-9    mt-2">   
                          <Link to="/newhire"><Button color="primary" className="ml-1 ">New Hire</Button></Link>
                           <Link to="/studentlist"><Button color="primary" className="ml-1 ">Students</Button></Link>
                           <Link to="/instrumentlist"><Button color="primary" className="ml-1 ">Instruments</Button></Link>
