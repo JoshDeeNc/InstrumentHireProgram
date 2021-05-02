@@ -54,7 +54,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                         <div class="col-md-4"> <h2> Hired Instrument List</h2></div>
                         <div class="col-md-2"> <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control mt-2" placeholder="search..." />
                         </div>
-                        <div class="col-md-6 text-right">   
+                        <div class="col-md-6  float-right mt-2">   
                          <Link to="/newhire"><Button color="primary" className="ml-1 float-right">New Hire</Button></Link>
                           <Link to="/studentlist"><Button color="primary" className="ml-1 float-right">Students</Button></Link>
                           <Link to="/instrumentlist"><Button color="primary" className="ml-1 float-right">Instruments</Button></Link>
