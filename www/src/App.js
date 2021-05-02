@@ -123,15 +123,8 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllTodos();
-      name = '';
-      code = '';
-      instrument = '';
-      brand = '';
-      rate = '';
-      owner = '';
-      dueDate = '';
     }
-    return result
+    return result;
   }
 
   const updateToDo = async (itemId, event) => {
@@ -270,15 +263,6 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllInstruments();
-      code = '';
-      type = '';
-      object = '';
-      brand = '';
-      rate = '';
-      purchVal = '';
-      depreciation = '';
-      owner = '';
-      window.location.href = "/instrumentlist";
     }
     return result;
   }
@@ -374,11 +358,6 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllStudents();
-      firstName = '';
-      lastName = '';
-      phone = '';
-      email = '';
-      window.location.href = '/studentlist';
     }
     return result;
   }

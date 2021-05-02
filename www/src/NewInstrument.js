@@ -6,7 +6,7 @@ function NewInstrument({ addInstrument }) {
     const history = useHistory();
 
     const add = async (event) => {
-        const result = await addInstrument;
+        const result = await addInstrument();
         if(result.status === 200 ) {
             history.push('/instrumentlist');
         }
@@ -134,7 +134,7 @@ function NewInstrument({ addInstrument }) {
                                         </div>
                                     </div>
                                     <div class="btn-div">
-                                        <Button onClick={toggle} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
+                                        <Button onClick={add} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
                                         <Link to="/instrumentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
                                     </div>
 
@@ -144,16 +144,6 @@ function NewInstrument({ addInstrument }) {
                     </div>
                 </div>
             </div>
-            <Modal isOpen={modal} toggle={toggle} >
-                <ModalHeader toggle={toggle}> Add</ModalHeader>
-                <ModalBody>
-                    Are you sure you want to add {document.getElementById("newInstName").value} {document.getElementById("newInstBrand").value} to inventory?
-        </ModalBody>
-                <ModalFooter>
-                    <Button color="primary" onClick={(e) => add}>Yes</Button>
-                    <Button color="secondary" onClick={toggle}>No</Button>
-                </ModalFooter>
-            </Modal>
         </div>
     );
 }
