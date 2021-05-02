@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, image } from 'reactstrap';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import chart1 from './img/chart1.png'; 
@@ -14,6 +14,14 @@ function Home({ toDos, deleteToDo, completeToDo }) {
   const changeFilter = (newFilter) => {
     setFilter(newFilter);
   };
+
+  const [q, setQ] = useState("")
+  const [filterRec, setFiltRec] = useState(toDos)
+
+  useEffect(() => {
+    console.log(q); // add whatever functions use new `college` value here.
+    setFiltRec(toDos.filter(item => item.name.toLowerCase().indexOf(q) > -1))
+  }, [q])
 
   return (
     <div className="ToDo">
@@ -51,8 +59,8 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
-
-                      <table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100">
+                      <input type="text" value={q} onChange={(e) => setQ(e.target.value)} />
+                      <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                                                 <thead>
                                                     <tr>
                                                     <th>Date Hired</th>
@@ -63,11 +71,11 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                               <th>Rate</th>
                               <th>Owner</th>
                               <th>Due Date</th>
-                              <th  >Details</th>
+                              <th >Details</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                {toDos.map((item, index) => (
+                                                {filterRec.map((item, index) => (
                               <tr role="row" key={item.id}>
                                 <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                 <td> {item.name}</td>
