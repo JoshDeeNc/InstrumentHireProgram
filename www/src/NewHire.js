@@ -40,7 +40,6 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr">
                             <h2>New Hire</h2>
-
                         </div>
 
                         <div class="panel-container show">
@@ -137,7 +136,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     </div>
                                     <div class="btn-div">
                                         <Button onClick={addToDo} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
-                                        <Link to="/"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
+                                        <Link to="/"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">CancelDD</Button></Link>
                                     </div>
                                 </form>
                             </div>
