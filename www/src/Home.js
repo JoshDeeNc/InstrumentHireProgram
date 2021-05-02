@@ -35,6 +35,8 @@ function Home({ toDos, deleteToDo, completeToDo }) {
             </li>
 
           </ul>
+
+          
           <div class="tab-content border border-top-0  ">
             <div class="tab-pane fade active show" id="tab_borders_icons-1" role="tabpanel">
               <div class="row">
@@ -49,10 +51,11 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
-                        <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
-                          <thead>
-                            <tr>
-                              <th>Date Hired</th>
+
+                      <table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100">
+                                                <thead>
+                                                    <tr>
+                                                    <th>Date Hired</th>
                               <th>Name</th>
                               <th>Code</th>
                               <th>Instrument</th>
@@ -61,10 +64,10 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                               <th>Owner</th>
                               <th>Due Date</th>
                               <th  >Details</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {toDos.map((item, index) => (
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                {toDos.map((item, index) => (
                               <tr role="row" key={item.id}>
                                 <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                 <td> {item.name}</td>
@@ -76,12 +79,14 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                 <td>{new Date(item.due).toLocaleDateString()}</td>
                                 <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                               </tr >
-                            ))}
+                            ))}                     
+                                                   
+                                                </tbody>
+                                            
+                                            </table>
+                                            
 
-                          </tbody>
-
-                        </table>
-
+                      
                       </div>
                     </div>
                   </div>
@@ -132,6 +137,8 @@ function Home({ toDos, deleteToDo, completeToDo }) {
 
                         </table>
 
+                        
+                                   
                       </div>
                     </div>
                   </div>
@@ -200,6 +207,8 @@ function Home({ toDos, deleteToDo, completeToDo }) {
             </div>
 
           </div>
+
+          
 
         </Col>
       </Row>
