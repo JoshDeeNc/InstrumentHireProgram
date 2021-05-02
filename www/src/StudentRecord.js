@@ -43,6 +43,13 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
         }
     }
 
+    const update = async (itemId, event) => {
+        const result = await updateStudent(itemId);
+        if(result.status === 200 ) {
+            history.push('/studentlist');
+        }
+    }
+
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
@@ -108,7 +115,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                         </div>
                                     </div>
                                     <div class="btn-div">
-                                        <Button data-item-id={studentRecord.id} onClick={(e) => updateStudent(studentRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 ">Update</Button>
+                                        <Button data-item-id={studentRecord.id} onClick={toggle} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 ">Update</Button>
                                         <Link to="/studentlist"><button class="btn btn-lg btn-secondary waves-effect waves-themed ">Cancel</button></Link>
                                         <Button data-item-id={studentRecord.id} color="danger" onClick={toggle} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
                                     </div>
@@ -125,6 +132,16 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
         </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={(e) => deletion(studentRecord.id)}>Yes</Button>
+                    <Button color="secondary" onClick={toggle}>No</Button>
+                </ModalFooter>
+            </Modal>
+            <Modal isOpen={modal} toggle={toggle} >
+                <ModalHeader toggle={toggle}> Update</ModalHeader>
+                <ModalBody>
+                    Are you sure you want to update {studFirst + " " + studLast}'s record?
+        </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onClick={(e) => update(studentRecord.id)}>Yes</Button>
                     <Button color="secondary" onClick={toggle}>No</Button>
                 </ModalFooter>
             </Modal>

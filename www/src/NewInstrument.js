@@ -1,7 +1,20 @@
-import React from 'react';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
+import React, { useState } from 'react';
+import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
+import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 function NewInstrument({ addInstrument }) {
+
+    const history = useHistory();
+
+    const add = async (event) => {
+        const result = await addInstrument;
+        if(result.status === 200 ) {
+            history.push('/instrumentlist');
+        }
+    }
+
+    const [modal, setModal] = useState(false);
+    const toggle = () => setModal(!modal);
+
     return (
         <div>
 
@@ -121,7 +134,7 @@ function NewInstrument({ addInstrument }) {
                                         </div>
                                     </div>
                                     <div class="btn-div">
-                                        <Button onClick={addInstrument} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
+                                        <Button onClick={toggle} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
                                         <Link to="/instrumentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
                                     </div>
 
@@ -130,26 +143,19 @@ function NewInstrument({ addInstrument }) {
                         </div>
                     </div>
                 </div>
-
-
-
-
             </div>
+            <Modal isOpen={modal} toggle={toggle} >
+                <ModalHeader toggle={toggle}> Add</ModalHeader>
+                <ModalBody>
+                    Are you sure you want to add {document.getElementById("newInstName").value} {document.getElementById("newInstBrand").value} to inventory?
+        </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onClick={(e) => add}>Yes</Button>
+                    <Button color="secondary" onClick={toggle}>No</Button>
+                </ModalFooter>
+            </Modal>
         </div>
     );
 }
 
 export default NewInstrument;
-
-/*<div class="form-group">
-                                                    <label class="form-label" for="example-select">Instrument</label>
-                                                    <select class="form-control" id="example-select">
-                                                        <option>Electric Guitar</option>
-                                                        <option>Bass Guitar</option>
-                                                        <option>Accoustic Guitar</option>
-                                                        <option>Flute</option>
-                                                        <option>Violin</option>
-                                                        <option>Trumpet</option>
-
-                                                    </select>
-                                                </div>*/

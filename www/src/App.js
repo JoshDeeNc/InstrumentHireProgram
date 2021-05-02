@@ -131,6 +131,7 @@ function App() {
       owner = '';
       dueDate = '';
     }
+    return result
   }
 
   const updateToDo = async (itemId, event) => {
@@ -172,6 +173,7 @@ function App() {
     } else if (result && result.status === 200) {
       getAllTodos();
     }
+    return result;
   }
 
   const deleteToDo = async (itemId) => {
@@ -278,6 +280,7 @@ function App() {
       owner = '';
       window.location.href = "/instrumentlist";
     }
+    return result;
   }
 
   const updateInstrument = async (itemId, event) => {
@@ -320,6 +323,7 @@ function App() {
     } else if (result && result.status === 200) {
       getAllInstruments();
     }
+    return result;
   }
 
   const deleteInstrument = async (itemId) => {
@@ -376,6 +380,7 @@ function App() {
       email = '';
       window.location.href = '/studentlist';
     }
+    return result;
   }
 
   const getAllStudents = async () => {
@@ -430,6 +435,7 @@ function App() {
     } else if (result && result.status === 200) {
       getAllStudents();
     }
+    return result;
   }
 
   const deleteStudent = async (itemId) => {

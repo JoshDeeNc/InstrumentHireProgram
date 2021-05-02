@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
+import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
+import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 function NewHire({ toDos, studentList, instInventory, addToDo }) {
+
+    const history = useHistory();
+
     const unique = (value, index, self) => {
         return self.indexOf(value) === index
     }
@@ -25,6 +28,16 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
     const onChangeStudent = (event) => {
         setStudent(event.target.value);
     }
+
+    const add = async (event) => {
+        const result = await addToDo;
+        if(result.status === 200 ) {
+            history.push('/');
+        }
+    }
+
+    const [modal, setModal] = useState(false);
+    const toggle = () => setModal(!modal);
 
     return (
         <div>
@@ -136,7 +149,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                         </div>
                                     </div>
                                     <div class="btn-div">
-                                        <Button onClick={addToDo} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
+                                        <Button onClick={toggle} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
                                         <Link to="/"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
                                     </div>
                                 </form>
@@ -145,6 +158,16 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                     </div>
                 </div>
             </div>
+            <Modal isOpen={modal} toggle={toggle} >
+                <ModalHeader toggle={toggle}> Add</ModalHeader>
+                <ModalBody>
+                    Are you sure you want to add {instr} to {student}'s record?
+        </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onClick={(e) => add}>Yes</Button>
+                    <Button color="secondary" onClick={toggle}>No</Button>
+                </ModalFooter>
+            </Modal>
         </div>
     );
 }

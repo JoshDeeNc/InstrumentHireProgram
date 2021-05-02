@@ -59,6 +59,13 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
         }
     }
 
+    const update = async (itemId, event) => {
+        const result = await updateInstrument(itemId);
+        if(result.status === 200 ) {
+            history.push('/instrumentlist');
+        }
+    }
+
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
@@ -163,7 +170,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                         </div>
                                     </div>
                                     <div class="btn-div">
-                                        <Button data-item-id={instrumentRecord.id} onClick={(e) => updateInstrument(instrumentRecord.id)} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
+                                        <Button data-item-id={instrumentRecord.id} onClick={toggle} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
                                         <Link to="/instrumentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
                                         <Button data-item-id={instrumentRecord.id} color="danger" onClick={toggle} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
                                     </div>
@@ -180,6 +187,16 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
         </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={(e) => deletion(instrumentRecord.id)}>Yes</Button>
+                    <Button color="secondary" onClick={toggle}>No</Button>
+                </ModalFooter>
+            </Modal>
+            <Modal isOpen={modal} toggle={toggle} >
+                <ModalHeader toggle={toggle}> Update</ModalHeader>
+                <ModalBody>
+                    Are you sure you want to update {object + " " + brand}?
+        </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onClick={(e) => update(instrumentRecord.id)}>Yes</Button>
                     <Button color="secondary" onClick={toggle}>No</Button>
                 </ModalFooter>
             </Modal>
