@@ -29,7 +29,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
         )
       );*/
     }
-    else return toDos
+    return toDos
   }
 
   return (
