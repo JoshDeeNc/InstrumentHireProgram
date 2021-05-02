@@ -15,20 +15,20 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     setFilter(newFilter);
   };
 
+  overDues = toDos.filter(item => new Date(item.due) < new Date())
+
   const [qry, setQry] = useState("")
 
   function search(records) {
     if (qry != "") {
       const columns = records[0] && Object.keys(records[0])
-      console.log(columns)
-      /*return records.filter((row) => 
+      return records.filter((row) => 
         columns.some((column) => 
           row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1
         )
-      );*/
+      );
     }
-    console.log(records)
-    return records
+    else return records
   }
 
   return (
@@ -143,7 +143,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                 </tr>
                               </thead>
                               <tbody>
-                                {search(toDos.filter(item => new Date(item.due) < new Date())).map((item, index) => (
+                                {search(overDues).map((item, index) => (
                                   <tr role="row" key={item.id}>
                                     <td>{new Date(item.due).toLocaleDateString()}</td>
                                     <td class="al-ctr"> <span class="txt-red">{Math.floor((new Date().getTime() - new Date(item.due).getTime()) / (1000 * 60 * 60 * 24))}</span></td>
