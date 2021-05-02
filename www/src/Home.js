@@ -60,7 +60,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                         <div class="row mb-2 mt-n3 ">  
                         <div class="col-md-3"> <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control mt-2" placeholder="search..." />
                         </div> 
-                        <div class="col-md-9    ">   
+                        <div class="col-md-9 mt-2   ">   
                           <Link to="/studentlist"><Button color="primary" className="ml-1 float-right ">Students</Button></Link>
                           <Link to="/instrumentlist"><Button color="primary" className="ml-1 float-right ">Instruments</Button></Link>
                           <Link to="/newhire"><Button color="primary" className="ml-1 float-right ">New Hire</Button></Link>
