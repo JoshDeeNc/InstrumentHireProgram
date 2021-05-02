@@ -17,16 +17,16 @@ function Home({ toDos, deleteToDo, completeToDo }) {
 
   const [qry, setQry] = useState("")
 
-  function search() {
+  function search(records) {
     if (qry != "") {
-      const columns = toDos[0] && Object.keys(toDos[0])
-      return toDos.filter((row) => 
+      const columns = records[0] && Object.keys(records[0])
+      return records.filter((row) => 
         columns.some((column) => 
           row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1
         )
       );
     }
-    else return toDos
+    else return records
   }
 
   return (
@@ -86,7 +86,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                 </tr>
                               </thead>
                               <tbody>
-                                {search().map((item, index) => (
+                                {search(toDos).map((item, index) => (
                                   <tr role="row" key={item.id}>
                                     <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                     <td> {item.name}</td>
@@ -141,7 +141,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                 </tr>
                               </thead>
                               <tbody>
-                                {toDos.filter(item => new Date(item.due) < new Date()).map((item, index) => (
+                                {search(toDos.filter(item => new Date(item.due) < new Date())).map((item, index) => (
                                   <tr role="row" key={item.id}>
                                     <td>{new Date(item.due).toLocaleDateString()}</td>
                                     <td class="al-ctr"> <span class="txt-red">{Math.floor((new Date().getTime() - new Date(item.due).getTime()) / (1000 * 60 * 60 * 24))}</span></td>

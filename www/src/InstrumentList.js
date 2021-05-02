@@ -64,7 +64,7 @@ function InstrumentList({ instInventory, deleteToDo, completeToDo }) {
                         </tr>
                       </thead>
                       <tbody>
-                        {instInventory.map((item, index) => (
+                        {search().map((item, index) => (
                           <tr role="row" key={item.id}>
                             <td>{item.code}</td>
                             <td>{item.type}</td>

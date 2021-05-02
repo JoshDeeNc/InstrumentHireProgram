@@ -61,7 +61,7 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
                         </tr>
                       </thead>
                       <tbody>
-                        {studentList.map((item, index) => (
+                        {search().map((item, index) => (
                           <tr role="row" key={item.id}>
                             <td>{item.firstName}</td>
                             <td>{item.lastName}</td>
