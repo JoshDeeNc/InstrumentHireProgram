@@ -77,10 +77,10 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                     Edit
                                                 </Button>
 
-                            <Button  type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
+                            <Link to={`/newhire/${instrumentRecord.id}`}><Button  type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
                                 <span class="fal fa-pencil mr-1"></span>
                                                     Book Now
-                                                </Button>
+                                                </Button></Link>
                         </div> 
                         <div class="panel-container show">
                             <div class="panel-content  ">
