@@ -26,7 +26,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
       //return toDos.filter((row) => row.name.toLowerCase().indexOf(qry.toLowerCase()) > -1)
       return toDos.filter((row) => 
         columns.some((column) => 
-          row[column].toLowerCase().indexOf(qry.toLowerCase()) > -1
+          row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1
         )
       );
     }
