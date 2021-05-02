@@ -15,16 +15,14 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     setFilter(newFilter);
   };
 
-  const [q, setQ] = useState("")
-  //const [filterRec, setFiltRec] = useState(toDos)
+  const [qry, setQry] = useState("")
 
   function search() {
-    console.log(q); // add whatever functions use new `college` value here.
-    if (q != "") {
+    if (qry != "") {
       const columns = toDos[0] && Object.keys(toDos[0])
       return toDos.filter((row) => 
         columns.some((column) => 
-          row[column].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
+          row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1
         )
       );
     }
@@ -63,7 +61,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                       <div class="panel-container show">
                         <div class="panel-content">
                         <div class="row mb-2 mt-n3 ">  
-                        <div class="col-md-3"> <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                        <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
                         </div> 
                         <div class="col-md-9 mt-2   ">   
                           <Link to="/studentlist"><Button color="primary" className="ml-1 float-right ">Students</Button></Link>
@@ -122,6 +120,10 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                       </div>
                       <div class="panel-container show">
                         <div class="panel-content">
+                          <div class="row mb-2 mt-n3 ">  
+                          <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                         </div> 
+                        </div>
                           <div class="table-responsive">
                             <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                               <thead>

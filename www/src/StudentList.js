@@ -10,6 +10,20 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
     setFilter(newFilter);
   };
 
+  const [qry, setQry] = useState("")
+
+  function search() {
+    if (qry != "") {
+      const columns = studentList[0] && Object.keys(studentList[0])
+      return studentList.filter((row) => 
+        columns.some((column) => 
+          row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1
+        )
+      );
+    }
+    else return studentList
+  }
+
   return (
     <div className="ToDo">
 
@@ -32,6 +46,10 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
                 </div>
                 <div class="panel-container show">
                   <div class="panel-content">
+                  <div class="row mb-2 mt-n3 ">  
+                          <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                         </div> 
+                    </div>
                     <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                       <thead>
                         <tr>

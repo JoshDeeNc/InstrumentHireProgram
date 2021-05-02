@@ -10,6 +10,20 @@ function InstrumentList({ instInventory, deleteToDo, completeToDo }) {
     setFilter(newFilter);
   };
 
+  const [qry, setQry] = useState("")
+
+  function search() {
+    if (qry != "") {
+      const columns = instInventory[0] && Object.keys(instInventory[0])
+      return instInventory.filter((row) => 
+        columns.some((column) => 
+          row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1
+        )
+      );
+    }
+    else return instInventory
+  }
+
   return (
     <div className="ToDo">
 
@@ -33,6 +47,10 @@ function InstrumentList({ instInventory, deleteToDo, completeToDo }) {
                 </div>
                 <div class="panel-container show">
                   <div class="panel-content">
+                  <div class="row mb-2 mt-n3 ">  
+                          <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                         </div> 
+                   </div>
                     <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                       <thead>
                         <tr>
