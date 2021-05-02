@@ -15,7 +15,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     setFilter(newFilter);
   };
 
-  overDues = toDos.filter(item => new Date(item.due) < new Date())
+  const overDues = toDos.filter(item => new Date(item.due) < new Date())
 
   const [qry, setQry] = useState("")
 
