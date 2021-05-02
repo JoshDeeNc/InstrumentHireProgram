@@ -22,11 +22,12 @@ function Home({ toDos, deleteToDo, completeToDo }) {
   function search() {
     if (qry != "") {
       const columns = toDos[0] && Object.keys(toDos[0])
-      return toDos.filter((row) => 
+      console.log(qry)
+      /*return toDos.filter((row) => 
         columns.some((column) => 
           row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1
         )
-      );
+      );*/
     }
     else return toDos
   }
@@ -123,6 +124,8 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                       <div class="panel-container show">
                         <div class="panel-content">
                           <div class="row mb-2 mt-n3 ">  
+                          <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                         </div> 
                         </div>
                           <div class="table-responsive">
                             <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
