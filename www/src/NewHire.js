@@ -45,11 +45,20 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                         <div class="panel-container show">
                             <div class="panel-content">
 
+                                <Form>
+                                    <FormGroup>
+                                        <Label for="exampleEmail">Input without validation</Label>
+                                        <Input />
+                                        <FormFeedback>You will not be able to see this</FormFeedback>
+                                        <FormText>Example help text that remains unchanged.</FormText>
+                                    </FormGroup>
+                                </Form>
+
                                 <form class="needs-validation" novalidate>
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Student Name </label>
                                         <div class="col-sm-9">
-                                        <select class="form-control" id="newToDoName" value={student} onChange={onChangeStudent} required>
+                                            <select class="form-control" id="newToDoName" value={student} onChange={onChangeStudent} required>
                                                 {studentConcat.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </select>
@@ -64,7 +73,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
                                         <div class="col-sm-9">
                                             <Input type="text" name="code" id="newToDoCode" placeholder="code" required />
-                                        <div class="invalid-tooltip">  Please enter the code </div>
+                                            <div class="invalid-tooltip">  Please enter the code </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -78,7 +87,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                                 {availInstruments.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </select>
-                                        <div class="invalid-tooltip">  Please select an instrument </div>
+                                            <div class="invalid-tooltip">  Please select an instrument </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -114,8 +123,8 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Owner</label>
                                         <div class="col-sm-9">
                                             <select class="form-control" id="newToDoOwner">
-                                                    <option>OMA</option>
-                                                    <option>Polygon</option>
+                                                <option>OMA</option>
+                                                <option>Polygon</option>
                                             </select>
                                             <div class="invalid-tooltip">  Please select owner </div>
                                         </div>
