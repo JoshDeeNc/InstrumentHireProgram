@@ -58,9 +58,9 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                         <div class="col-md-3"> <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control mt-2" placeholder="search..." />
                         </div>
                         <div class="col-md-9    mt-2">   
-                         <Link to="/newhire"><Button color="primary" className="ml-1 ">New Hire</Button></Link>
-                          <Link to="/studentlist"><Button color="primary" className="ml-1 ">Students</Button></Link>
-                          <Link to="/instrumentlist"><Button color="primary" className="ml-1 ">Instruments</Button></Link>
+                         <Link to="/newhire"><Button color="primary" className="ml-1 float-right ">New Hire</Button></Link>
+                          <Link to="/studentlist"><Button color="primary" className="ml-1 float-right ">Students</Button></Link>
+                          <Link to="/instrumentlist"><Button color="primary" className="ml-1 float-right ">Instruments</Button></Link>
                         </div>
                         </div>
                           <div class="table-responsive">
@@ -190,9 +190,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                             <div class="col-xl-6">
                               <div id="panel-7" class="panel">
                                 <div class="panel-hdr">
-                                  <h2>
-                                    Instrument Availability
-                                                </h2>
+                                  <h2> Instrument Availability </h2>
 
                                 </div>
                                 <div class="panel-container show">
@@ -207,8 +205,6 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                             </div>
                           </div>
 
-
-
                         </div>
                       </div>
                     </div>
@@ -217,8 +213,6 @@ function Home({ toDos, deleteToDo, completeToDo }) {
               </div>
 
             </div>
-
-
 
         </Col>
       </Row>
