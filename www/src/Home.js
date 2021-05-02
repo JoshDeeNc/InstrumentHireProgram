@@ -59,7 +59,12 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
-                      <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control" />
+                      <div class="row">
+                       <div class="col-md-4">
+                         <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control" />
+                       </div>
+                    </div>
+                    
                       <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                                                 <thead>
                                                     <tr>
