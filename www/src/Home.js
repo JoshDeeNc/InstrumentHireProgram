@@ -63,6 +63,16 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                       </div>
                       <div class="panel-container show">
                         <div class="panel-content">
+                        <div class="row  ">
+                        <div class="col-md-12"> <h2> Hired Instrument List</h2></div>
+                        <div class="col-md-12"> <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                        </div>
+                        <div class="col-md-12    mt-2">   
+                         <Link to="/newhire"><Button color="primary" className="ml-1 ">New Hire</Button></Link>
+                          <Link to="/studentlist"><Button color="primary" className="ml-1 ">Students</Button></Link>
+                          <Link to="/instrumentlist"><Button color="primary" className="ml-1 ">Instruments</Button></Link>
+                        </div>
+                        </div>
                           <div class="table-responsive">
                             <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                               <thead>
