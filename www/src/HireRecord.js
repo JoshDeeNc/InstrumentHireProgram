@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
-import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col,   FormFeedback, FormText,  Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 function HireRecord({ deleteToDo, updateToDo, toDos }) {
     const history = useHistory();
