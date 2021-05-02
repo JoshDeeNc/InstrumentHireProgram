@@ -54,13 +54,14 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                       </div>
                       <div class="panel-container show">
                         <div class="panel-content">
-                        <div class="row m-2 ">  
+                        <div class="row mb-2 mt-n2 ">  
                         <div class="col-md-3"> <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control mt-2" placeholder="search..." />
                         </div> 
                         <div class="col-md-9    ">   
-                         <Link to="/newhire"><Button color="primary" className="ml-1 float-right ">New Hire</Button></Link>
                           <Link to="/studentlist"><Button color="primary" className="ml-1 float-right ">Students</Button></Link>
                           <Link to="/instrumentlist"><Button color="primary" className="ml-1 float-right ">Instruments</Button></Link>
+                          <Link to="/studentlist"><Button color="primary" className="ml-1 float-right ">Students</Button></Link>
+                       
                         </div>
                         </div>
                           <div class="table-responsive">
