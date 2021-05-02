@@ -67,7 +67,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                             {toDos.map((item, index) => (
                               <tr role="row" key={item.id}>
                                 <td>{new Date(item.creation_date).toLocaleDateString()}</td>
-                                <td><a href="#">{item.name}</a></td>
+                                <td> {item.name}</td>
                                 <td>{item.code}</td>
                                 <td>{item.instrument}</td>
                                 <td>{item.brand}</td>
