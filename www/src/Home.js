@@ -18,14 +18,15 @@ function Home({ toDos, deleteToDo, completeToDo }) {
   const [qry, setQry] = useState("")
 
   function search(records) {
-    /*if (qry != "") {
+    if (qry != "") {
       const columns = records[0] && Object.keys(records[0])
-      return records.filter((row) => 
+      console.log(columns)
+      /*return records.filter((row) => 
         columns.some((column) => 
           row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1
         )
-      );
-    }*/
+      );*/
+    }
     console.log(records)
     return records
   }
