@@ -50,175 +50,172 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                 <div class="col-xl-12">
                   <div id="panel-1" class="panel mb-0">
                     <div class="panel-hdr">
-                      <h2> Hired Instrument List</h2>
-                      <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control" placeholder="search..." />
-                        
-                      <Link to="/newhire"><Button color="primary" className="ml-1">New Hire</Button></Link>
-                      <Link to="/studentlist"><Button color="primary" className="ml-1">Students</Button></Link>
-                      <Link to="/instrumentlist"><Button color="primary" className="ml-1">Instruments</Button></Link>
-
-                    </div>
-                    <div class="panel-container show">
-                      <div class="panel-content">
-                        <div class="row mb-1 flex-row-reverse">
-                          <div class="col-md-4">
-                            <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control" placeholder="search..." />
-                          </div>
+                      <div class="row  ">
+                        <div class="col-md-4"> <h2> Hired Instrument List</h2></div>
+                        <div class="col-md-4"> <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control" placeholder="search..." />
                         </div>
-                        <div class="table-responsive">
-                          <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
-                            <thead>
-                              <tr>
-                                <th>Date Hired</th>
-                                <th>Name</th>
-                                <th>Code</th>
-                                <th>Instrument</th>
-                                <th>Brand</th>
-                                <th>Rate</th>
-                                <th>Owner</th>
-                                <th>Due Date</th>
-                                <th >Details</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {filterRec.map((item, index) => (
-                                <tr role="row" key={item.id}>
-                                  <td>{new Date(item.creation_date).toLocaleDateString()}</td>
-                                  <td> {item.name}</td>
-                                  <td>{item.code}</td>
-                                  <td>{item.instrument}</td>
-                                  <td>{item.brand}</td>
-                                  <td>{item.rate}</td>
-                                  <td>{item.owner}</td>
-                                  <td>{new Date(item.due).toLocaleDateString()}</td>
-                                  <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
-                                </tr >
-                              ))}
-
-                            </tbody>
-
-                          </table>
+                        <div class="col-md-4">    <Link to="/newhire"><Button color="primary" className="ml-1">New Hire</Button></Link>
+                          <Link to="/studentlist"><Button color="primary" className="ml-1">Students</Button></Link>
+                          <Link to="/instrumentlist"><Button color="primary" className="ml-1">Instruments</Button></Link>
                         </div>
-
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="tab_borders_icons-2" role="tabpanel">
-              <div class="row">
-                <div class="col-xl-12">
-                  <div id="panel-1" class="panel mb-0">
-                    <div class="panel-hdr">
-                      <h2>Overdue Hire Instrument List</h2>
-                    </div>
-                    <div class="panel-container show">
-                      <div class="panel-content">
-                        <div class="table-responsive">
-                          <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
-                            <thead>
-                              <tr>
-                                <th>Due Date </th>
-                                <th>No. of Days</th>
-                                <th>Name</th>
-                                <th>Code</th>
-                                <th>Instrument</th>
-                                <th>Brand</th>
-                                <th>Rate</th>
-                                <th>Date Hired</th>
-                                <th>Owner</th>
-                                <th class="dtl-cel">Details</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {toDos.filter(item => new Date(item.due) < new Date()).map((item, index) => (
-                                <tr role="row" key={item.id}>
-                                  <td>{new Date(item.due).toLocaleDateString()}</td>
-                                  <td class="al-ctr"> <span class="txt-red">{Math.floor((new Date().getTime() - new Date(item.due).getTime()) / (1000 * 60 * 60 * 24))}</span></td>
-                                  <td>{item.name}</td>
-                                  <td>{item.code}</td>
-                                  <td>{item.instrument}</td>
-                                  <td>{item.brand}</td>
-                                  <td>{item.rate}</td>
-                                  <td>{new Date(item.creation_date).toLocaleDateString()}</td>
-                                  <td>{item.owner}</td>
-                                  <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
+                      <div class="panel-container show">
+                        <div class="panel-content">
+                          <div class="table-responsive">
+                            <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th>Date Hired</th>
+                                  <th>Name</th>
+                                  <th>Code</th>
+                                  <th>Instrument</th>
+                                  <th>Brand</th>
+                                  <th>Rate</th>
+                                  <th>Owner</th>
+                                  <th>Due Date</th>
+                                  <th >Details</th>
                                 </tr>
-                              ))}
+                              </thead>
+                              <tbody>
+                                {filterRec.map((item, index) => (
+                                  <tr role="row" key={item.id}>
+                                    <td>{new Date(item.creation_date).toLocaleDateString()}</td>
+                                    <td> {item.name}</td>
+                                    <td>{item.code}</td>
+                                    <td>{item.instrument}</td>
+                                    <td>{item.brand}</td>
+                                    <td>{item.rate}</td>
+                                    <td>{item.owner}</td>
+                                    <td>{new Date(item.due).toLocaleDateString()}</td>
+                                    <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
+                                  </tr >
+                                ))}
 
-                            </tbody>
+                              </tbody>
 
-                          </table>
+                            </table>
+                          </div>
+
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+              <div class="tab-pane fade" id="tab_borders_icons-2" role="tabpanel">
+                <div class="row">
+                  <div class="col-xl-12">
+                    <div id="panel-1" class="panel mb-0">
+                      <div class="panel-hdr">
+                        <h2>Overdue Hire Instrument List</h2>
+                      </div>
+                      <div class="panel-container show">
+                        <div class="panel-content">
+                          <div class="table-responsive">
+                            <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
+                              <thead>
+                                <tr>
+                                  <th>Due Date </th>
+                                  <th>No. of Days</th>
+                                  <th>Name</th>
+                                  <th>Code</th>
+                                  <th>Instrument</th>
+                                  <th>Brand</th>
+                                  <th>Rate</th>
+                                  <th>Date Hired</th>
+                                  <th>Owner</th>
+                                  <th class="dtl-cel">Details</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {toDos.filter(item => new Date(item.due) < new Date()).map((item, index) => (
+                                  <tr role="row" key={item.id}>
+                                    <td>{new Date(item.due).toLocaleDateString()}</td>
+                                    <td class="al-ctr"> <span class="txt-red">{Math.floor((new Date().getTime() - new Date(item.due).getTime()) / (1000 * 60 * 60 * 24))}</span></td>
+                                    <td>{item.name}</td>
+                                    <td>{item.code}</td>
+                                    <td>{item.instrument}</td>
+                                    <td>{item.brand}</td>
+                                    <td>{item.rate}</td>
+                                    <td>{new Date(item.creation_date).toLocaleDateString()}</td>
+                                    <td>{item.owner}</td>
+                                    <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
+                                  </tr>
+                                ))}
 
-            <div class="tab-pane fade" id="tab_borders_icons-3" role="tabpanel">
-              <div class="row">
-                <div class="col-xl-12">
-                  <div id="panel-1" class="panel mb-0">
-                    <div class="panel-hdr">
-                      <h2>Insights </h2>
-                    </div>
-                    <div class="panel-container show">
-                      <div class="panel-content">
+                              </tbody>
 
-                        <div class="row">
-                          <div class="col-xl-6">
-                            <div id="panel-1" class="panel">
-                              <div class="panel-hdr">
-                                <h2>
-                                  Instrument Hires
-                                                </h2>
-
-                              </div>
-                              <div class="panel-container show">
-                                <div class="panel-content">
-                                  <div class="panel-tag">
-                                    The line chart requires an array of labels for each of the data points. This is shown on the X axis. It has a colour for the fill, a colour for the line and colours for the points and strokes of the points
-                                                    </div>
-
-                                  <div>  <img src={chart2} alt="chart" class="img-fluid" />   </div>
-
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-xl-6">
-                            <div id="panel-7" class="panel">
-                              <div class="panel-hdr">
-                                <h2>
-                                  Instrument Availability
-                                                </h2>
-
-                              </div>
-                              <div class="panel-container show">
-                                <div class="panel-content">
-                                  <div class="panel-tag">
-                                    An area chart or area graph displays graphically quantitative data. It is based on the line chart. The area between axis and line are commonly emphasized with colors, textures and hatchings
-                                                    </div>
-                                  <div>  <img src={chart1} alt="Logo" class="img-fluid" />     </div>
-                                </div>
-                              </div>
-                            </div>
+                            </table>
                           </div>
                         </div>
-
-
-
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-          </div>
+              <div class="tab-pane fade" id="tab_borders_icons-3" role="tabpanel">
+                <div class="row">
+                  <div class="col-xl-12">
+                    <div id="panel-1" class="panel mb-0">
+                      <div class="panel-hdr">
+                        <h2>Insights </h2>
+                      </div>
+                      <div class="panel-container show">
+                        <div class="panel-content">
+
+                          <div class="row">
+                            <div class="col-xl-6">
+                              <div id="panel-1" class="panel">
+                                <div class="panel-hdr">
+                                  <h2>
+                                    Instrument Hires
+                                                </h2>
+
+                                </div>
+                                <div class="panel-container show">
+                                  <div class="panel-content">
+                                    <div class="panel-tag">
+                                      The line chart requires an array of labels for each of the data points. This is shown on the X axis. It has a colour for the fill, a colour for the line and colours for the points and strokes of the points
+                                                    </div>
+
+                                    <div>  <img src={chart2} alt="chart" class="img-fluid" />   </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xl-6">
+                              <div id="panel-7" class="panel">
+                                <div class="panel-hdr">
+                                  <h2>
+                                    Instrument Availability
+                                                </h2>
+
+                                </div>
+                                <div class="panel-container show">
+                                  <div class="panel-content">
+                                    <div class="panel-tag">
+                                      An area chart or area graph displays graphically quantitative data. It is based on the line chart. The area between axis and line are commonly emphasized with colors, textures and hatchings
+                                                    </div>
+                                    <div>  <img src={chart1} alt="Logo" class="img-fluid" />     </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
 
 
 
