@@ -45,14 +45,6 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                         <div class="panel-container show">
                             <div class="panel-content">
 
-                                <Form>
-                                    <FormGroup>
-                                        <Label for="exampleEmail">Input without validation</Label>
-                                        <Input />
-                                        <FormFeedback>You will not be able to see this</FormFeedback>
-                                        <FormText>Example help text that remains unchanged.</FormText>
-                                    </FormGroup>
-                                </Form>
 
                                 <form class="needs-validation" novalidate>
                                     <div class=" form-group row">
