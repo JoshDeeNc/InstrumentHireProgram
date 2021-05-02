@@ -81,7 +81,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                 <span class="fal fa-pencil mr-1"></span>
                                                     Book Now
                                                 </Button>
-                        </div>
+                        </div> 
                         <div class="panel-container show">
                             <div class="panel-content  ">
                                 <form>
