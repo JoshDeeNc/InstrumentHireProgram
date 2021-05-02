@@ -55,6 +55,13 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
         }
     }
 
+    const update = async (itemId, event) => {
+        const result = await updateToDo(itemId);
+        if(result.status === 200 ) {
+            history.push('/');
+        }
+    }
+
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
@@ -168,6 +175,16 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
         </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={(e) => deletion(hireRecord.id)}>Yes</Button>
+                    <Button color="secondary" onClick={toggle}>No</Button>
+                </ModalFooter>
+            </Modal>
+            <Modal isOpen={modal} toggle={toggle} >
+                <ModalHeader toggle={toggle}> Update</ModalHeader>
+                <ModalBody>
+                    Are you sure you want to update {studName}'s {instrument + " " + brand} hire record?
+        </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onClick={(e) => update(hireRecord.id)}>Yes</Button>
                     <Button color="secondary" onClick={toggle}>No</Button>
                 </ModalFooter>
             </Modal>
