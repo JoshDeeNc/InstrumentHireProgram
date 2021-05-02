@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
-import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col,   FormFeedback, FormText,  Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 function HireRecord({ deleteToDo, updateToDo, toDos }) {
     const history = useHistory();
@@ -66,7 +66,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                         <div class="panel-hdr">
                             <h2>Hire Details </h2>
                             <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
-                                <span class="fal fa-pencil mr-1"></span>  Edit </Button>
+                                <span class="fal fa-pencil mr-1"></span>  Edit  </Button>
                         </div>
 
                         <div class="panel-container show">
