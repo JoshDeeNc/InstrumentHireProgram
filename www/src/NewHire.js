@@ -29,8 +29,8 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
         setStudent(event.target.value);
     }
 
-    const add = async () => {
-        const result = await addToDo;
+    const add = async (event) => {
+        const result = await addToDo();
         if(result.status === 200 ) {
             history.push('/');
         }

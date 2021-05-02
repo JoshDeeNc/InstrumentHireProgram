@@ -6,7 +6,7 @@ function NewStudent({ addStudent }) {
     const history = useHistory();
 
     const add = async () => {
-        const result = await addStudent;
+        const result = await addStudent();
         if(result.status === 200 ) {
             history.push('/studentlist');
         }
@@ -36,6 +36,9 @@ function NewStudent({ addStudent }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Student First Name </label>
                                         <div class="col-sm-9">
                                             <Input type="text" class="form-control no-edit" name="name" id="newFirstName" placeholder="First name" />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
                                         </div>
                                     </div>
 
