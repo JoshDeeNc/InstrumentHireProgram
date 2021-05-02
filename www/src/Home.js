@@ -21,7 +21,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
   function search() {
     console.log(q); // add whatever functions use new `college` value here.
     if (q != "") {
-      return toDos.filter(item => item.name.toLowerCase().indexOf(q) > -1)
+      return toDos.filter((item, index) => item[index].toString().toLowerCase().indexOf(q.toLowerCase()) > -1)
     }
     else return toDos
   }
