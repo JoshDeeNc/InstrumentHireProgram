@@ -23,12 +23,8 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     if (qry != "") {
       const columns = toDos[0] && Object.keys(toDos[0])
       console.log(qry)
-      //return toDos.filter((row) => row.name.toLowerCase().indexOf(qry.toLowerCase()) > -1)
-      return toDos.filter((row) => 
-        columns.some((column) => 
-          row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1
-        )
-      );
+      return toDos.filter((row) => row.name.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+                                  row.instrument.toLowerCase().indexOf(qry.toLowerCase()) > -1)
     }
     return toDos
   }
