@@ -58,7 +58,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
-                        <div class="row">
+                        <div class="row mb-1 flex-row-reverse">
                           <div class="col-md-4">
                             <input type="text" value={q} onChange={(e) => setQ(e.target.value)} class="form-control" placeholder="search..." />
                           </div>
