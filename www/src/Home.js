@@ -19,11 +19,10 @@ function Home({ toDos, deleteToDo, completeToDo }) {
 
   const [qry, setQry] = useState("")
 
-  function search() {
+  function search(records) {
     if (qry != "") {
-      const columns = toDos[0] && Object.keys(toDos[0])
       console.log(qry)
-      return toDos.filter((row) => new Date(row.creation_date).toLocaleDateString().indexOf(qry.toLowerCase()) > -1 ||
+      return records.filter((row) => new Date(row.creation_date).toLocaleDateString().indexOf(qry.toLowerCase()) > -1 ||
                                   row.code.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
                                   row.name.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
                                   row.instrument.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
@@ -32,7 +31,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                   row.owner.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
                                   new Date(row.due).toLocaleDateString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
     }
-    return toDos
+    return records
   }
 
   return (
@@ -92,7 +91,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                 </tr>
                               </thead>
                               <tbody>
-                                {search().map((item, index) => (
+                                {search(toDos).map((item, index) => (
                                   <tr role="row" key={item.id}>
                                     <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                     <td> {item.name}</td>
@@ -127,7 +126,8 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                       <div class="panel-container show">
                         <div class="panel-content">
                           <div class="row mb-2 mt-n3 ">  
-                           
+                          <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                        </div> 
                         </div>
                           <div class="table-responsive">
                             <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
@@ -146,7 +146,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                 </tr>
                               </thead>
                               <tbody>
-                                {overDues.map((item, index) => (
+                                {search(overDues).map((item, index) => (
                                   <tr role="row" key={item.id}>
                                     <td>{new Date(item.due).toLocaleDateString()}</td>
                                     <td class="al-ctr"> <span class="txt-red">{Math.floor((new Date().getTime() - new Date(item.due).getTime()) / (1000 * 60 * 60 * 24))}</span></td>
