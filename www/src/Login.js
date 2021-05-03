@@ -1,19 +1,41 @@
 import React from 'react';
 import { Container, Jumbotron, Row, Col, Alert, Button } from 'reactstrap';
 import config from './config';
+ 
 function Login() {
     return (
-        <Row>
-            <Col md="12">
-                <Button
-                    href={`https://${config.cognito_hosted_domain}/login?response_type=token&client_id=${config.aws_user_pools_web_client_id}&redirect_uri=${config.redirect_url}`}
-                    color="primary"
-                    className="mt-5 float-center"
-                >
-                    Log In
-            </Button>
-            </Col>
-        </Row>
+
+        <div>
+            <div class="wrapper   ">
+                <main class="page-main   d-flex justify-content-center  align-items-center  ">
+                    <div class="d-flex justify-content-center    ">
+
+                        <div class="row w-80 bdr bg-green-5 "  >
+                            <div class="col-md-6 loginBG ">
+                            
+                        </div>
+
+                            <div class="col-md-6 p-5 ">
+                               
+                                <h2 class="sprd-txt"><strong>OneMaker  </strong> Academy</h2>
+                                <div class="underln" >   </div>
+                                <h1 class="txt-green   " >Instrument Hire Management System</h1>
+
+                                <p class="mb-5  mt-4 op-7 ">OneMaker Academy is a Performing Arts Academy for music and dance.
+OMA aims to build and nurture a creative community that is inspired in all aspects of the arts with a strong emphasis on excellence in teaching and performing.</p>
+                                <Button
+                                    href={`https://${config.cognito_hosted_domain}/login?response_type=token&client_id=${config.aws_user_pools_web_client_id}&redirect_uri=${config.redirect_url}`}
+                                    color="primary" >
+                                    Log In </Button>
+                            </div>
+                        </div>
+                       
+
+
+                    </div>
+                </main>
+            </div>
+        </div>
     )
 }
 
