@@ -30,7 +30,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                   row.brand.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
                                   row.rate.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
                                   row.owner.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-                                  row.due.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+                                  new Date(row.due).toLocaleDateString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
     }
     return toDos
   }
