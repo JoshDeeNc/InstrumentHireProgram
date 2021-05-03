@@ -62,8 +62,11 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
         }
     }
 
-    const [modal, setModal] = useState(false);
-    const toggle = () => setModal(!modal);
+    const [deleteModal, setDelModal] = useState(false);
+    const toggleDel = () => setDelModal(!deleteModal);
+
+    const [updateModal, setUpModal] = useState(false);
+    const toggleUp = () => setUpModal(!updateModal);
 
     return (
         <div>
@@ -157,9 +160,9 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                         </div>
                                     </div>
                                     <div class="btn-div">
-                                        <Button data-item-id={hireRecord.id} onClick={toggle} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Update</Button>
+                                        <Button data-item-id={hireRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Update</Button>
                                         <Link to="/"><button class="btn btn-lg btn-secondary waves-effect waves-themed">Cancel</button></Link>
-                                        <Button data-item-id={hireRecord.id} color="danger" onClick={toggle} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
+                                        <Button data-item-id={hireRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
                                      </div>
                                 </form>
                             </div>
@@ -168,24 +171,24 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                     </div>
                 </div>
             </div>
-            <Modal isOpen={modal} toggle={toggle} >
-                <ModalHeader toggle={toggle}> Delete</ModalHeader>
+            <Modal isOpen={deleteModal} toggle={toggleDel} >
+                <ModalHeader toggle={toggleDel}> Delete</ModalHeader>
                 <ModalBody>
                     Are you sure you want to delete {studName}'s {instrument + " " + brand} hire record?
         </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={(e) => deletion(hireRecord.id)}>Yes</Button>
-                    <Button color="secondary" onClick={toggle}>No</Button>
+                    <Button color="secondary" onClick={toggleDel}>No</Button>
                 </ModalFooter>
             </Modal>
-            <Modal isOpen={modal} toggle={toggle} >
-                <ModalHeader toggle={toggle}> Update</ModalHeader>
+            <Modal isOpen={updateModal} toggle={toggleUp} >
+                <ModalHeader toggle={toggleUp}> Update</ModalHeader>
                 <ModalBody>
                     Are you sure you want to update {studName}'s {instrument + " " + brand} hire record?
         </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={(e) => update(hireRecord.id)}>Yes</Button>
-                    <Button color="secondary" onClick={toggle}>No</Button>
+                    <Button color="secondary" onClick={toggleUp}>No</Button>
                 </ModalFooter>
             </Modal>
         </div>
