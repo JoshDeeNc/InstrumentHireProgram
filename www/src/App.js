@@ -444,6 +444,7 @@ function App() {
   return (
     <div className="App">
       {idToken.length > 0 ? (
+        <BrowserRouter>
         <div class="mt-0">
           <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
             <p dangerouslySetInnerHTML={{ __html: alert }}></p>
@@ -454,10 +455,8 @@ function App() {
               <div class="page-content-wrapper">
                 <Header />
                 <main id="js-page-content" role="main" class="page-content">
-
                   <Row>
                     <Col md="12">
-                      <BrowserRouter>
                         <Switch>
                           <Route path="/newhire"><NewHire toDos={toDos} studentList={studentList} instInventory={instInventory} addToDo={addToDo} /></Route>
                           <Route path="/hirerecord"><HireRecord deleteToDo={deleteToDo} updateToDo={updateToDo} toDos={toDos} /></Route>
@@ -468,8 +467,7 @@ function App() {
                           <Route path="/studentlist"><StudentList studentList={studentList} /></Route>
                           <Route path="/newstudent"><NewStudent addStudent={addStudent} /></Route>
                           <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
-                        </Switch>
-                      </BrowserRouter>
+                        </Switch>    
                     </Col>
                   </Row>
                 </main>
@@ -478,6 +476,7 @@ function App() {
             </div>
           </div>
         </div>
+        </BrowserRouter>
       ) : (
         <Row>
           <Col md="12">

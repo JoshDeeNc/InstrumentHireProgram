@@ -38,10 +38,10 @@ function Sidebar() {
         </div>
         <ul id="js-nav-menu" class="nav-menu js-nav-built">
         <li>
-                <a href="/" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
+                <Link to="/" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_flot">Home</span>
                 
-                </a>
+                </Link>
               </li>
 
           <li class="active open">
@@ -51,29 +51,27 @@ function Sidebar() {
               <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
             <ul>
               <li>
-                <a href="/studentlist" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
+                <Link to="/studentlist" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_flot">Students List</span>
                   <span class="dl-ref label bg-info-900 ml-2">214</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/newStudent" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
+                <Link to="/newStudent" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_chartist.js">Add Student</span>
-
-                </a>
+                </Link>
               </li>
               <li class=" ">
-                <a href="/instrumentlist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
+                <Link to="/instrumentlist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Instruments List</span>
                   <span class="dl-ref label bg-info-900 ml-2">205</span>
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="/newinstrument" title="C3 Charts" data-filter-tags="statistics chart graphs c3 charts" class=" waves-effect waves-themed">
+                <Link to="/newinstrument" title="C3 Charts" data-filter-tags="statistics chart graphs c3 charts" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_c3_charts">Add Instrument</span>
-
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="statistics_c3.html" title="C3 Charts" data-filter-tags="statistics chart graphs c3 charts" class=" waves-effect waves-themed">
