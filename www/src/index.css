@@ -297,3 +297,7 @@ body:not(.mod-pace-custom) .pace .pace-progress {
 .form-group {
   margin-bottom: 0;
 }
+
+.dt-range {
+  display:none;
+}

@@ -12,6 +12,11 @@ import StudentList from './StudentList';
 import NewStudent from './NewStudent';
 import StudentRecord from './StudentRecord'
 import './App.css';
+import Header from './layout/Header'
+import Sidebar from './layout/Sidebar'
+import Overlay from './layout/Overlay'
+import Breadcrumb from './layout/Breadcrumb'
+import Footer from './layout/Footer'
 
 import config from './config';
 
@@ -139,7 +144,7 @@ function App() {
     console.log(name);
     if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
-      
+
     const updateToDo = {
       "name": name,
       "completed": true,
@@ -233,9 +238,9 @@ function App() {
     const purchVal = document.getElementById('newInstPurchVal').value
     const depreciation = document.getElementById('newInstDepr').value;
     const owner = document.getElementById('newInstOwner').value;
-    
+
     if (!code || code === '' || !type || type === '' || !object || object === ''
-      || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === '' 
+      || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === ''
       || !depreciation || depreciation === '' || !owner || owner === '') return;
 
     const newInstrument = {
@@ -276,9 +281,9 @@ function App() {
     const purchVal = document.getElementById('editInstPurchVal').value
     const depreciation = document.getElementById('editInstDepr').value;
     const owner = document.getElementById('editInstOwner').value;
-    
+
     if (!code || code === '' || !type || type === '' || !object || object === ''
-      || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === '' 
+      || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === ''
       || !depreciation || depreciation === '' || !owner || owner === '') return;
 
     const updateInstrument = {
@@ -388,7 +393,7 @@ function App() {
     const lastName = document.getElementById('editLastName').value;
     const phone = document.getElementById('editPhoneNumber').value;
     const email = document.getElementById('editEmail').value;
-    
+
     if (!firstName || firstName === '' || !lastName || lastName === '' || !phone || phone === ''
       || !email || email === '') return;
 
@@ -438,26 +443,44 @@ function App() {
 
   return (
     <div className="App">
-      <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
-        <p dangerouslySetInnerHTML={{ __html: alert }}></p>
-      </Alert>
-      <Row>
-        <Col md="12">
-          {idToken.length > 0 ? (
-            <BrowserRouter>
-              <Switch>
-                <Route path="/newhire"><NewHire toDos={toDos} studentList={studentList} instInventory={instInventory} addToDo={addToDo} /></Route>
-                <Route path="/hirerecord"><HireRecord deleteToDo={deleteToDo} updateToDo={updateToDo} toDos={toDos} /></Route>
-                <Route path="/instrumentrecord"><InstrumentRecord deleteInstrument={deleteInstrument} updateInstrument={updateInstrument} instInventory={instInventory} /></Route>
-                <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
-                <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
-                <Route path="/studentrecord"><StudentRecord deleteStudent={deleteStudent} updateStudent={updateStudent} studentList={studentList} /></Route>
-                <Route path="/studentlist"><StudentList studentList={studentList} /></Route>
-                <Route path="/newstudent"><NewStudent addStudent={addStudent} /></Route>
-                <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
-              </Switch>
-            </BrowserRouter>
-          ) : (
+      {idToken.length > 0 ? (
+        <div class="mt-0">
+          <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
+            <p dangerouslySetInnerHTML={{ __html: alert }}></p>
+          </Alert>
+          <div class="page-wrapper">
+            <div class="page-inner">
+              <Sidebar />
+              <div class="page-content-wrapper">
+                <Header />
+                <main id="js-page-content" role="main" class="page-content">
+
+                  <Row>
+                    <Col md="12">
+                      <BrowserRouter>
+                        <Switch>
+                          <Route path="/newhire"><NewHire toDos={toDos} studentList={studentList} instInventory={instInventory} addToDo={addToDo} /></Route>
+                          <Route path="/hirerecord"><HireRecord deleteToDo={deleteToDo} updateToDo={updateToDo} toDos={toDos} /></Route>
+                          <Route path="/instrumentrecord"><InstrumentRecord deleteInstrument={deleteInstrument} updateInstrument={updateInstrument} instInventory={instInventory} /></Route>
+                          <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
+                          <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
+                          <Route path="/studentrecord"><StudentRecord deleteStudent={deleteStudent} updateStudent={updateStudent} studentList={studentList} /></Route>
+                          <Route path="/studentlist"><StudentList studentList={studentList} /></Route>
+                          <Route path="/newstudent"><NewStudent addStudent={addStudent} /></Route>
+                          <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
+                        </Switch>
+                      </BrowserRouter>
+                    </Col>
+                  </Row>
+                </main>
+                <Footer />
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <Row>
+          <Col md="12">
             <Button
               href={`https://${config.cognito_hosted_domain}/login?response_type=token&client_id=${config.aws_user_pools_web_client_id}&redirect_uri=${config.redirect_url}`}
               color="primary"
@@ -465,10 +488,10 @@ function App() {
             >
               Log In
             </Button>
-          )
-          }
-        </Col>
-      </Row>
+          </Col>
+        </Row>
+      )
+      }
     </div >
 
 
