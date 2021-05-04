@@ -352,3 +352,6 @@ body:not(.mod-pace-custom) .pace .pace-progress {
 .loginBG {background-image: url(./img/loginBG.jpg); background-size: cover; background-position-y: bottom; background-position-x: center;}
 
  .w-80 {width: 80%; max-width: 1100px;}
+ .chart-div {width:50%; height:300px;}
+
+ .input-group-prepend span,  .input-group-append span  {font-size: 14px !important;}
