@@ -266,6 +266,10 @@ body:not(.mod-pace-custom) .pace .pace-progress {
   padding-left: 0;
 }
 
+.nov {
+display: none;
+}
+
 .btn-div {
   padding: 20px 0;
   text-align: center;
