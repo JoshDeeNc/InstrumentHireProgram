@@ -238,9 +238,17 @@ table tr td a .fa-2x {
   background: #dc3545 !important;
 }
 
-body:not(.mod-pace-custom) .pace .pace-progress {
+body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.active.active {
   background: #8bc34a;
 }
+
+.custom-control-input:checked~.custom-control-label:before {
+  color: #fff;
+  border-color: #2e7d32;
+  background-color: #2e7d32;
+}
+
+.daterangepicker table tr td.active.active:hover {background: #4caf50; }
 
 .nav-function-minify .nav-footer, .nav-function-fixed .nav-footer {
   background-color: #2e7d32;
