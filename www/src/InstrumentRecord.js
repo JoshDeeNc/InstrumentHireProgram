@@ -89,7 +89,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                     Edit
                                                 </Button>
 
-                            <Link to={`/newhire/${instrumentRecord.id}`}><Button  type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
+                            <Link to={`/newhire/${instrumentRecord.id}`}><Button  type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
                                 <span class="fal fa-pencil mr-1"></span>
                                                     Book Now
                                                 </Button></Link>
@@ -100,7 +100,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
 
                                 <div class=" form-group row" >
                                          
-                                        <div class="col-md-2 bdr">
+                                        <div class="col-md-3  ">
                                         <img src={instImg} alt=" " class="img-fluid" />  
                                         </div>
                                     </div>
