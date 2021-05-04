@@ -99,7 +99,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
 
                                 <div class="row" >
 
-                                    <div class="col-md-9  ">
+                                    <div class="col-md-8  ">
                                         <form>
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" ">Code </label>
@@ -107,20 +107,22 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                     <input type="text" class="form-control nox" name=" " id="editInstCode"
                                                         value={code} onChange={onChangeCode} placeholder=" Code" />
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-12 ">
+                                                <div class="col-sm-12 ">
                                                 <div class=" hr"></div>
                                             </div>
+                                            </div>
+                                            
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" "> Instrument Type </label>
                                                 <div class="col-sm-9">
                                                     <input type="text" class="form-control nox" name=" " id="editInstType"
                                                         value={type} onChange={onChangeType} placeholder="Instrument Type " />
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-12 ">
+                                                <div class="col-sm-12 ">
                                                 <div class=" hr"></div>
                                             </div>
+                                            </div>
+                                            
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" "> Instrument Name </label>
                                                 <div class="col-sm-9">
@@ -190,7 +192,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
 
                                     </div>
 
-                                    <div class="col-md-3 bdr ">
+                                    <div class="col-md-4   ">
                                     <img src={instImg} alt=" " class="img-fluid" />
                                     </div>
 
