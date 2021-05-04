@@ -15,7 +15,8 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     setFilter(newFilter);
   };
 
-  const [hireRecords, setRecords] = useState(toDos)
+  const [hireRecords, setRecords] = useState([])
+  setRecords(toDos)
 
   const overDues = hireRecords.filter(item => new Date(item.due) < new Date())
 
