@@ -63,7 +63,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
 
     const update = async (itemId, event) => {
         const result = await updateInstrument(itemId);
-        if(result.status === 200 ) {
+        if (result.status === 200) {
             history.push('/instrumentlist');
         }
     }
@@ -89,112 +89,113 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                     Edit
                                                 </Button>
 
-                            <Link to={`/newhire/${instrumentRecord.id}`}><Button  type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
+                            <Link to={`/newhire/${instrumentRecord.id}`}><Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
                                 <span class="fal fa-pencil mr-1"></span>
                                                     Book Now
                                                 </Button></Link>
-                        </div> 
+                        </div>
                         <div class="panel-container show">
                             <div class="panel-content  ">
-                                <form>
 
-                                <div class=" form-group row" >
-                                         
-                                        <div class="col-md-3  ">
-                                        <img src={instImg} alt=" " class="img-fluid" />  
-                                        </div>
+                                <div class="row" >
+
+                                    <div class="col-md-9  ">
+                                        <form>
+                                            <div class=" form-group row" >
+                                                <label class="col-sm-3 col-form-label" for=" ">Code </label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control nox" name=" " id="editInstCode"
+                                                        value={code} onChange={onChangeCode} placeholder=" Code" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 ">
+                                                <div class=" hr"></div>
+                                            </div>
+                                            <div class=" form-group row" >
+                                                <label class="col-sm-3 col-form-label" for=" "> Instrument Type </label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control nox" name=" " id="editInstType"
+                                                        value={type} onChange={onChangeType} placeholder="Instrument Type " />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 ">
+                                                <div class=" hr"></div>
+                                            </div>
+                                            <div class=" form-group row" >
+                                                <label class="col-sm-3 col-form-label" for=" "> Instrument Name </label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control nox" name=" " id="editInstName"
+                                                        value={object} onChange={onChangeObject} placeholder="Instrument Name " />
+                                                </div>
+                                                <div class="col-sm-12 ">
+                                                    <div class=" hr"></div>
+                                                </div>
+                                            </div>
+                                            <div class=" form-group row" >
+                                                <label class="col-sm-3 col-form-label" for=" ">Brand </label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control nox" name=" " id="editInstBrand"
+                                                        value={brand} onChange={onChangeBrand} placeholder="Brand " />
+                                                </div>
+                                                <div class="col-sm-12 ">
+                                                    <div class=" hr"></div>
+                                                </div>
+                                            </div>
+                                            <div class=" form-group row" >
+                                                <label class="col-sm-3 col-form-label" for=" "> Rate </label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control nox" name=" " id="editInstRate"
+                                                        value={rate} onChange={onChangeRate} placeholder="Rate " />
+                                                </div>
+                                                <div class="col-sm-12 ">
+                                                    <div class=" hr"></div>
+                                                </div>
+                                            </div>
+                                            <div class=" form-group row" >
+                                                <label class="col-sm-3 col-form-label" for=" "> Purchase Value </label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control nox" name=" " id="editInstPurchVal"
+                                                        value={purchVal} onChange={onChangePurch} placeholder="Purchase Value  " />
+                                                </div>
+                                                <div class="col-sm-12 ">
+                                                    <div class=" hr"></div>
+                                                </div>
+                                            </div>
+                                            <div class=" form-group row" >
+                                                <label class="col-sm-3 col-form-label" for=" ">Depreciation </label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control nox" name=" " id="editInstDepr"
+                                                        value={depr} onChange={onChangeDepreciation} placeholder=" Depreciation" />
+                                                </div>
+                                                <div class="col-sm-12 ">
+                                                    <div class=" hr"></div>
+                                                </div>
+                                            </div>
+                                            <div class=" form-group row" >
+                                                <label class="col-sm-3 col-form-label" for=" "> Owner </label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control nox" name=" " id="editInstOwner"
+                                                        value={owner} onChange={onChangeOwner} placeholder="Owner " />
+                                                </div>
+                                                <div class="col-sm-12 ">
+                                                    <div class=" hr"></div>
+                                                </div>
+                                            </div>
+                                            <div class="btn-div">
+                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
+                                                <Link to="/instrumentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
+                                                <Button data-item-id={instrumentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
+                                            </div>
+                                        </form>
+
                                     </div>
 
-                                    <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
+                                    <div class="col-md-3 bdr ">
+                                    <img src={instImg} alt=" " class="img-fluid" />
+                                    </div>
 
-                                    <div class=" form-group row" >
-                                        <label class="col-sm-3 col-form-label" for=" ">Code </label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control nox" name=" " id="editInstCode"
-                                                value={code} onChange={onChangeCode} placeholder=" Code" />
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                    <div class=" form-group row" >
-                                        <label class="col-sm-3 col-form-label" for=" "> Instrument Type </label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control nox" name=" " id="editInstType"
-                                                value={type} onChange={onChangeType} placeholder="Instrument Type " />
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                    <div class=" form-group row" >
-                                        <label class="col-sm-3 col-form-label" for=" "> Instrument Name </label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control nox" name=" " id="editInstName"
-                                                value={object} onChange={onChangeObject} placeholder="Instrument Name " />
-                                        </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                    </div>
-                                    <div class=" form-group row" >
-                                        <label class="col-sm-3 col-form-label" for=" ">Brand </label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control nox" name=" " id="editInstBrand"
-                                                value={brand} onChange={onChangeBrand} placeholder="Brand " />
-                                        </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                    </div>
-                                    <div class=" form-group row" >
-                                        <label class="col-sm-3 col-form-label" for=" "> Rate </label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control nox" name=" " id="editInstRate"
-                                                value={rate} onChange={onChangeRate} placeholder="Rate " />
-                                        </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                    </div>
-                                    <div class=" form-group row" >
-                                        <label class="col-sm-3 col-form-label" for=" "> Purchase Value </label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control nox" name=" " id="editInstPurchVal"
-                                                value={purchVal} onChange={onChangePurch} placeholder="Purchase Value  " />
-                                        </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                    </div>
-                                    <div class=" form-group row" >
-                                        <label class="col-sm-3 col-form-label" for=" ">Depreciation </label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control nox" name=" " id="editInstDepr"
-                                                value={depr} onChange={onChangeDepreciation} placeholder=" Depreciation" />
-                                        </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                    </div>
-                                    <div class=" form-group row" >
-                                        <label class="col-sm-3 col-form-label" for=" "> Owner </label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control nox" name=" " id="editInstOwner"
-                                                value={owner} onChange={onChangeOwner} placeholder="Owner " />
-                                        </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                    </div>
-                                    <div class="btn-div">
-                                        <Button data-item-id={instrumentRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
-                                        <Link to="/instrumentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
-                                        <Button data-item-id={instrumentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
-                                    </div>
-                                </form>
+                                </div>
+
                             </div>
                         </div>
                     </div>
