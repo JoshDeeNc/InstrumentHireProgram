@@ -52,11 +52,11 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
 
         }
 
-        var b = document.getElementsByTagName('span');
+        var b = document.getElementsByTagName('div');
         // loop through all 'a' elements
         for (var i = 0; i < b.length; i++) {
             // Remove the class 'active' if it exists
-            b[i].classList.remove('nov');
+            b[i].classList.remove('btn-div');
 
         }
         // add 'active' classs to the element that was clicked
@@ -95,10 +95,9 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                         </h2>
 
 
-                            <Link to={`/newhire/${instrumentRecord.id}`}><Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
-                                <span class="fal fa-pencil mr-1"></span>
-                                                    Book Now
-                                                </Button></Link>
+                            <Link to={`/newhire/${instrumentRecord.id}`}>
+                                <Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
+                                <span class="fal fa-pencil mr-1">  Book Now </span></Button></Link>
                         </div>
                         <div class="panel-container show">
                             <div class="panel-content  ">
@@ -185,15 +184,13 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                     <input type="text" class="form-control nox" name=" " id="editInstOwner"
                                                         value={owner} onChange={onChangeOwner} placeholder="Owner " />
                                                 </div>
-                                                <div class="col-sm-12 ">
+                                                <div class="col-sm-12 mb-5 ">
                                                     <div class=" hr"></div>
                                                 </div>
                                             </div>
                                             <div class="btn-div">
-                                                <span class="nov">
                                                     <Button data-item-id={instrumentRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2  "  >Update</Button>
                                                     <Link to="/instrumentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1 ">Cancel</Button></Link>
-                                                </span>
                                             </div>
                                         </form>
 
