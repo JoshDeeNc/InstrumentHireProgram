@@ -75,10 +75,9 @@ function Sidebar() {
                 </Link>
               </li>
               <li>
-                <a href="statistics_c3.html" title="C3 Charts" data-filter-tags="statistics chart graphs c3 charts" class=" waves-effect waves-themed">
+              <Link to="/test" title="C3 Charts" data-filter-tags="statistics chart graphs c3 charts" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_c3_charts">My Account</span>
-
-                </a>
+                </Link>
               </li>
 
             </ul>
@@ -90,6 +89,8 @@ function Sidebar() {
                 
                 </Link>
               </li>
+
+              
 
         </ul>
         <div class="filter-message js-filter-message bg-success-600"></div>

@@ -78,7 +78,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
     return (
         <div>
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr">
                             <h2>
