@@ -206,6 +206,22 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                 </div>
 
                             </div>
+                       
+                            <div class="panel-content py-2 rounded-bottom border-faded border-left-0 border-right-0 border-bottom-0   d-flex">
+                                            
+                                            
+                                            <span class="badge badge-pill badge-success fw-400">
+                                            <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
+                                <span class="fal fa-pencil mr-1"></span>
+                                                    Edit
+                                                </Button>
+                                            </span>
+                                            <span class="badge badge-pill rounded-circle badge-secondary fw-400 ml-auto mr-2">
+                                            <Button data-item-id={instrumentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
+                                           
+                                            </span>
+                                         
+                                        </div>
                         </div>
                     </div>
                 </div>
