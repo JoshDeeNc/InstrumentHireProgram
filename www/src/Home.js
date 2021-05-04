@@ -15,9 +15,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     setFilter(newFilter);
   };
 
-  const hireRecords = toDos
-
-  const overDues = hireRecords.filter(item => new Date(item.due) < new Date())
+  const overDues = toDos.filter(item => new Date(item.due) < new Date())
 
   const [qry, setQry] = useState("")
 
@@ -55,8 +53,8 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     var dates = document.getElementById("datepicker-1").value;
     var startEnd = dates.split(" - ")
     console.log(startEnd)
-    return hireRecords.filter(item => new Date(item.creation_date) >= new Date(startEnd[0]) && new Date(item.creation_date) <= new Date(startEnd[1]))
-    //console.log(hireRecords)
+    console.log(toDos.filter(item => new Date(item.creation_date) >= new Date(startEnd[0]) && new Date(item.creation_date) <= new Date(startEnd[1])))
+    search(toDos.filter(item => new Date(item.creation_date) >= new Date(startEnd[0]) && new Date(item.creation_date) <= new Date(startEnd[1])))
   }
 
   return (
@@ -143,7 +141,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                               </tr>
                             </thead>
                             <tbody>
-                              {search(hireRecords).map((item, index) => (
+                              {search(toDos).map((item, index) => (
                                 <tr role="row" key={item.id}>
                                   <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                   <td> {item.name}</td>
