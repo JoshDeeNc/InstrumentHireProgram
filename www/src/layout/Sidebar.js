@@ -1,7 +1,7 @@
 import React from 'react';
 import StudentList from '../StudentList';
 import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
-function Sidebar() {
+function Sidebar( {clearCredentials} ) {
   return (
     <aside class="page-sidebar">
       <div class="page-logo">
@@ -83,7 +83,7 @@ function Sidebar() {
             </ul>
           </li>
           <li>
-                <Link to="/" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
+                <Link onClick={clearCredentials} title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
                 <i class="fal fa-door-open"></i>
                   <span class="nav-link-text" data-i18n="nav.statistics_flot">Logout</span>
                 

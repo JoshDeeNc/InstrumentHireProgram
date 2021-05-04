@@ -453,7 +453,7 @@ function App() {
           </Alert>
           <div class="page-wrapper">
             <div class="page-inner">
-              <Sidebar />
+              <Sidebar clearCredentials={clearCredentials}/>
               <div class="page-content-wrapper">
                 <Header />
                 <main id="js-page-content" role="main" class="page-content">
