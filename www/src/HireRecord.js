@@ -39,10 +39,15 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
 
     const editToggle = (event) => {
         var a = document.getElementsByTagName('input');
+        var b = document.getElementsByClassName('editingButton');
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
             // Remove the class 'active' if it exists
             a[i].classList.remove('nox');
+        }
+
+        for (var j = 0; j < b.length; j++) {
+            b[j].classList.remove('nov')
         }
         // add 'active' classs to the element that was clicked
         //elem.classList.add('active');
@@ -160,8 +165,8 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                         </div>
                                     </div>
                                     <div class="btn-div">
-                                        <Button data-item-id={hireRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Update</Button>
-                                        <Link to="/"><button class="btn btn-lg btn-secondary waves-effect waves-themed">Cancel</button></Link>
+                                        <Button data-item-id={hireRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 nov editingButton">Update</Button>
+                                        <Link to="/"><button class="btn btn-lg btn-secondary waves-effect waves-themed nov editingButton">Cancel</button></Link>
                                         <Button data-item-id={hireRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
                                      </div>
                                 </form>

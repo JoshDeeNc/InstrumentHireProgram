@@ -49,6 +49,13 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     }
   }
 
+  const filterDates = () => {
+    var dates = document.getElementById("datepicker-1").value;
+    var startEnd = dates.split(" - ")
+    console.log(startEnd)
+    search(toDos.filter(item => new Date(item.creation_date) >= new Date(startEnd[0]) && new Date(item.creation_date) <= new Date(startEnd[1])))
+  }
+
   return (
     <div className="ToDo">
 
@@ -105,7 +112,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                     </div>
                                   </div>
 
-                                  <div class="col-md-1  "> <button    class="btn btn-sm btn-primary waves-effect waves-themed mr-2">Go</button>
+                                  <div class="col-md-1  "> <button onClick={filterDates} class="btn btn-sm btn-primary waves-effect waves-themed mr-2">Go</button>
                                         </div>
                                 </div>
                               </div>
