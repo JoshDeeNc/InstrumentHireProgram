@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import instImg from './img/inst.jpeg';
+
 
 function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory }) {
     const history = useHistory();
@@ -95,6 +97,18 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                         <div class="panel-container show">
                             <div class="panel-content  ">
                                 <form>
+
+                                <div class=" form-group row" >
+                                         
+                                        <div class="col-md-2 bdr">
+                                        <img src={instImg} alt=" " class="img-fluid" />  
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+
                                     <div class=" form-group row" >
                                         <label class="col-sm-3 col-form-label" for=" ">Code </label>
                                         <div class="col-sm-9">
@@ -102,6 +116,9 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 value={code} onChange={onChangeCode} placeholder=" Code" />
                                         </div>
                                     </div>
+                                    <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                     <div class=" form-group row" >
                                         <label class="col-sm-3 col-form-label" for=" "> Instrument Type </label>
                                         <div class="col-sm-9">
