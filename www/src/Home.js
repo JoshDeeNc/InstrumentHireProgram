@@ -55,8 +55,8 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     var dates = document.getElementById("datepicker-1").value;
     var startEnd = dates.split(" - ")
     console.log(startEnd)
-    setRecords(toDos.filter(item => new Date(item.creation_date) >= new Date(startEnd[0]) && new Date(item.creation_date) <= new Date(startEnd[1])))
-    console.log(hireRecords)
+    return hireRecords.filter(item => new Date(item.creation_date) >= new Date(startEnd[0]) && new Date(item.creation_date) <= new Date(startEnd[1]))
+    //console.log(hireRecords)
   }
 
   return (
