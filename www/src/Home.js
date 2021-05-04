@@ -94,8 +94,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                               <div class="col-12">
 
                                 <div class="form-group row">
-                                  
-                                  <div class="col-md-6  ">
+                                  <div class="col-md-7  ">
                                     <div class="input-group">
                                       <input type="text" class="form-control" placeholder="Select date" id="datepicker-1" />
                                       <div class="input-group-append">
@@ -105,6 +104,9 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                       </div>
                                     </div>
                                   </div>
+
+                                  <div class="col-md-1  "> <button    class="btn btn-sm btn-primary waves-effect waves-themed mr-2">Go</button>
+                                        </div>
                                 </div>
                               </div>
                             </div>
@@ -223,28 +225,29 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                       <div class="panel-content">
 
                         <div class="row">
-                          <div class="col-xl-6">
-                            <div id="panel-1" class="panel">
+                          <div class="col-md-6">
+                            <div class="panel">
                               <div class="panel-hdr">
-                                <h2>
-                                  Instrument Hires
-                                                </h2>
+                                <h2> Instrument Hires  </h2>
 
                               </div>
                               <div class="panel-container show">
                                 <div class="panel-content">
                                   <div class="panel-tag">
-                                    The line chart requires an array of labels for each of the data points. This is shown on the X axis. It has a colour for the fill, a colour for the line and colours for the points and strokes of the points
-                                                    </div>
+                                    This chart depicts the instrument hires over time.
+                                       </div>
 
-                                  <div>  <img src={chart2} alt="chart" class="img-fluid" />   </div>
+                                  <div>
+                                    <div id="lineChart">
+                                      <canvas class="chart-div bdr "></canvas>
+                                    </div> </div>
 
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="col-xl-6">
-                            <div id="panel-7" class="panel">
+                          <div class="col-md-6">
+                            <div class="panel">
                               <div class="panel-hdr">
                                 <h2> Instrument Availability </h2>
 
@@ -252,13 +255,20 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                               <div class="panel-container show">
                                 <div class="panel-content">
                                   <div class="panel-tag">
-                                    An area chart or area graph displays graphically quantitative data. It is based on the line chart. The area between axis and line are commonly emphasized with colors, textures and hatchings
+                                    This chart depicts the instrument inventory available for hire over time.
                                                     </div>
-                                  <div>  <img src={chart1} alt="Logo" class="img-fluid" />     </div>
+                                  <div>   <div>
+                                    <div id="areaChart">
+                                      <canvas class="chart-div bdr "></canvas>
+                                    </div> </div>     </div>
                                 </div>
                               </div>
                             </div>
                           </div>
+
+
+
+
                         </div>
 
                       </div>

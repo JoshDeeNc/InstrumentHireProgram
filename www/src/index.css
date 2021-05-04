@@ -33,6 +33,11 @@ button a {
   min-width: 120px !important;
 }
 
+.btn-sm {
+  min-width: 30px !important;
+  padding: 6px  12px !important;
+}
+
 /* --- Custom Styling  ---------------- */
 
 .panel-hdr h2 {
