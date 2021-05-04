@@ -82,20 +82,20 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                       <div class="panel-content">
                         <div class="row mb-2 mt-n3 ">
 
-                          <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                          <div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
                           </div>
 
                           <div class="col-md-2 mt-2 text-right"><div class="custom-control custom-checkbox  ">
                             <input type="checkbox" onChange={(e) => setDtRange(e.target.checked)} class="custom-control-input" id="defaultUnchecked" />
                             <label class="custom-control-label mt-2" for="defaultUnchecked">Date Range</label>
                           </div> </div>
-                          <div class="col-md-7 mt-2   ">
+                          <div class="col-md-6 mt-2   ">
                             <div class="row dt-range " id="dt-range">
                               <div class="col-12">
 
                                 <div class="form-group row">
                                   
-                                  <div class="col-12  ">
+                                  <div class="col-md-6  ">
                                     <div class="input-group">
                                       <input type="text" class="form-control" placeholder="Select date" id="datepicker-1" />
                                       <div class="input-group-append">
