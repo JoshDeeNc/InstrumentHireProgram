@@ -39,6 +39,7 @@ function Sidebar() {
         <ul id="js-nav-menu" class="nav-menu js-nav-built">
         <li>
                 <Link to="/" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
+                <i class="fal fa-home"></i>
                   <span class="nav-link-text" data-i18n="nav.statistics_flot">Home</span>
                 
                 </Link>
@@ -82,7 +83,13 @@ function Sidebar() {
 
             </ul>
           </li>
-
+          <li>
+                <Link to="/" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
+                <i class="fal fa-door-open"></i>
+                  <span class="nav-link-text" data-i18n="nav.statistics_flot">Logout</span>
+                
+                </Link>
+              </li>
 
         </ul>
         <div class="filter-message js-filter-message bg-success-600"></div>
