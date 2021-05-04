@@ -18,7 +18,6 @@ import Sidebar from './layout/Sidebar'
 import Overlay from './layout/Overlay'
 import Breadcrumb from './layout/Breadcrumb'
 import Footer from './layout/Footer'
-import Test from './Test'
 
 import config from './config';
 
@@ -445,7 +444,7 @@ function App() {
 
   return (
     <div className="App">
-      {idToken.length == 0 ? (
+      {idToken.length > 0 ? (
         <BrowserRouter>
         <div class="mt-0">
           <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
@@ -468,7 +467,6 @@ function App() {
                           <Route path="/studentrecord"><StudentRecord deleteStudent={deleteStudent} updateStudent={updateStudent} studentList={studentList} /></Route>
                           <Route path="/studentlist"><StudentList studentList={studentList} /></Route>
                           <Route path="/newstudent"><NewStudent addStudent={addStudent} /></Route>
-                          <Route path="/test"><Test/></Route>
                           <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
                         </Switch>    
                     </Col>

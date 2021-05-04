@@ -82,7 +82,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr">
                             <h2>
-                            Instrument Details
+                                Hire Details
                                         </h2>
                             <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
                                 <span class="fal fa-pencil mr-1"></span>
