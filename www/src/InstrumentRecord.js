@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import instImg from './img/inst.jpeg';
+
 
 
 function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory }) {
@@ -78,7 +78,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
     return (
         <div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-10">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr">
                             <h2>
@@ -99,7 +99,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
 
                                 <div class="row" >
 
-                                    <div class="col-md-8  ">
+                                    <div class="col-md-12  ">
                                         <form>
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" ">Code </label>
@@ -190,10 +190,6 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             </div>
                                         </form>
 
-                                    </div>
-
-                                    <div class="col-md-4   ">
-                                    <img src={instImg} alt=" " class="img-fluid" />
                                     </div>
 
                                 </div>

@@ -72,7 +72,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
             <li class="nav-item">
               <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Overdue Hires<span class="badge badge-icon bg-red pos-top ml-1 mt-2">{toDos.filter(item => new Date(item.due) < new Date()).length}</span> </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item nov">
               <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-3" role="tab" aria-selected="false"><i class="fal fa-chart-bar mr-1"></i> Insights </a>
             </li>
 
