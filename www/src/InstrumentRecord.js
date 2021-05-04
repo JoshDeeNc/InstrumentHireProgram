@@ -93,10 +93,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                             <h2>
                                 Hire Details
                                         </h2>
-                            <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
-                                <span class="fal fa-pencil mr-1"></span>
-                                                    Edit
-                                                </Button>
+                   
 
                             <Link to={`/newhire/${instrumentRecord.id}`}><Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
                                 <span class="fal fa-pencil mr-1"></span>
@@ -197,8 +194,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 <Button data-item-id={instrumentRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2  "  >Update</Button>
                                                 <Link to="/instrumentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1 ">Cancel</Button></Link>
                                                 </span>
-                                                <Button data-item-id={instrumentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
-                                            </div>
+                                                   </div>
                                         </form>
 
                                     </div>
@@ -210,13 +206,13 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                             <div class="panel-content py-2 rounded-bottom border-faded border-left-0 border-right-0 border-bottom-0   d-flex">
                                             
                                             
-                                            <span class="badge badge-pill badge-success fw-400">
+                                            
                                             <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
-                                <span class="fal fa-pencil mr-1"></span>
+                                <span class="fal fa-pencil mr-1"> 
                                                     Edit
                                                 </Button>
                                             </span>
-                                            <span class="badge badge-pill rounded-circle badge-secondary fw-400 ml-auto mr-2">
+                                            <span class="ml-auto  ">
                                             <Button data-item-id={instrumentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
                                            
                                             </span>
