@@ -275,7 +275,7 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
 }
 
 .nov {
-display: none;
+visibility:hidden;
 }
 
 .btn-div {

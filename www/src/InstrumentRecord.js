@@ -48,7 +48,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
             // Remove the class 'active' if it exists
-            a[i].classList.remove('nox');
+            a[i].classList.remove('nox','nov');
         }
         // add 'active' classs to the element that was clicked
         //elem.classList.add('active');
@@ -184,8 +184,8 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 </div>
                                             </div>
                                             <div class="btn-div">
-                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Update</Button>
-                                                <Link to="/instrumentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
+                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 nov " className="ml-1 ">Update</Button>
+                                                <Link to="/instrumentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed nov" className="ml-1 ">Cancel</Button></Link>
                                                 <Button data-item-id={instrumentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
                                             </div>
                                         </form>
