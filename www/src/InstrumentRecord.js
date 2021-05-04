@@ -49,6 +49,15 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
         for (var i = 0; i < a.length; i++) {
             // Remove the class 'active' if it exists
             a[i].classList.remove('nox','nov');
+            
+        }
+
+        var b = document.getElementsByTagName('span');
+        // loop through all 'a' elements
+        for (var i = 0; i < b.length; i++) {
+            // Remove the class 'active' if it exists
+            b[i].classList.remove('nov');
+            
         }
         // add 'active' classs to the element that was clicked
         //elem.classList.add('active');
