@@ -51,6 +51,11 @@ function Sidebar( {clearCredentials, toDos, instInventory, studentList} ) {
               <span class="nav-link-text" data-i18n="nav.statistics">Settings</span>
               <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
             <ul>
+            <li>
+                <Link to="/newHire" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
+                  <span class="nav-link-text" data-i18n="nav.statistics_chartist.js"> New Hire</span>
+                </Link>
+              </li>
               <li>
                 <Link to="/studentlist" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_flot">Students List</span>
