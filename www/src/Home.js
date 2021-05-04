@@ -91,9 +91,22 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                           </div> </div>
                           <div class="col-md-7 mt-2   ">
                             <div class="row dt-range " id="dt-range">
-                              <div class="col-md-3"><input type="date" class="form-control" /> </div>
-                              <div class="col-md-3"><input type="date" class="form-control" />  </div>
-                              <div class="col-md-2"> <Button color="primary" className="ml-1 float-right ">Go</Button></div>
+                              <div class="col-12">
+
+                                <div class="form-group row">
+                                  
+                                  <div class="col-12  ">
+                                    <div class="input-group">
+                                      <input type="text" class="form-control" placeholder="Select date" id="datepicker-1" />
+                                      <div class="input-group-append">
+                                        <span class="input-group-text fs-xl">
+                                          <i class="fal fa-calendar"></i>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
                           </div>
