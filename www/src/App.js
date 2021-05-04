@@ -445,7 +445,7 @@ function App() {
 
   return (
     <div className="App">
-      {idToken.length == 0 ? (
+      {idToken.length > 0 ? (
         <BrowserRouter>
         <div class="mt-0">
           <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
@@ -453,7 +453,7 @@ function App() {
           </Alert>
           <div class="page-wrapper">
             <div class="page-inner">
-              <Sidebar clearCredentials={clearCredentials}/>
+              <Sidebar clearCredentials={clearCredentials} toDos={toDos} instInventory={instInventory} studentList={studentList}/>
               <div class="page-content-wrapper">
                 <Header />
                 <main id="js-page-content" role="main" class="page-content">

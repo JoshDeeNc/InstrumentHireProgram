@@ -1,7 +1,7 @@
 import React from 'react';
 import StudentList from '../StudentList';
 import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
-function Sidebar( {clearCredentials} ) {
+function Sidebar( {clearCredentials, toDos, instInventory, studentList} ) {
   return (
     <aside class="page-sidebar">
       <div class="page-logo">
@@ -41,7 +41,7 @@ function Sidebar( {clearCredentials} ) {
                 <Link to="/" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
                 <i class="fal fa-home"></i>
                   <span class="nav-link-text" data-i18n="nav.statistics_flot">Home</span>
-                
+                  <span class="dl-ref label bg-info-900 ml-2">{toDos.length}</span>
                 </Link>
               </li>
 
@@ -54,7 +54,7 @@ function Sidebar( {clearCredentials} ) {
               <li>
                 <Link to="/studentlist" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_flot">Students List</span>
-                  <span class="dl-ref label bg-info-900 ml-2">214</span>
+                  <span class="dl-ref label bg-info-900 ml-2">{studentList.length}</span>
                 </Link>
               </li>
               <li>
@@ -65,7 +65,7 @@ function Sidebar( {clearCredentials} ) {
               <li class=" ">
                 <Link to="/instrumentlist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Instruments List</span>
-                  <span class="dl-ref label bg-info-900 ml-2">205</span>
+                  <span class="dl-ref label bg-info-900 ml-2">{instInventory.length}</span>
                 </Link>
               </li>
 
