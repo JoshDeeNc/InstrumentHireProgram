@@ -85,7 +85,8 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                         <div class="panel-hdr-dsp">
                         <i class="fal fn-icon fa-arrow-circle-left mr-2"></i>
                             <h2>Hire Details </h2>
-                            <div></div>
+                                <Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
+                                    Return </Button>
 
                         </div>
 
