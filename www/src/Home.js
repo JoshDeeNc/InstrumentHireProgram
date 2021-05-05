@@ -32,7 +32,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
         row.owner.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         new Date(row.due).toLocaleDateString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
     }
-    if (filtDates.length > 0) {
+    if (filtDates.length > 0 && dtRange) {
       var dates = document.getElementById("datepicker-1").value;
       var startEnd = dates.split(" - ")
       console.log(startEnd)
