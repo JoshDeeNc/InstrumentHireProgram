@@ -18,6 +18,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
   const overDues = toDos.filter(item => new Date(item.due) < new Date())
 
   const [qry, setQry] = useState("")
+  const [filtDates, setFiltDates] = useState("")
 
   function search(records) {
     if (qry != "") {
@@ -30,6 +31,12 @@ function Home({ toDos, deleteToDo, completeToDo }) {
         row.rate.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         row.owner.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         new Date(row.due).toLocaleDateString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+    }
+    if (filtDates.length > 0) {
+      var dates = document.getElementById("datepicker-1").value;
+      var startEnd = dates.split(" - ")
+      console.log(startEnd)
+      return toDos.filter(item => new Date(item.creation_date) >= new Date(startEnd[0]) && new Date(item.creation_date) <= new Date(startEnd[1]))
     }
     return records
   }
@@ -47,14 +54,6 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     else {
       a.classList.add('dt-range');
     }
-  }
-
-  const filterDates = () => {
-    var dates = document.getElementById("datepicker-1").value;
-    var startEnd = dates.split(" - ")
-    console.log(startEnd)
-    //console.log(toDos.filter(item => new Date(item.creation_date) >= new Date(startEnd[0]) && new Date(item.creation_date) <= new Date(startEnd[1])))
-    console.log(search(toDos.filter(item => new Date(item.creation_date) >= new Date(startEnd[0]) && new Date(item.creation_date) <= new Date(startEnd[1]))))
   }
 
   return (
@@ -113,7 +112,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                     </div>
                                   </div>
 
-                                  <div class="col-md-1  "> <button onClick={filterDates} class="btn btn-sm btn-primary waves-effect waves-themed mr-2">Go</button>
+                                  <div class="col-md-1  "> <button onClick={(e) => setFiltDates(e.target.value)} class="btn btn-sm btn-primary waves-effect waves-themed mr-2">Go</button>
                                         </div>
                                 </div>
                               </div>
