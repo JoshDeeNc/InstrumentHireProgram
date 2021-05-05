@@ -40,11 +40,39 @@ button a {
 
 /* --- Custom Styling  ---------------- */
 
-.panel-hdr h2 {
+.panel-hdr-dsp { 
+
+  -webkit-box-pack: justify !important;
+  -ms-flex-pack: justify !important;
+  justify-content: space-between !important;
+padding: 5px 15px;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; 
+  background: #fff;
+  min-height: 3rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 4px 4px 0 0;
+  -webkit-transition: background-color 0.4s ease-out;
+  transition: background-color 0.4s ease-out;
+  text-transform: uppercase;
+
+}
+
+.panel-hdr-dsp h2 {
   font-size: 0.9rem !important;
   text-transform: uppercase;
   font-weight: 300 !important;
+  padding-top: 5px;
 }
+
+.fn-icon {
+  font-size: 1.5em;
+  color: #aaa;
+}
+
+
 
 .nav-link.h2 {
   font-size: 1rem !important;

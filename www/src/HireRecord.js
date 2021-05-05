@@ -82,8 +82,10 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
             <div class="row">
                 <div class="col-md-10">
                     <div id="panel-1" class="panel">
-                        <div class="panel-hdr">
+                        <div class="panel-hdr-dsp">
+                        <i class="fal fn-icon fa-arrow-circle-left mr-2"></i>
                             <h2>Hire Details </h2>
+                            <div></div>
 
                         </div>
 
