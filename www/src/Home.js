@@ -48,6 +48,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
 
   useEffect(() => {
     search(toDos)
+    console.log(filtDates.length)
   }, [filtDates]);
 
   const setDateRange = (dtRange) => {
