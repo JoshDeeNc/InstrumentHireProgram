@@ -167,7 +167,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                             <div class=" hr"></div>
                                         </div>
                                     </div>
-                                    <div class="btn-div text-center">
+                                    <div class="btn-div text-center pt-2">
                                         <Button data-item-id={hireRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2  " >Update</Button>
                                         <Link to="/"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1 " >Cancel</Button></Link>
                                     </div>
