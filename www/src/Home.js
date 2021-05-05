@@ -46,6 +46,10 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     setDateRange(dtRange)
   }, [dtRange]);
 
+  useEffect(() => {
+    search(toDos)
+  }, [filtDates]);
+
   const setDateRange = (dtRange) => {
     var a = document.getElementById('dt-range');
     if (dtRange == true) {
