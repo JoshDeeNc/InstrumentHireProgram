@@ -117,7 +117,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                     </div>
                                   </div>
 
-                                  <div class="col-md-1  "> <button onClick={console.log(e)} class="btn btn-sm btn-primary waves-effect waves-themed mr-2">Go</button>
+                                  <div class="col-md-1  "> <button onClick={(e) => console.log(e)} class="btn btn-sm btn-primary waves-effect waves-themed mr-2">Go</button>
                                         </div>
                                 </div>
                               </div>
