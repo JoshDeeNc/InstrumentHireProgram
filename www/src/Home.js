@@ -46,11 +46,6 @@ function Home({ toDos, deleteToDo, completeToDo }) {
     setDateRange(dtRange)
   }, [dtRange]);
 
-  useEffect(() => {
-    search(toDos)
-    console.log(filtDates.length)
-  }, [filtDates]);
-
   const setDateRange = (dtRange) => {
     var a = document.getElementById('dt-range');
     if (dtRange == true) {
@@ -60,6 +55,13 @@ function Home({ toDos, deleteToDo, completeToDo }) {
       a.classList.add('dt-range');
     }
   }
+
+  const filterDates = () => {
+    setFiltDates(document.getElementById("datepicker-1").value)
+    console.log(filtDates)
+    search(toDos)
+  }
+
 
   return (
     <div className="ToDo">
@@ -117,7 +119,7 @@ function Home({ toDos, deleteToDo, completeToDo }) {
                                     </div>
                                   </div>
 
-                                  <div class="col-md-1  "> <button onClick={(e) => console.log(e)} class="btn btn-sm btn-primary waves-effect waves-themed mr-2">Go</button>
+                                  <div class="col-md-1  "> <button onClick={filterDates} class="btn btn-sm btn-primary waves-effect waves-themed mr-2">Go</button>
                                         </div>
                                 </div>
                               </div>
