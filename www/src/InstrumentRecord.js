@@ -53,14 +53,12 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
         }
 
         var b = document.getElementsByTagName('div');
-        // loop through all 'a' elements
+        // loop through all 'b' elements
         for (var i = 0; i < b.length; i++) {
             // Remove the class 'active' if it exists
             b[i].classList.remove('btn-div');
-
         }
-        // add 'active' classs to the element that was clicked
-        //elem.classList.add('active');
+    
     }
 
     const deletion = async (itemId, event) => {
@@ -97,7 +95,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
 
                             <Link to={`/newhire/${instrumentRecord.id}`}>
                                 <Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
-                                <span class="fal fa-pencil mr-1">  Book Now </span></Button></Link>
+                                  Book Now  </Button></Link>
                         </div>
                         <div class="panel-container show">
                             <div class="panel-content  ">
@@ -184,7 +182,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                     <input type="text" class="form-control nox" name=" " id="editInstOwner"
                                                         value={owner} onChange={onChangeOwner} placeholder="Owner " />
                                                 </div>
-                                                <div class="col-sm-12 mb-5 ">
+                                                <div class="col-sm-12 ">
                                                     <div class=" hr"></div>
                                                 </div>
                                             </div>
@@ -201,11 +199,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                             </div>
 
                             <div class="panel-content py-2 rounded-bottom border-faded border-left-0 border-right-0 border-bottom-0   d-flex">
-
-
-                                <span class="fal fa-pencil mr-1">
-                                    <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">Edit</Button>
-                                </span>
+                                    <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">  Edit</Button>
                                 <span class="ml-auto  ">
                                     <Button data-item-id={instrumentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
                                 </span>
