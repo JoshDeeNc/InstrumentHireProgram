@@ -67,13 +67,8 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                 <div class="col-md-10">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr">
-                            <h2>
-                                Student Details
-                                        </h2>
-                            <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
-                                <span class="fal fa-pencil mr-2"></span>
-                                                    Edit
-                                                </Button>
+                            <h2>Student Details</h2>
+                         
                         </div>
                         <div class="panel-container show">
                             <div class="panel-content">
