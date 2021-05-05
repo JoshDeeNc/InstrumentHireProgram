@@ -38,7 +38,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
     }
 
 
-    const editToggle = (event) => { 
+    const editToggle = (event) => {
         var a = document.getElementsByTagName('input');
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
@@ -54,19 +54,19 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
             b[i].classList.remove('btn-div');
 
         }
-        
+
     }
 
     const deletion = async (itemId, event) => {
         const result = await deleteToDo(itemId);
-        if(result.status === 200 ) {
+        if (result.status === 200) {
             history.push('/');
         }
     }
 
     const update = async (itemId, event) => {
         const result = await updateToDo(itemId);
-        if(result.status === 200 ) {
+        if (result.status === 200) {
             history.push('/');
         }
     }
@@ -84,7 +84,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr">
                             <h2>Hire Details </h2>
-                            
+
                         </div>
 
                         <div class="panel-container show">
@@ -169,20 +169,20 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                                     </div>
                                     <div class="btn-div">
                                         <Button data-item-id={hireRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2  " >Update</Button>
-                                        <Link to="/"><button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1 " >Cancel</button></Link>
-                                         </div>
+                                        <Link to="/"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1 " >Cancel</Button></Link>
+                                    </div>
                                 </form>
                             </div>
                             <div class="panel-content py-2 rounded-bottom border-faded border-left-0 border-right-0 border-bottom-0   d-flex">
-                            <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
-                                <span class="fal fa-pencil mr-1"></span>  Edit  </Button>
-                    
-                 <span class="ml-auto  ">
-                 <Button data-item-id={hireRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
+                                <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
+                                    <span class="fal fa-pencil mr-1"></span>  Edit  </Button>
 
-                       </span>
-             </div>
-                        
+                                <span class="ml-auto  ">
+                                    <Button data-item-id={hireRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
+
+                                </span>
+                            </div>
+
                         </div>
 
                     </div>

@@ -50,7 +50,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
 
     const update = async (itemId, event) => {
         const result = await updateStudent(itemId);
-        if(result.status === 200 ) {
+        if (result.status === 200) {
             history.push('/studentlist');
         }
     }
@@ -68,7 +68,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr">
                             <h2>Student Details</h2>
-                         
+
                         </div>
                         <div class="panel-container show">
                             <div class="panel-content">
@@ -119,23 +119,23 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                     </div>
                                     <div class="btn-div">
                                         <Button data-item-id={studentRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2  " >Update</Button>
-                                        <Link to="/studentlist"><button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1 " >Cancel</button></Link>
-                                             </div>
+                                        <Link to="/studentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1 " >Cancel</Button></Link>
+                                    </div>
                                 </form>
                             </div>
-                       
-                       
+
+
                             <div class="panel-content py-2 rounded-bottom border-faded border-left-0 border-right-0 border-bottom-0   d-flex">
 
-                   <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">Edit</Button>
-              
-                 <span class="ml-auto  ">
-                    
-                     <Button data-item-id={studentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
-                                 
-                 </span>
-             </div>
-                       
+                                <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">Edit</Button>
+
+                                <span class="ml-auto  ">
+
+                                    <Button data-item-id={studentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
+
+                                </span>
+                            </div>
+
                         </div>
                     </div>
                 </div>
