@@ -29,8 +29,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
     useEffect(() => {
         console.log(code); // add whatever functions use new `college` value here.
-        const instrRate = instInventory.find(item => item.type === "Instrument" && item.object === instr && item.brand === brand && item.code === code)
-        setRate(instrRate.rate)
+        setRate(instInventory.filter(item => item.type === "Instrument" && item.object === instr && item.brand === brand && item.code === code).map(item => item.rate).filter(unique))
     }, [code])
 
     const studentConcat = studentList.map(item => item.firstName + " " + item.lastName)
