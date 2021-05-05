@@ -187,7 +187,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                     <div class=" hr"></div>
                                                 </div>
                                             </div>
-                                            <div class="btn-div">
+                                            <div class="btn-div text-center pt-2">
                                                 <Button data-item-id={instrumentRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2  "  >Update</Button>
                                                 <Link to="/instrumentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1 ">Cancel</Button></Link>
                                             </div>
