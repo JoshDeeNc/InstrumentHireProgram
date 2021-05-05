@@ -118,8 +118,8 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                         </div>
                                     </div>
                                     <div class="btn-div">
-                                        <Button data-item-id={studentRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 ">Update</Button>
-                                        <Link to="/studentlist"><button class="btn btn-lg btn-secondary waves-effect waves-themed ">Cancel</button></Link>
+                                        <Button data-item-id={studentRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2  " >Update</Button>
+                                        <Link to="/studentlist"><button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1 " >Cancel</button></Link>
                                              </div>
                                 </form>
                             </div>

@@ -96,7 +96,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
 
                             <Link to={`/newhire/${instrumentRecord.id}`}>
                                 <Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
-                                <span class="fal fa-pencil mr-1">  Book Now </span></Button></Link>
+                                  Book Now  </Button></Link>
                         </div>
                         <div class="panel-container show">
                             <div class="panel-content  ">
@@ -200,9 +200,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                             </div>
 
                             <div class="panel-content py-2 rounded-bottom border-faded border-left-0 border-right-0 border-bottom-0   d-flex">
-                     
-                                    <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">Edit</Button>
-                             
+                                    <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">Edit</Button>            
                                 <span class="ml-auto  ">
                                     <Button data-item-id={instrumentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
                                 </span>
