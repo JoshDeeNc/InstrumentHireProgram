@@ -12,10 +12,10 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
     const availInstruments = instInventory.filter(item => item.type === "Instrument").map(item => item.object).filter(unique)
     const [availBrands, setAvailBrands] = useState([])
     const [availCodes, setAvailCodes] = useState([])
-    const [availRates, setAvailRates] = useState([])
     const [instr, setInstrument] = useState('')
     const [brand, setBrand] = useState('')
     const [code, setCode] = useState('')
+    const [rate, setRate] = useState('')
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
@@ -29,7 +29,8 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
     useEffect(() => {
         console.log(code); // add whatever functions use new `college` value here.
-        setAvailRates(instInventory.filter(item => item.type === "Instrument" && item.object === instr && item.brand === brand && item.code === code).map(item => item.rate).filter(unique))
+        const instrRate = instInventory.find(item => item.type === "Instrument" && item.object === instr && item.brand === brand && item.code === code)
+        setRate(instrRate.rate)
     }, [code])
 
     const studentConcat = studentList.map(item => item.firstName + " " + item.lastName)
@@ -127,10 +128,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Rate</label>
                                         <div class="col-sm-9">
-                                        <select class="form-control" id="newToDoRate" required>
-                                                {availRates.map((item, index) => (
-                                                    <option>{item}</option>))}
-                                            </select>
+                                            <Input type="text" name="rate" id="newToDoRate" placeholder="rate" value={rate} required />
                                             <div class="invalid-tooltip">  Please enter rate </div>
                                         </div>
                                         <div class="col-sm-12 ">
