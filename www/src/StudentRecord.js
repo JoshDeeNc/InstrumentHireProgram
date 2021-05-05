@@ -32,8 +32,13 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
             // Remove the class 'active' if it exists
             a[i].classList.remove('nox');
         }
-        // add 'active' classs to the element that was clicked
-        //elem.classList.add('active');
+        var b = document.getElementsByTagName('div');
+        // loop through all 'a' elements
+        for (var i = 0; i < b.length; i++) {
+            // Remove the class 'active' if it exists
+            b[i].classList.remove('btn-div');
+
+        }
     }
 
     const deletion = async (itemId, event) => {
@@ -120,10 +125,22 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                     <div class="btn-div">
                                         <Button data-item-id={studentRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 ">Update</Button>
                                         <Link to="/studentlist"><button class="btn btn-lg btn-secondary waves-effect waves-themed ">Cancel</button></Link>
-                                        <Button data-item-id={studentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
-                                    </div>
+                                             </div>
                                 </form>
                             </div>
+                       
+                       
+                            <div class="panel-content py-2 rounded-bottom border-faded border-left-0 border-right-0 border-bottom-0   d-flex">
+
+                   <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">Edit</Button>
+              
+                 <span class="ml-auto  ">
+                    
+                     <Button data-item-id={studentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
+                                 
+                 </span>
+             </div>
+                       
                         </div>
                     </div>
                 </div>
