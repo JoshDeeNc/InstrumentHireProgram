@@ -279,6 +279,11 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   visibility:hidden;
 }
 
+.btn-divS {
+  padding: 5px;
+    text-align: center;
+}
+
 .page-header .btn {
   min-width: auto !important;
 }

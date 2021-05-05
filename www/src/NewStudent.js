@@ -71,7 +71,7 @@ function NewStudent({ addStudent }) {
                                             <div class=" hr"></div>
                                         </div>
                                     </div>
-                                    <div class="btn-div">
+                                    <div class="btn-divS">
                                         <Button onClick={add} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
                                         <Link to="/studentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
                                     </div>
