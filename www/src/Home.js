@@ -40,6 +40,14 @@ function Home({ toDos, deleteToDo }) {
       console.log(filtDates)
       return records.filter(item => new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1]))
     }
+    if (filtOvDates.length > 0 && dtRange2) {
+      console.log(filtOvDates)
+      return records.filter(item => new Date(item.creation_date) >= new Date(filtOvDates[0]) && new Date(item.creation_date) <= new Date(filtOvDates[1]))
+    }
+    if (filtRetDates.length > 0 && dtRange3) {
+      console.log(filtRetDates)
+      return records.filter(item => new Date(item.creation_date) >= new Date(filtRetDates[0]) && new Date(item.creation_date) <= new Date(filtRetDates[1]))
+    }
     return records
   }
 
@@ -116,12 +124,12 @@ function Home({ toDos, deleteToDo }) {
 
   const filterDates2 = () => {
     setFiltOvDates([document.getElementById("startDate2").value, document.getElementById("endDate2").value])
-    searchOvDates(overDues)
+    search(overDues)
   }
 
   const filterDates3 = () => {
     setFiltRetDates([document.getElementById("startDate3").value, document.getElementById("endDate3").value])
-    searchRetDates(returnedHires)
+    search(returnedHires)
   }
 
 
