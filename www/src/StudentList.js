@@ -40,7 +40,6 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
             <div class="col-xl-12">
               <div id="panel-1" class="panel">
                 <div class="panel-hdr-dsp    mb-3">
-                <i class="fal fn-icon fa-arrow-circle-left mr-2"></i>
                   <h2>Student List</h2>
                     <Link to="/newstudent"><Button color="primary" className="ml-1">New Student</Button></Link>
 
