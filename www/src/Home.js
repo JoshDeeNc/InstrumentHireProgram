@@ -385,28 +385,28 @@ function Home({ toDos, deleteToDo }) {
                           <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                             <thead>
                               <tr>
-                                <th>Due Date </th>
+                                <th>Date Hired</th>
                                 <th>Name</th>
                                 <th>Code</th>
                                 <th>Instrument</th>
                                 <th>Brand</th>
                                 <th>Rate</th>
-                                <th>Date Hired</th>
                                 <th>Owner</th>
+                                <th>Due Date </th>
                                 <th class="dtl-cel">Details</th>
                               </tr>
                             </thead>
                             <tbody>
                               {search(returnedHires).map((item, index) => (
                                 <tr role="row" key={item.id}>
-                                  <td>{new Date(item.due).toLocaleDateString()}</td>
+                                  <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                   <td>{item.name}</td>
                                   <td>{item.code}</td>
                                   <td>{item.instrument}</td>
                                   <td>{item.brand}</td>
                                   <td>{item.rate}</td>
-                                  <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                   <td>{item.owner}</td>
+                                  <td>{new Date(item.due).toLocaleDateString()}</td>
                                   <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                                 </tr>
                               ))}
