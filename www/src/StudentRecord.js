@@ -54,7 +54,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                 <div class="col-md-10">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr-dsp">
-                        <i class="fal fn-icon fa-arrow-circle-left mr-2"></i>
+                        <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
                             <h2>Student Details</h2>
                             <div></div>
 

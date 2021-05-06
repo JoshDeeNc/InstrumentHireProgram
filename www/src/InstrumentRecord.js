@@ -89,13 +89,9 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                 <div class="col-md-10">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr-dsp">
-                        <i class="fal fn-icon fa-arrow-circle-left mr-2"></i>
-                            <h2>
-                                Hire Details
-                                        </h2>
-                                        <div></div>
-
-
+                            <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
+                            <h2> Instrument Details </h2>
+                            <div></div>
                             <Link to={`/newhire/${instrumentRecord.id}`}>
                                 <Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
                                     Book Now  </Button></Link>

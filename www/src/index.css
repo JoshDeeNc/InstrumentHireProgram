@@ -435,3 +435,5 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
 .input-group-prepend span, .input-group-append span {
   font-size: 14px !important;
 }
+
+.hand {cursor: pointer;}

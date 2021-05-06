@@ -62,14 +62,13 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                 <div class="col-md-10">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr-dsp">
-                            <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left mr-2"></i></span>
+                            <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
                             <h2>New Hire</h2>
                             <div></div>
                         </div>
 
                         <div class="panel-container show">
                             <div class="panel-content">
-
 
                                 <form class="needs-validation" novalidate>
                                     <div class=" form-group row">
