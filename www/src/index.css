@@ -433,6 +433,10 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   width: 30px !important;
 }
 
+.w-80 {
+  width: 80%;
+  max-width: 1100px;
+}
 
 
 .chart-div {
