@@ -16,6 +16,8 @@ function Home({ toDos, deleteToDo }) {
   };
 
   const overDues = toDos.filter(item => new Date(item.due) < new Date())
+  const curHires = toDos.filter(item => item.returned === false)
+  const returnedHires = toDos.filter(item => item.returned === true)
 
   const [qry, setQry] = useState("")
   const [filtDates, setFiltDates] = useState("")
@@ -78,8 +80,11 @@ function Home({ toDos, deleteToDo }) {
             <li class="nav-item">
               <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Overdue Hires<span class="badge badge-icon bg-red pos-top ml-1 mt-2">{toDos.filter(item => new Date(item.due) < new Date()).length}</span> </a>
             </li>
-            <li class="nav-item nov">
-              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-3" role="tab" aria-selected="false"><i class="fal fa-chart-bar mr-1"></i> Insights </a>
+            <li class="nav-item">
+              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-3" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Returned Hires<span class="badge badge-icon bg-red pos-top ml-1 mt-2">{toDos.filter(item => new Date(item.due) < new Date()).length}</span> </a>
+            </li>
+            <li class="nav-item no-disp">
+              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-4" role="tab" aria-selected="false"><i class="fal fa-chart-bar mr-1"></i> Insights </a>
             </li>
 
           </ul>
@@ -90,7 +95,7 @@ function Home({ toDos, deleteToDo }) {
                 <div class="col-xl-12">
                   <div id="panel-1" class="panel mb-0">
                     <div class="panel-hdr">
-                      <h2> Hired Instrument List</h2>
+                      <h2> Instrument Hires</h2>
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
@@ -147,7 +152,7 @@ function Home({ toDos, deleteToDo }) {
                               </tr>
                             </thead>
                             <tbody>
-                              {search(toDos).map((item, index) => (
+                              {search(curHires).map((item, index) => (
                                 <tr role="row" key={item.id}>
                                   <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                   <td> {item.name}</td>
@@ -177,7 +182,7 @@ function Home({ toDos, deleteToDo }) {
                 <div class="col-xl-12">
                   <div id="panel-1" class="panel mb-0">
                     <div class="panel-hdr">
-                      <h2>Overdue Hire Instrument List</h2>
+                      <h2>Overdue Hires</h2>
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
@@ -227,8 +232,61 @@ function Home({ toDos, deleteToDo }) {
                 </div>
               </div>
             </div>
-
             <div class="tab-pane fade" id="tab_borders_icons-3" role="tabpanel">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div id="panel-1" class="panel mb-0">
+                    <div class="panel-hdr">
+                      <h2>Returned Hires</h2>
+                    </div>
+                    <div class="panel-container show">
+                      <div class="panel-content">
+                        <div class="row mb-2 mt-n3 ">
+                          <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                          </div>
+                        </div>
+                        <div class="table-responsive">
+                          <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
+                            <thead>
+                              <tr>
+                                <th>Due Date </th>
+                                <th>Name</th>
+                                <th>Code</th>
+                                <th>Instrument</th>
+                                <th>Brand</th>
+                                <th>Rate</th>
+                                <th>Date Hired</th>
+                                <th>Owner</th>
+                                <th class="dtl-cel">Details</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {search(returnedHires).map((item, index) => (
+                                <tr role="row" key={item.id}>
+                                  <td>{new Date(item.due).toLocaleDateString()}</td>
+                                  <td>{item.name}</td>
+                                  <td>{item.code}</td>
+                                  <td>{item.instrument}</td>
+                                  <td>{item.brand}</td>
+                                  <td>{item.rate}</td>
+                                  <td>{new Date(item.creation_date).toLocaleDateString()}</td>
+                                  <td>{item.owner}</td>
+                                  <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
+                                </tr>
+                              ))}
+
+                            </tbody>
+
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="tab_borders_icons-4" role="tabpanel">
               <div class="row">
                 <div class="col-xl-12">
                   <div id="panel-1" class="panel mb-0">

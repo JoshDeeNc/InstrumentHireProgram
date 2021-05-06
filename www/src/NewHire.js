@@ -1,7 +1,42 @@
 import React, { useState, useEffect } from 'react';
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 function NewHire({ toDos, studentList, instInventory, addToDo }) {
+
+    const items = [
+        {
+            name: 'Brttany Smith'
+        },
+        {
+            name: 'Aron Joseph'
+        },
+        {
+            name: 'Hannah McDoland'
+        },
+        {
+            name: 'Jason Chafez'
+        },
+        {
+            name: 'Ronaldo McGommery'
+        }
+    ]
+    const handleOnSearch = (string, results) => {
+        // onSearch will have as the first callback parameter
+        // the string searched and for the second the results.
+        console.log(string, results)
+    }
+    const handleOnHover = (result) => {
+        // the item hovered
+        console.log(result)
+    }
+    const handleOnSelect = (item) => {
+        // the item selected
+        console.log(item)
+    }
+    const handleOnFocus = () => {
+        console.log('Focused')
+    }
 
     const history = useHistory();
 
@@ -37,7 +72,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
     const add = async (event) => {
         const result = await addToDo();
-        if(result.status === 200 ) {
+        if (result.status === 200) {
             history.push('/');
         }
     }
@@ -58,7 +93,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                 <div class="col-md-10">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr-dsp">
-                        <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left mr-2"></i></span>
+                            <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left mr-2"></i></span>
                             <h2>New Hire</h2>
                             <div></div>
                         </div>
@@ -68,6 +103,26 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
 
                                 <form class="needs-validation" novalidate>
+                                    <div class=" form-group row">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Student Name* </label>
+                                        <div class="col-sm-9">
+                                            <div >
+                                                <ReactSearchAutocomplete
+                                                    items={items}
+                                                    onSearch={handleOnSearch}
+                                                    onHover={handleOnHover}
+                                                    onSelect={handleOnSelect}
+                                                    onFocus={handleOnFocus}
+                                                    autoFocus
+                                                />
+                                            </div>
+                                            <div class="invalid-tooltip"> Please enter the student name </div>
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+                                    </div>
+
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Student Name </label>
                                         <div class="col-sm-9">
@@ -113,7 +168,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
                                         <div class="col-sm-9">
-                                        <select class="form-control" id="newToDoCode" value={code} onChange={(e) => setCode(e.target.value)} required>
+                                            <select class="form-control" id="newToDoCode" value={code} onChange={(e) => setCode(e.target.value)} required>
                                                 {availCodes.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </select>
