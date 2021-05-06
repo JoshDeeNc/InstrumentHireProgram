@@ -60,7 +60,7 @@ function InstrumentList({ instInventory, toDos }) {
                           <th>Brand</th>
                           <th>Rate</th>
                           <th>Owner</th>
-                          <th>Available</th>
+                          <th>Status</th>
                           <th class="dtl-cel">Details</th>
                         </tr>
                       </thead>
