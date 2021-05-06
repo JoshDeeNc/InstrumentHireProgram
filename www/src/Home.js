@@ -36,6 +36,10 @@ function Home({ toDos, deleteToDo }) {
         row.owner.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         new Date(row.due).toLocaleDateString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
     }
+    if (filtDates.length > 0 && dtRange) {
+      console.log(filtDates)
+      return records.filter(item => new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1]))
+    }
     return records
   }
 
@@ -107,7 +111,7 @@ function Home({ toDos, deleteToDo }) {
 
   const filterDates = () => {
     setFiltDates([document.getElementById("startDate").value, document.getElementById("endDate").value])
-    searchDates(curHires)
+    search(curHires)
   }
 
   const filterDates2 = () => {
