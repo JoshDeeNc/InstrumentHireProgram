@@ -42,7 +42,7 @@ function Home({ toDos, deleteToDo }) {
   function searchDates(records) {
     if (filtDates.length > 0 && dtRange) {
       console.log(filtDates)
-      return records.filter(item => new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1]))
+      search(records.filter(item => new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1])))
     }
   }
 
