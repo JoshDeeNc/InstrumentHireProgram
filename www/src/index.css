@@ -8,13 +8,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
- h1{font-size: 2.0rem;
+h1 {
+  font-size: 2.0rem;
   font-weight: 300;
-  letter-spacing: -1px;}
+  letter-spacing: -1px;
+}
 
-  h2{font-size: 1.25rem;
-    font-weight: 300;
-    letter-spacing: -1px;}
+h2 {
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: -1px;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -35,21 +39,20 @@ button a {
 
 .btn-sm {
   min-width: 30px !important;
-  padding: 6px  12px !important;
+  padding: 6px 12px !important;
 }
 
 /* --- Custom Styling  ---------------- */
 
-.panel-hdr-dsp { 
-
+.panel-hdr-dsp {
   -webkit-box-pack: justify !important;
   -ms-flex-pack: justify !important;
   justify-content: space-between !important;
-padding: 5px 15px;
+  padding: 5px 15px;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; 
+  align-items: center;
   background: #fff;
   min-height: 3rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
@@ -57,7 +60,12 @@ padding: 5px 15px;
   -webkit-transition: background-color 0.4s ease-out;
   transition: background-color 0.4s ease-out;
   text-transform: uppercase;
+}
 
+.panel-hdr h2 {
+  font-size: 0.9rem !important;
+  text-transform: uppercase;
+  font-weight: 300 !important;
 }
 
 .panel-hdr-dsp h2 {
@@ -71,8 +79,6 @@ padding: 5px 15px;
   font-size: 1.5em;
   color: #aaa;
 }
-
-
 
 .nav-link.h2 {
   font-size: 1rem !important;
@@ -99,9 +105,7 @@ html body a {
   background-color: #004d40;
 }
 
-
-
-.nav-menu li>ul li a, .nav-menu li a  {
+.nav-menu li>ul li a, .nav-menu li a {
   color: #FFFFFF !important;
 }
 
@@ -136,7 +140,9 @@ html body a {
   color: red;
 }
 
-.txt-green {color: #2baf30;}
+.txt-green {
+  color: #2baf30;
+}
 
 .lt-sp-m1 {
   letter-spacing: -1px;
@@ -276,7 +282,9 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   background-color: #2e7d32;
 }
 
-.daterangepicker table tr td.active.active:hover {background: #4caf50; }
+.daterangepicker table tr td.active.active:hover {
+  background: #4caf50;
+}
 
 .nav-function-minify .nav-footer, .nav-function-fixed .nav-footer {
   background-color: #2e7d32;
@@ -302,14 +310,17 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   padding-left: 0;
 }
 
+.no-display {
+  visibility: hidden;
+}
 
 .btn-div {
-  visibility:hidden;
+  visibility: hidden;
 }
 
 .btn-divS {
   padding: 5px;
-    text-align: center;
+  text-align: center;
 }
 
 .page-header .btn {
@@ -357,7 +368,7 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
 }
 
 .dt-range {
-  display:none;
+  display: none;
 }
 
 .wrapper {
@@ -365,39 +376,95 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   flex-direction: column;
   min-height: 100vh;
 }
- 
-.wrapper > * {
+
+.wrapper>* {
   padding: 20px;
 }
- 
+
 .page-main {
   flex-grow: 1;
 }
 
-.h1{font-size: 1.25rem;
+.h1 {
+  font-size: 1.25rem;
   font-weight: 300;
-  letter-spacing: -1px;}
- 
+  letter-spacing: -1px;
+}
+
 .underln {
- 
-
   border-top: 2px solid #f44336;
-    width: 50px;
-    margin: 10px 0;
- 
+  width: 50px;
+  margin: 10px 0;
+}
 
-  }
+.sprd-txt {
+  letter-spacing: 5px !important;
+  font-size: 14px;
+  text-transform: uppercase;
+}
 
-  .sprd-txt {letter-spacing: 5px !important; font-size: 14px; text-transform: uppercase;}
+.bdr {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
 
-  .bdr {border:1px solid rgba(0, 0, 0, 0.1);}
+.op-7 {
+  opacity: 0.5;
+}
 
-  .op-7 {opacity: 0.5;}
+.bg-green-5 {
+  background: #607d8b14;
+}
 
-  .bg-green-5 {background:#607d8b14 ;} 
-.loginBG {background-image: url(./img/loginBG.jpg); background-size: cover; background-position-y: bottom; background-position-x: center;}
+.loginBG {
+  background-image: url(./img/loginBG.jpg);
+  background-size: cover;
+  background-position-y: bottom;
+  background-position-x: center;
+}
 
- .w-80 {width: 80%; max-width: 1100px;}
- .chart-div {width:50%; height:300px;}
+.w-80 {
+  width: 80%;
+  max-width: 1100px;
+}
 
- .input-group-prepend span,  .input-group-append span  {font-size: 14px !important;}
+.chart-div {
+  width: 50%;
+  height: 300px;
+}
+
+.input-group-prepend span, .input-group-append span {
+  font-size: 14px !important;
+}
+
+.wrapper {
+  min-height: 20px;
+  padding: 0px;
+  border-radius: 4px !important;
+  z-index: 9999999 !important;
+  position: relative !important;
+  box-shadow: none !important;
+  border: 1px solid #ced4da !important;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 14px !important;
+}
+
+.wrapper>* {
+  padding: 0px !important;
+}
+.frjscc {
+  min-height: 36px !important
+}
+
+.frjscc>input {
+  padding: 0 0 0 6px !important;
+  
+}
+
+.eOPJCx {
+  margin: 0 0 0 8px !important;
+}
+
+.ViWoI {
+  margin: -3px 7px 0 0 !important;
+}
+
