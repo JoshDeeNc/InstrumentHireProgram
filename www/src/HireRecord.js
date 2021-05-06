@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-function HireRecord({ deleteToDo, updateToDo, toDos }) {
+function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
     const history = useHistory();
     const id = /[^/]*$/.exec(window.location.href)[0];
     const hireRecord = toDos.find(item => item.id === id);
@@ -66,6 +66,13 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
 
     const update = async (itemId, event) => {
         const result = await updateToDo(itemId);
+        if (result.status === 200) {
+            history.push('/');
+        }
+    }
+
+    const returned = async (itemId, instCode, event) => {
+        const result = await returnToDo(itemId, instCode);
         if (result.status === 200) {
             history.push('/');
         }
@@ -220,7 +227,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                     Are you sure that {studName} has returned {instrument + " " + brand} with code ({code})?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => update(hireRecord.id)}>Yes</Button>
+                    <Button color="primary" onClick={(e) => returned(hireRecord.id, hireRecord.code)}>Yes</Button>
                     <Button color="secondary" onClick={toggleRet}>No</Button>
                 </ModalFooter>
             </Modal>

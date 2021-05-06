@@ -8,7 +8,7 @@ import history from './history';
 
 
 
-function Home({ toDos, deleteToDo, completeToDo }) {
+function Home({ toDos, deleteToDo }) {
 
   const [filter, setFilter] = useState('all');
   const changeFilter = (newFilter) => {
