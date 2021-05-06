@@ -310,8 +310,8 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   padding-left: 0;
 }
 
-.no-display {
-  visibility: hidden;
+.no-disp {
+  display: none;
 }
 
 .btn-div {

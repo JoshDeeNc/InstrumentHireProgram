@@ -190,7 +190,7 @@ function App() {
     return result;
   }
 
-  const deleteToDo = async (itemId) => {
+  const deleteToDo = async (itemId, instCode) => {
     if (itemId === null) return;
 
     const result = await axios({
@@ -204,7 +204,21 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      getAllTodos();
+      let instr = instInventory.find(item => item.code === instCode)
+      instr.available = true;
+      const resultInst = await axios({
+        method: 'PUT',
+        url: `${config.api_base_url}/instrument/${instr.id}`,
+        headers: {
+          Authorization: idToken
+        },
+        data: instr
+      });
+
+      if (resultInst && resultInst.status === 200) {
+        getAllTodos();
+        return resultInst;
+      }
     }
     return result;
   }
@@ -477,7 +491,7 @@ function App() {
 
   return (
     <div className="App">
-      {idToken.length > 0 ? (
+      {idToken.length == 0 ? (
         <BrowserRouter>
         <div class="mt-0">
           <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>

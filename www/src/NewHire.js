@@ -3,23 +3,7 @@ import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
-    const items = ["Hello", "Java", "Xavier"]
-    const handleOnSearch = (string, results) => {
-        // onSearch will have as the first callback parameter
-        // the string searched and for the second the results.
-        console.log(string, results)
-    }
-    const handleOnHover = (result) => {
-        // the item hovered
-        console.log(result)
-    }
-    const handleOnSelect = (item) => {
-        // the item selected
-        console.log(item)
-    }
-    const handleOnFocus = () => {
-        console.log('Focused')
-    }
+    const inventory = instInventory.map(item => item.available === true)
 
     const history = useHistory();
 
@@ -27,27 +11,29 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
         return self.indexOf(value) === index
     }
 
-    const availInstruments = instInventory.filter(item => item.type === "Instrument").map(item => item.object).filter(unique)
+    const availInstruments = inventory.filter(item => item.type === "Instrument").map(item => item.object).filter(unique)
     const [availBrands, setAvailBrands] = useState([])
     const [availCodes, setAvailCodes] = useState([])
     const [instr, setInstrument] = useState('')
     const [brand, setBrand] = useState('')
     const [code, setCode] = useState('')
     const [rate, setRate] = useState('')
+    const [owner, setOwner] = useState('')
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
-        setAvailBrands(instInventory.filter(item => item.type === "Instrument" && item.object === instr).map(item => item.brand).filter(unique))
+        setAvailBrands(inventory.filter(item => item.type === "Instrument" && item.object === instr).map(item => item.brand).filter(unique))
     }, [instr])
 
     useEffect(() => {
         console.log(brand); // add whatever functions use new `college` value here.
-        setAvailCodes(instInventory.filter(item => item.type === "Instrument" && item.object === instr && item.brand === brand).map(item => item.code).filter(unique))
+        setAvailCodes(inventory.filter(item => item.type === "Instrument" && item.object === instr && item.brand === brand).map(item => item.code).filter(unique))
     }, [brand])
 
     useEffect(() => {
         console.log(code); // add whatever functions use new `college` value here.
-        setRate(instInventory.filter(item => item.type === "Instrument" && item.object === instr && item.brand === brand && item.code === code).map(item => item.rate).filter(unique))
+        setRate(inventory.filter(item => item.type === "Instrument" && item.object === instr && item.brand === brand && item.code === code).map(item => item.rate).filter(unique))
+        setOwner(inventory.filter(item => item.type === "Instrument" && item.object === instr && item.brand === brand && item.code === code).map(item => item.owner).filter(unique))
     }, [code])
 
     const studentConcat = studentList.map(item => item.firstName + " " + item.lastName)
@@ -160,10 +146,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Owner</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newToDoOwner">
-                                                <option>OMA</option>
-                                                <option>Polygon</option>
-                                            </select>
+                                        <Input type="text" name="owner" id="newToDoOwner" placeholder="owner" value={owner} required />
                                             <div class="invalid-tooltip">  Please select owner </div>
                                         </div>
                                         <div class="col-sm-12 ">

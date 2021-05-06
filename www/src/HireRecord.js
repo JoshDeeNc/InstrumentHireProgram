@@ -57,8 +57,8 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
 
     }
 
-    const deletion = async (itemId, event) => {
-        const result = await deleteToDo(itemId);
+    const deletion = async (itemId, instCode, event) => {
+        const result = await deleteToDo(itemId, instCode);
         if (result.status === 200) {
             history.push('/');
         }
@@ -207,7 +207,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                     Are you sure you want to delete {studName}'s {instrument + " " + brand} hire record?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => deletion(hireRecord.id)}>Yes</Button>
+                    <Button color="primary" onClick={(e) => deletion(hireRecord.id, hireRecord.code)}>Yes</Button>
                     <Button color="secondary" onClick={toggleDel}>No</Button>
                 </ModalFooter>
             </Modal>
