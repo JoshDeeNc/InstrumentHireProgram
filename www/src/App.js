@@ -491,7 +491,7 @@ function App() {
 
   return (
     <div className="App">
-      {idToken.length == 0 ? (
+      {idToken.length > 0 ? (
         <BrowserRouter>
         <div class="mt-0">
           <Alert color={alertStyle} isOpen={alertVisible} toggle={alertDismissable ? onDismiss : null}>
