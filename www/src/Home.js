@@ -15,7 +15,7 @@ function Home({ toDos, deleteToDo }) {
     setFilter(newFilter);
   };
 
-  const overDues = toDos.filter(item => new Date(item.due) < new Date())
+  const overDues = toDos.filter(item => item.returned === false && new Date(item.due) < new Date())
   const curHires = toDos.filter(item => item.returned === false)
   const returnedHires = toDos.filter(item => item.returned === true)
 
@@ -78,10 +78,10 @@ function Home({ toDos, deleteToDo }) {
               <a class="nav-link h2 active " data-toggle="tab" href="#tab_borders_icons-1" role="tab" aria-selected="true"><i class="fal fa-guitar mr-1"></i>  Instrument Hires</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Overdue Hires<span class="badge badge-icon bg-red pos-top ml-1 mt-2">{toDos.filter(item => new Date(item.due) < new Date()).length}</span> </a>
+              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Overdue Hires<span class="badge badge-icon bg-red pos-top ml-1 mt-2">{overDues.length}</span> </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-3" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Returned Hires<span class="badge badge-icon bg-red pos-top ml-1 mt-2">{toDos.filter(item => new Date(item.due) < new Date()).length}</span> </a>
+              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-3" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Returned Hires<span class="badge badge-icon bg-red pos-top ml-1 mt-2">{returnedHires.length}</span> </a>
             </li>
             <li class="nav-item no-disp">
               <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-4" role="tab" aria-selected="false"><i class="fal fa-chart-bar mr-1"></i> Insights </a>

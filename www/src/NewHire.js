@@ -1,26 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
-    const items = [
-        {
-            name: 'Brttany Smith'
-        },
-        {
-            name: 'Aron Joseph'
-        },
-        {
-            name: 'Hannah McDoland'
-        },
-        {
-            name: 'Jason Chafez'
-        },
-        {
-            name: 'Ronaldo McGommery'
-        }
-    ]
+    const items = ["Hello", "Java", "Xavier"]
     const handleOnSearch = (string, results) => {
         // onSearch will have as the first callback parameter
         // the string searched and for the second the results.
@@ -104,32 +87,13 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
                                 <form class="needs-validation" novalidate>
                                     <div class=" form-group row">
-                                        <label class="col-sm-3 col-form-label" for="simpleinput">Student Name* </label>
-                                        <div class="col-sm-9">
-                                            <div >
-                                                <ReactSearchAutocomplete
-                                                    items={items}
-                                                    onSearch={handleOnSearch}
-                                                    onHover={handleOnHover}
-                                                    onSelect={handleOnSelect}
-                                                    onFocus={handleOnFocus}
-                                                    autoFocus
-                                                />
-                                            </div>
-                                            <div class="invalid-tooltip"> Please enter the student name </div>
-                                        </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Student Name </label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newToDoName" value={student} onChange={(e) => setStudent(e.target.value)} required>
-                                                {studentConcat.map((item, index) => (
+                                        <input list="student" name="student" id="newToDoName" class="form-control" value={student} onChange={(e) => setStudent(e.target.value)} />
+                                            <datalist id="student">
+                                            {studentConcat.map((item, index) => (
                                                     <option>{item}</option>))}
-                                            </select>
+                                            </datalist>
                                             <div class="invalid-tooltip">  Please enter the student name </div>
                                         </div>
                                         <div class="col-sm-12 ">
@@ -140,10 +104,11 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newToDoInstrument" value={instr} onChange={(e) => setInstrument(e.target.value)} required>
-                                                {availInstruments.map((item, index) => (
+                                        <input list="instrument" name="instrument" class="form-control" id="newToDoInstrument" value={instr} onChange={(e) => setInstrument(e.target.value)} />
+                                            <datalist id="instrument">
+                                            {availInstruments.map((item, index) => (
                                                     <option>{item}</option>))}
-                                            </select>
+                                            </datalist>
                                             <div class="invalid-tooltip">  Please select an instrument </div>
                                         </div>
                                         <div class="col-sm-12 ">
@@ -154,10 +119,11 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Brand</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newToDoBrand" value={brand} onChange={(e) => setBrand(e.target.value)} required>
-                                                {availBrands.map((item, index) => (
+                                        <input list="brand" name="brand" class="form-control" id="newToDoBrand" value={brand} onChange={(e) => setBrand(e.target.value)} />
+                                            <datalist id="brand">
+                                            {availBrands.map((item, index) => (
                                                     <option>{item}</option>))}
-                                            </select>
+                                            </datalist>
                                             <div class="invalid-tooltip">  Please select a brand </div>
                                         </div>
                                         <div class="col-sm-12 ">
@@ -168,10 +134,11 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newToDoCode" value={code} onChange={(e) => setCode(e.target.value)} required>
-                                                {availCodes.map((item, index) => (
+                                        <input list="code" name="code" class="form-control" id="newToDoCode" value={code} onChange={(e) => setCode(e.target.value)} />
+                                            <datalist id="code">
+                                            {availCodes.map((item, index) => (
                                                     <option>{item}</option>))}
-                                            </select>
+                                            </datalist>
                                             <div class="invalid-tooltip">  Please enter the code </div>
                                         </div>
                                         <div class="col-sm-12 ">
