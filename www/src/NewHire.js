@@ -11,23 +11,29 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
     const availInstruments = instInventory.filter(item => item.type === "Instrument").map(item => item.object).filter(unique)
     const [availBrands, setAvailBrands] = useState([])
+    const [availCodes, setAvailCodes] = useState([])
     const [instr, setInstrument] = useState('')
+    const [brand, setBrand] = useState('')
+    const [code, setCode] = useState('')
+    const [rate, setRate] = useState('')
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
-        setAvailBrands(instInventory.filter(item => item.object === instr && item.type === "Instrument").map(item => item.brand).filter(unique))
+        setAvailBrands(instInventory.filter(item => item.type === "Instrument" && item.object === instr).map(item => item.brand).filter(unique))
     }, [instr])
 
-    const onChangeInstrument = (event) => {
-        setInstrument(event.target.value);
-    }
+    useEffect(() => {
+        console.log(brand); // add whatever functions use new `college` value here.
+        setAvailCodes(instInventory.filter(item => item.type === "Instrument" && item.object === instr && item.brand === brand).map(item => item.code).filter(unique))
+    }, [brand])
+
+    useEffect(() => {
+        console.log(code); // add whatever functions use new `college` value here.
+        setRate(instInventory.filter(item => item.type === "Instrument" && item.object === instr && item.brand === brand && item.code === code).map(item => item.rate).filter(unique))
+    }, [code])
 
     const studentConcat = studentList.map(item => item.firstName + " " + item.lastName)
     const [student, setStudent] = useState('')
-
-    const onChangeStudent = (event) => {
-        setStudent(event.target.value);
-    }
 
     const add = async (event) => {
         const result = await addToDo();
@@ -52,7 +58,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                 <div class="col-md-10">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr-dsp">
-                        <i class="fal fn-icon fa-arrow-circle-left mr-2"></i>
+                        <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left mr-2"></i></span>
                             <h2>New Hire</h2>
                             <div></div>
                         </div>
@@ -65,7 +71,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Student Name </label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newToDoName" value={student} onChange={onChangeStudent} required>
+                                            <select class="form-control" id="newToDoName" value={student} onChange={(e) => setStudent(e.target.value)} required>
                                                 {studentConcat.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </select>
@@ -77,20 +83,9 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
-                                        <div class="col-sm-9">
-                                            <Input type="text" name="code" id="newToDoCode" placeholder="code" required />
-                                            <div class="invalid-tooltip">  Please enter the code </div>
-                                        </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newToDoInstrument" value={instr} onChange={onChangeInstrument} required>
+                                            <select class="form-control" id="newToDoInstrument" value={instr} onChange={(e) => setInstrument(e.target.value)} required>
                                                 {availInstruments.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </select>
@@ -104,7 +99,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Brand</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newToDoBrand" required>
+                                            <select class="form-control" id="newToDoBrand" value={brand} onChange={(e) => setBrand(e.target.value)} required>
                                                 {availBrands.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </select>
@@ -116,9 +111,23 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     </div>
 
                                     <div class=" form-group row">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
+                                        <div class="col-sm-9">
+                                        <select class="form-control" id="newToDoCode" value={code} onChange={(e) => setCode(e.target.value)} required>
+                                                {availCodes.map((item, index) => (
+                                                    <option>{item}</option>))}
+                                            </select>
+                                            <div class="invalid-tooltip">  Please enter the code </div>
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Rate</label>
                                         <div class="col-sm-9">
-                                            <Input type="text" name="rate" id="newToDoRate" placeholder="rate" required />
+                                            <Input type="text" name="rate" id="newToDoRate" placeholder="rate" value={rate} required />
                                             <div class="invalid-tooltip">  Please enter rate </div>
                                         </div>
                                         <div class="col-sm-12 ">

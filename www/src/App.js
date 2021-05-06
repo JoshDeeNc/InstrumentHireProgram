@@ -109,6 +109,7 @@ function App() {
 
     const newToDo = {
       "name": name,
+      "returned": false,
       "code": code,
       "instrument": instrument,
       "brand": brand,
@@ -129,9 +130,22 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      getAllTodos();
+      let instr = instInventory.find(item => item.code === code)
+      instr.available = false;
+      const resultInst = await axios({
+        method: 'PUT',
+        url: `${config.api_base_url}/instrument/${instr.id}`,
+        headers: {
+          Authorization: idToken
+        },
+        data: instr
+      });
+
+      if (resultInst && resultInst.status === 200) {
+        getAllTodos();
+        return resultInst;
+      }
     }
-    return result;
   }
 
   const updateToDo = async (itemId, event) => {
@@ -149,7 +163,7 @@ function App() {
 
     const updateToDo = {
       "name": name,
-      "completed": true,
+      "returned": false,
       "code": code,
       "instrument": instrument,
       "brand": brand,
@@ -195,19 +209,37 @@ function App() {
     return result;
   }
 
-  const completeToDo = async (itemId) => {
+  const returnToDo = async (itemId, instCode) => {
     if (itemId === null) return;
 
+    let hire = toDos.find(item => item.id === itemId);
+    hire.returned = true;
+
     const result = await axios({
-      method: 'POST',
-      url: `${config.api_base_url}/item/${itemId}/done`,
+      method: 'PUT',
+      url: `${config.api_base_url}/item/${itemId}`,
       headers: {
         Authorization: idToken
-      }
+      },
+      data: hire
     });
 
     if (result && result.status === 200) {
-      getAllTodos();
+      let instr = instInventory.find(item => item.code === instCode)
+      instr.available = true;
+      const resultInst = await axios({
+        method: 'PUT',
+        url: `${config.api_base_url}/instrument/${instr.id}`,
+        headers: {
+          Authorization: idToken
+        },
+        data: instr
+      });
+
+      if (resultInst && resultInst.status === 200) {
+        getAllTodos();
+        return resultInst;
+      }
     }
   }
 
@@ -461,7 +493,7 @@ function App() {
                     <Col md="12">
                         <Switch>
                           <Route path="/newhire"><NewHire toDos={toDos} studentList={studentList} instInventory={instInventory} addToDo={addToDo} /></Route>
-                          <Route path="/hirerecord"><HireRecord deleteToDo={deleteToDo} updateToDo={updateToDo} toDos={toDos} /></Route>
+                          <Route path="/hirerecord"><HireRecord deleteToDo={deleteToDo} updateToDo={updateToDo} returnToDo={returnToDo} toDos={toDos} /></Route>
                           <Route path="/instrumentrecord"><InstrumentRecord deleteInstrument={deleteInstrument} updateInstrument={updateInstrument} instInventory={instInventory} /></Route>
                           <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
                           <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
@@ -469,7 +501,7 @@ function App() {
                           <Route path="/studentlist"><StudentList studentList={studentList} /></Route>
                           <Route path="/newstudent"><NewStudent addStudent={addStudent} /></Route>
                           <Route path="/test"><Test/></Route>
-                          <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} completeToDo={completeToDo} /></Route>
+                          <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} /></Route>
                         </Switch>    
                     </Col>
                   </Row>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-function HireRecord({ deleteToDo, updateToDo, toDos }) {
+function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
     const history = useHistory();
     const id = /[^/]*$/.exec(window.location.href)[0];
     const hireRecord = toDos.find(item => item.id === id);
@@ -71,11 +71,21 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
         }
     }
 
+    const returned = async (itemId, instCode, event) => {
+        const result = await returnToDo(itemId, instCode);
+        if (result.status === 200) {
+            history.push('/');
+        }
+    }
+
     const [deleteModal, setDelModal] = useState(false);
     const toggleDel = () => setDelModal(!deleteModal);
 
     const [updateModal, setUpModal] = useState(false);
     const toggleUp = () => setUpModal(!updateModal);
+
+    const [returnModal, setRetModal] = useState(false);
+    const toggleRet = () => setRetModal(!returnModal);
 
     return (
         <div>
@@ -85,7 +95,8 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                         <div class="panel-hdr-dsp">
                         <i class="fal fn-icon fa-arrow-circle-left mr-2"></i>
                             <h2>Hire Details </h2>
-                            <div></div>
+                                <Button onClick={toggleRet} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
+                                    Return </Button>
 
                         </div>
 
@@ -208,6 +219,16 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                 <ModalFooter>
                     <Button color="primary" onClick={(e) => update(hireRecord.id)}>Yes</Button>
                     <Button color="secondary" onClick={toggleUp}>No</Button>
+                </ModalFooter>
+            </Modal>
+            <Modal isOpen={returnModal} toggle={toggleRet}>
+                <ModalHeader toggle={toggleRet}>Return</ModalHeader>
+                <ModalBody>
+                    Are you sure that {studName} has returned {instrument + " " + brand} with code ({code})?
+        </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onClick={(e) => returned(hireRecord.id, hireRecord.code)}>Yes</Button>
+                    <Button color="secondary" onClick={toggleRet}>No</Button>
                 </ModalFooter>
             </Modal>
         </div>

@@ -60,7 +60,7 @@ function updateRecord(username, recordId, eventBody) {
         },
         UpdateExpression: "set #field = :c, lastupdate_date = :lud, #n = :n, #cde = :cde, instrument = :instr, brand = :brd, rate = :rte, #owon = :odh, due = :d",
         ExpressionAttributeNames: { 
-            '#field': 'completed',
+            '#field': 'returned',
             '#n': 'name',
             '#cde': 'code',
             '#owon': 'owner'
@@ -68,7 +68,7 @@ function updateRecord(username, recordId, eventBody) {
         ExpressionAttributeValues: {
             ':lud': d.toISOString(),
             ':n': item.name,
-            ':c': item.completed,
+            ':c': item.returned,
             ':cde': item.code,
             ':instr': item.instrument,
             ':brd': item.brand,
