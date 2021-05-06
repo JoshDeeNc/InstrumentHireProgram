@@ -41,7 +41,7 @@ function Sidebar( {clearCredentials, toDos, instInventory, studentList} ) {
                 <Link to="/" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
                 <i class="fal fa-home"></i>
                   <span class="nav-link-text" data-i18n="nav.statistics_flot">Home</span>
-                  <span class="dl-ref label bg-info-900 ml-2">{toDos.length}</span>
+                  <span class="dl-ref label bg-info-900 ml-2">{toDos.filter(item => item.returned === false).length}</span>
                 </Link>
               </li>
 
