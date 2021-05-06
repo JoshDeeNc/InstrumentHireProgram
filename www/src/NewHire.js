@@ -3,7 +3,7 @@ import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
-    const inventory = instInventory.map(item => item.available === true)
+    const inventory = instInventory
 
     const history = useHistory();
 
