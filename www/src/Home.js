@@ -20,7 +20,7 @@ function Home({ toDos, deleteToDo }) {
   const returnedHires = toDos.filter(item => item.returned === true)
 
   const [qry, setQry] = useState("")
-  const [filtDates, setFiltDates] = useState("")
+  const [filtDates, setFiltDates] = useState([])
 
   function search(records) {
     if (qry != "") {
@@ -35,10 +35,8 @@ function Home({ toDos, deleteToDo }) {
         new Date(row.due).toLocaleDateString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
     }
     if (filtDates.length > 0 && dtRange) {
-      var dates = document.getElementById("datepicker-1").value;
-      var startEnd = dates.split(" - ")
-      console.log(startEnd)
-      return records.filter(item => new Date(item.creation_date) >= new Date(startEnd[0]) && new Date(item.creation_date) <= new Date(startEnd[1]))
+      console.log(filtDates)
+      return records.filter(item => new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1]))
     }
     return records
   }
@@ -59,8 +57,7 @@ function Home({ toDos, deleteToDo }) {
   }
 
   const filterDates = () => {
-    setFiltDates(document.getElementById("datepicker-1").value)
-    console.log(filtDates)
+    setFiltDates([document.getElementById("startDate").value, document.getElementById("endDate").value])
     search(toDos)
   }
 
@@ -115,12 +112,12 @@ function Home({ toDos, deleteToDo }) {
                                 <div class="form-group row">
                                   <div class="col-md-5  ">
                                     <div class="input-group">
-                                      <input type="date" class="form-control" placeholder="Select date"  id="" />
+                                      <input type="date" class="form-control" placeholder="Select date"  id="startDate" />
                                     </div>
                                   </div>
                                   <div class="col-md-5  ">
                                     <div class="input-group">
-                                      <input type="date" class="form-control" placeholder="Select date"  id="" />
+                                      <input type="date" class="form-control" placeholder="Select date"  id="endDate" />
                                     </div>
                                   </div>
 
