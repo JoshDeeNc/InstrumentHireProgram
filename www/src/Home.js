@@ -149,7 +149,7 @@ function Home({ toDos, deleteToDo }) {
               <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Overdue Hires<span class="badge badge-icon bg-red pos-top ml-1 mt-2">{overDues.length}</span> </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-3" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Returned Hires<span class="badge badge-icon bg-red pos-top ml-1 mt-2">{returnedHires.length}</span> </a>
+              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-3" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Returned Hires</a>
             </li>
             <li class="nav-item no-disp">
               <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-4" role="tab" aria-selected="false"><i class="fal fa-chart-bar mr-1"></i> Insights </a>

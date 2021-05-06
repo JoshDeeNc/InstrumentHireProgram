@@ -60,6 +60,7 @@ function InstrumentList({ instInventory, deleteToDo, completeToDo }) {
                           <th>Brand</th>
                           <th>Rate</th>
                           <th>Owner</th>
+                          <th>Available</th>
                           <th class="dtl-cel">Details</th>
                         </tr>
                       </thead>
@@ -72,6 +73,7 @@ function InstrumentList({ instInventory, deleteToDo, completeToDo }) {
                             <td>{item.brand}</td>
                             <td>{item.rate}</td>
                             <td>{item.owner}</td>
+                            <td>{item.available}</td>
                             <td class="al-ctr"><Link to={`/instrumentrecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                           </tr>
                         ))}
