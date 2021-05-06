@@ -3,7 +3,7 @@ import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 're
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 
-function InstrumentList({ instInventory, deleteToDo, completeToDo }) {
+function InstrumentList({ instInventory, studentList }) {
   const [filter, setFilter] = useState('all');
 
   const changeFilter = (newFilter) => {
@@ -73,7 +73,7 @@ function InstrumentList({ instInventory, deleteToDo, completeToDo }) {
                             <td>{item.brand}</td>
                             <td>{item.rate}</td>
                             <td>{item.owner}</td>
-                            <td>{item.available}</td>
+                            {item.available ? (<td>Yes</td>) : (<td>Hired to ...</td>)}
                             <td class="al-ctr"><Link to={`/instrumentrecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                           </tr>
                         ))}

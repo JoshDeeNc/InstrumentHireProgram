@@ -509,7 +509,7 @@ function App() {
                           <Route path="/newhire"><NewHire toDos={toDos} studentList={studentList} instInventory={instInventory} addToDo={addToDo} /></Route>
                           <Route path="/hirerecord"><HireRecord deleteToDo={deleteToDo} updateToDo={updateToDo} returnToDo={returnToDo} toDos={toDos} /></Route>
                           <Route path="/instrumentrecord"><InstrumentRecord deleteInstrument={deleteInstrument} updateInstrument={updateInstrument} instInventory={instInventory} /></Route>
-                          <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} /></Route>
+                          <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} studentList={studentList} /></Route>
                           <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
                           <Route path="/studentrecord"><StudentRecord deleteStudent={deleteStudent} updateStudent={updateStudent} studentList={studentList} /></Route>
                           <Route path="/studentlist"><StudentList studentList={studentList} /></Route>
