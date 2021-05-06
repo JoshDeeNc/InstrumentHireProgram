@@ -77,6 +77,9 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
     const [updateModal, setUpModal] = useState(false);
     const toggleUp = () => setUpModal(!updateModal);
 
+    const [returnModal, setRetModal] = useState(false);
+    const toggleRet = () => setRetModal(!returnModal);
+
     return (
         <div>
             <div class="row">
@@ -85,7 +88,7 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                         <div class="panel-hdr-dsp">
                         <i class="fal fn-icon fa-arrow-circle-left mr-2"></i>
                             <h2>Hire Details </h2>
-                                <Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
+                                <Button onClick={toggleRet} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
                                     Return </Button>
 
                         </div>
@@ -209,6 +212,16 @@ function HireRecord({ deleteToDo, updateToDo, toDos }) {
                 <ModalFooter>
                     <Button color="primary" onClick={(e) => update(hireRecord.id)}>Yes</Button>
                     <Button color="secondary" onClick={toggleUp}>No</Button>
+                </ModalFooter>
+            </Modal>
+            <Modal isOpen={returnModal} toggle={toggleRet}>
+                <ModalHeader toggle={toggleRet}>Return</ModalHeader>
+                <ModalBody>
+                    Are you sure that {studName} has returned {instrument + " " + brand} with code ({code})?
+        </ModalBody>
+                <ModalFooter>
+                    <Button color="primary" onClick={(e) => update(hireRecord.id)}>Yes</Button>
+                    <Button color="secondary" onClick={toggleRet}>No</Button>
                 </ModalFooter>
             </Modal>
         </div>

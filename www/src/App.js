@@ -109,6 +109,7 @@ function App() {
 
     const newToDo = {
       "name": name,
+      "returned": false,
       "code": code,
       "instrument": instrument,
       "brand": brand,
@@ -149,7 +150,7 @@ function App() {
 
     const updateToDo = {
       "name": name,
-      "completed": true,
+      "returned": false,
       "code": code,
       "instrument": instrument,
       "brand": brand,

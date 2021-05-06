@@ -12,19 +12,6 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
     const [phone, setPhone] = useState(studentRecord.phone)
     const [email, setEmail] = useState(studentRecord.email)
 
-    const onChangeFirst = (event) => {
-        setStudFirst(event.target.value);
-    }
-    const onChangeLast = (event) => {
-        setStudLast(event.target.value);
-    }
-    const onChangePhone = (event) => {
-        setPhone(event.target.value);
-    }
-    const onChangeEmail = (event) => {
-        setEmail(event.target.value);
-    }
-
     const editToggle = (event) => {
         var a = document.getElementsByTagName('input');
         // loop through all 'a' elements
@@ -79,7 +66,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                         <label class="col-sm-3 col-form-label" for=" ">First Name </label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="name" id="editFirstName"
-                                                value={studFirst} onChange={onChangeFirst} placeholder="Name" />
+                                                value={studFirst} onChange={(e) => setStudFirst(e.target.value)} placeholder="Name" />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -91,7 +78,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
 
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="name" id="editLastName"
-                                                value={studLast} onChange={onChangeLast} placeholder="Last Name " />
+                                                value={studLast} onChange={(e) => setStudLast(e.target.value)} placeholder="Last Name " />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -102,7 +89,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
 
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="name" id="editPhoneNumber"
-                                                value={phone} onChange={onChangePhone} placeholder="Phone Number" />
+                                                value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone Number" />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -113,7 +100,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
 
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="name" id="editEmail"
-                                                value={email} onChange={onChangeEmail} placeholder="Email" />
+                                                value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
