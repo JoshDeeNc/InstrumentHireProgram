@@ -21,6 +21,8 @@ function Home({ toDos, deleteToDo }) {
 
   const [qry, setQry] = useState("")
   const [filtDates, setFiltDates] = useState([])
+  const [filtOvDates, setFiltOvDates] = useState([])
+  const [filtRetDates, setFiltRetDates] = useState([])
 
   function search(records) {
     if (qry != "") {
@@ -34,17 +36,44 @@ function Home({ toDos, deleteToDo }) {
         row.owner.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         new Date(row.due).toLocaleDateString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
     }
+    return records
+  }
+
+  function searchDates(records) {
     if (filtDates.length > 0 && dtRange) {
       console.log(filtDates)
       return records.filter(item => new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1]))
     }
-    return records
+  }
+
+  function searchOvDates(records) {
+    if (filtOvDates.length > 0 && dtRange2) {
+      console.log(filtOvDates)
+      return records.filter(item => new Date(item.creation_date) >= new Date(filtOvDates[0]) && new Date(item.creation_date) <= new Date(filtOvDates[1]))
+    }
+  }
+
+  function searchRetDates(records) {
+    if (filtRetDates.length > 0 && dtRange3) {
+      console.log(filtRetDates)
+      return records.filter(item => new Date(item.creation_date) >= new Date(filtRetDates[0]) && new Date(item.creation_date) <= new Date(filtRetDates[1]))
+    }
   }
 
   const [dtRange, setDtRange] = useState(false);
   useEffect(() => {
     setDateRange(dtRange)
   }, [dtRange]);
+
+  const [dtRange2, setDtRange2] = useState(false);
+  useEffect(() => {
+    setDateRange2(dtRange2)
+  }, [dtRange2]);
+
+  const [dtRange3, setDtRange3] = useState(false);
+  useEffect(() => {
+    setDateRange3(dtRange3)
+  }, [dtRange3]);
 
   const setDateRange = (dtRange) => {
     var a = document.getElementById('dt-range');
@@ -56,9 +85,39 @@ function Home({ toDos, deleteToDo }) {
     }
   }
 
+  const setDateRange2 = (dtRange2) => {
+    var a = document.getElementById('dt-range2');
+    if (dtRange2 == true) {
+      a.classList.remove('dt-range');
+    }
+    else {
+      a.classList.add('dt-range');
+    }
+  }
+
+  const setDateRange3 = (dtRange3) => {
+    var a = document.getElementById('dt-range3');
+    if (dtRange3 == true) {
+      a.classList.remove('dt-range');
+    }
+    else {
+      a.classList.add('dt-range');
+    }
+  }
+
   const filterDates = () => {
     setFiltDates([document.getElementById("startDate").value, document.getElementById("endDate").value])
-    search(toDos)
+    searchDates(curHires)
+  }
+
+  const filterDates2 = () => {
+    setFiltOvDates([document.getElementById("startDate2").value, document.getElementById("endDate2").value])
+    searchOvDates(overDues)
+  }
+
+  const filterDates3 = () => {
+    setFiltRetDates([document.getElementById("startDate3").value, document.getElementById("endDate3").value])
+    searchRetDates(returnedHires)
   }
 
 
@@ -185,10 +244,42 @@ function Home({ toDos, deleteToDo }) {
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
-                        <div class="row mb-2 mt-n3 ">
-                          <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
-                          </div>
-                        </div>
+                      <div class="row mb-2 mt-n3 ">
+
+<div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
+</div>
+
+<div class="col-md-1 mt-2 text-right"><div class="custom-control custom-checkbox  "><Button onClick={(e) => setDtRange2(!dtRange2)} class="btn-sm btn-primary waves-effect waves-themed mr-2 w-50"> Dt</Button>
+</div> </div>
+<div class="col-md-7 mt-2   ">
+  <div class="row dt-range " id="dt-range2">
+    <div class="col-12">
+
+      <div class="form-group row">
+        <div class="col-md-5  ">
+          <div class="input-group">
+            <input type="date" class="form-control" placeholder="Select date"  id="startDate2" />
+          </div>
+        </div>
+        <div class="col-md-5  ">
+          <div class="input-group">
+            <input type="date" class="form-control" placeholder="Select date"  id="endDate2" />
+          </div>
+        </div>
+
+        <div class="col-md-2  "> <Button onClick={filterDates2} class=" btn-sm btn-primary waves-effect waves-themed mr-2 ">Go</Button>
+              </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+</div>
+
                         <div class="table-responsive">
                           <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                             <thead>
@@ -240,10 +331,44 @@ function Home({ toDos, deleteToDo }) {
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
-                        <div class="row mb-2 mt-n3 ">
-                          <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
-                          </div>
-                        </div>
+                      <div class="row mb-2 mt-n3 ">
+
+<div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
+</div>
+
+<div class="col-md-1 mt-2 text-right"><div class="custom-control custom-checkbox  "><Button onClick={(e) => setDtRange3(!dtRange3)} class="btn-sm btn-primary waves-effect waves-themed mr-2 w-50"> Dt</Button>
+</div> </div>
+<div class="col-md-7 mt-2   ">
+  <div class="row dt-range " id="dt-range3">
+    <div class="col-12">
+
+      <div class="form-group row">
+        <div class="col-md-5  ">
+          <div class="input-group">
+            <input type="date" class="form-control" placeholder="Select date"  id="startDate3" />
+          </div>
+        </div>
+        <div class="col-md-5  ">
+          <div class="input-group">
+            <input type="date" class="form-control" placeholder="Select date"  id="endDate3" />
+          </div>
+        </div>
+
+        <div class="col-md-2  "> <Button onClick={filterDates3} class=" btn-sm btn-primary waves-effect waves-themed mr-2 ">Go</Button>
+              </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+</div>
+
+
+                      
                         <div class="table-responsive">
                           <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                             <thead>
