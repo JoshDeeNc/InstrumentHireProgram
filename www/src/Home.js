@@ -172,25 +172,25 @@ function Home({ toDos, deleteToDo }) {
                           <div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
                           </div>
 
-                          <div class="col-md-1 mt-2 text-right"> 
-                          <Button onClick={(e) => setDtRange(!dtRange)}  className="btn-sm "> Dates</Button>
+                          <div class="col-md-1   text-right"> 
+                          <Button onClick={(e) => setDtRange(!dtRange)}  className="btn-sm mt-2 "> Dates</Button>
                             </div>
-                          <div class="col-md-7 mt-2   ">
+                          <div class="col-md-7     ">
                             <div class="row dt-range " id="dt-range">
                               <div class="col-12">
 
                                 <div class="form-group row">
                                   <div class="col-md-5  ">
                                     <div class="input-group">
-                                      <input type="date" class="form-control" placeholder="Select date"  id="startDate" />
+                                      <input type="date" class="form-control mt-2" placeholder="Select date"  id="startDate" />
                                     </div>
                                   </div>
                                   <div class="col-md-5  ">
                                     <div class="input-group">
-                                      <input type="date" class="form-control" placeholder="Select date"  id="endDate" />
+                                      <input type="date" class="form-control mt-2" placeholder="Select date"  id="endDate" />
                                     </div>
                                   </div>
-                                  <div class="col-md-2  "> <Button onClick={filterDates} color="primary" className="btn-sm">Go</Button>
+                                  <div class="col-md-2  "> <Button onClick={filterDates} color="primary" className="btn-sm mt-2">Go</Button>
                                   </div>
                                 </div>
                               </div>
@@ -258,23 +258,23 @@ function Home({ toDos, deleteToDo }) {
 
 <div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setDtRange2(!dtRange2)} className="btn-sm "> Dates</Button>
   </div>
-<div class="col-md-7 mt-2   ">
+<div class="col-md-7   ">
   <div class="row dt-range " id="dt-range2">
     <div class="col-12">
 
       <div class="form-group row">
         <div class="col-md-5  ">
           <div class="input-group">
-            <input type="date" class="form-control" placeholder="Select date"  id="startDate2" />
+            <input type="date" class="form-control mt-2 " placeholder="Select date"  id="startDate2" />
           </div>
         </div>
         <div class="col-md-5  ">
           <div class="input-group">
-            <input type="date" class="form-control" placeholder="Select date"  id="endDate2" />
+            <input type="date" class="form-control mt-2 " placeholder="Select date"  id="endDate2" />
           </div>
         </div>
 
-        <div class="col-md-2  "> <Button onClick={filterDates2} color="primary" className=" btn-sm ">Go</Button>
+        <div class="col-md-2  "> <Button onClick={filterDates2} color="primary" className=" btn-sm mt-2  ">Go</Button>
               </div>
       </div>
     </div>
@@ -345,23 +345,23 @@ function Home({ toDos, deleteToDo }) {
 
 <div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setDtRange3(!dtRange3)}  className="btn-sm "> Dates</Button>
   </div>
-<div class="col-md-7 mt-2   ">
+<div class="col-md-7    ">
   <div class="row dt-range " id="dt-range3">
     <div class="col-12">
 
       <div class="form-group row">
         <div class="col-md-5  ">
           <div class="input-group">
-            <input type="date" class="form-control" placeholder="Select date"  id="startDate3" />
+            <input type="date" class="form-control mt-2 " placeholder="Select date"  id="startDate3" />
           </div>
         </div>
         <div class="col-md-5  ">
           <div class="input-group">
-            <input type="date" class="form-control" placeholder="Select date"  id="endDate3" />
+            <input type="date" class="form-control mt-2 " placeholder="Select date"  id="endDate3" />
           </div>
         </div>
 
-        <div class="col-md-2  "> <Button onClick={filterDates3} color="primary" className=" btn-sm ">Go</Button>
+        <div class="col-md-2  "> <Button onClick={filterDates3} color="primary" className=" btn-sm mt-2  ">Go</Button>
               </div>
       </div>
     </div>

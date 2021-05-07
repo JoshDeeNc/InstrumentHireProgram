@@ -101,7 +101,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                         <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
                             <h2>Hire Details </h2>
                                 <Button onClick={toggleRet} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
-                                <span class="fal fa-angle-double-left mr-1"></span>  Return </Button>
+                                <span class="fal fa-hand-holding-box mr-1"></span>  Return </Button>
 
                         </div>
 

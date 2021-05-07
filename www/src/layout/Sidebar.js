@@ -122,8 +122,7 @@ function Sidebar( {clearCredentials, toDos, instInventory, studentList} ) {
             </a>
           </li>
         </ul>
-        <div><img src="dist/img/phcs.png" class="phcs-logo" alt=" " aria-roledescription="logo" /></div>
-      </div>
+          </div>
     </aside>
   );
 }
