@@ -59,12 +59,15 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
             b[i].classList.remove('btn-div');
 
         }
-        var c = document.getElementsByClassName('input-group-text-white')
-        for (var i = 0; i < c.length; i++) {
-            // Remove the class 'active' if it exists
-            c[i].classList.remove('input-group-text-white');    
-            c[i].classList.add('input-group-text');     
-        }
+        var c = document.getElementById('ratelabel')
+        c.classList.add('input-group-text');
+        c.classList.remove('input-group-text-white');
+        var d = document.getElementById('purchaselabel')
+        d.classList.add('input-group-text');
+        d.classList.remove('input-group-text-white');
+        var e = document.getElementById('deprlabel')
+        e.classList.add('input-group-text');
+        e.classList.remove('input-group-text-white');
     }
 
     const deletion = async (itemId, event) => {
@@ -156,7 +159,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                    
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text-white">$</span>
+                                                        <span class="input-group-text-white" id="ratelabel">$</span>
                                                     </div>
                                                     <input type="text" class="form-control nox" name=" " id="editInstRate"
                                                             value={rate} onChange={onChangeRate} placeholder="Rate " />
@@ -174,7 +177,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
 
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text-white">$</span>
+                                                        <span class="input-group-text-white" id="purchaselabel">$</span>
                                                     </div>
                                                     <input type="text" class="form-control nox" name=" " id="editInstPurchVal"
                                                             value={purchVal} onChange={onChangePurch} placeholder="Purchase Value " />
@@ -194,7 +197,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 <input type="text" class="form-control nox" name=" " id="editInstDepr"
                                                         value={depr} onChange={onChangeDepreciation} placeholder=" Depreciation" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text-white">%</span>
+                                                    <span class="input-group-text-white" id="deprlabel">%</span>
                                                 </div>
                                             </div>
                                                 

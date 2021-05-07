@@ -173,7 +173,7 @@ function Home({ toDos, deleteToDo }) {
                           </div>
 
                           <div class="col-md-1 mt-2 text-right"><div class="custom-control custom-checkbox  ">
-                          <Button onClick={(e) => setDtRange(!dtRange)} class="btn-sm "> Dt</Button>
+                          <Button onClick={(e) => setDtRange(!dtRange)} className="btn-sm "> Dt</Button>
                           </div> </div>
                           <div class="col-md-7 mt-2   ">
                             <div class="row dt-range " id="dt-range">
@@ -260,7 +260,7 @@ function Home({ toDos, deleteToDo }) {
 <div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
 </div>
 
-<div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setDtRange2(!dtRange2)} class="btn-sm "> Dt</Button>
+<div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setDtRange2(!dtRange2)} className="btn-sm "> Dt</Button>
   </div>
 <div class="col-md-7 mt-2   ">
   <div class="row dt-range " id="dt-range2">
@@ -347,7 +347,7 @@ function Home({ toDos, deleteToDo }) {
 <div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
 </div>
 
-<div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setDtRange3(!dtRange3)} class="btn-sm "> Dt</Button>
+<div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setDtRange3(!dtRange3)} className="btn-sm "> Dt</Button>
   </div>
 <div class="col-md-7 mt-2   ">
   <div class="row dt-range " id="dt-range3">
