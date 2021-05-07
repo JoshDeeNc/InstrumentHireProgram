@@ -107,8 +107,8 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                         </div>
                                     </div>
                                     <div class="btn-div text-center pt-2">
-                                        <Button data-item-id={studentRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2  " >Update</Button>
-                                        <Link to="/studentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1 " >Cancel</Button></Link>
+                                        <Button data-item-id={studentRecord.id} onClick={toggleUp} color="primary" className="mr-2"  >Update</Button>
+                                        <Link to="/studentlist"><Button color="secondary"  >Cancel</Button></Link>
                                     </div>
                                 </form>
                             </div>
@@ -116,7 +116,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
 
                             <div class="panel-content py-2 rounded-bottom border-faded border-left-0 border-right-0 border-bottom-0   d-flex">
 
-                                <Button onClick={editToggle} type="button"  >Edit</Button>
+                                <Button onClick={editToggle} type="button"  ><span class="fal fa-pencil mr-1"></span> Edit</Button>
 
                                 <span class="ml-auto  ">
 

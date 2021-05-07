@@ -199,7 +199,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                 </form>
                             </div>
                             <div class="panel-content py-2 rounded-bottom border-faded border-left-0 border-right-0 border-bottom-0   d-flex">
-                                <Button onClick={editToggle} type="button" color="primary" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
+                                <Button onClick={editToggle} type="button" color="secondary"  >
                                     <span class="fal fa-pencil mr-1"></span>  Edit  </Button>
 
                                 <span class="ml-auto  ">

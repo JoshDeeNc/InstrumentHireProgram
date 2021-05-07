@@ -272,13 +272,11 @@ table tr td a .fa-2x {
   color: #666666 !important;
   background-color: #eeeeee !important;
   border: none !important;
-  margin-left: 10px;
 }
 
 .phcs-logo {
   width: 50px;
   position: relative;
-  bottom: 11px;
   z-index: 99999;
  
 }
@@ -286,6 +284,12 @@ table tr td a .fa-2x {
 .nav-menu li a .dl-ref {
   border-radius: 25px;
   padding: 0 5px;
+}
+
+.header-btn[data-class='mobile-nav-on'] {
+  border-color: #004d40;
+  background-color: #004d40;
+
 }
 
 .bg-red {

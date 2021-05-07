@@ -171,14 +171,15 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" "> Purchase Value </label>
                                                 <div class="col-md-4">
-                                               
-                                               <div class="input-group">
+
+                                                <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text-white">$</span>
                                                     </div>
                                                     <input type="text" class="form-control nox" name=" " id="editInstPurchVal"
-                                                        value={purchVal} onChange={onChangePurch} placeholder="Purchase Value  " />
+                                                            value={purchVal} onChange={onChangePurch} placeholder="Purchase Value " />
                                                 </div>
+
 
                                                 </div>
                                                 <div class="col-sm-12 ">
@@ -187,7 +188,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             </div>
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" ">Depreciation </label>
-                                                <div class="col-md-4">
+                                                <div class="col-md-1">
                                                    
                                                 <div class="input-group">
                                                 <input type="text" class="form-control nox" name=" " id="editInstDepr"
