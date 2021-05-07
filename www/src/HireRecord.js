@@ -102,7 +102,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                         <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
                             <h2>Hire Details </h2>
                                 <Button onClick={toggleRet} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
-                                    Return </Button>
+                                <span class="fal fa-angle-double-left mr-1"></span>  Return </Button>
 
                         </div>
 
@@ -194,17 +194,17 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                         </div>
                                     </div>
                                     <div class="btn-div text-center pt-2">
-                                        <Button data-item-id={hireRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2  " >Update</Button>
-                                        <Link to="/"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1 " >Cancel</Button></Link>
+                                        <Button data-item-id={hireRecord.id} onClick={toggleUp} color="primary" class="btn btn-lg btn-primary waves-effect waves-themed mr-2  " >Update</Button>
+                                        <Link to="/"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " color="secondary" >Cancel</Button></Link>
                                     </div>
                                 </form>
                             </div>
                             <div class="panel-content py-2 rounded-bottom border-faded border-left-0 border-right-0 border-bottom-0   d-flex">
-                                <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
+                                <Button onClick={editToggle} type="button" color="primary" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">
                                     <span class="fal fa-pencil mr-1"></span>  Edit  </Button>
 
                                 <span class="ml-auto  ">
-                                    <Button data-item-id={hireRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
+                                    <Button data-item-id={hireRecord.id} color="danger" onClick={toggleDel} > <span class="fal fa-trash mr-1"></span> Delete</Button>
 
                                 </span>
                             </div>

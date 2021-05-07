@@ -259,12 +259,16 @@ table tr td a .fa-2x {
 .btn-primary {
   background-color: #78909c !important;
   border: none !important;
+  -webkit-box-shadow: 0 1px 1px 0 rgb(134 142 150 / 50%) !important;
+  box-shadow: 0 1px 1px 0 rgb(134 142 150 / 50%) !important;
 }
 
 .btn-secondary {
-  color: #777777;
+  color: #666666 !important;
   background-color: #eeeeee !important;
   border: none !important;
+  -webkit-box-shadow: 0 1px 1px 0 rgb(134 142 150 / 50%) !important;
+  box-shadow: 0 1px 1px 0 rgb(134 142 150 / 50%) !important;
 }
 
 .phcs-logo {
@@ -458,7 +462,7 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
     display: flex;
     -webkit-align-items: center;
     align-items: center;
-    padding: .375rem .75rem;
+    padding: .375rem .3rem .375rem 0;
     margin-bottom: 0;
     font-size: 1rem;
     font-weight: 400;
