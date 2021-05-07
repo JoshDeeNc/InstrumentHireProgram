@@ -38,12 +38,12 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
     }
 
 
-    const editToggle = (event) => {
+    const editToggle = async (event) => {
         var a = document.getElementsByTagName('input');
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
             // Remove the class 'active' if it exists
-            a[i].classList.remove('nox', 'input-group-text');
+            a[i].classList.remove('nox');
            
 
         }
@@ -57,7 +57,9 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
         var c = document.getElementsByClassName('input-group-text-white')
         for (var i = 0; i < c.length; i++) {
             // Remove the class 'active' if it exists
+            c[i].classList.add('input-group-text');
             c[i].classList.remove('input-group-text-white');
+            
         }
     }
 

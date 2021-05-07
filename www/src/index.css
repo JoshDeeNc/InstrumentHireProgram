@@ -262,8 +262,8 @@ table tr td a .fa-2x {
 }
 
 .btn-secondary {
-  color: #fff;
-  background-color: #9ba8b4 !important;
+  color: #777777;
+  background-color: #eeeeee !important;
   border: none !important;
 }
 
@@ -453,6 +453,22 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   font-size: 14px !important;
 }
 
-.input-group-text-white {background: #ffffff ; border-color: #ffffff; }
+.input-group-text-white {
+  display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: .375rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+  background: #ffffff ; border-color: #ffffff; }
 
 .hand {cursor: pointer;}
