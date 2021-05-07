@@ -59,7 +59,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                     </h1>
             </div>
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-lg-7 col-md-10">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr-dsp">
                             <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
@@ -118,7 +118,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
-                                        <div class="col-sm-9">
+                                        <div class="col-md-4">
                                         <input list="code" name="code" class="form-control" id="newToDoCode" value={code} onChange={(e) => setCode(e.target.value)} />
                                             <datalist id="code">
                                             {availCodes.map((item, index) => (
@@ -133,7 +133,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Rate</label>
-                                        <div class="col-sm-9">
+                                        <div class="col-md-4">
                                             <Input type="text" name="rate" id="newToDoRate" placeholder="rate" value={rate} required />
                                             <div class="invalid-tooltip">  Please enter rate </div>
                                         </div>
@@ -155,7 +155,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
 
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Due Date</label>
-                                        <div class="col-sm-9">
+                                        <div class="col-md-4">
                                             <Input class="  form-control " id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" required />
                                             <div class="invalid-tooltip">  Please select the due date </div>
                                         </div>

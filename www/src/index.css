@@ -130,6 +130,11 @@ html body a {
   border-bottom: 1px solid rgb(255, 255, 255, 0.1);
 }
 
+.nav-menu li a .dl-ref.label {
+
+  color: #000000;
+}
+
 .breadcrumb {
   background-color: transparent;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -241,7 +246,8 @@ table tr td a .fa-2x {
   border-radius: 0.15rem;
   text-transform: uppercase;
   font-size: 0.8rem;
-  min-width: 50px;
+  min-width: 90px;
+  margin-right: 10px;
 }
 
 .btn-sm {

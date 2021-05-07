@@ -86,7 +86,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
     return (
         <div>
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-lg-7 col-md-10">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr-dsp">
                             <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
@@ -147,7 +147,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             </div>
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" "> Rate </label>
-                                                <div class="col-sm-9">
+                                                <div class="col-md-4">
                                                     <input type="text" class="form-control nox" name=" " id="editInstRate"
                                                         value={rate} onChange={onChangeRate} placeholder="Rate " />
                                                 </div>
@@ -157,7 +157,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             </div>
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" "> Purchase Value </label>
-                                                <div class="col-sm-9">
+                                                <div class="col-md-4">
                                                     <input type="text" class="form-control nox" name=" " id="editInstPurchVal"
                                                         value={purchVal} onChange={onChangePurch} placeholder="Purchase Value  " />
                                                 </div>
@@ -167,7 +167,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             </div>
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" ">Depreciation </label>
-                                                <div class="col-sm-9">
+                                                <div class="col-md-4">
                                                     <input type="text" class="form-control nox" name=" " id="editInstDepr"
                                                         value={depr} onChange={onChangeDepreciation} placeholder=" Depreciation" />
                                                 </div>

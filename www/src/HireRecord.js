@@ -90,7 +90,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
     return (
         <div>
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-lg-7 col-md-10">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr-dsp">
                         <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
@@ -150,9 +150,19 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
 
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Rate</label>
-                                        <div class="col-sm-9">
+                                        <div class="col-md-4">
                                             <input class="form-control nox" type="text" name="rate" id="editToDoRate" placeholder="rate"
                                                 value={rate} onChange={onChangeRate} />
+
+<div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">$</span>
+                                                </div>
+                                                <input class="form-control nox" type="text" name="rate" id="editToDoRate" placeholder="rate"
+                                                value={rate} onChange={onChangeRate} />
+                                            </div>
+
+
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -172,7 +182,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
 
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Due Date</label>
-                                        <div class="col-sm-9">
+                                        <div class="col-md-4">
                                             <input class="form-control nox" id="editToDoDueDate" type="date" name="date"
                                                 placeholder="dd/mm/yyyy" value={dueDate} onChange={onChangeDue} />
                                         </div>

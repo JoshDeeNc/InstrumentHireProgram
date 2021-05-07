@@ -23,7 +23,7 @@ function NewStudent({ addStudent }) {
                     </h1>
             </div>
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-lg-7 col-md-10">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr-dsp">
                         <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
