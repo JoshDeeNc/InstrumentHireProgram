@@ -104,7 +104,7 @@ function NewInstrument({ addInstrument }) {
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-3 col-form-label" for="simpleinput">Depreciation Rate%</label>
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Depreciation Rate %</label>
                                         <div class="col-md-2">
                                         <Input type="text" class="  form-control " name="rate" id="newInstDepr" placeholder=" " />
                                                
@@ -124,7 +124,7 @@ function NewInstrument({ addInstrument }) {
                                         </div>
                                     </div>
                                     <div class="btn-divS">
-                                        <Button onClick={add} color="primary" class="mr-2"  >Add</Button>
+                                        <Button onClick={add} color="primary" className="mr-2"  >Add</Button>
                                         <Link to="/instrumentlist"><Button color="secondary"  >Cancel</Button></Link>
                                     </div>
 

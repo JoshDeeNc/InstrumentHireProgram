@@ -107,7 +107,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                         </div>
                                     </div>
                                     <div class="btn-div text-center pt-2">
-                                        <Button data-item-id={studentRecord.id} onClick={toggleUp} color="primary" class="mr-2"  >Update</Button>
+                                        <Button data-item-id={studentRecord.id} onClick={toggleUp} color="primary" className="mr-2"  >Update</Button>
                                         <Link to="/studentlist"><Button color="secondary"  >Cancel</Button></Link>
                                     </div>
                                 </form>

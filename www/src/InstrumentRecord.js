@@ -102,7 +102,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                             <div></div>
                             <Link to={`/newhire/${instrumentRecord.id}`}>
                                 <Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
-                                <i class="fal fa-address-book"></i>  Book Now  </Button></Link>
+                                <i class="fal fa-address-book mr-1"></i>  Book Now  </Button></Link>
                         </div>
                         <div class="panel-container show">
                             <div class="panel-content  ">
@@ -190,7 +190,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 </div>
                                             </div>
                                             <div class=" form-group row" >
-                                                <label class="col-sm-3 col-form-label" for=" ">Depreciation Rate% </label>
+                                                <label class="col-sm-3 col-form-label" for=" ">Depreciation Rate % </label>
                                                 <div class="col-md-2">
                                                      <input type="text" class="form-control nox"   id="editInstDepr" 
                                                     value={depr} onChange={onChangeDepreciation} placeholder="Depreciation " />
@@ -211,7 +211,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 </div>
                                             </div>
                                             <div class="btn-div text-center pt-2">
-                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp}  color="primary" className="mr-2" class="mr-2">Update</Button>
+                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp}  color="primary" className="mr-2" >Update</Button>
                                                 <Link to="/instrumentlist"><Button color="secondary"  >Cancel</Button></Link>
                                             </div>
                                         </form>
