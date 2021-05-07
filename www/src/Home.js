@@ -173,7 +173,7 @@ function Home({ toDos, deleteToDo }) {
                           </div>
 
                           <div class="col-md-1 mt-2 text-right"> 
-                          <Button onClick={(e) => setDtRange(!dtRange)} color="primary" className="btn-sm "> Dates</Button>
+                          <Button onClick={(e) => setDtRange(!dtRange)}  className="btn-sm "> Dates</Button>
                             </div>
                           <div class="col-md-7 mt-2   ">
                             <div class="row dt-range " id="dt-range">
@@ -190,7 +190,7 @@ function Home({ toDos, deleteToDo }) {
                                       <input type="date" class="form-control" placeholder="Select date"  id="endDate" />
                                     </div>
                                   </div>
-                                  <div class="col-md-2  "> <Button onClick={filterDates} className="btn-sm">Go</Button>
+                                  <div class="col-md-2  "> <Button onClick={filterDates} color="primary" className="btn-sm">Go</Button>
                                   </div>
                                 </div>
                               </div>

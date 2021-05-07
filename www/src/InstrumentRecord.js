@@ -190,7 +190,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 </div>
                                             </div>
                                             <div class=" form-group row" >
-                                                <label class="col-sm-3 col-form-label" for=" ">Depreciation Rate % </label>
+                                                <label class="col-sm-3 col-form-label" for=" ">Depreciation % </label>
                                                 <div class="col-md-2">
                                                      <input type="text" class="form-control nox"   id="editInstDepr" 
                                                     value={depr} onChange={onChangeDepreciation} placeholder="Depreciation " />

@@ -104,7 +104,7 @@ function NewInstrument({ addInstrument }) {
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-3 col-form-label" for="simpleinput">Depreciation Rate %</label>
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Depreciation %</label>
                                         <div class="col-md-2">
                                         <Input type="text" class="  form-control " name="rate" id="newInstDepr" placeholder=" " />
                                                
