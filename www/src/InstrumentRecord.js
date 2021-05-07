@@ -43,7 +43,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
         setOwner(event.target.value);
     }
 
-    const editToggle = async (event) => {
+    const editToggle = (event) => {
         var a = document.getElementsByTagName('input');
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
@@ -188,7 +188,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             </div>
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" ">Depreciation </label>
-                                                <div class="col-md-1">
+                                                <div class="col-md-2">
                                                    
                                                 <div class="input-group">
                                                 <input type="text" class="form-control nox" name=" " id="editInstDepr"
@@ -214,7 +214,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 </div>
                                             </div>
                                             <div class="btn-div text-center pt-2">
-                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp}  color="primary"  >Update</Button>
+                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp}  color="primary" class="mr-2"  className="mr-2"  >Update</Button>
                                                 <Link to="/instrumentlist"><Button color="secondary"  >Cancel</Button></Link>
                                             </div>
                                         </form>
