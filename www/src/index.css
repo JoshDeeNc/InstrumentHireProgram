@@ -184,6 +184,8 @@ body {
   background-color: rgba(0, 0, 0, .02);
 }
 
+.table-hover tbody tr:hover {box-shadow: none; background: #78909c ;}
+
 .table-bordered thead th, .table-bordered thead td {
   background: #f0f8ff63
 }
