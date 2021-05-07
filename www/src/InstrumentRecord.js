@@ -148,8 +148,16 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" "> Rate </label>
                                                 <div class="col-md-4">
+                                                   
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">$</span>
+                                                    </div>
                                                     <input type="text" class="form-control nox" name=" " id="editInstRate"
-                                                        value={rate} onChange={onChangeRate} placeholder="Rate " />
+                                                            value={rate} onChange={onChangeRate} placeholder="Rate " />
+                                                </div>
+                                                
+                                                
                                                 </div>
                                                 <div class="col-sm-12 ">
                                                     <div class=" hr"></div>
@@ -158,8 +166,15 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" "> Purchase Value </label>
                                                 <div class="col-md-4">
+                                               
+                                               <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">$</span>
+                                                    </div>
                                                     <input type="text" class="form-control nox" name=" " id="editInstPurchVal"
                                                         value={purchVal} onChange={onChangePurch} placeholder="Purchase Value  " />
+                                                </div>
+
                                                 </div>
                                                 <div class="col-sm-12 ">
                                                     <div class=" hr"></div>
@@ -168,8 +183,15 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" ">Depreciation </label>
                                                 <div class="col-md-4">
-                                                    <input type="text" class="form-control nox" name=" " id="editInstDepr"
+                                                   
+                                                <div class="input-group">
+                                                <input type="text" class="form-control nox" name=" " id="editInstDepr"
                                                         value={depr} onChange={onChangeDepreciation} placeholder=" Depreciation" />
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">%</span>
+                                                </div>
+                                            </div>
+                                                
                                                 </div>
                                                 <div class="col-sm-12 ">
                                                     <div class=" hr"></div>

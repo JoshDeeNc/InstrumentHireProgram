@@ -44,7 +44,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
         for (var i = 0; i < a.length; i++) {
             // Remove the class 'active' if it exists
             a[i].classList.remove('nox', 'input-group-text');
-            a[i].classList.add('input-group-text-white');
+           
 
         }
 
