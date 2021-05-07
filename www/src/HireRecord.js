@@ -47,7 +47,6 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
            
 
         }
-
         var b = document.getElementsByTagName('div');
         // loop through all 'a' elements
         for (var i = 0; i < b.length; i++) {
@@ -55,7 +54,11 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
             b[i].classList.remove('btn-div');
 
         }
-
+        var c = document.getElementsByClassName('input-group-text-white')
+        for (var i = 0; i < c.length; i++) {
+            // Remove the class 'active' if it exists
+            c[i].classList.remove('input-group-text-white');
+        }
     }
 
     const deletion = async (itemId, instCode, event) => {
@@ -154,7 +157,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                    <span class="input-group-text">$</span>
+                                                    <span class="input-group-text-white">$</span>
                                                 </div>
                                                 <input class="form-control nox" type="text" name="rate" id="editToDoRate" placeholder="rate"
                                                 value={rate} onChange={onChangeRate} />
