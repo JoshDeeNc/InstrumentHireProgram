@@ -454,4 +454,6 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   font-size: 14px !important;
 }
 
+.input-group-text-white {background: #ffffff ; border-color: #ffffff; }
+
 .hand {cursor: pointer;}

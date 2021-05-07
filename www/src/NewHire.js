@@ -134,7 +134,14 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Rate</label>
                                         <div class="col-md-4">
-                                            <Input type="text" name="rate" id="newToDoRate" placeholder="rate" value={rate} required />
+                                             
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">$</span>
+                                                </div>
+                                                <Input type="text" name="rate" id="newToDoRate" placeholder="rate" value={rate} required />
+                                             </div>
+                                            
                                             <div class="invalid-tooltip">  Please enter rate </div>
                                         </div>
                                         <div class="col-sm-12 ">

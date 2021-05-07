@@ -151,10 +151,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Rate</label>
                                         <div class="col-md-4">
-                                            <input class="form-control nox" type="text" name="rate" id="editToDoRate" placeholder="rate"
-                                                value={rate} onChange={onChangeRate} />
-
-<div class="input-group">
+                                            <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">$</span>
                                                 </div>
