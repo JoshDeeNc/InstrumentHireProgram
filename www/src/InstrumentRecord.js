@@ -60,14 +60,14 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
 
         }
         var c = document.getElementById('ratelabel')
-        c.classList.add('input-group-text');
         c.classList.remove('input-group-text-white');
+        c.classList.add('input-group-text');
         var d = document.getElementById('purchaselabel')
-        d.classList.add('input-group-text');
         d.classList.remove('input-group-text-white');
+        d.classList.add('input-group-text');
         var e = document.getElementById('deprlabel')
-        e.classList.add('input-group-text');
         e.classList.remove('input-group-text-white');
+        e.classList.add('input-group-text');
     }
 
     const deletion = async (itemId, event) => {
