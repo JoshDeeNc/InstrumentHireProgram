@@ -62,8 +62,8 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
         var c = document.getElementsByClassName('input-group-text-white')
         for (var i = 0; i < c.length; i++) {
             // Remove the class 'active' if it exists
-            c[i].classList.add('input-group-text');
-            c[i].classList.remove('input-group-text-white');         
+            c[i].classList.remove('input-group-text-white');    
+            c[i].classList.add('input-group-text');     
         }
     }
 
@@ -99,7 +99,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                             <div></div>
                             <Link to={`/newhire/${instrumentRecord.id}`}>
                                 <Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
-                                    Book Now  </Button></Link>
+                                <i class="fal fa-address-book"></i>  Book Now  </Button></Link>
                         </div>
                         <div class="panel-container show">
                             <div class="panel-content  ">
@@ -214,7 +214,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 </div>
                                             </div>
                                             <div class="btn-div text-center pt-2">
-                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp}  color="primary" class="mr-2"  className="mr-2"  >Update</Button>
+                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp}  color="primary" class="mr-2"   >Update</Button>
                                                 <Link to="/instrumentlist"><Button color="secondary"  >Cancel</Button></Link>
                                             </div>
                                         </form>

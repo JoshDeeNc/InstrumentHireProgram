@@ -173,8 +173,7 @@ function Home({ toDos, deleteToDo }) {
                           </div>
 
                           <div class="col-md-1 mt-2 text-right"><div class="custom-control custom-checkbox  ">
-                            <input type="checkbox" onChange={(e) => setDtRange(e.target.checked)} class="custom-control-input" id="defaultUnchecked" />
-                            <label class="custom-control-label mt-2" for="defaultUnchecked">Dates </label>
+                          <Button onClick={(e) => setDtRange(!dtRange)} class="btn-sm "> Dt</Button>
                           </div> </div>
                           <div class="col-md-7 mt-2   ">
                             <div class="row dt-range " id="dt-range">
@@ -261,8 +260,8 @@ function Home({ toDos, deleteToDo }) {
 <div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
 </div>
 
-<div class="col-md-1 mt-2 text-right"><div class="custom-control custom-checkbox  "><Button onClick={(e) => setDtRange2(!dtRange2)} class="btn-sm btn-primary waves-effect waves-themed mr-2 w-50"> Dt</Button>
-</div> </div>
+<div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setDtRange2(!dtRange2)} class="btn-sm "> Dt</Button>
+  </div>
 <div class="col-md-7 mt-2   ">
   <div class="row dt-range " id="dt-range2">
     <div class="col-12">
@@ -348,8 +347,8 @@ function Home({ toDos, deleteToDo }) {
 <div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
 </div>
 
-<div class="col-md-1 mt-2 text-right"><div class="custom-control custom-checkbox  "><Button onClick={(e) => setDtRange3(!dtRange3)} class="btn-sm btn-primary waves-effect waves-themed mr-2 w-50"> Dt</Button>
-</div> </div>
+<div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setDtRange3(!dtRange3)} class="btn-sm "> Dt</Button>
+  </div>
 <div class="col-md-7 mt-2   ">
   <div class="row dt-range " id="dt-range3">
     <div class="col-12">

@@ -118,8 +118,6 @@ function NewInstrument({ addInstrument }) {
                                         </div>
                                     </div>
 
-
-
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Owner</label>
                                         <div class="col-sm-9">
@@ -130,7 +128,7 @@ function NewInstrument({ addInstrument }) {
                                         </div>
                                     </div>
                                     <div class="btn-divS">
-                                        <Button onClick={add} color="primary" >Add</Button>
+                                        <Button onClick={add} color="primary" class="mr-2"  >Add</Button>
                                         <Link to="/instrumentlist"><Button color="secondary"  >Cancel</Button></Link>
                                     </div>
 
