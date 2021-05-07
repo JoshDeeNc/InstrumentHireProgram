@@ -58,8 +58,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
         for (var i = 0; i < c.length; i++) {
             // Remove the class 'active' if it exists
             c[i].classList.add('input-group-text');
-            c[i].classList.remove('input-group-text-white');
-            
+            c[i].classList.remove('input-group-text-white');         
         }
     }
 
@@ -204,7 +203,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                     <span class="fal fa-pencil mr-1"></span>  Edit  </Button>
 
                                 <span class="ml-auto  ">
-                                    <Button data-item-id={hireRecord.id} color="danger" onClick={toggleDel} > <span class="fal fa-trash mr-1"></span> Delete</Button>
+                                    <Button data-item-id={hireRecord.id} color="danger" onClick={toggleDel} > <span class="fal fa-trash-alt mr-1"></span> Delete</Button>
 
                                 </span>
                             </div>

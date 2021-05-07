@@ -116,11 +116,11 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
 
                             <div class="panel-content py-2 rounded-bottom border-faded border-left-0 border-right-0 border-bottom-0   d-flex">
 
-                                <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">Edit</Button>
+                                <Button onClick={editToggle} type="button"  >Edit</Button>
 
                                 <span class="ml-auto  ">
 
-                                    <Button data-item-id={studentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
+                                    <Button data-item-id={studentRecord.id} color="danger" onClick={toggleDel} > <span class="fal fa-trash-alt mr-1"></span>  Delete</Button>
 
                                 </span>
                             </div>

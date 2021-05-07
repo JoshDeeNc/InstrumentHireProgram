@@ -17,12 +17,8 @@ function NewInstrument({ addInstrument }) {
 
     return (
         <div>
-
             <div class="subheader">
-                <h1 class="subheader-title">
-                    Add Instrument
-
-                    </h1>
+                <h1 class="subheader-title"> Add Instrument </h1>
             </div>
             <div class="row">
                 <div class="col-lg-7 col-md-10">
@@ -30,14 +26,13 @@ function NewInstrument({ addInstrument }) {
                         <div class="panel-hdr-dsp">
                         <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
                             <h2>New Instrument</h2>
-                            <div></div>
+                            <div>
+                            </div>
                         </div>
 
                         <div class="panel-container show">
                             <div class="panel-content">
-
                                 <form>
-
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
                                         <div class="col-sm-9">
@@ -135,8 +130,8 @@ function NewInstrument({ addInstrument }) {
                                         </div>
                                     </div>
                                     <div class="btn-divS">
-                                        <Button onClick={add} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
-                                        <Link to="/instrumentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
+                                        <Button onClick={add} color="primary" >Add</Button>
+                                        <Link to="/instrumentlist"><Button color="secondary"  >Cancel</Button></Link>
                                     </div>
 
                                 </form>

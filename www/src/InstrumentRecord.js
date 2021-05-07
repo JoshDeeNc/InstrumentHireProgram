@@ -43,15 +43,15 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
         setOwner(event.target.value);
     }
 
-    const editToggle = (event) => {
+    const editToggle = async (event) => {
         var a = document.getElementsByTagName('input');
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
             // Remove the class 'active' if it exists
-            a[i].classList.remove('nox', 'nov');
+            a[i].classList.remove('nox');
+           
 
         }
-
         var b = document.getElementsByTagName('div');
         // loop through all 'a' elements
         for (var i = 0; i < b.length; i++) {
@@ -59,7 +59,12 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
             b[i].classList.remove('btn-div');
 
         }
-
+        var c = document.getElementsByClassName('input-group-text-white')
+        for (var i = 0; i < c.length; i++) {
+            // Remove the class 'active' if it exists
+            c[i].classList.add('input-group-text');
+            c[i].classList.remove('input-group-text-white');         
+        }
     }
 
     const deletion = async (itemId, event) => {
@@ -151,7 +156,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                    
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text">$</span>
+                                                        <span class="input-group-text-white">$</span>
                                                     </div>
                                                     <input type="text" class="form-control nox" name=" " id="editInstRate"
                                                             value={rate} onChange={onChangeRate} placeholder="Rate " />
@@ -169,7 +174,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                
                                                <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text">$</span>
+                                                        <span class="input-group-text-white">$</span>
                                                     </div>
                                                     <input type="text" class="form-control nox" name=" " id="editInstPurchVal"
                                                         value={purchVal} onChange={onChangePurch} placeholder="Purchase Value  " />
@@ -188,7 +193,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 <input type="text" class="form-control nox" name=" " id="editInstDepr"
                                                         value={depr} onChange={onChangeDepreciation} placeholder=" Depreciation" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text">%</span>
+                                                    <span class="input-group-text-white">%</span>
                                                 </div>
                                             </div>
                                                 
@@ -208,8 +213,8 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 </div>
                                             </div>
                                             <div class="btn-div text-center pt-2">
-                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp} class="btn btn-lg btn-primary waves-effect waves-themed mr-2  "  >Update</Button>
-                                                <Link to="/instrumentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1 ">Cancel</Button></Link>
+                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp}  color="primary"  >Update</Button>
+                                                <Link to="/instrumentlist"><Button color="secondary"  >Cancel</Button></Link>
                                             </div>
                                         </form>
 
@@ -220,9 +225,9 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                             </div>
 
                             <div class="panel-content py-2 rounded-bottom border-faded border-left-0 border-right-0 border-bottom-0   d-flex">
-                                <Button onClick={editToggle} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed mr-2">Edit</Button>
+                                <Button onClick={editToggle} type="button"  color="secondary">  <span class="fal fa-pencil mr-1"></span>  Edit</Button>
                                 <span class="ml-auto  ">
-                                    <Button data-item-id={instrumentRecord.id} color="danger" onClick={toggleDel} class="btn btn-lg btn-primary waves-effect waves-themed mr-2">Delete</Button>
+                                    <Button data-item-id={instrumentRecord.id} color="danger" onClick={toggleDel} > <span class="fal fa-trash-alt mr-1"></span>  Delete</Button>
                                 </span>
                             </div>
                         </div>

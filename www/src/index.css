@@ -256,6 +256,11 @@ table tr td a .fa-2x {
   min-width: 20px;
 }
 
+.btn-primary, .btn-secondary, .btn-danger {
+  -webkit-box-shadow: 0 1px 1px 0 rgb(134 142 150 / 50%) !important;
+  box-shadow: 0 1px 1px 0 rgb(134 142 150 / 50%) !important;
+}
+
 .btn-primary {
   background-color: #78909c !important;
   border: none !important;
@@ -267,16 +272,15 @@ table tr td a .fa-2x {
   color: #666666 !important;
   background-color: #eeeeee !important;
   border: none !important;
-  -webkit-box-shadow: 0 1px 1px 0 rgb(134 142 150 / 50%) !important;
-  box-shadow: 0 1px 1px 0 rgb(134 142 150 / 50%) !important;
+  margin-left: 10px;
 }
 
 .phcs-logo {
   width: 50px;
-  position: fixed;
+  position: relative;
   bottom: 11px;
   z-index: 99999;
-  left: 12px;
+ 
 }
 
 .nav-menu li a .dl-ref {

@@ -74,8 +74,8 @@ function NewStudent({ addStudent }) {
                                         </div>
                                     </div>
                                     <div class="btn-divS">
-                                        <Button onClick={add} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
-                                        <Link to="/studentlist"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
+                                        <Button onClick={add}  color="primary" >Add</Button>
+                                        <Link to="/studentlist"><Button color="secondary" >Cancel</Button></Link>
                                     </div>
                                 </form>
                             </div>

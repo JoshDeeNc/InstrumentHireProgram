@@ -53,10 +53,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
         <div>
 
             <div class="subheader">
-                <h1 class="subheader-title">
-                    Add Hire
-
-                    </h1>
+                <h1 class="subheader-title"> Add Hire</h1>
             </div>
             <div class="row">
                 <div class="col-lg-7 col-md-10">
@@ -171,8 +168,8 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                         </div>
                                     </div>
                                     <div class="btn-divS">
-                                        <Button onClick={add} class="btn btn-lg btn-primary waves-effect waves-themed mr-2 " className="ml-1">Add</Button>
-                                        <Link to="/"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " className="ml-1">Cancel</Button></Link>
+                                        <Button onClick={add} color="primary" className="ml-1">Add</Button>
+                                        <Link to="/"><Button color="secondary">Cancel</Button></Link>
                                     </div>
                                 </form>
                             </div>
