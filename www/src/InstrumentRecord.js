@@ -217,7 +217,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 </div>
                                             </div>
                                             <div class="btn-div text-center pt-2">
-                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp}  color="primary" class="mr-2"   >Update</Button>
+                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp}  color="primary" className="mr-2" class="mr-2">Update</Button>
                                                 <Link to="/instrumentlist"><Button color="secondary"  >Cancel</Button></Link>
                                             </div>
                                         </form>

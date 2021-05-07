@@ -172,9 +172,9 @@ function Home({ toDos, deleteToDo }) {
                           <div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
                           </div>
 
-                          <div class="col-md-1 mt-2 text-right"><div class="custom-control custom-checkbox  ">
+                          <div class="col-md-1 mt-2 text-right">
                           <Button onClick={(e) => setDtRange(!dtRange)} className="btn-sm "> Dt</Button>
-                          </div> </div>
+                           </div>
                           <div class="col-md-7 mt-2   ">
                             <div class="row dt-range " id="dt-range">
                               <div class="col-12">
@@ -185,14 +185,14 @@ function Home({ toDos, deleteToDo }) {
                                       <input type="date" class="form-control" placeholder="Select date"  id="startDate" />
                                     </div>
                                   </div>
-                                  <div class="col-md-5  ">
+                                  <div class="col-md-7  ">
                                     <div class="input-group">
                                       <input type="date" class="form-control" placeholder="Select date"  id="endDate" />
+                                      <Button onClick={filterDates} class="btn-sm ">Go</Button>
                                     </div>
                                   </div>
 
-                                  <div class="col-md-2  "> <button onClick={filterDates} class="btn btn-sm btn-primary waves-effect waves-themed mr-2">Go</button>
-                                        </div>
+                              
                                 </div>
                               </div>
                             </div>
@@ -272,14 +272,14 @@ function Home({ toDos, deleteToDo }) {
             <input type="date" class="form-control" placeholder="Select date"  id="startDate2" />
           </div>
         </div>
-        <div class="col-md-5  ">
+        <div class="col-md-7  ">
           <div class="input-group">
             <input type="date" class="form-control" placeholder="Select date"  id="endDate2" />
+            <Button onClick={filterDates2} class=" btn-sm btn-primary waves-effect waves-themed mr-2 ">Go</Button>
+            
           </div>
         </div>
 
-        <div class="col-md-2  "> <Button onClick={filterDates2} class=" btn-sm btn-primary waves-effect waves-themed mr-2 ">Go</Button>
-              </div>
       </div>
     </div>
   </div>
@@ -359,14 +359,14 @@ function Home({ toDos, deleteToDo }) {
             <input type="date" class="form-control" placeholder="Select date"  id="startDate3" />
           </div>
         </div>
-        <div class="col-md-5  ">
+        <div class="col-md-7  ">
           <div class="input-group">
             <input type="date" class="form-control" placeholder="Select date"  id="endDate3" />
           </div>
+          <Button onClick={filterDates3} color="primary" class=" btn-sm btn-primary waves-effect waves-themed mr-2 ">Go</Button>
         </div>
 
-        <div class="col-md-2  "> <Button onClick={filterDates3} class=" btn-sm btn-primary waves-effect waves-themed mr-2 ">Go</Button>
-              </div>
+       
       </div>
     </div>
   </div>
