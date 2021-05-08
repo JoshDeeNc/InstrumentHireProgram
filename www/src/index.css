@@ -467,7 +467,8 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   font-size: 14px !important;
 }
 
-.sm-inpt-width {width:auto; max-width: 46px;}
+.sm-inpt-width {width:auto; max-width: 28px;}
+.sm-inpt-width-edt {width:auto; max-width: 46px;}
 
 .input-group-text-white {
   display: -webkit-flex;
