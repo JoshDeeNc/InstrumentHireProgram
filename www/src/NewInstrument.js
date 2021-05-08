@@ -104,10 +104,14 @@ function NewInstrument({ addInstrument }) {
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-3 col-form-label" for="simpleinput">Depreciation %</label>
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Depreciation </label>
                                         <div class="col-md-2">
-                                        <Input type="text" class="  form-control " name="rate" id="newInstDepr" placeholder=" " />
-                                               
+                                         <div class="input-group">
+                                         <Input type="text" class="  form-control " name="rate" id="newInstDepr" placeholder=" " />
+                                                     <div class="input-group-append">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>    
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>

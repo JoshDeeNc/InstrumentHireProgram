@@ -96,9 +96,12 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
             <div class="row">
                 <div class="col-lg-7 col-md-10">
                     <div id="panel-1" class="panel">
+                    <div class="panel-hdr">
+                      <h2>Instrument Details </h2>
+                    </div>
                         <div class="panel-hdr-dsp">
                             <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
-                            <h2> Instrument Details </h2>
+                            <h2> Instrument Description </h2>
                             <div></div>
                             <Link to={`/newhire/${instrumentRecord.id}`}>
                                 <Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
@@ -190,11 +193,16 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 </div>
                                             </div>
                                             <div class=" form-group row" >
-                                                <label class="col-sm-3 col-form-label" for=" ">Depreciation % </label>
+                                                <label class="col-sm-3 col-form-label" for=" ">Depreciation </label>
                                                 <div class="col-md-2">
-                                                     <input type="text" class="form-control nox"   id="editInstDepr" 
+                                             <div class="input-group">
+                                             <input type="text" class="form-control nox sm-inpt-width"   id="editInstDepr" 
                                                     value={depr} onChange={onChangeDepreciation} placeholder="Depreciation " />
-                                             
+                                                    
+                                                     <div class="input-group-append">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
                                                 </div>
                                                 <div class="col-sm-12 ">
                                                     <div class=" hr"></div>
