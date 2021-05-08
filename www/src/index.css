@@ -488,5 +488,6 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   background: #ffffff ; border-color: #ffffff; }
 
   .input-group-text-lbl .input-group-text {padding-left: 0;}
+  #editInstDepr {padding:12px  0 ;}
 
 .hand {cursor: pointer;}
