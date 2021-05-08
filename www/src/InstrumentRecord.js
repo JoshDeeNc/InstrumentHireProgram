@@ -67,6 +67,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
         d.classList.add('input-group-text');
         var e = document.getElementById('deprlabel')
         e.classList.remove('input-group-text-white');
+        e.classList.add('input-group-text-lbl');
         e.classList.add('input-group-text');
     }
 
@@ -200,7 +201,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                     value={depr} onChange={onChangeDepreciation} placeholder="Depreciation " />
                                                     
                                                      <div class="input-group-append">
-                                                        <span class="input-group-text-white">%</span>
+                                                        <span class="input-group-text-white" id="deprlabel">%</span>
                                                     </div>
                                                 </div>
                                                 </div>
