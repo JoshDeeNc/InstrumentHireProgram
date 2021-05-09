@@ -136,10 +136,10 @@ function NewInstrument({ addInstrument }) {
                                                             <i class="fal fa-plus-circle width-2 fs-xl"></i> Add-ons
                                                                 <span class="ml-auto">
                                                                     <span class="collapsed-reveal">
-                                                                        <i class="fal fa-angle-up"></i>
+                                                                        <i class="fal fa-angle-up fa-2x"></i>
                                                                     </span>
                                                                     <span class="collapsed-hidden">
-                                                                        <i class="fal fa-angle-down"></i>
+                                                                        <i class="fal fa-angle-down fa-2x"></i>
                                                                     </span>
                                                                 </span>
                                                             </a>
@@ -147,32 +147,21 @@ function NewInstrument({ addInstrument }) {
                                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                                         <div class="card-body">
                                                             <div class=" form-group row">
-                                                                <label class="col-6 col-form-label fw-700" for="simpleinput">Description</label>
+                                                                <label class="col-8 col-form-label fw-700" for="simpleinput">Description</label>
 
-                                                                <label class="col-3 col-form-label fw-700 text-center" for="simpleinput">Qty</label>
+                                                                <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Qty</label>
 
-                                                                <label class="col-3 col-form-label fw-700 text-center" for="simpleinput">Rate</label>
+                                                                <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Rate</label>
 
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr-2"></div>
                                                                 </div>
                                                             </div>
                                                             <div class=" form-group row">
-                                                                <label class="col-6 col-form-label" for="simpleinput">Wire leads 6mt</label>
-                                                                <div class="col-3">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Wire leads 6mt</label>
+                                                                <div class="col-2">
                                                                     <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
-                                                                </div><div class="col-3">
-                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
-                                                                </div>
-                                                                <div class="col-sm-12 ">
-                                                                    <div class=" hr"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class=" form-group row">
-                                                                <label class="col-6 col-form-label" for="simpleinput">Strings</label>
-                                                                <div class="col-3">
-                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
-                                                                </div><div class="col-3">
+                                                                </div><div class="col-2">
                                                                     <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
@@ -180,10 +169,10 @@ function NewInstrument({ addInstrument }) {
                                                                 </div>
                                                             </div>
                                                             <div class=" form-group row">
-                                                                <label class="col-6 col-form-label" for="simpleinput">Stands</label>
-                                                                <div class="col-3">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Strings</label>
+                                                                <div class="col-2">
                                                                     <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
-                                                                </div><div class="col-3">
+                                                                </div><div class="col-2">
                                                                     <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
@@ -191,10 +180,21 @@ function NewInstrument({ addInstrument }) {
                                                                 </div>
                                                             </div>
                                                             <div class=" form-group row">
-                                                                <label class="col-6 col-form-label" for="simpleinput">Picks</label>
-                                                                <div class="col-3">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Stands</label>
+                                                                <div class="col-2">
                                                                     <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
-                                                                </div><div class="col-3">
+                                                                </div><div class="col-2">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Picks</label>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div><div class="col-2">
                                                                     <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
