@@ -191,10 +191,94 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                             <input class="form-control nox" id="editToDoDueDate" type="date" name="date"
                                                 placeholder="dd/mm/yyyy" value={dueDate} onChange={onChangeDue} />
                                         </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
+                                       
                                     </div>
+
+
+                                    <div class="frame-wrap w-100">
+                                                <div class="accordion" id="accordionExample">
+         
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingTwo">
+                                                            
+                                                            <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                            <i class="fal fa-plus-circle width-2 fs-xl"></i> Add-ons
+                                                                <span class="ml-auto">
+                                                                    <span class="collapsed-reveal">
+                                                                        <i class="fal fa-angle-up fa-2x"></i>
+                                                                    </span>
+                                                                    <span class="collapsed-hidden">
+                                                                        <i class="fal fa-angle-down fa-2x"></i>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                        <div class="card-body">
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label fw-700" for="simpleinput">Description</label>
+
+                                                                <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Qty</label>
+
+                                                                <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Rate</label>
+
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr-2"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Wire leads 6mt</label>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div><div class="col-2">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Strings</label>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div><div class="col-2">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Stands</label>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div><div class="col-2">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Picks</label>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div><div class="col-2">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                  
+                                                        </div>
+                                                    </div>
+                                                       </div>
+                                            </div>
+ 
+
+
                                     <div class="btn-div text-center pt-2">
                                         <Button data-item-id={hireRecord.id} onClick={toggleUp} color="primary" className="mr-2" >Update</Button>
                                         <Link to="/"><Button class="btn btn-lg btn-secondary waves-effect waves-themed " color="secondary" >Cancel</Button></Link>
