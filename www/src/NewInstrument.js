@@ -123,31 +123,28 @@ function NewInstrument({ addInstrument }) {
                                         <div class="col-sm-9">
                                             <Input type="text" name="owner" id="newInstOwner" placeholder="owner" />
                                         </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
+                                        
                                     </div>
 
-                                    <div class=" form-group row">
-
-                                        <div class="col-sm-12 ">
-                                            <div class="accordion accordion-outline" id="js_demo_accordion-3">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <a href="javascript:void(0);" class="card-title" data-toggle="collapse" data-target="#js_demo_accordion-3a" aria-expanded="true">
-                                                            <i class="fal fa-plus-circle width-2 fs-xl"></i>
-                                                            Add-ons
-                                                            <span class="ml-auto">
-                                                                <span class="collapsed-reveal">
-                                                                    <i class="fal fa-angle-up fs-xl"></i>
+                                    <div class="frame-wrap w-100">
+                                                <div class="accordion" id="accordionExample">
+         
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingTwo">
+                                                            
+                                                            <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                            <i class="fal fa-plus-circle width-2 fs-xl"></i> Add-ons
+                                                                <span class="ml-auto">
+                                                                    <span class="collapsed-reveal">
+                                                                        <i class="fal fa-angle-up"></i>
+                                                                    </span>
+                                                                    <span class="collapsed-hidden">
+                                                                        <i class="fal fa-angle-down"></i>
+                                                                    </span>
                                                                 </span>
-                                                                <span class="collapsed-hidden">
-                                                                    <i class="fal fa-angle-down fs-xl"></i>
-                                                                </span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                    <div id="js_demo_accordion-3a" class="collapse show" data-parent="#js_demo_accordion-3">
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                                         <div class="card-body">
                                                             <div class=" form-group row">
                                                                 <label class="col-6 col-form-label fw-700" for="simpleinput">Description</label>
@@ -205,13 +202,12 @@ function NewInstrument({ addInstrument }) {
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                  
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                       </div>
                                             </div>
-
-
-                                        </div>
-                                    </div>
+ 
 
                                     <div class="btn-divS">
                                         <Button onClick={add} color="primary" className="mr-2"  >Add</Button>

@@ -503,3 +503,7 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   #editInstDepr {padding:12px  0 ;}
 
 .hand {cursor: pointer;}
+
+.frame-wrap {
+  margin: 1.5rem 0;
+}
