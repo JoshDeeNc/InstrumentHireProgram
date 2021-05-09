@@ -194,27 +194,17 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                        
                                     </div>
 
+                                    <div class="frame-wrap mt-4 mb-3  ">
+                                                <div class="mt-3 mb-3">  
+                                                    <a class="btn btn-secondary" data-toggle="collapse" href="#addOnDiv" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                    <i class="fal fa-plus-circle  mr-1 fs-xl"></i>  Add-Ons
+                                                    </a>
+                                                    </div> 
 
-                                    <div class="frame-wrap w-100">
-                                                <div class="accordion" id="accordionExample">
-         
-                                                    <div class="card">
-                                                        <div class="card-header" id="headingTwo">
-                                                            
-                                                            <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                            <i class="fal fa-plus-circle width-2 fs-xl"></i> Add-ons
-                                                                <span class="ml-auto">
-                                                                    <span class="collapsed-reveal">
-                                                                        <i class="fal fa-angle-up fa-2x"></i>
-                                                                    </span>
-                                                                    <span class="collapsed-hidden">
-                                                                        <i class="fal fa-angle-down fa-2x"></i>
-                                                                    </span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                                        <div class="card-body">
+                                                    <div class="clearfix" ></div>
+                                               
+                                                <div class="collapse" id="addOnDiv">
+                                                <div class="card card-body">
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label fw-700" for="simpleinput">Description</label>
 
@@ -272,12 +262,9 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                                             </div>
                                                         </div>
                                                   
-                                                        </div>
-                                                    </div>
-                                                       </div>
+                                                </div>
                                             </div>
- 
-
+                    
 
                                     <div class="btn-div text-center pt-2">
                                         <Button data-item-id={hireRecord.id} onClick={toggleUp} color="primary" className="mr-2" >Update</Button>
