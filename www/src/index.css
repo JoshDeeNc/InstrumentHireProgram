@@ -389,6 +389,17 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   margin: 5px 0;
 }
 
+
+.hr-2 {
+  border-top: 3px solid #eeeeee;
+  height: 1px;
+  margin: 5px 0;
+}
+
+.accordion .card .card-header .card-title {
+  padding: 0.5rem 0.7rem; color: #666666; font-weight: 300; text-transform: uppercase;}
+  
+
 .form-group {
   margin-bottom: 0;
 }
@@ -467,8 +478,8 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   font-size: 14px !important;
 }
 
-.sm-inpt-width {width:auto; max-width: 28px;}
-.sm-inpt-width-edt {width:auto; max-width: 46px;}
+.sm-inpt-width {width:auto; max-width: 60px; min-width: 60px;}
+.sm-inpt-width-edt {width:auto; max-width: 80px; min-width: 80px;}
 
 .input-group-text-white {
   display: -webkit-flex;

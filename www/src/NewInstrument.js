@@ -7,7 +7,7 @@ function NewInstrument({ addInstrument }) {
 
     const add = async (event) => {
         const result = await addInstrument();
-        if(result.status === 200 ) {
+        if (result.status === 200) {
             history.push('/instrumentlist');
         }
     }
@@ -24,7 +24,7 @@ function NewInstrument({ addInstrument }) {
                 <div class="col-lg-7 col-md-10">
                     <div id="panel-1" class="panel">
                         <div class="panel-hdr-dsp">
-                        <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
+                            <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
                             <h2>New Instrument</h2>
                             <div>
                             </div>
@@ -36,7 +36,7 @@ function NewInstrument({ addInstrument }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
                                         <div class="col-sm-9">
-                                            <Input type="text" class="  form-control " name="code" id="newInstCode" placeholder="Instrument code" />
+                                            <Input type="text" class="  form-control " name="code" id="newInstCode" placeholder=" " />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -46,7 +46,7 @@ function NewInstrument({ addInstrument }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput"> Type </label>
                                         <div class="col-sm-9">
-                                            <Input type="text" class="  form-control " name="name" id="newInstType" placeholder="Instrument/Add-on Type" />
+                                            <Input type="text" class="  form-control " name="name" id="newInstType" placeholder=" " />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -56,7 +56,7 @@ function NewInstrument({ addInstrument }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument Name </label>
                                         <div class="col-sm-9">
-                                            <Input type="text" class="  form-control " name="name" id="newInstName" placeholder="Instrument/add-on" />
+                                            <Input type="text" class="  form-control " name="name" id="newInstName" placeholder=" " />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -66,7 +66,7 @@ function NewInstrument({ addInstrument }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Brand</label>
                                         <div class="col-sm-9">
-                                            <Input type="text" class="  form-control " name="brand" id="newInstBrand" placeholder="Brand" />
+                                            <Input type="text" class="  form-control " name="brand" id="newInstBrand" placeholder=" " />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -106,12 +106,12 @@ function NewInstrument({ addInstrument }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Depreciation </label>
                                         <div class="col-md-2">
-                                         <div class="input-group   sm-inpt-width-edt">
-                                         <Input type="text" class="  form-control " name="rate" id="newInstDepr" placeholder=" " />
-                                                     <div class="input-group-append">
-                                                        <span class="input-group-text">%</span>
-                                                    </div>
-                                                </div>    
+                                            <div class="input-group   sm-inpt-width-edt">
+                                                <Input type="text" class="  form-control " name="rate" id="newInstDepr" placeholder=" " />
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">%</span>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -127,6 +127,92 @@ function NewInstrument({ addInstrument }) {
                                             <div class=" hr"></div>
                                         </div>
                                     </div>
+
+                                    <div class=" form-group row">
+
+                                        <div class="col-sm-12 ">
+                                            <div class="accordion accordion-outline" id="js_demo_accordion-3">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <a href="javascript:void(0);" class="card-title" data-toggle="collapse" data-target="#js_demo_accordion-3a" aria-expanded="true">
+                                                            <i class="fal fa-plus-circle width-2 fs-xl"></i>
+                                                            Add-ons
+                                                            <span class="ml-auto">
+                                                                <span class="collapsed-reveal">
+                                                                    <i class="fal fa-angle-up fs-xl"></i>
+                                                                </span>
+                                                                <span class="collapsed-hidden">
+                                                                    <i class="fal fa-angle-down fs-xl"></i>
+                                                                </span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                    <div id="js_demo_accordion-3a" class="collapse show" data-parent="#js_demo_accordion-3">
+                                                        <div class="card-body">
+                                                            <div class=" form-group row">
+                                                                <label class="col-6 col-form-label fw-700" for="simpleinput">Description</label>
+
+                                                                <label class="col-3 col-form-label fw-700 text-center" for="simpleinput">Qty</label>
+
+                                                                <label class="col-3 col-form-label fw-700 text-center" for="simpleinput">Rate</label>
+
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr-2"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-6 col-form-label" for="simpleinput">Wire leads 6mt</label>
+                                                                <div class="col-3">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div><div class="col-3">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-6 col-form-label" for="simpleinput">Strings</label>
+                                                                <div class="col-3">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div><div class="col-3">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-6 col-form-label" for="simpleinput">Stands</label>
+                                                                <div class="col-3">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div><div class="col-3">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-6 col-form-label" for="simpleinput">Picks</label>
+                                                                <div class="col-3">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div><div class="col-3">
+                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
                                     <div class="btn-divS">
                                         <Button onClick={add} color="primary" className="mr-2"  >Add</Button>
                                         <Link to="/instrumentlist"><Button color="secondary"  >Cancel</Button></Link>

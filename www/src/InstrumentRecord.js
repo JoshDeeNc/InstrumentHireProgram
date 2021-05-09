@@ -219,6 +219,93 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                     <div class=" hr"></div>
                                                 </div>
                                             </div>
+
+                                            <div class=" form-group row">
+
+<div class="col-sm-12 ">
+    <div class="accordion accordion-outline" id="js_demo_accordion-3">
+        <div class="card">
+            <div class="card-header">
+                <a href="javascript:void(0);" class="card-title" data-toggle="collapse" data-target="#js_demo_accordion-3a" aria-expanded="true">
+                    <i class="fal fa-plus-circle width-2 fs-xl"></i>
+                    Add-ons
+                    <span class="ml-auto">
+                        <span class="collapsed-reveal">
+                            <i class="fal fa-angle-up fs-xl"></i>
+                        </span>
+                        <span class="collapsed-hidden">
+                            <i class="fal fa-angle-down fs-xl"></i>
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div id="js_demo_accordion-3a" class="collapse show" data-parent="#js_demo_accordion-3">
+                <div class="card-body">
+                    <div class=" form-group row">
+                        <label class="col-6 col-form-label fw-700" for="simpleinput">Description</label>
+
+                        <label class="col-3 col-form-label fw-700 text-center" for="simpleinput">Qty</label>
+
+                        <label class="col-3 col-form-label fw-700 text-center" for="simpleinput">Rate</label>
+
+                        <div class="col-sm-12 ">
+                            <div class=" hr-2"></div>
+                        </div>
+                    </div>
+                    <div class=" form-group row">
+                        <label class="col-6 col-form-label" for="simpleinput">Wire leads 6mt</label>
+                        <div class="col-3">
+                            <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                        </div><div class="col-3">
+                            <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class=" hr"></div>
+                        </div>
+                    </div>
+                    <div class=" form-group row">
+                        <label class="col-6 col-form-label" for="simpleinput">Strings</label>
+                        <div class="col-3">
+                            <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                        </div><div class="col-3">
+                            <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class=" hr"></div>
+                        </div>
+                    </div>
+                    <div class=" form-group row">
+                        <label class="col-6 col-form-label" for="simpleinput">Stands</label>
+                        <div class="col-3">
+                            <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                        </div><div class="col-3">
+                            <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class=" hr"></div>
+                        </div>
+                    </div>
+                    <div class=" form-group row">
+                        <label class="col-6 col-form-label" for="simpleinput">Picks</label>
+                        <div class="col-3">
+                            <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                        </div><div class="col-3">
+                            <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class=" hr"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</div>
+
+
                                             <div class="btn-div text-center pt-2">
                                                 <Button data-item-id={instrumentRecord.id} onClick={toggleUp}  color="primary" className="mr-2" >Update</Button>
                                                 <Link to="/instrumentlist"><Button color="secondary"  >Cancel</Button></Link>
