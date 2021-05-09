@@ -191,6 +191,10 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                             <input class="form-control nox" id="editToDoDueDate" type="date" name="date"
                                                 placeholder="dd/mm/yyyy" value={dueDate} onChange={onChangeDue} />
                                         </div>
+
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                        
                                     </div>
 

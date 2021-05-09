@@ -163,7 +163,9 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                             <Input class="  form-control " id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" required />
                                             <div class="invalid-tooltip">  Please select the due date </div>
                                         </div>
-                                        
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div> 
                                     </div>
                                     <div class="frame-wrap mt-4 mb-3  ">
                                                 <div class="mt-3 mb-3">  

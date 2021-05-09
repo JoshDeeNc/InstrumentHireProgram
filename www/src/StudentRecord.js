@@ -102,12 +102,10 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                             <input type="text" class="form-control nox" name="name" id="editEmail"
                                                 value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
                                         </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
+                                      
                                     </div>
                                     <div class="btn-div text-center pt-2">
-                                        <Button data-item-id={studentRecord.id} onClick={toggleUp} color="primary" className="mr-2"  >Update</Button>
+                                        <Button data-item-id={studentRecord.id} onClick={toggleUp} color="primary" class="mr-2"  >Update</Button>
                                         <Link to="/studentlist"><Button color="secondary"  >Cancel</Button></Link>
                                     </div>
                                 </form>
