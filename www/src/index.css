@@ -244,6 +244,10 @@ table tr td a .fa-2x {
   background-color: #8bc34a;
 }
 
+.card, .card-group {box-shadow: none;}
+
+ .card-body {padding: 5px 15px}
+
 .btn {
   border-radius: 0.15rem;
   text-transform: uppercase;
