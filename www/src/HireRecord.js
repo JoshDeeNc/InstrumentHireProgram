@@ -197,6 +197,13 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                         </div>
                                        
                                     </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control    " id=" " type=" "  
+                                                placeholder=" "  rows="3"   > </textarea>
+                                        </div>
+                                    </div>
 
                                     <div class="frame-wrap mt-4 mb-3  ">
                                                 <div class="mt-3 mb-3">  

@@ -49,7 +49,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
         for (var i = 0; i < a.length; i++) {
             // Remove the class 'active' if it exists
             a[i].classList.remove('nox');
-           
+
 
         }
         var b = document.getElementsByTagName('div');
@@ -97,16 +97,16 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
             <div class="row">
                 <div class="col-lg-7 col-md-10">
                     <div id="panel-1" class="panel">
-                    <div class="panel-hdr">
-                      <h2>Instrument Details </h2>
-                    </div>
+                        <div class="panel-hdr">
+                            <h2>Instrument Details </h2>
+                        </div>
                         <div class="panel-hdr-dsp">
                             <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
                             <h2> Instrument Description </h2>
                             <div></div>
                             <Link to={`/newhire/${instrumentRecord.id}`}>
                                 <Button type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
-                                <i class="fal fa-address-book mr-1"></i>  Book Now  </Button></Link>
+                                    <i class="fal fa-address-book mr-1"></i>  Book Now  </Button></Link>
                         </div>
                         <div class="panel-container show">
                             <div class="panel-content  ">
@@ -160,16 +160,16 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" "> Rate </label>
                                                 <div class="col-md-4">
-                                                   
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text-white" id="ratelabel">$</span>
-                                                    </div>
-                                                    <input type="text" class="form-control nox" name=" " id="editInstRate"
+
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text-white" id="ratelabel">$</span>
+                                                        </div>
+                                                        <input type="text" class="form-control nox" name=" " id="editInstRate"
                                                             value={rate} onChange={onChangeRate} placeholder="Rate " />
-                                                </div>
-                                                
-                                                
+                                                    </div>
+
+
                                                 </div>
                                                 <div class="col-sm-12 ">
                                                     <div class=" hr"></div>
@@ -179,13 +179,13 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 <label class="col-sm-3 col-form-label" for=" "> Purchase Value </label>
                                                 <div class="col-md-4">
 
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text-white" id="purchaselabel">$</span>
-                                                    </div>
-                                                    <input type="text" class="form-control nox" name=" " id="editInstPurchVal"
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text-white" id="purchaselabel">$</span>
+                                                        </div>
+                                                        <input type="text" class="form-control nox" name=" " id="editInstPurchVal"
                                                             value={purchVal} onChange={onChangePurch} placeholder="Purchase Value " />
-                                                </div>
+                                                    </div>
 
 
                                                 </div>
@@ -196,14 +196,14 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             <div class=" form-group row" >
                                                 <label class="col-sm-3 col-form-label" for=" ">Depreciation </label>
                                                 <div class="col-md-2">
-                                             <div class="input-group sm-inpt-width">
-                                             <input type="text" class="form-control nox  "   id="editInstDepr" 
-                                                    value={depr} onChange={onChangeDepreciation} placeholder="Depreciation " />
-                                                    
-                                                     <div class="input-group-append">
-                                                        <span class="input-group-text-white" id="deprlabel">%</span>
+                                                    <div class="input-group sm-inpt-width">
+                                                        <input type="text" class="form-control nox  " id="editInstDepr"
+                                                            value={depr} onChange={onChangeDepreciation} placeholder="Depreciation " />
+
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text-white" id="deprlabel">%</span>
+                                                        </div>
                                                     </div>
-                                                </div>
                                                 </div>
                                                 <div class="col-sm-12 ">
                                                     <div class=" hr"></div>
@@ -215,13 +215,24 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                     <input type="text" class="form-control nox" name=" " id="editInstOwner"
                                                         value={owner} onChange={onChangeOwner} placeholder="Owner " />
                                                 </div>
-                                                
+                                                <div class="col-sm-12 ">
+                                                    <div class=" hr"></div>
+                                                </div>
+
                                             </div>
 
-                                           
+                                            <div class="form-group row mb-3">
+                                                <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
+                                                <div class="col-md-9">
+                                                    <textarea class="form-control    " id=" " type=" "
+                                                        placeholder=" " rows="3"   > </textarea>
+                                                </div>
+                                            </div>
+
+
 
                                             <div class="btn-div text-center pt-2">
-                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp}  color="primary" className="mr-2" >Update</Button>
+                                                <Button data-item-id={instrumentRecord.id} onClick={toggleUp} color="primary" className="mr-2" >Update</Button>
                                                 <Link to="/instrumentlist"><Button color="secondary"  >Cancel</Button></Link>
                                             </div>
                                         </form>
@@ -233,7 +244,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                             </div>
 
                             <div class="panel-content py-2 rounded-bottom border-faded border-left-0 border-right-0 border-bottom-0   d-flex">
-                                <Button onClick={editToggle} type="button"  color="secondary">  <span class="fal fa-pencil mr-1"></span>  Edit</Button>
+                                <Button onClick={editToggle} type="button" color="secondary">  <span class="fal fa-pencil mr-1"></span>  Edit</Button>
                                 <span class="ml-auto  ">
                                     <Button data-item-id={instrumentRecord.id} color="danger" onClick={toggleDel} > <span class="fal fa-trash-alt mr-1"></span>  Delete</Button>
                                 </span>

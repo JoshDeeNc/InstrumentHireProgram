@@ -167,6 +167,16 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                             <div class=" hr"></div>
                                         </div> 
                                     </div>
+
+                     
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control    " id=" " type=" "  
+                                                placeholder=" "  rows="3"   > </textarea>
+                                        </div>
+                                    </div>
+
                                     <div class="frame-wrap mt-4 mb-3  ">
                                                 <div class="mt-3 mb-3">  
                                                     <a class="btn btn-secondary" data-toggle="collapse" href="#addOnDiv" role="button" aria-expanded="false" aria-controls="collapseExample">

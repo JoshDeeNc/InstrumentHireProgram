@@ -127,6 +127,13 @@ function NewInstrument({ addInstrument }) {
                                         </div>
                                         
                                     </div>
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control    " id=" " type=" "  
+                                                placeholder=" "  rows="3"   > </textarea>
+                                        </div>
+                                    </div>
 
                                     <div class="btn-divS">
                                         <Button onClick={add} color="primary" className="mr-2"  >Add</Button>

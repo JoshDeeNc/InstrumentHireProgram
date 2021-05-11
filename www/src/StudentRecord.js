@@ -102,8 +102,20 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                             <input type="text" class="form-control nox" name="name" id="editEmail"
                                                 value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
                                         </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
                                       
                                     </div>
+
+                                    <div class="form-group row mb-3">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control    " id=" " type=" "  
+                                                placeholder=" "  rows="3"   > </textarea>
+                                        </div>
+                                    </div>
+
                                     <div class="btn-div text-center pt-2">
                                         <Button data-item-id={studentRecord.id} onClick={toggleUp} color="primary" className="mr-2"  >Update</Button>
                                         <Link to="/studentlist"><Button color="secondary"  >Cancel</Button></Link>
