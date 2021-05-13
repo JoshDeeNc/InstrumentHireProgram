@@ -200,7 +200,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
                                         <div class="col-md-9">
-                                            <textarea class="form-control    " id=" " type=" "  
+                                            <textarea class="form-control nox" id="editToDoNotes" type="text"  
                                                 placeholder=" "  rows="3"   > </textarea>
                                         </div>
                                     </div>
