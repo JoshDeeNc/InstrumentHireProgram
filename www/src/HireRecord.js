@@ -205,6 +205,38 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                         </div>
                                     </div>
 
+                                    {hireRecord.returned == "" ? (
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Date Hired</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control nox" type="text" value={hireRecord.creation_date} />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+                                    </div>) : (
+                                        <div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Date Returned</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control nox" type="text" value={hireRecord.returned} />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label" for="simpleinput">Date Hired</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control nox" type="text" value={hireRecord.creation_date} />
+                                    </div>
+                                    <div class="col-sm-12 ">
+                                        <div class=" hr"></div>
+                                    </div>
+                                </div>
+                                </div>
+                                    )}
+
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Due Date</label>
                                         <div class="col-md-4">

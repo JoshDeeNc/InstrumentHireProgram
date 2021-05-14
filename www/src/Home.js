@@ -15,9 +15,9 @@ function Home({ toDos, deleteToDo }) {
     setFilter(newFilter);
   };
 
-  const overDues = toDos.filter(item => item.returned === false && new Date(item.due) < new Date())
-  const curHires = toDos.filter(item => item.returned === false)
-  const returnedHires = toDos.filter(item => item.returned === true)
+  const overDues = toDos.filter(item => item.returned === "" && new Date(item.due) < new Date())
+  const curHires = toDos.filter(item => item.returned === "")
+  const returnedHires = toDos.filter(item => item.returned != "")
 
   const [qry, setQry] = useState("")
   const [filtDates, setFiltDates] = useState([])
@@ -28,6 +28,7 @@ function Home({ toDos, deleteToDo }) {
     if (qry != "") {
       console.log(qry)
       return records.filter((row) => new Date(row.creation_date).toLocaleDateString().indexOf(qry.toLowerCase()) > -1 ||
+        new Date(row.returned).toLocaleDateString().indexOf(qry.toLowerCase()) > -1 ||
         row.code.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         row.name.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         row.instrument.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
@@ -143,7 +144,7 @@ function Home({ toDos, deleteToDo }) {
         <Col xs="12" className="mt-1 mb-1">
           <ul class="nav nav-tabs nav-justified" role="tablist">
             <li class="nav-item ">
-              <a class="nav-link h2 active " data-toggle="tab" href="#tab_borders_icons-1" role="tab" aria-selected="true"><i class="fal fa-guitar mr-1"></i>  Instrument Hires</a>
+              <a class="nav-link h2 active " data-toggle="tab" href="#tab_borders_icons-1" role="tab" aria-selected="true"><i class="fal fa-guitar mr-1"></i> Current Hires</a>
             </li>
             <li class="nav-item">
               <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Overdue Hires<span class="badge badge-icon bg-red pos-top ml-1 mt-2">{overDues.length}</span> </a>
@@ -380,6 +381,7 @@ function Home({ toDos, deleteToDo }) {
                           <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                             <thead>
                               <tr>
+                                <th>Date Returned</th>
                                 <th>Date Hired</th>
                                 <th>Name</th>
                                 <th>Code</th>
@@ -394,6 +396,7 @@ function Home({ toDos, deleteToDo }) {
                             <tbody>
                               {search(returnedHires).map((item, index) => (
                                 <tr role="row" key={item.id}>
+                                  <td>{new Date(item.returned).toLocaleDateString()}</td>
                                   <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                   <td>{item.name}</td>
                                   <td>{item.code}</td>

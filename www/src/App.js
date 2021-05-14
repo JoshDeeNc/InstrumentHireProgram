@@ -119,7 +119,7 @@ function App() {
 
     const newToDo = {
       "name": name,
-      "returned": false,
+      "returned": "",
       "code": code,
       "instrument": instrument,
       "brand": brand,
@@ -177,7 +177,7 @@ function App() {
 
     const updateToDo = {
       "name": name,
-      "returned": false,
+      "returned": "",
       "code": code,
       "instrument": instrument,
       "brand": brand,
@@ -242,7 +242,8 @@ function App() {
     if (itemId === null) return;
 
     let hire = toDos.find(item => item.id === itemId);
-    hire.returned = true;
+    let d = new Date();
+    hire.returned = d.toISOString();
 
     const result = await axios({
       method: 'PUT',
