@@ -44,6 +44,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
 
     const editToggle = async (event) => {
         var a = document.getElementsByTagName('input');
+        var a1 = document.getElementsByTagName('textarea');
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
             // Remove the class 'active' if it exists
@@ -51,6 +52,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
            
 
         }
+        a1[0].classList.remove('nox');
         var b = document.getElementsByTagName('div');
         // loop through all 'a' elements
         for (var i = 0; i < b.length; i++) {
@@ -204,7 +206,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
                                         <div class="col-md-9">
-                                            <textarea class="form-control" id="editToDoNotes" type="text"  
+                                            <textarea class="form-control nox" id="editToDoNotes" type="text"  
                                                 placeholder=" "  rows="3" value={notes} onChange={onChangeNotes}> </textarea>
                                         </div>
                                     </div>
