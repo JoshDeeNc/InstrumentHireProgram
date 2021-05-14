@@ -11,13 +11,14 @@ import NewInstrument from './NewInstrument';
 import InstrumentRecord from './InstrumentRecord';
 import StudentList from './StudentList';
 import NewStudent from './NewStudent';
-import StudentRecord from './StudentRecord'
+import StudentRecord from './StudentRecord';
+import SchoolList from './SchoolList';
+import NewSchool from './NewSchool';
+import SchoolRecord from './SchoolRecord';
 import Test from './Test'
 import './App.css';
 import Header from './layout/Header'
 import Sidebar from './layout/Sidebar'
-import Overlay from './layout/Overlay'
-import Breadcrumb from './layout/Breadcrumb'
 import Footer from './layout/Footer'
 
 import config from './config';
@@ -31,13 +32,15 @@ function App() {
   const [toDos, setToDos] = useState([]);
   const [instInventory, setInstInventory] = useState([]);
   const [studentList, setStudents] = useState([]);
+  const [schoolList, setSchools] = useState([]);
 
   useEffect(() => {
     getIdToken();
     if (idToken.length > 0) {
+      getAllTodos();
       getAllInstruments();
       getAllStudents();
-      getAllTodos();
+      getAllSchools();
     }
   }, [idToken]);
 
@@ -503,6 +506,112 @@ function App() {
     return result;
   }
 
+  const addSchool = async (event) => {
+    const name = document.getElementById('newSchoolName').value;
+    const phone = document.getElementById('newSchoolNumber').value;
+    const email = document.getElementById('newSchoolEmail').value;
+    const notes = document.getElementById('newSchoolNotes').value == null ? "" : document.getElementById('newSchoolNotes').value;
+
+    if (!name || name === '' || !phone || phone === '' || !email || email === '') return;
+
+    const newSchool = {
+      "name": name,
+      "phone": phone,
+      "email": email,
+      "notes": notes
+    };
+
+    const result = await axios({
+      method: 'POST',
+      url: `${config.api_base_url}/school/`,
+      headers: {
+        Authorization: idToken
+      },
+      data: newSchool
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      getAllSchools();
+    }
+    return result;
+  }
+
+  const getAllSchools = async () => {
+    const result = await axios({
+      url: `${config.api_base_url}/school/`,
+      headers: {
+        Authorization: idToken
+      }
+    }).catch(error => {
+      console.log(error);
+    });
+
+    console.log(result);
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      console.log(result.data.Items);
+      setSchools(result.data.Items);
+    }
+  };
+
+  const updateSchool = async (itemId, event) => {
+    if (itemId === null) return;
+    const name = document.getElementById('editSchoolName').value;
+    const phone = document.getElementById('editSchoolNumber').value;
+    const email = document.getElementById('editSchoolEmail').value;
+    const notes = document.getElementById('editSchoolNotes').value == null ? "" : document.getElementById('editSchoolNotes').value;
+
+    if (!name || name === '' || !phone || phone === ''
+      || !email || email === '') return;
+
+    const updateSchool = {
+      "name": name,
+      "phone": phone,
+      "email": email,
+      "notes": notes
+    };
+
+    const result = await axios({
+      method: 'PUT',
+      url: `${config.api_base_url}/school/${itemId}`,
+      headers: {
+        Authorization: idToken
+      },
+      data: updateSchool
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+      console.log(result)
+    } else if (result && result.status === 200) {
+      getAllSchools();
+    }
+    return result;
+  }
+
+  const deleteSchool = async (itemId) => {
+    if (itemId === null) return;
+
+    const result = await axios({
+      method: 'DELETE',
+      url: `${config.api_base_url}/school/${itemId}`,
+      headers: {
+        Authorization: idToken
+      }
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      getAllSchools();
+    }
+    return result;
+  }
+
   return (
     <div className="App">
       {idToken.length > 0 ? (
@@ -513,7 +622,7 @@ function App() {
           </Alert>
           <div class="page-wrapper">
             <div class="page-inner">
-              <Sidebar clearCredentials={clearCredentials} toDos={toDos} instInventory={instInventory} studentList={studentList}/>
+              <Sidebar clearCredentials={clearCredentials} toDos={toDos} instInventory={instInventory} studentList={studentList} schoolList={schoolList}/>
               <div class="page-content-wrapper">
                 <Header />
                 <main id="js-page-content" role="main" class="page-content">
@@ -528,6 +637,9 @@ function App() {
                           <Route path="/studentrecord"><StudentRecord deleteStudent={deleteStudent} updateStudent={updateStudent} studentList={studentList} /></Route>
                           <Route path="/studentlist"><StudentList studentList={studentList} /></Route>
                           <Route path="/newstudent"><NewStudent addStudent={addStudent} /></Route>
+                          <Route path="/schoolrecord"><SchoolRecord deleteSchool={deleteSchool} updateSchool={updateSchool} schoolList={schoolList} /></Route>
+                          <Route path="/schoollist"><SchoolList schoolList={schoolList} /></Route>
+                          <Route path="/newschool"><NewSchool addSchool={addSchool} /></Route>
                           <Route path="/test"><Test/></Route>
                           <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} /></Route>
                         </Switch>    

@@ -1,7 +1,7 @@
 import React from 'react';
 import StudentList from '../StudentList';
 import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
-function Sidebar( {clearCredentials, toDos, instInventory, studentList} ) {
+function Sidebar( {clearCredentials, toDos, instInventory, studentList, schoolList} ) {
   return (
     <aside class="page-sidebar">
       <div class="page-logo">
@@ -77,6 +77,17 @@ function Sidebar( {clearCredentials, toDos, instInventory, studentList} ) {
               <li>
                 <Link to="/newinstrument" title="C3 Charts" data-filter-tags="statistics chart graphs c3 charts" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_c3_charts">Add Instrument</span>
+                </Link>
+              </li>
+              <li class=" ">
+                <Link to="/schoollist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
+                  <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Schools List</span>
+                  <span class="dl-ref label bg-info-900 ml-2">{schoolList.length}</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/newschool" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
+                  <span class="nav-link-text" data-i18n="nav.statistics_chartist.js"> New School</span>
                 </Link>
               </li>
               <li>
