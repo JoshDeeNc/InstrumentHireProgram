@@ -134,9 +134,9 @@ function App() {
     } else if (result && result.status === 200) {
       console.log(code)
       let instr = instInventory.find(item => item.code === code)
+      instr.available = false;
       console.log(instr)
-      /*instr.available = false;
-      const resultInst = await axios({
+      /*const resultInst = await axios({
         method: 'PUT',
         url: `${config.api_base_url}/instrument/${instr.id}`,
         headers: {
