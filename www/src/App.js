@@ -338,6 +338,8 @@ function App() {
     const owner = document.getElementById('editInstOwner').value;
     const notes = document.getElementById('editInstNotes').value == null ? "" : document.getElementById('editInstNotes').value;
 
+    let inst = instInventory.find(item => item.id === itemId);
+
     if (!code || code === '' || !type || type === '' || !object || object === ''
       || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === ''
       || !depreciation || depreciation === '' || !owner || owner === '') return;
@@ -351,7 +353,7 @@ function App() {
       "purchaseValue": purchVal,
       "depreciation": depreciation,
       "owner": owner,
-      "available": true,
+      "available": inst.available,
       "notes": notes
     };
 
