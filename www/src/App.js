@@ -108,12 +108,13 @@ function App() {
     const code = document.getElementById('newToDoCode').value;
     const instrument = document.getElementById('newToDoInstrument').value;
     const brand = document.getElementById('newToDoBrand').value;
+    const serialNum = document.getElementById('newToDoSerialNum').value;
     const rate = document.getElementById('newToDoRate').value;
     const owner = document.getElementById('newToDoOwner').value;
     const dueDate = document.getElementById('newToDoDueDate').value;
     const notes = document.getElementById('newToDoNotes').value == null ? "" : document.getElementById('newToDoNotes').value;
 
-    if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
+    if (!name || name === '' || !code || code === '' || !instrument || instrument === '' || !serialNum || serialNum === ''
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
 
     const newToDo = {
@@ -122,6 +123,7 @@ function App() {
       "code": code,
       "instrument": instrument,
       "brand": brand,
+      "serialNum": serialNum,
       "rate": rate,
       "owner": owner,
       "due": dueDate,
@@ -164,12 +166,13 @@ function App() {
     const code = document.getElementById('editToDoCode').value;
     const instrument = document.getElementById('editToDoInstrument').value;
     const brand = document.getElementById('editToDoBrand').value;
+    const serialNum = document.getElementById('editToDoSerialNum').value;
     const rate = document.getElementById('editToDoRate').value;
     const owner = document.getElementById('editToDoOwner').value;
     const dueDate = document.getElementById('editToDoDueDate').value;
     const notes = document.getElementById('editToDoNotes').value == null ? "" : document.getElementById('editToDoNotes').value;
     console.log(name);
-    if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
+    if (!name || name === '' || !code || code === '' || !instrument || instrument === '' || !serialNum || serialNum === ''
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
 
     const updateToDo = {
@@ -178,6 +181,7 @@ function App() {
       "code": code,
       "instrument": instrument,
       "brand": brand,
+      "serialNum": serialNum,
       "rate": rate,
       "owner": owner,
       "due": dueDate,
@@ -290,8 +294,8 @@ function App() {
 
   const addInstrument = async (event) => {
     const code = document.getElementById('newInstCode').value;
+    const serialNum = document.getElementById('newSerialNum').value;
     const type = document.getElementById('newInstType').value;
-    const object = document.getElementById('newInstName').value;
     const brand = document.getElementById('newInstBrand').value;
     const rate = document.getElementById('newInstRate').value;
     const purchVal = document.getElementById('newInstPurchVal').value
@@ -300,14 +304,14 @@ function App() {
     const notes = document.getElementById('newInstNotes').value == null ? "" : document.getElementById('newInstNotes').value;
 
 
-    if (!code || code === '' || !type || type === '' || !object || object === ''
+    if (!code || code === '' || !serialNum || serialNum === '' || !type || type === ''
       || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === ''
       || !depreciation || depreciation === '' || !owner || owner === '') return;
 
     const newInstrument = {
       "code": code,
+      "serialNum": serialNum,
       "type": type,
-      "object": object,
       "brand": brand,
       "rate": rate,
       "purchaseValue": purchVal,
@@ -337,7 +341,7 @@ function App() {
   const updateInstrument = async (itemId, event) => {
     const code = document.getElementById('editInstCode').value;
     const type = document.getElementById('editInstType').value;
-    const object = document.getElementById('editInstName').value;
+    const serialNum = document.getElementById('editInstSerialNum').value;
     const brand = document.getElementById('editInstBrand').value;
     const rate = document.getElementById('editInstRate').value;
     const purchVal = document.getElementById('editInstPurchVal').value;
@@ -347,14 +351,14 @@ function App() {
 
     let inst = instInventory.find(item => item.id === itemId);
 
-    if (!code || code === '' || !type || type === '' || !object || object === ''
+    if (!code || code === '' || !type || type === '' || !serialNum || serialNum === ''
       || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === ''
       || !depreciation || depreciation === '' || !owner || owner === '') return;
 
     const updateInstrument = {
       "code": code,
       "type": type,
-      "object": object,
+      "serialNum": serialNum,
       "brand": brand,
       "rate": rate,
       "purchaseValue": purchVal,

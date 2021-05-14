@@ -50,9 +50,9 @@ function NewInstrument({ addInstrument, ownerList }) {
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-3 col-form-label" for="simpleinput"> Type </label>
+                                        <label class="col-sm-3 col-form-label" for="simpleinput"> Serial Number </label>
                                         <div class="col-sm-9">
-                                            <Input type="text" class="  form-control " name="name" id="newInstType" placeholder=" " />
+                                            <Input type="text" class="  form-control " name="serialNumber" id="newSerialNum" placeholder=" " />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -60,9 +60,9 @@ function NewInstrument({ addInstrument, ownerList }) {
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-3 col-form-label" for="simpleinput">Instrument Name </label>
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Instrument Type </label>
                                         <div class="col-sm-9">
-                                            <Input type="text" class="  form-control " name="name" id="newInstName" placeholder=" " />
+                                            <Input type="text" class="  form-control " name="name" id="newInstType" placeholder=" " />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>

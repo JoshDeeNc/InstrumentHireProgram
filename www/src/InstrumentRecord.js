@@ -10,8 +10,8 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
     const instrumentRecord = instInventory.find(item => item.id === id);
 
     const [code, setCode] = useState(instrumentRecord.code)
+    const [serialNum, setSerialNum] = useState(instrumentRecord.serialNum)
     const [type, setType] = useState(instrumentRecord.type)
-    const [object, setObject] = useState(instrumentRecord.object)
     const [brand, setBrand] = useState(instrumentRecord.brand)
     const [rate, setRate] = useState(instrumentRecord.rate)
     const [purchVal, setPurchVal] = useState(instrumentRecord.purchaseValue)
@@ -22,11 +22,11 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
     const onChangeCode = (event) => {
         setCode(event.target.value);
     }
+    const onChangeSerialNum = (event) => {
+        setSerialNum(event.target.value);
+    }
     const onChangeType = (event) => {
         setType(event.target.value);
-    }
-    const onChangeObject = (event) => {
-        setObject(event.target.value);
     }
     const onChangeBrand = (event) => {
         setBrand(event.target.value);
@@ -131,23 +131,21 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                     <div class=" hr"></div>
                                                 </div>
                                             </div>
-
                                             <div class=" form-group row" >
-                                                <label class="col-sm-3 col-form-label" for=" "> Instrument Type </label>
+                                                <label class="col-sm-3 col-form-label" for=" "> Serial Number </label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control nox" name=" " id="editInstType"
-                                                        value={type} onChange={onChangeType} placeholder="Instrument Type " />
+                                                    <input type="text" class="form-control nox" name=" " id="editInstSerialNum"
+                                                        value={serialNum} onChange={onChangeSerialNum} placeholder="Serial Number " />
                                                 </div>
                                                 <div class="col-sm-12 ">
                                                     <div class=" hr"></div>
                                                 </div>
                                             </div>
-
                                             <div class=" form-group row" >
-                                                <label class="col-sm-3 col-form-label" for=" "> Instrument Name </label>
+                                                <label class="col-sm-3 col-form-label" for=" "> Instrument Type </label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control nox" name=" " id="editInstName"
-                                                        value={object} onChange={onChangeObject} placeholder="Instrument Name " />
+                                                    <input type="text" class="form-control nox" name=" " id="editInstType"
+                                                        value={type} onChange={onChangeType} placeholder="Instrument Type " />
                                                 </div>
                                                 <div class="col-sm-12 ">
                                                     <div class=" hr"></div>
@@ -224,9 +222,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 <div class="col-sm-12 ">
                                                     <div class=" hr"></div>
                                                 </div>
-
                                             </div>
-
                                             <div class="form-group row mb-3">
                                                 <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
                                                 <div class="col-md-9">
@@ -262,7 +258,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
             <Modal isOpen={deleteModal} toggle={toggleDel} >
                 <ModalHeader toggle={toggleDel}> Delete</ModalHeader>
                 <ModalBody>
-                    Are you sure you want to delete {object + " " + brand}?
+                    Are you sure you want to delete {type + " " + brand}?
         </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={(e) => deletion(instrumentRecord.id)}>Yes</Button>
@@ -272,7 +268,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
             <Modal isOpen={updateModal} toggle={toggleUp} >
                 <ModalHeader toggle={toggleUp}> Update</ModalHeader>
                 <ModalBody>
-                    Are you sure you want to update {object + " " + brand}?
+                    Are you sure you want to update {type + " " + brand}?
         </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={(e) => update(instrumentRecord.id)}>Yes</Button>

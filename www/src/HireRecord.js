@@ -12,6 +12,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
     const [instrument, setInstrument] = useState(hireRecord.instrument)
     const [brand, setBrand] = useState(hireRecord.brand)
     const [rate, setRate] = useState(hireRecord.rate)
+    const [serialNum, setSerialNum] = useState(hireRecord.serialNum)
     const [owner, setOwner] = useState(hireRecord.owner)
     const [dueDate, setDue] = useState(hireRecord.due)
     const [notes, setNotes] = useState(hireRecord.notes)
@@ -30,6 +31,9 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
     }
     const onChangeRate = (event) => {
         setRate(event.target.value);
+    }
+    const onChangeSerialNum = (event) => {
+        setSerialNum(event.target.value);
     }
     const onChangeOwner = (event) => {
         setOwner(event.target.value);
@@ -134,6 +138,16 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="code" id="editToDoCode" placeholder="code"
                                                 value={code} onChange={onChangeCode} />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Serial Number</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control nox" name="code" id="editToDoSerialNum" placeholder="serial number"
+                                                value={serialNum} onChange={onChangeSerialNum} />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>

@@ -58,12 +58,12 @@ function updateRecord(username, recordId, eventBody) {
             "cognito-username": username,
             "id": recordId
         },
-        UpdateExpression: "set #avail = :avl, lastupdate_date = :lud, #cod = :cod, #tipe = :tipe, #obej = :obej, #brnd = :brd, #rtes = :rtes, #prchVal = :prchVal, #dpr = :dpr, #owone = :odhe, #nts = :nts",
+        UpdateExpression: "set #avail = :avl, lastupdate_date = :lud, #cod = :cod, #tipe = :tipe, #serNum = :serNum, #brnd = :brd, #rtes = :rtes, #prchVal = :prchVal, #dpr = :dpr, #owone = :odhe, #nts = :nts",
         ExpressionAttributeNames: {
             '#avail': 'available',
             '#cod': 'code',
             '#tipe': 'type',
-            '#obej': 'object',
+            '#serNum': 'serialNum',
             '#brnd': 'brand',
             '#rtes': 'rate',
             '#prchVal': 'purchaseValue',
@@ -76,7 +76,7 @@ function updateRecord(username, recordId, eventBody) {
             ':avl': item.available,
             ':cod': item.code,
             ':tipe': item.type,
-            ':obej': item.object,
+            ':serNum': item.serialNum,
             ':brd': item.brand,
             ':rtes': item.rate,
             ':prchVal': item.purchaseValue,

@@ -11,29 +11,31 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
         return self.indexOf(value) === index
     }
 
-    const availInstruments = inventory.filter(item => item.type === "Instrument").map(item => item.object).filter(unique)
+    const availInstruments = inventory.map(item => item.type).filter(unique)
     const [availBrands, setAvailBrands] = useState([])
     const [availCodes, setAvailCodes] = useState([])
     const [instr, setInstrument] = useState('')
     const [brand, setBrand] = useState('')
     const [code, setCode] = useState('')
+    const [serialNum, setSerialNum] = useState('')
     const [rate, setRate] = useState('')
     const [owner, setOwner] = useState('')
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
-        setAvailBrands(inventory.filter(item => item.type === "Instrument" && item.object === instr).map(item => item.brand).filter(unique))
+        setAvailBrands(inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique))
     }, [instr])
 
     useEffect(() => {
         console.log(brand); // add whatever functions use new `college` value here.
-        setAvailCodes(inventory.filter(item => item.type === "Instrument" && item.object === instr && item.brand === brand).map(item => item.code).filter(unique))
+        setAvailCodes(inventory.filter(item => item.type === instr && item.brand === brand).map(item => item.code).filter(unique))
     }, [brand])
 
     useEffect(() => {
         console.log(code); // add whatever functions use new `college` value here.
-        setRate(inventory.filter(item => item.type === "Instrument" && item.object === instr && item.brand === brand && item.code === code).map(item => item.rate).filter(unique))
-        setOwner(inventory.filter(item => item.type === "Instrument" && item.object === instr && item.brand === brand && item.code === code).map(item => item.owner).filter(unique))
+        setRate(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.rate).filter(unique))
+        setSerialNum(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.serialNum).filter(unique))
+        setOwner(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.owner).filter(unique))
     }, [code])
 
     const studentConcat = studentList.map(item => item.firstName + " " + item.lastName)
@@ -122,6 +124,21 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                                     <option>{item}</option>))}
                                             </datalist>
                                             <div class="invalid-tooltip">  Please enter the code </div>
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class=" form-group row">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Serial Number</label>
+                                        <div class="col-md-4">
+                                             
+                                            <div class="input-group">
+                                                <Input type="text" name="serialNumber" id="newToDoSerialNum" placeholder="serial number" value={serialNum} required />
+                                             </div>
+                                            
+                                            <div class="invalid-tooltip">  Please enter serial number </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
