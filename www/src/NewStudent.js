@@ -10,8 +10,6 @@ function NewStudent({ addStudent, schoolList }) {
     }
 
     const schools = schoolList.map(item => item.instrument).filter(unique)
-    console.log(schools)
-    const [school, setSchool] = useState('')
 
     const add = async () => {
         const result = await addStudent();
@@ -85,7 +83,7 @@ function NewStudent({ addStudent, schoolList }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Student's School</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newStudentSchool" value={school} onChange={(e) => setSchool(e.target.value)}>
+                                            <select class="form-control" id="newStudentSchool">
                                                     {schools.map((item, index) => (
                                                         <option>{item}</option>))}
                                             </select>
