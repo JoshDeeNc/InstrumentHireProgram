@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-function NewInstrument({ addInstrument }) {
+function NewInstrument({ addInstrument, ownerList }) {
 
     const history = useHistory();
+
+    const unique = (value, index, self) => {
+        return self.indexOf(value) === index
+    }
+
+    const owners = ownerList.map(item => item.name).filter(unique)
 
     const add = async (event) => {
         const result = await addInstrument();
@@ -121,7 +127,10 @@ function NewInstrument({ addInstrument }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Owner</label>
                                         <div class="col-sm-9">
-                                            <Input type="text" name="owner" id="newInstOwner" placeholder="owner" />
+                                            <select class="form-control" id="newInstOwner">
+                                                    {owners.map((item, index) => (
+                                                        <option>{item}</option>))}
+                                            </select>
                                         </div> <div class="col-sm-12 ">
                                             <div class=" hr"></div>
                                         </div>

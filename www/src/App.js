@@ -748,7 +748,7 @@ function App() {
                           <Route path="/hirerecord"><HireRecord deleteToDo={deleteToDo} updateToDo={updateToDo} returnToDo={returnToDo} toDos={toDos} /></Route>
                           <Route path="/instrumentrecord"><InstrumentRecord deleteInstrument={deleteInstrument} updateInstrument={updateInstrument} instInventory={instInventory} /></Route>
                           <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} toDos={toDos} /></Route>
-                          <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
+                          <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} ownerList={ownerList} /></Route>
                           <Route path="/studentrecord"><StudentRecord deleteStudent={deleteStudent} updateStudent={updateStudent} studentList={studentList} /></Route>
                           <Route path="/studentlist"><StudentList studentList={studentList} /></Route>
                           <Route path="/newstudent"><NewStudent addStudent={addStudent} schoolList={schoolList} /></Route>
