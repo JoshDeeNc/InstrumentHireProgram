@@ -148,6 +148,46 @@ Resources:
       SSESpecification:
         SSEEnabled: true
 
+  OwnerTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Join ['-', [owner-table, !Ref AWS::StackName]]
+      KeySchema:
+          - AttributeName: cognito-username
+            KeyType: HASH
+          - AttributeName: id
+            KeyType: RANGE
+      AttributeDefinitions:
+          - AttributeName: cognito-username
+            AttributeType: S
+          - AttributeName: id
+            AttributeType: S
+      ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5                  
+      SSESpecification:
+        SSEEnabled: true
+
+  SchoolTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Join ['-', [school-table, !Ref AWS::StackName]]
+      KeySchema:
+          - AttributeName: cognito-username
+            KeyType: HASH
+          - AttributeName: id
+            KeyType: RANGE
+      AttributeDefinitions:
+          - AttributeName: cognito-username
+            AttributeType: S
+          - AttributeName: id
+            AttributeType: S
+      ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5                  
+      SSESpecification:
+        SSEEnabled: true
+
   # API declaration
   TodoApi:
     Type: AWS::Serverless::Api
@@ -586,6 +626,265 @@ Resources:
             RestApiId: !Ref TodoApi
             Auth:
               Authorizer: CognitoAuthorizer
+
+  GetAllSchoolsFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: todo-src/getAllSchools
+      Handler: app.getAllSchools
+      Tracing: Active
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref SchoolTable
+        - CloudWatchPutMetricPolicy: {}
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref SchoolTable
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+          ENDPOINT_OVERRIDE: ""
+
+      Events:
+        GetItem:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /school
+            Method: get
+            RestApiId: !Ref TodoApi
+            Auth:
+              Authorizer: CognitoAuthorizer
+  
+  GetSchoolFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: todo-src/getSchool
+      Handler: app.getSchool
+      Tracing: Active
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref SchoolTable
+        - CloudWatchPutMetricPolicy: {}
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref SchoolTable
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+          USE_DYNAMODB_LOCAL: "0"
+          DYNAMODB_LOCAL_URI: ""
+
+      Events:
+        GetItem:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /school/{id}
+            Method: get
+            RestApiId: !Ref TodoApi
+            Auth:
+              Authorizer: CognitoAuthorizer
+
+  AddSchoolFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: todo-src/addSchool/
+      Handler: app.addSchool
+      Tracing: Active
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref SchoolTable
+        - CloudWatchPutMetricPolicy: {}
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref SchoolTable
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+          ENDPOINT_OVERRIDE: ""
+
+      Events:
+        PutItem:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /school
+            Method: POST
+            RestApiId: !Ref TodoApi
+            Auth:
+              Authorizer: CognitoAuthorizer
+
+  UpdateSchoolFunction:
+      Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+      Properties:
+        CodeUri: todo-src/updateSchool/
+        Handler: app.updateSchool
+        Tracing: Active
+        Policies:
+          - DynamoDBCrudPolicy:
+              TableName: !Ref SchoolTable
+          - CloudWatchPutMetricPolicy: {}
+        Environment:
+          Variables:
+            TABLE_NAME: !Ref SchoolTable
+            AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+        Events:
+          UpdateItem:
+            Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+            Properties:
+              Path: /school/{id}
+              Method: PUT
+              RestApiId: !Ref TodoApi
+              Auth:
+                Authorizer: CognitoAuthorizer
+
+  DeleteSchoolFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: todo-src/deleteSchool
+      Handler: app.deleteSchool
+      Tracing: Active
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref SchoolTable
+        - CloudWatchPutMetricPolicy: {}
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref SchoolTable
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+          ENDPOINT_OVERRIDE: ""
+
+      Events:
+        DeleteItem:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /school/{id}
+            Method: DELETE
+            RestApiId: !Ref TodoApi
+            Auth:
+              Authorizer: CognitoAuthorizer
+
+  GetAllOwnersFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: todo-src/getAllOwners
+      Handler: app.getAllOwners
+      Tracing: Active
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref OwnerTable
+        - CloudWatchPutMetricPolicy: {}
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref OwnerTable
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+          ENDPOINT_OVERRIDE: ""
+
+      Events:
+        GetItem:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /owner
+            Method: get
+            RestApiId: !Ref TodoApi
+            Auth:
+              Authorizer: CognitoAuthorizer
+  
+  GetOwnerFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: todo-src/getOwner
+      Handler: app.getOwner
+      Tracing: Active
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref OwnerTable
+        - CloudWatchPutMetricPolicy: {}
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref OwnerTable
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+          USE_DYNAMODB_LOCAL: "0"
+          DYNAMODB_LOCAL_URI: ""
+
+      Events:
+        GetItem:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /owner/{id}
+            Method: get
+            RestApiId: !Ref TodoApi
+            Auth:
+              Authorizer: CognitoAuthorizer
+
+  AddOwnerFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: todo-src/addOwner/
+      Handler: app.addOwner
+      Tracing: Active
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref OwnerTable
+        - CloudWatchPutMetricPolicy: {}
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref OwnerTable
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+          ENDPOINT_OVERRIDE: ""
+
+      Events:
+        PutItem:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /owner
+            Method: POST
+            RestApiId: !Ref TodoApi
+            Auth:
+              Authorizer: CognitoAuthorizer
+
+  UpdateOwnerFunction:
+      Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+      Properties:
+        CodeUri: todo-src/updateOwner/
+        Handler: app.updateOwner
+        Tracing: Active
+        Policies:
+          - DynamoDBCrudPolicy:
+              TableName: !Ref OwnerTable
+          - CloudWatchPutMetricPolicy: {}
+        Environment:
+          Variables:
+            TABLE_NAME: !Ref OwnerTable
+            AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+        Events:
+          UpdateItem:
+            Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+            Properties:
+              Path: /owner/{id}
+              Method: PUT
+              RestApiId: !Ref TodoApi
+              Auth:
+                Authorizer: CognitoAuthorizer
+
+  DeleteOwnerFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: todo-src/deleteOwner
+      Handler: app.deleteOwner
+      Tracing: Active
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref OwnerTable
+        - CloudWatchPutMetricPolicy: {}
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref OwnerTable
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+          ENDPOINT_OVERRIDE: ""
+
+      Events:
+        DeleteItem:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /owner/{id}
+            Method: DELETE
+            RestApiId: !Ref TodoApi
+            Auth:
+              Authorizer: CognitoAuthorizer
+
 
 
   # This role allows API Gateway to push execution and access logs to CloudWatch logs
