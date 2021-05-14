@@ -104,7 +104,7 @@ function App() {
     const owner = document.getElementById('newToDoOwner').value;
     const dueDate = document.getElementById('newToDoDueDate').value;
     const notes = document.getElementById('newToDoNotes').value == null ? "" : document.getElementById('newToDoNotes').value;
-    console.log(name);
+
     if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
 
@@ -132,7 +132,7 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      console.log(code)
+      /*console.log(code)
       let instr = instInventory.find(item => item.code === code)
       console.log(instr)
       instr.available = false;
@@ -148,7 +148,8 @@ function App() {
       if (resultInst && resultInst.status === 200) {
         getAllTodos();
         return resultInst;
-      }
+      }*/
+      return result
     }
   }
 
