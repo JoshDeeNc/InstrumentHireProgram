@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-function NewStudent({ addStudent }) {
+function NewStudent({ addStudent, schoolList }) {
 
     const history = useHistory();
+
+    const unique = (value, index, self) => {
+        return self.indexOf(value) === index
+    }
+
+    const schools = schoolList.map(item => item.instrument).filter(unique)
+
+    const [school, setSchool] = useState(schools[0])
 
     const add = async () => {
         const result = await addStudent();
@@ -68,6 +76,19 @@ function NewStudent({ addStudent }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Email</label>
                                         <div class="col-sm-9">
                                             <Input type="text" class="form-control no-edit" name="code" id="newEmail" placeholder="Email" />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class=" form-group row">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Student's School</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" id="newStudentSchool" value={school} onChange={(e) => setSchool(e.target.value)}>
+                                                    {schools.map((item, index) => (
+                                                        <option>{item}</option>))}
+                                            </select>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>

@@ -400,6 +400,7 @@ function App() {
     const lastName = document.getElementById('newLastName').value;
     const phone = document.getElementById('newPhoneNumber').value;
     const email = document.getElementById('newEmail').value;
+    const school = document.getElementById('newStudentSchool').value;
     const notes = document.getElementById('newNotes').value == null ? "" : document.getElementById('newNotes').value;
 
     if (!firstName || firstName === '' || !lastName || lastName === '' || !phone || phone === ''
@@ -410,6 +411,7 @@ function App() {
       "lastName": lastName,
       "phone": phone,
       "email": email,
+      "school": school,
       "notes": notes
     };
 
@@ -456,6 +458,7 @@ function App() {
     const lastName = document.getElementById('editLastName').value;
     const phone = document.getElementById('editPhoneNumber').value;
     const email = document.getElementById('editEmail').value;
+    const school = document.getElementById('editStudentSchool').value;
     const notes = document.getElementById('editNotes').value == null ? "" : document.getElementById('editNotes').value;
 
     if (!firstName || firstName === '' || !lastName || lastName === '' || !phone || phone === ''
@@ -466,6 +469,7 @@ function App() {
       "lastName": lastName,
       "phone": phone,
       "email": email,
+      "school": school,
       "notes": notes
     };
 
@@ -636,7 +640,7 @@ function App() {
                           <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} /></Route>
                           <Route path="/studentrecord"><StudentRecord deleteStudent={deleteStudent} updateStudent={updateStudent} studentList={studentList} /></Route>
                           <Route path="/studentlist"><StudentList studentList={studentList} /></Route>
-                          <Route path="/newstudent"><NewStudent addStudent={addStudent} /></Route>
+                          <Route path="/newstudent"><NewStudent addStudent={addStudent} schoolList={schoolList} /></Route>
                           <Route path="/schoolrecord"><SchoolRecord deleteSchool={deleteSchool} updateSchool={updateSchool} schoolList={schoolList} /></Route>
                           <Route path="/schoollist"><SchoolList schoolList={schoolList} /></Route>
                           <Route path="/newschool"><NewSchool addSchool={addSchool} /></Route>

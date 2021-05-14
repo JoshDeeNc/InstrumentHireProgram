@@ -11,6 +11,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
     const [studLast, setStudLast] = useState(studentRecord.lastName)
     const [phone, setPhone] = useState(studentRecord.phone)
     const [email, setEmail] = useState(studentRecord.email)
+    const [studSchool, setStudSchool] = useState(studentRecord.school)
     const [notes, setNotes] = useState(studentRecord.notes)
 
     const editToggle = (event) => {
@@ -104,6 +105,18 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="name" id="editEmail"
                                                 value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+                                      
+                                    </div>
+                                    <div class="row form-group" >
+                                        <label class="col-sm-3 col-form-label" for=" ">School</label>
+
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control nox" name="name" id="editStudentSchool"
+                                                value={studSchool} onChange={(e) => setStudSchool(e.target.value)} placeholder="School" />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
