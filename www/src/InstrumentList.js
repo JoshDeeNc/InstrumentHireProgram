@@ -17,7 +17,7 @@ function InstrumentList({ instInventory, toDos }) {
       return instInventory.filter((row) => 
       row.code.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
       row.type.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.object.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.serialNum.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
       row.brand.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
       row.rate.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
       row.owner.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
@@ -58,7 +58,7 @@ function InstrumentList({ instInventory, toDos }) {
                         <tr>
                           <th>Code</th>
                           <th>Type</th>
-                          <th>Object Name</th>
+                          <th>Serial Number</th>
                           <th>Brand</th>
                           <th>Rate</th>
                           <th>Owner</th>
@@ -71,7 +71,7 @@ function InstrumentList({ instInventory, toDos }) {
                           <tr role="row" key={item.id}>
                             <td>{item.code}</td>
                             <td>{item.type}</td>
-                            <td>{item.object}</td>
+                            <td>{item.serialNum}</td>
                             <td>{item.brand}</td>
                             <td>{item.rate}</td>
                             <td>{item.owner}</td>
