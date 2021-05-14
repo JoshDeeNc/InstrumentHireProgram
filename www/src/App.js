@@ -132,10 +132,10 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      /*console.log(code)
+      console.log(code)
       let instr = instInventory.find(item => item.code === code)
       console.log(instr)
-      instr.available = false;
+      /*instr.available = false;
       const resultInst = await axios({
         method: 'PUT',
         url: `${config.api_base_url}/instrument/${instr.id}`,

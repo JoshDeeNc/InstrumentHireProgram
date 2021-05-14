@@ -14,12 +14,14 @@ function InstrumentList({ instInventory, toDos }) {
 
   function search() {
     if (qry != "") {
-      const columns = instInventory[0] && Object.keys(instInventory[0])
       return instInventory.filter((row) => 
-        columns.some((column) => 
-          row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1
-        )
-      );
+      row.code.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.type.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.object.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.brand.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.rate.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.owner.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.available.toLowerCase().indexOf(qry.toLowerCase()) > -1)
     }
     else return instInventory
   }

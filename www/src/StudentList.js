@@ -14,12 +14,11 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
 
   function search() {
     if (qry != "") {
-      const columns = studentList[0] && Object.keys(studentList[0])
       return studentList.filter((row) => 
-        columns.some((column) => 
-          row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1
-        )
-      );
+      row.firstName.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.lastName.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.phone.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.email.toLowerCase().indexOf(qry.toLowerCase()) > -1)
     }
     else return studentList
   }
