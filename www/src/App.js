@@ -461,7 +461,7 @@ function App() {
     const email = document.getElementById('editEmail').value;
     const school = document.getElementById('editStudentSchool').value;
     const notes = document.getElementById('editNotes').value == null ? "" : document.getElementById('editNotes').value;
-
+    console.log(school)
     if (!firstName || firstName === '' || !lastName || lastName === '' || !phone || phone === ''
       || !email || email === '') return;
 
