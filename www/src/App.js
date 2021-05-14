@@ -103,6 +103,7 @@ function App() {
     const rate = document.getElementById('newToDoRate').value;
     const owner = document.getElementById('newToDoOwner').value;
     const dueDate = document.getElementById('newToDoDueDate').value;
+    const notes = document.getElementById('newToDoNotes').value == null ? "" : document.getElementById('newToDoNotes').value;
     console.log(name);
     if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
@@ -116,6 +117,7 @@ function App() {
       "rate": rate,
       "owner": owner,
       "due": dueDate,
+      "notes": notes
     };
 
     const result = await axios({
@@ -157,6 +159,7 @@ function App() {
     const rate = document.getElementById('editToDoRate').value;
     const owner = document.getElementById('editToDoOwner').value;
     const dueDate = document.getElementById('editToDoDueDate').value;
+    const notes = document.getElementById('editToDoNotes').value == null ? "" : document.getElementById('editToDoNotes').value;
     console.log(name);
     if (!name || name === '' || !code || code === '' || !instrument || instrument === ''
       || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
@@ -169,7 +172,8 @@ function App() {
       "brand": brand,
       "rate": rate,
       "owner": owner,
-      "due": dueDate
+      "due": dueDate,
+      "notes": notes
     };
 
     const result = await axios({

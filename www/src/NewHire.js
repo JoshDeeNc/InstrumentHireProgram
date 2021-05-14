@@ -19,6 +19,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
     const [code, setCode] = useState('')
     const [rate, setRate] = useState('')
     const [owner, setOwner] = useState('')
+    const [notes, setNotes] = useState('')
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
@@ -172,7 +173,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
                                         <div class="col-md-9">
-                                            <textarea class="form-control    " id=" " type=" "  
+                                            <textarea class="form-control    " id="newToDoNotes" type="text"  
                                                 placeholder=" "  rows="3"   > </textarea>
                                         </div>
                                     </div>

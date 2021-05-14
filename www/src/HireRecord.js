@@ -14,6 +14,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
     const [rate, setRate] = useState(hireRecord.rate)
     const [owner, setOwner] = useState(hireRecord.owner)
     const [dueDate, setDue] = useState(hireRecord.due)
+    const [notes, setNotes] = useState(hireRecord.notes)
 
     const onChangeStud = (event) => {
         setStudName(event.target.value);
@@ -35,6 +36,9 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
     }
     const onChangeDue = (event) => {
         setDue(event.target.value);
+    }
+    const onChangeNotes = (event) => {
+        setNotes(event.target.value);
     }
 
 
@@ -200,8 +204,8 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
                                         <div class="col-md-9">
-                                            <textarea class="form-control nox" id="editToDoNotes" type="text"  
-                                                placeholder=" "  rows="3"   > </textarea>
+                                            <textarea class="form-control" id="editToDoNotes" type="text"  
+                                                placeholder=" "  rows="3" value={notes} onChange={onChangeNotes}> </textarea>
                                         </div>
                                     </div>
 
