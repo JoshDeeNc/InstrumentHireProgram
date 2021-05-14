@@ -236,9 +236,9 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" for="simpleinput">Wire leads 6mt</label>
                                                                 <div class="col-2">
-                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
                                                                 </div><div class="col-2">
-                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
@@ -247,9 +247,9 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" for="simpleinput">Strings</label>
                                                                 <div class="col-2">
-                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
                                                                 </div><div class="col-2">
-                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
@@ -258,9 +258,9 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" for="simpleinput">Stands</label>
                                                                 <div class="col-2">
-                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
                                                                 </div><div class="col-2">
-                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
@@ -269,9 +269,9 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" for="simpleinput">Picks</label>
                                                                 <div class="col-2">
-                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
                                                                 </div><div class="col-2">
-                                                                    <Input type="text" name="owner" id="newInstOwner" placeholder=" " />
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>

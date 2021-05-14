@@ -19,7 +19,6 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
     const [code, setCode] = useState('')
     const [rate, setRate] = useState('')
     const [owner, setOwner] = useState('')
-    const [notes, setNotes] = useState('')
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
