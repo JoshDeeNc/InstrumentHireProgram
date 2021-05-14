@@ -149,7 +149,8 @@ function App() {
         getAllTodos();
         return resultInst;
       }*/
-      return result
+      getAllTodos();
+      return result;
     }
   }
 
