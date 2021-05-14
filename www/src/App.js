@@ -214,7 +214,7 @@ function App() {
     } else if (result && result.status === 200) {
       let instr = instInventory.find(item => item.code === instCode)
       instr.available = true;
-      const resultInst = await axios({
+      /*const resultInst = await axios({
         method: 'PUT',
         url: `${config.api_base_url}/instrument/${instr.id}`,
         headers: {
@@ -226,9 +226,10 @@ function App() {
       if (resultInst && resultInst.status === 200) {
         getAllTodos();
         return resultInst;
-      }
+      }*/
+      getAllTodos();
+      return result;
     }
-    return result;
   }
 
   const returnToDo = async (itemId, instCode) => {
@@ -249,7 +250,7 @@ function App() {
     if (result && result.status === 200) {
       let instr = instInventory.find(item => item.code === instCode)
       instr.available = true;
-      const resultInst = await axios({
+      /*const resultInst = await axios({
         method: 'PUT',
         url: `${config.api_base_url}/instrument/${instr.id}`,
         headers: {
@@ -261,7 +262,9 @@ function App() {
       if (resultInst && resultInst.status === 200) {
         getAllTodos();
         return resultInst;
-      }
+      }*/
+      getAllTodos();
+      return result;
     }
   }
 
