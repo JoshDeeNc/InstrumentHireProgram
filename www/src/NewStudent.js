@@ -10,8 +10,8 @@ function NewStudent({ addStudent, schoolList }) {
     }
 
     const schools = schoolList.map(item => item.instrument).filter(unique)
-
-    const [school, setSchool] = useState(schools[0])
+    console.log(schools)
+    const [school, setSchool] = useState('')
 
     const add = async () => {
         const result = await addStudent();
