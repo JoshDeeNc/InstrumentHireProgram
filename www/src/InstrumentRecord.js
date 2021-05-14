@@ -49,6 +49,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
 
     const editToggle = (event) => {
         var a = document.getElementsByTagName('input');
+        var a1 = document.getElementsByTagName('textarea');
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
             // Remove the class 'active' if it exists
@@ -56,6 +57,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
 
 
         }
+        a1[0].classList.remove('nox');
         var b = document.getElementsByTagName('div');
         // loop through all 'a' elements
         for (var i = 0; i < b.length; i++) {
@@ -228,7 +230,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             <div class="form-group row mb-3">
                                                 <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
                                                 <div class="col-md-9">
-                                                    <textarea class="form-control    " id="editInstNotes" type="text"
+                                                    <textarea class="form-control nox" id="editInstNotes" type="text"
                                                         placeholder=" " rows="3" value={notes} onChange={onChangeNotes}> </textarea>
                                                 </div>
                                             </div>

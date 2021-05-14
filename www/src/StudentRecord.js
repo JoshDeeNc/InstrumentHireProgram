@@ -15,11 +15,13 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
 
     const editToggle = (event) => {
         var a = document.getElementsByTagName('input');
+        var a1 = document.getElementsByTagName('textarea');
         // loop through all 'a' elements
         for (var i = 0; i < a.length; i++) {
             // Remove the class 'active' if it exists
             a[i].classList.remove('nox');
         }
+        a1[0].classList.remove('nox');
         var b = document.getElementsByTagName('div');
         // loop through all 'a' elements
         for (var i = 0; i < b.length; i++) {
@@ -112,7 +114,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                     <div class="form-group row mb-3">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
                                         <div class="col-md-9">
-                                            <textarea class="form-control    " id="editNotes" type="text"  
+                                            <textarea class="form-control nox" id="editNotes" type="text"  
                                                 placeholder=" "  rows="3" value={notes} onChange={(e) => setNotes(e.target.value)}> </textarea>
                                         </div>
                                     </div>
