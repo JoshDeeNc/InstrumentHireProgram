@@ -33,6 +33,7 @@ function App() {
   const [instInventory, setInstInventory] = useState([]);
   const [studentList, setStudents] = useState([]);
   const [schoolList, setSchools] = useState([]);
+  const [ownerList, setOwners] = useState([]);
 
   useEffect(() => {
     getIdToken();
@@ -612,6 +613,112 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       getAllSchools();
+    }
+    return result;
+  }
+
+  const addOwner = async (event) => {
+    const name = document.getElementById('newOwnerName').value;
+    const phone = document.getElementById('newOwnerNumber').value;
+    const email = document.getElementById('newOwnerEmail').value;
+    const notes = document.getElementById('newOwnerNotes').value == null ? "" : document.getElementById('newOwnerNotes').value;
+
+    if (!name || name === '' || !phone || phone === '' || !email || email === '') return;
+
+    const newOwner = {
+      "name": name,
+      "phone": phone,
+      "email": email,
+      "notes": notes
+    };
+
+    const result = await axios({
+      method: 'POST',
+      url: `${config.api_base_url}/owner/`,
+      headers: {
+        Authorization: idToken
+      },
+      data: newOwner
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      getAllOwners();
+    }
+    return result;
+  }
+
+  const getAllOwners = async () => {
+    const result = await axios({
+      url: `${config.api_base_url}/owner/`,
+      headers: {
+        Authorization: idToken
+      }
+    }).catch(error => {
+      console.log(error);
+    });
+
+    console.log(result);
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      console.log(result.data.Items);
+      setOwners(result.data.Items);
+    }
+  };
+
+  const updateOwner = async (itemId, event) => {
+    if (itemId === null) return;
+    const name = document.getElementById('editOwnerName').value;
+    const phone = document.getElementById('editOwnerNumber').value;
+    const email = document.getElementById('editOwnerEmail').value;
+    const notes = document.getElementById('editOwnerNotes').value == null ? "" : document.getElementById('editOwnerNotes').value;
+
+    if (!name || name === '' || !phone || phone === ''
+      || !email || email === '') return;
+
+    const updateOwner = {
+      "name": name,
+      "phone": phone,
+      "email": email,
+      "notes": notes
+    };
+
+    const result = await axios({
+      method: 'PUT',
+      url: `${config.api_base_url}/owner/${itemId}`,
+      headers: {
+        Authorization: idToken
+      },
+      data: updateOwner
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+      console.log(result)
+    } else if (result && result.status === 200) {
+      getAllOwners();
+    }
+    return result;
+  }
+
+  const deleteOwner = async (itemId) => {
+    if (itemId === null) return;
+
+    const result = await axios({
+      method: 'DELETE',
+      url: `${config.api_base_url}/owner/${itemId}`,
+      headers: {
+        Authorization: idToken
+      }
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      getAllOwners();
     }
     return result;
   }
