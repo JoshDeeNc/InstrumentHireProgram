@@ -9,7 +9,7 @@ function NewStudent({ addStudent, schoolList }) {
         return self.indexOf(value) === index
     }
 
-    const schools = schoolList.map(item => item.instrument).filter(unique)
+    const schools = schoolList.map(item => item.name).filter(unique)
 
     const add = async () => {
         const result = await addStudent();
