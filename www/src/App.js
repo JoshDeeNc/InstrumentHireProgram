@@ -15,6 +15,9 @@ import StudentRecord from './StudentRecord';
 import SchoolList from './SchoolList';
 import NewSchool from './NewSchool';
 import SchoolRecord from './SchoolRecord';
+import OwnerList from './OwnerList';
+import NewOwner from './NewOwner';
+import OwnerRecord from './OwnerRecord';
 import Test from './Test'
 import './App.css';
 import Header from './layout/Header'
@@ -42,6 +45,7 @@ function App() {
       getAllInstruments();
       getAllStudents();
       getAllSchools();
+      getAllOwners();
     }
   }, [idToken]);
 
@@ -733,7 +737,7 @@ function App() {
           </Alert>
           <div class="page-wrapper">
             <div class="page-inner">
-              <Sidebar clearCredentials={clearCredentials} toDos={toDos} instInventory={instInventory} studentList={studentList} schoolList={schoolList}/>
+              <Sidebar clearCredentials={clearCredentials} toDos={toDos} instInventory={instInventory} studentList={studentList} schoolList={schoolList} ownerList={ownerList}/>
               <div class="page-content-wrapper">
                 <Header />
                 <main id="js-page-content" role="main" class="page-content">
@@ -751,6 +755,9 @@ function App() {
                           <Route path="/schoolrecord"><SchoolRecord deleteSchool={deleteSchool} updateSchool={updateSchool} schoolList={schoolList} /></Route>
                           <Route path="/schoollist"><SchoolList schoolList={schoolList} /></Route>
                           <Route path="/newschool"><NewSchool addSchool={addSchool} /></Route>
+                          <Route path="/ownerrecord"><OwnerRecord deleteOwner={deleteOwner} updateOwner={updateOwner} ownerList={ownerList} /></Route>
+                          <Route path="/ownerlist"><OwnerList ownerList={ownerList} /></Route>
+                          <Route path="/newowner"><NewOwner addOwner={addOwner} /></Route>
                           <Route path="/test"><Test/></Route>
                           <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} /></Route>
                         </Switch>    
