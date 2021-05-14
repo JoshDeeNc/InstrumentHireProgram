@@ -58,12 +58,13 @@ function updateRecord(username, recordId, eventBody) {
             "cognito-username": username,
             "id": recordId
         },
-        UpdateExpression: "set #first = :frst, lastupdate_date = :lud, #last = :lst, #phn = :phn, #eml = :eml, #nts = :nts",
+        UpdateExpression: "set #first = :frst, lastupdate_date = :lud, #last = :lst, #phn = :phn, #eml = :eml, #scl = :scl, #nts = :nts",
         ExpressionAttributeNames: { 
             '#first': 'firstName',
             '#last': 'lastName',
             '#phn': 'phone',
             '#eml': 'email',
+            '#scl': 'school',
             '#nts': 'notes'
         },
         ExpressionAttributeValues: {
@@ -72,6 +73,7 @@ function updateRecord(username, recordId, eventBody) {
             ':lst': item.lastName,
             ':phn': item.phone,
             ':eml': item.email,
+            ':scl': item.school,
             ':nts': item.notes
         }
     }
