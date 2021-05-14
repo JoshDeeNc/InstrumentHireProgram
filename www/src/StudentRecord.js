@@ -11,6 +11,7 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
     const [studLast, setStudLast] = useState(studentRecord.lastName)
     const [phone, setPhone] = useState(studentRecord.phone)
     const [email, setEmail] = useState(studentRecord.email)
+    const [notes, setNotes] = useState(studentRecord.notes)
 
     const editToggle = (event) => {
         var a = document.getElementsByTagName('input');
@@ -111,8 +112,8 @@ function StudentRecord({ deleteStudent, updateStudent, studentList }) {
                                     <div class="form-group row mb-3">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
                                         <div class="col-md-9">
-                                            <textarea class="form-control    " id=" " type=" "  
-                                                placeholder=" "  rows="3"   > </textarea>
+                                            <textarea class="form-control    " id="editNotes" type="text"  
+                                                placeholder=" "  rows="3" value={notes} onChange={(e) => setNotes(e.target.value)}> </textarea>
                                         </div>
                                     </div>
 

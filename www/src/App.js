@@ -290,6 +290,8 @@ function App() {
     const purchVal = document.getElementById('newInstPurchVal').value
     const depreciation = document.getElementById('newInstDepr').value;
     const owner = document.getElementById('newInstOwner').value;
+    const notes = document.getElementById('newInstNotes').value == null ? "" : document.getElementById('newInstNotes').value;
+
 
     if (!code || code === '' || !type || type === '' || !object || object === ''
       || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === ''
@@ -304,7 +306,8 @@ function App() {
       "purchaseValue": purchVal,
       "depreciation": depreciation,
       "owner": owner,
-      "available": true
+      "available": true,
+      "notes": notes
     };
 
     const result = await axios({
@@ -330,9 +333,10 @@ function App() {
     const object = document.getElementById('editInstName').value;
     const brand = document.getElementById('editInstBrand').value;
     const rate = document.getElementById('editInstRate').value;
-    const purchVal = document.getElementById('editInstPurchVal').value
+    const purchVal = document.getElementById('editInstPurchVal').value;
     const depreciation = document.getElementById('editInstDepr').value;
     const owner = document.getElementById('editInstOwner').value;
+    const notes = document.getElementById('editInstNotes').value == null ? "" : document.getElementById('editInstNotes').value;
 
     if (!code || code === '' || !type || type === '' || !object || object === ''
       || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === ''
@@ -347,7 +351,8 @@ function App() {
       "purchaseValue": purchVal,
       "depreciation": depreciation,
       "owner": owner,
-      "available": true
+      "available": true,
+      "notes": notes
     };
 
     const result = await axios({
@@ -391,6 +396,7 @@ function App() {
     const lastName = document.getElementById('newLastName').value;
     const phone = document.getElementById('newPhoneNumber').value;
     const email = document.getElementById('newEmail').value;
+    const notes = document.getElementById('newNotes').value == null ? "" : document.getElementById('newNotes').value;
 
     if (!firstName || firstName === '' || !lastName || lastName === '' || !phone || phone === ''
       || !email || email === '') return;
@@ -400,6 +406,7 @@ function App() {
       "lastName": lastName,
       "phone": phone,
       "email": email,
+      "notes": notes
     };
 
     const result = await axios({
@@ -445,6 +452,7 @@ function App() {
     const lastName = document.getElementById('editLastName').value;
     const phone = document.getElementById('editPhoneNumber').value;
     const email = document.getElementById('editEmail').value;
+    const notes = document.getElementById('editNotes').value == null ? "" : document.getElementById('editNotes').value;
 
     if (!firstName || firstName === '' || !lastName || lastName === '' || !phone || phone === ''
       || !email || email === '') return;
@@ -454,6 +462,7 @@ function App() {
       "lastName": lastName,
       "phone": phone,
       "email": email,
+      "notes": notes
     };
 
     const result = await axios({

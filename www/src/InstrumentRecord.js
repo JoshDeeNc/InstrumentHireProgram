@@ -17,6 +17,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
     const [purchVal, setPurchVal] = useState(instrumentRecord.purchaseValue)
     const [depr, setDepreciation] = useState(instrumentRecord.depreciation)
     const [owner, setOwner] = useState(instrumentRecord.owner)
+    const [notes, setNotes] = useState(instrumentRecord.notes)
 
     const onChangeCode = (event) => {
         setCode(event.target.value);
@@ -41,6 +42,9 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
     }
     const onChangeOwner = (event) => {
         setOwner(event.target.value);
+    }
+    const onChangeNotes = (event) => {
+        setNotes(event.target.value);
     }
 
     const editToggle = (event) => {
@@ -224,8 +228,8 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                             <div class="form-group row mb-3">
                                                 <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
                                                 <div class="col-md-9">
-                                                    <textarea class="form-control    " id=" " type=" "
-                                                        placeholder=" " rows="3"   > </textarea>
+                                                    <textarea class="form-control    " id="editInstNotes" type="text"
+                                                        placeholder=" " rows="3" value={notes} onChange={onChangeNotes}> </textarea>
                                                 </div>
                                             </div>
 

@@ -58,19 +58,21 @@ function updateRecord(username, recordId, eventBody) {
             "cognito-username": username,
             "id": recordId
         },
-        UpdateExpression: "set #first = :frst, lastupdate_date = :lud, #last = :lst, #phn = :phn, #eml = :eml",
+        UpdateExpression: "set #first = :frst, lastupdate_date = :lud, #last = :lst, #phn = :phn, #eml = :eml, #nts = :nts",
         ExpressionAttributeNames: { 
             '#first': 'firstName',
             '#last': 'lastName',
             '#phn': 'phone',
-            '#eml': 'email'
+            '#eml': 'email',
+            '#nts': 'notes'
         },
         ExpressionAttributeValues: {
             ':lud': d.toISOString(),
             ':frst': item.firstName,
             ':lst': item.lastName,
             ':phn': item.phone,
-            ':eml': item.email
+            ':eml': item.email,
+            ':nts': item.notes
         }
     }
     return docClient.update(params)

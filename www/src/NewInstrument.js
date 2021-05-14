@@ -130,7 +130,7 @@ function NewInstrument({ addInstrument }) {
                                     <div class="form-group row mb-3">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
                                         <div class="col-md-9">
-                                            <textarea class="form-control    " id=" " type=" "  
+                                            <textarea class="form-control    " id="newInstNotes" type="text"  
                                                 placeholder=" "  rows="3"   > </textarea>
                                         </div>
                                     </div>
