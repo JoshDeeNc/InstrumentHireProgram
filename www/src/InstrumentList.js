@@ -16,12 +16,12 @@ function InstrumentList({ instInventory, toDos }) {
     if (qry != "") {
       return instInventory.filter((row) => 
       row.code.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.type.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.object.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.brand.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.rate.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.owner.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.available.toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      row.type.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.object.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.brand.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.rate.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.owner.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
+      row.available.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
     }
     else return instInventory
   }
