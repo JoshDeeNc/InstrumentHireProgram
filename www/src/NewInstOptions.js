@@ -15,7 +15,7 @@ function NewInstOptions( { addInstOptions } ) {
         for (var i = 0; i < ado.length; i++) {
             let attr = ado[i].split(",");
             console.log(attr)
-            addOns.attr[0] = attr[1]
+            addOns[attr[0]] = attr[1]
         }
         console.log(addOns)
         const result = await addInstOptions(instTypeName, sizes, addOns);
