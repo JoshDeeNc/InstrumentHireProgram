@@ -9,12 +9,12 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
 
     const [instTypeName, setInstTypeName] = useState(instOptionsRecord.instrumentTypeName)
     const [sizes, setSizes] = useState(instOptionsRecord.sizes.toString())
+    let addOnStr = ""
     for(let key in instOptionsRecord.addOns) {
         let value = instOptionsRecord.addOns[key]
-        console.log(value)
-        console.log(key)
+        addOnStr = addOnStr + key + "," + value + ";"
     }
-    const [addOns, setAddOns] = useState(JSON.stringify(instOptionsRecord.addOns))
+    const [addOns, setAddOns] = useState(addOnStr)
 
     const editToggle = (event) => {
         var a = document.getElementsByTagName('input');
@@ -41,8 +41,17 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
 
     const update = async (itemId, event) => {
         const inst = instTypeName == "" ? "" : instTypeName;
-        const szs = sizes == "" ? ["N/A"] : sizes.split(",");
-        const ado = addOns == "" ? ["N/A"] : addOns.split(",");
+        const szs = sizes == "" ? ["N/A"] : sizes.split(";");
+        const ado = addOns.split(";");
+        let addOnsUpdate = {};
+        if (ado != "") {
+            for (var i = 0; i < ado.length; i++) {
+                let attr = ado[i].split(",");
+                console.log(attr)
+                addOnsUpdate[attr[0]] = attr[1]
+            }
+            console.log(addOnsUpdate)
+        }
         const result = await updateInstOptions(itemId, inst, szs, ado);
         if (result.status === 200) {
             history.push('/instoptionslist');
