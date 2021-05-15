@@ -255,7 +255,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                             
                                                             {addOns.map((item, index) => (
                                                             <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">Yo</label>
+                                                                <label class="col-8 col-form-label" for="simpleinput">{Object.keys(item)[0]}</label>
                                                                 <div class="col-2">
                                                                     <Input type="text" name="owner" id=" " placeholder=" " />
                                                                 </div><div class="col-2">
