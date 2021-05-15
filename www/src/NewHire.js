@@ -16,9 +16,10 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     console.log(addOnsList)
     var addOns = {}
     for(let instaddons in addOnsList) {
-        for(let ado in instaddons) {
+        console.log(instaddons)
+        /*for(let ado in instaddons) {
             addOns[ado] = instaddons[ado]
-        }
+        }*/
     }
     const [availBrands, setAvailBrands] = useState([])
     const [availCodes, setAvailCodes] = useState([])
