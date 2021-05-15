@@ -209,7 +209,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Date Hired</label>
                                         <div class="col-sm-9">
-                                            <input class="form-control nox" type="text" value={hireRecord.creation_date} />
+                                            <input class="form-control nox" type="text" value={new Date(hireRecord.creation_date).toLocaleDateString()} />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -219,7 +219,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Date Returned</label>
                                         <div class="col-sm-9">
-                                            <input class="form-control nox" type="text" value={hireRecord.returned} />
+                                            <input class="form-control nox" type="text" value={new Date(hireRecord.returned).toLocaleDateString()} />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -228,7 +228,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                     <div class="form-group row">
                                     <label class="col-sm-3 col-form-label" for="simpleinput">Date Hired</label>
                                     <div class="col-sm-9">
-                                        <input class="form-control nox" type="text" value={hireRecord.creation_date} />
+                                        <input class="form-control nox" type="text" value={new Date(hireRecord.creation_date).toLocaleDateString()} />
                                     </div>
                                     <div class="col-sm-12 ">
                                         <div class=" hr"></div>
