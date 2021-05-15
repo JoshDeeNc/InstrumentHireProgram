@@ -56,7 +56,7 @@ function InstOptionsList({ instOptionsList }) {
                       <tbody>
                         {search().map((item, index) => (
                           <tr role="row" key={item.id}>
-                            <td>{item.name}</td>
+                            <td>{item.instrumentTypeName}</td>
                             <td class="al-ctr"><Link to={`/instOptionsRecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                           </tr>
                         ))}
