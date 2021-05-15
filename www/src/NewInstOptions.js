@@ -8,8 +8,14 @@ function NewInstOptions( { addInstOptions } ) {
 
     const add = async () => {
         const instTypeName = document.getElementById("newInstTypeName").value === null ? "" : document.getElementById('newInstTypeName').value;
-        const sizes = document.getElementById("newSizesList").value === "" ? ["N/A"] : document.getElementById('newSizesList').value.split(",");
-        const addOns = document.getElementById("newAddOnsList").value === "" ? ["N/A"] : document.getElementById('newAddOnsList').value.split(",");
+        const sizes = document.getElementById("newSizesList").value === "" ? ["N/A"] : document.getElementById('newSizesList').value.split(";");
+        let ado = document.getElementById('newAddOnsList').value.split(";");
+        let addOns = {};
+        for (var i = 0; i < ado.length; i++) {
+            let attr = ado[i].split(",");
+            addOns.attr[0] = attr[1]
+        }
+        console.log(addOns)
         const result = await addInstOptions(instTypeName, sizes, addOns);
         if(result.status === 200 ) {
             history.push('/instoptionslist');
