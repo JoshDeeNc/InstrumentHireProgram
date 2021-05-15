@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-function NewInstOptions( { addInstOptions } ) {
+function NewInstOptions({ addInstOptions }) {
 
     const history = useHistory();
 
@@ -12,14 +12,16 @@ function NewInstOptions( { addInstOptions } ) {
         let ado = document.getElementById('newAddOnsList').value.split(";");
         console.log(ado)
         let addOns = {};
-        for (var i = 0; i < ado.length; i++) {
-            let attr = ado[i].split(",");
-            console.log(attr)
-            addOns[attr[0]] = attr[1]
+        if (ado != "") {
+            for (var i = 0; i < ado.length; i++) {
+                let attr = ado[i].split(",");
+                console.log(attr)
+                addOns[attr[0]] = attr[1]
+            }
+            console.log(addOns)
         }
-        console.log(addOns)
         const result = await addInstOptions(instTypeName, sizes, addOns);
-        if(result.status === 200 ) {
+        if (result.status === 200) {
             history.push('/instoptionslist');
         }
     }
@@ -42,7 +44,7 @@ function NewInstOptions( { addInstOptions } ) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument Type Name </label>
                                         <div class="col-sm-9">
-                                            <Input type="text" class="form-control no-edit" name="name" id="newInstTypeName"  />
+                                            <Input type="text" class="form-control no-edit" name="name" id="newInstTypeName" />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -57,8 +59,8 @@ function NewInstOptions( { addInstOptions } ) {
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
                                         </div>
-                                         
-                                         
+
+
                                         <div class="col-sm-12 mb-2 mt-2 ">
                                             <div class=" hr"></div>
                                         </div>
@@ -72,7 +74,7 @@ function NewInstOptions( { addInstOptions } ) {
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
                                         </div>
-              
+
                                         <div class="col-sm-12 mb-2 mt-2 ">
                                             <div class=" hr"></div>
                                         </div>
