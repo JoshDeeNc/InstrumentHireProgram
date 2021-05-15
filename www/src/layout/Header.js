@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
 
-function Header() {
+function Header({schoolList, ownerList, instOptionsList }) { 
     return (
         <header class="page-header" role="banner">
 
@@ -82,7 +82,7 @@ function Header() {
                                     <li class=" ">
                                         <Link to="/instoptionslist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
                                             <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Instrument Types List</span>
-                                            <span class="dl-ref label bg-info-900 ml-2"> </span>
+                                            <span class="dl-ref label bg-info-900 ml-2"> {instOptionsList.length}</span>
                                         </Link>
                                     </li>
                                     <li>
@@ -105,7 +105,7 @@ function Header() {
                                     <li class=" ">
                                         <Link to="/schoollist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
                                             <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Schools List</span>
-                                            <span class="dl-ref label bg-info-900 ml-2"> </span>
+                                            <span class="dl-ref label bg-info-900 ml-2">{schoolList.length}</span>
                                         </Link>
                                     </li>
                                     <li>
@@ -128,7 +128,7 @@ function Header() {
                                     <li class=" ">
                                         <Link to="/ownerlist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
                                             <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Owner List</span>
-                                            <span class="dl-ref label bg-info-900 ml-2"> </span>
+                                            <span class="dl-ref label bg-info-900 ml-2">{ownerList.length} </span>
                                         </Link>
                                     </li>
                                     <li>
@@ -173,7 +173,7 @@ function Header() {
                             class="dropdown-header bg-trans-gradient d-flex justify-content-center align-items-center rounded-top">
                             <h4 class="m-0 text-center color-white">
                                 Quick Shortcuts
-                    <small class="mb-0 opacity-80">Related links</small>
+                    <small class="mb-0 opacity-80">Handy links</small>
                             </h4>
                         </div>
                         <div class="custom-scroll h-100">
