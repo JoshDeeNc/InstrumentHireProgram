@@ -50,6 +50,7 @@ function App() {
       getAllStudents();
       getAllSchools();
       getAllOwners();
+      getAllInstOptions();
     }
   }, [idToken]);
 
