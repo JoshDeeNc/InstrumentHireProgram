@@ -23,15 +23,20 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [owner, setOwner] = useState('')
     const [addOns,setAddOns] = useState({})
 
-    useEffect(() => {
-        console.log(instr); // add whatever functions use new `college` value here.
-        setAvailBrands(inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique))
+    function search(records) {
         if(instr != '') {
             let a = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
             if(a.length > 0) {
-                setAddOns(a[0])
+                return a[0]
+                //setAddOns(a[0])
             }
         }
+        return records
+    }
+
+    useEffect(() => {
+        console.log(instr); // add whatever functions use new `college` value here.
+        setAvailBrands(inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique))
     }, [instr])
 
     useEffect(() => {
@@ -249,7 +254,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                     <div class=" hr"></div>
                                                                 </div>
                                                             </div>
-                                                            {addOns.length > 0 ? addOns.map((item, index) => (
+                                                            {search(addOns).length > 0 ? search(addOns).map((item, index) => (
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" for="simpleinput">{item}</label>
                                                                 <div class="col-2">
