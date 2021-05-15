@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-function NewInstOptions( addInstOptions) {
+function NewInstOptions( { addInstOptions } ) {
 
     const history = useHistory();
 
