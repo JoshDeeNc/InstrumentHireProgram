@@ -4,8 +4,6 @@ import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, Mo
 function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }) {
 
     const inventory = instInventory.filter(item => item.available === true)
-    let addOnsList = instOptionsList.map(item => item.addOns)
-    console.log(addOnsList)
 
     const history = useHistory();
 
@@ -23,15 +21,14 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [serialNum, setSerialNum] = useState('')
     const [rate, setRate] = useState('')
     const [owner, setOwner] = useState('')
-    let addOns = {}
+    const [addOns,setAddOns] = useState({})
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
         setAvailBrands(inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique))
         if(instr != '') {
             let a = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
-            addOns = a[0]
-            console.log(addOns)
+            setAddOns(a[0])
         }
     }, [instr])
 
@@ -60,6 +57,8 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
 
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
+
+    console.log(addOns)
 
     return (
         <div>
