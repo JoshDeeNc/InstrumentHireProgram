@@ -10,14 +10,14 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
     }
 
     const owners = ownerList.map(item => item.name).filter(unique)
-    const [instType, setInstType] = useState('')
+    const [instr, setInstType] = useState('')
     const [instSizes, setInstSizes] = useState([])
     const instTypes = instOptionsList.map(item => item.instrumentTypeName).filter(unique)
 
     useEffect(() => {
-        console.log(instType); // add whatever functions use new `college` value here.
-        setInstSizes(instOptionsList.filter(item => item.instrumentTypeName === instType).map(item => item.sizes))
-    }, [instType])
+        console.log(instr); // add whatever functions use new `college` value here.
+        setInstSizes(instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.sizes))
+    }, [instr])
 
     const add = async (event) => {
         const result = await addInstrument();
@@ -28,6 +28,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
 
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
+    console.log(instSizes)
 
     return (
         <div>
@@ -70,7 +71,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument Type </label>
                                         <div class="col-sm-9">
-                                            <input list="size" name="size" id="newInstType" class="form-control" value={instType} onChange={(e) => setInstType(e.target.value)} />
+                                            <input list="size" name="size" id="newInstType" class="form-control" value={instr} onChange={(e) => setInstType(e.target.value)} />
                                             <datalist id="size">
                                             {instTypes.map((item, index) => (
                                                     <option>{item}</option>))}
