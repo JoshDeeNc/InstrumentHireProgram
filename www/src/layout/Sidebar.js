@@ -1,7 +1,7 @@
 import React from 'react';
 import StudentList from '../StudentList';
 import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
-function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolList, ownerList }) {
+function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolList, ownerList, instOptionsList }) {
   return (
     <aside class="page-sidebar">
       <div class="page-logo">
@@ -163,7 +163,17 @@ function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolLi
               <span class="nav-link-text" data-i18n="nav.statistics">Settings</span>
               <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
             <ul>
-             
+            <li class=" ">
+                <Link to="/instoptionslist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
+                  <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Instrument Types List</span>
+                  <span class="dl-ref label bg-info-900 ml-2">{instOptionsList.length}</span>
+                </Link>
+              </li>
+            <li>
+                <Link to="/newinstoptions" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
+                  <span class="nav-link-text" data-i18n="nav.statistics_chartist.js">New Instrument Type</span>
+                </Link>
+              </li>
               <li>
                 <Link to="/test" title="C3 Charts" data-filter-tags="statistics chart graphs c3 charts" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_c3_charts">My Account</span>

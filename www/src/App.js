@@ -18,6 +18,9 @@ import SchoolRecord from './SchoolRecord';
 import OwnerList from './OwnerList';
 import NewOwner from './NewOwner';
 import OwnerRecord from './OwnerRecord';
+import InstOptionsList from './InstOptionsList';
+import NewInstOptions from './NewInstOptions';
+import InstOptionsRecord from './InstOptionsRecord';
 import Test from './Test'
 import './App.css';
 import Header from './layout/Header'
@@ -37,6 +40,7 @@ function App() {
   const [studentList, setStudents] = useState([]);
   const [schoolList, setSchools] = useState([]);
   const [ownerList, setOwners] = useState([]);
+  const [instOptionsList, setInstOptionsList] = useState([]);
 
   useEffect(() => {
     getIdToken();
@@ -732,6 +736,53 @@ function App() {
     return result;
   }
 
+  const addInstOptions = async (instTypeName, sizes, addOns, event) => {
+
+    if (!instTypeName || instTypeName === '' || !sizes || !addOns ) return;
+
+    const newOwner = {
+      "instrumentTypeName": instTypeName,
+      "sizes": sizes,
+      "addOns": addOns
+    };
+
+    const result = await axios({
+      method: 'POST',
+      url: `${config.api_base_url}/instoptions/`,
+      headers: {
+        Authorization: idToken
+      },
+      data: newOwner
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      getAllInstOptions();
+    }
+    return result;
+  }
+
+  const getAllInstOptions = async () => {
+    const result = await axios({
+      url: `${config.api_base_url}/instoptions/`,
+      headers: {
+        Authorization: idToken
+      }
+    }).catch(error => {
+      console.log(error);
+    });
+
+    console.log(result);
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      console.log(result.data.Items);
+      setInstOptionsList(result.data.Items);
+    }
+  };
+
   return (
     <div className="App">
       {idToken.length > 0 ? (
@@ -742,7 +793,7 @@ function App() {
           </Alert>
           <div class="page-wrapper">
             <div class="page-inner">
-              <Sidebar clearCredentials={clearCredentials} toDos={toDos} instInventory={instInventory} studentList={studentList} schoolList={schoolList} ownerList={ownerList}/>
+              <Sidebar clearCredentials={clearCredentials} toDos={toDos} instInventory={instInventory} studentList={studentList} schoolList={schoolList} ownerList={ownerList} instOptionsList={instOptionsList}/>
               <div class="page-content-wrapper">
                 <Header />
                 <main id="js-page-content" role="main" class="page-content">
@@ -763,6 +814,8 @@ function App() {
                           <Route path="/ownerrecord"><OwnerRecord deleteOwner={deleteOwner} updateOwner={updateOwner} ownerList={ownerList} /></Route>
                           <Route path="/ownerlist"><OwnerList ownerList={ownerList} /></Route>
                           <Route path="/newowner"><NewOwner addOwner={addOwner} /></Route>
+                          <Route path="/instoptionslist"><InstOptionsList instOptionsList={instOptionsList} /></Route>
+                          <Route path="/newinstoptions"><NewInstOptions addInstOptions={addInstOptions} /></Route>
                           <Route path="/test"><Test/></Route>
                           <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} /></Route>
                         </Switch>    
