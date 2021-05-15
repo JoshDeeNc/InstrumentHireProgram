@@ -113,6 +113,7 @@ function App() {
     const code = document.getElementById('newToDoCode').value;
     const instrument = document.getElementById('newToDoInstrument').value;
     const brand = document.getElementById('newToDoBrand').value;
+    const size = document.getElementById('newToDoSize').value;
     const serialNum = document.getElementById('newToDoSerialNum').value;
     const rate = document.getElementById('newToDoRate').value;
     const owner = document.getElementById('newToDoOwner').value;
@@ -120,7 +121,8 @@ function App() {
     const notes = document.getElementById('newToDoNotes').value == null ? "" : document.getElementById('newToDoNotes').value;
 
     if (!name || name === '' || !code || code === '' || !instrument || instrument === '' || !serialNum || serialNum === ''
-      || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
+      || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' ||
+      !size || size === '' || !dueDate || dueDate === '') return;
 
     const newToDo = {
       "name": name,
@@ -128,6 +130,7 @@ function App() {
       "code": code,
       "instrument": instrument,
       "brand": brand,
+      "size": size,
       "serialNum": serialNum,
       "rate": rate,
       "owner": owner,
@@ -171,6 +174,7 @@ function App() {
     const code = document.getElementById('editToDoCode').value;
     const instrument = document.getElementById('editToDoInstrument').value;
     const brand = document.getElementById('editToDoBrand').value;
+    const size = document.getElementById('editToDoSize').value;
     const serialNum = document.getElementById('editToDoSerialNum').value;
     const rate = document.getElementById('editToDoRate').value;
     const owner = document.getElementById('editToDoOwner').value;
@@ -178,7 +182,8 @@ function App() {
     const notes = document.getElementById('editToDoNotes').value == null ? "" : document.getElementById('editToDoNotes').value;
     console.log(name);
     if (!name || name === '' || !code || code === '' || !instrument || instrument === '' || !serialNum || serialNum === ''
-      || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
+      || !size || size === '' || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' 
+      || !dueDate || dueDate === '') return;
 
     const updateToDo = {
       "name": name,
@@ -186,6 +191,7 @@ function App() {
       "code": code,
       "instrument": instrument,
       "brand": brand,
+      "size": size,
       "serialNum": serialNum,
       "rate": rate,
       "owner": owner,

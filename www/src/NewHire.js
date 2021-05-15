@@ -16,6 +16,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
     const [availCodes, setAvailCodes] = useState([])
     const [instr, setInstrument] = useState('')
     const [brand, setBrand] = useState('')
+    const [size, setSize] = useState('')
     const [code, setCode] = useState('')
     const [serialNum, setSerialNum] = useState('')
     const [rate, setRate] = useState('')
@@ -36,6 +37,7 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
         setRate(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.rate).filter(unique))
         setSerialNum(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.serialNum).filter(unique))
         setOwner(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.owner).filter(unique))
+        setSize(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.size).filter(unique))
     }, [code])
 
     const studentConcat = studentList.map(item => item.firstName + " " + item.lastName)
@@ -129,7 +131,19 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                             <div class=" hr"></div>
                                         </div>
                                     </div>
-
+                                    <div class=" form-group row">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Size</label>
+                                        <div class="col-md-4">
+                                            <div class="input-group">
+                                                <Input type="text" name="size" id="newToDoSize" placeholder="size" value={size} required />
+                                             </div>
+                                            
+                                            <div class="invalid-tooltip">  Please enter Size </div>
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+                                    </div>
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Serial Number</label>
                                         <div class="col-md-4">
@@ -193,7 +207,79 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                                 placeholder=" "  rows="3"   > </textarea>
                                         </div>
                                     </div>
-                                  
+                                    <div class="frame-wrap mt-4 mb-3  ">
+                                                <div class="mt-3 mb-3">  
+                                                    <a class="btn btn-secondary" data-toggle="collapse" href="#addOnDiv" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                    <i class="fal fa-plus-circle  mr-1 fs-xl"></i>  Add-Ons
+                                                    </a>
+                                                    </div> 
+
+                                                    <div class="clearfix" ></div>
+                                               
+                                                <div class="collapse" id="addOnDiv">
+                                                <div class="card card-body">
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label fw-700" for="simpleinput">Description</label>
+
+                                                                <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Qty</label>
+
+                                                                <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Rate</label>
+
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr-2"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Wire leads 6mt</label>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div><div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Strings</label>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div><div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Stands</label>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div><div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Picks</label>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div><div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                  
+                                                </div>
+                                            </div>
+                    
+
+
                                     <div class="btn-divS">
                                         <Button onClick={add} color="primary" className="mr-2" >Add</Button>
                                         <Link to="/"><Button color="secondary">Cancel</Button></Link>

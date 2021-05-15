@@ -11,6 +11,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
     const [code, setCode] = useState(hireRecord.code)
     const [instrument, setInstrument] = useState(hireRecord.instrument)
     const [brand, setBrand] = useState(hireRecord.brand)
+    const [size, setSize] = useState(hireRecord.size)
     const [rate, setRate] = useState(hireRecord.rate)
     const [serialNum, setSerialNum] = useState(hireRecord.serialNum)
     const [owner, setOwner] = useState(hireRecord.owner)
@@ -28,6 +29,9 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
     }
     const onChangeBrand = (event) => {
         setBrand(event.target.value);
+    }
+    const onChangeSize = (event) => {
+        setSize(event.target.value);
     }
     const onChangeRate = (event) => {
         setRate(event.target.value);
@@ -175,6 +179,16 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                             <div class=" hr"></div>
                                         </div>
                                     </div>
+                                    <div class="form-group row ">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Size</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control nox" type="text" name="size" id="editToDoSize" placeholder="size"
+                                                value={size} onChange={onChangeSize} />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+                                    </div>
 
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Rate</label>
@@ -256,6 +270,78 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                                 placeholder=" "  rows="3" value={notes} onChange={onChangeNotes}> </textarea>
                                         </div>
                                     </div>
+                                    <div class="frame-wrap mt-4 mb-3  ">
+                                                <div class="mt-3 mb-3">  
+                                                    <a class="btn btn-secondary" data-toggle="collapse" href="#addOnDiv" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                    <i class="fal fa-plus-circle  mr-1 fs-xl"></i>  Add-Ons
+                                                    </a>
+                                                    </div> 
+
+                                                    <div class="clearfix" ></div>
+                                               
+                                                <div class="collapse" id="addOnDiv">
+                                                <div class="card card-body">
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label fw-700" for="simpleinput">Description</label>
+
+                                                                <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Qty</label>
+
+                                                                <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Rate</label>
+
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr-2"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Wire leads 6mt</label>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div><div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Strings</label>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div><div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Stands</label>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div><div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" form-group row">
+                                                                <label class="col-8 col-form-label" for="simpleinput">Picks</label>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div><div class="col-2">
+                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                </div>
+                                                                <div class="col-sm-12 ">
+                                                                    <div class=" hr"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                  
+                                                </div>
+                                            </div>
+                    
+
 
                                    
                                     <div class="btn-div text-center pt-2">
