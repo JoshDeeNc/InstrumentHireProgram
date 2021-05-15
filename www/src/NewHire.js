@@ -15,11 +15,11 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const addOnsList = instOptionsList.map(item => item.addOns)
     console.log(addOnsList)
     var addOns = {}
-    for(let instaddons in addOnsList) {
-        console.log(instaddons)
-        /*for(let ado in instaddons) {
-            addOns[ado] = instaddons[ado]
-        }*/
+    for(let k in addOnsList) {
+        console.log(addOnsList[k])
+        for(let ado in addOnsList[k]) {
+            addOns[ado] = ado
+        }
     }
     const [availBrands, setAvailBrands] = useState([])
     const [availCodes, setAvailCodes] = useState([])
@@ -73,7 +73,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
-    //console.log(addOns)
+    console.log(addOns)
 
     return (
         <div>
