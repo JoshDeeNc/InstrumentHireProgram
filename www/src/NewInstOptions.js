@@ -10,6 +10,7 @@ function NewInstOptions( { addInstOptions } ) {
         const instTypeName = document.getElementById("newInstTypeName").value === null ? "" : document.getElementById('newInstTypeName').value;
         const sizes = document.getElementById("newSizesList").value === null ? ["N/A"] : document.getElementById('newSizesList').value.split(",");
         const addOns = document.getElementById("newAddOnsList").value === null ? ["N/A"] : document.getElementById('newAddOnsList').value.split(",");
+        console.log(addOns)
         const result = await addInstOptions(instTypeName, sizes, addOns);
         if(result.status === 200 ) {
             history.push('/instoptionslist');

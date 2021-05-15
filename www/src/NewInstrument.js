@@ -18,8 +18,6 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
         console.log(instr); // add whatever functions use new `college` value here.
         if(instr != '') {
             let a = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.sizes)
-            console.log(a)
-            console.log(a[0])
             setInstSizes(a[0])
         }
     }, [instr])
