@@ -253,9 +253,9 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                 </div>
                                                             </div>
                                                             
-                                                            {/*addOns.map((item, index) => (
+                                                            {addOns.map((item, index) => (
                                                             <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">{item}</label>
+                                                                <label class="col-8 col-form-label" for="simpleinput">Yo</label>
                                                                 <div class="col-2">
                                                                     <Input type="text" name="owner" id=" " placeholder=" " />
                                                                 </div><div class="col-2">
@@ -264,7 +264,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
                                                                 </div>
-                                                            </div>))*/}
+                                                            </div>))}
                                                        
                                                        
                                                         </div>
