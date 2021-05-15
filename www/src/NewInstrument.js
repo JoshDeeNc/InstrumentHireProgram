@@ -87,7 +87,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                         <div class="col-sm-9">
                                         <input list="size" name="size" id="newInstSize" class="form-control" />
                                             <datalist id="size">
-                                            {instSizes[0].map((item, index) => (
+                                            {instSizes.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </datalist>
                                             <div class="invalid-tooltip">  Please enter the instrument size </div>
