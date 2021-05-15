@@ -10,9 +10,11 @@ function NewInstOptions( { addInstOptions } ) {
         const instTypeName = document.getElementById("newInstTypeName").value === null ? "" : document.getElementById('newInstTypeName').value;
         const sizes = document.getElementById("newSizesList").value === "" ? ["N/A"] : document.getElementById('newSizesList').value.split(";");
         let ado = document.getElementById('newAddOnsList').value.split(";");
+        console.log(ado)
         let addOns = {};
         for (var i = 0; i < ado.length; i++) {
             let attr = ado[i].split(",");
+            console.log(attr)
             addOns.attr[0] = attr[1]
         }
         console.log(addOns)
