@@ -228,6 +228,12 @@ table tr td a .fa-2x {
   font-weight: 700;
 }
 
+.settings-logos {width: 80%; max-width: 50px; margin: 10px 0;}
+
+.app-list {height: auto;}
+
+.app-list-item {height: auto;}
+
 .badge.badge-icon {
   font-weight: 700;
 }
@@ -292,6 +298,8 @@ table tr td a .fa-2x {
   padding: 0 5px;
 }
 
+.app-list a {text-decoration: none !important; text-transform: uppercase;}
+
 .header-btn[data-class='mobile-nav-on'] {
   border-color: #004d40;
   background-color: #004d40;
@@ -300,6 +308,16 @@ table tr td a .fa-2x {
 
 .bg-red {
   background: #dc3545 !important;
+}
+
+.bg-green {
+  background: #055756 !important;
+}
+
+.bg-trans-gradient {
+  background: linear-gradient(
+0deg
+, #28a745, #064e4d);
 }
 
 body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.active.active {
