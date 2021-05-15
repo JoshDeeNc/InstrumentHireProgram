@@ -29,7 +29,8 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
         console.log(instr); // add whatever functions use new `college` value here.
         setAvailBrands(inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique))
         if(instr != '') {
-            addOns = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
+            let a = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
+            addOns = a[0]
             console.log(addOns)
         }
     }, [instr])
@@ -236,9 +237,9 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                     <div class=" hr-2"></div>
                                                                 </div>
                                                             </div>
-                                                            {//addOns.map((item, index) => (
+                                                            {addOns.map((item, index) => (
                                                             <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">Label</label>
+                                                                <label class="col-8 col-form-label" for="simpleinput">{addOns[item]}</label>
                                                                 <div class="col-2">
                                                                     <Input type="text" name="owner" id=" " placeholder=" " />
                                                                 </div><div class="col-2">
@@ -247,7 +248,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
                                                                 </div>
-                                                            </div>/*))*/}
+                                                            </div>))}
                                                        
                                                        
                                                         </div>
