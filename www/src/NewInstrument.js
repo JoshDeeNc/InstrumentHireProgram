@@ -10,14 +10,17 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
     }
 
     const owners = ownerList.map(item => item.name).filter(unique)
-    const [instType, setInstType] = useState('')
+    const [instr, setInstType] = useState('')
     const [instSizes, setInstSizes] = useState([])
     const instTypes = instOptionsList.map(item => item.instrumentTypeName).filter(unique)
 
     useEffect(() => {
-        console.log(instType); // add whatever functions use new `college` value here.
-        setInstSizes(instOptionsList.filter(item => item.instrumentTypeName === instType).map(item => item.sizes))
-    }, [instType])
+        console.log(instr); // add whatever functions use new `college` value here.
+        if(instr != '') {
+            let a = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.sizes)
+            setInstSizes(a[0])
+        }
+    }, [instr])
 
     const add = async (event) => {
         const result = await addInstrument();
@@ -28,6 +31,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
 
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
+    console.log(instSizes)
 
     return (
         <div>
@@ -70,8 +74,8 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument Type </label>
                                         <div class="col-sm-9">
-                                            <input list="size" name="size" id="newInstType" class="form-control" value={instType} onChange={(e) => setInstType(e.target.value)} />
-                                            <datalist id="size">
+                                            <input list="type" name="type" id="newInstType" class="form-control" value={instr} onChange={(e) => setInstType(e.target.value)} />
+                                            <datalist id="type">
                                             {instTypes.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </datalist>
@@ -84,10 +88,12 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Size</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newInstSize">
-                                                    {instSizes.map((item, index) => (
-                                                        <option>{item}</option>))}
-                                            </select>
+                                        <input list="size" name="size" id="newInstSize" class="form-control" />
+                                            <datalist id="size">
+                                            {instSizes.map((item, index) => (
+                                                    <option>{item}</option>))}
+                                            </datalist>
+                                            <div class="invalid-tooltip">  Please enter the instrument size </div>
                                         </div> <div class="col-sm-12 ">
                                             <div class=" hr"></div>
                                         </div>    

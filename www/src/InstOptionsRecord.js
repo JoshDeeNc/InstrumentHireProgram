@@ -9,7 +9,7 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
 
     const [instTypeName, setInstTypeName] = useState(instOptionsRecord.instrumentTypeName)
     const [sizes, setSizes] = useState(instOptionsRecord.sizes.toString())
-    const [addOns, setAddOns] = useState(instOptionsRecord.addOns.toString())
+    const [addOns, setAddOns] = useState(JSON.stringify(instOptionsRecord.addOns))
 
     const editToggle = (event) => {
         var a = document.getElementsByTagName('input');
