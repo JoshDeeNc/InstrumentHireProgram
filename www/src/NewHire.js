@@ -14,13 +14,13 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const availInstruments = inventory.map(item => item.type).filter(unique)
     const addOnsList = instOptionsList.map(item => item.addOns)
     var addOns = []
-    for(let k in addOnsList) {
+    /*for(let k in addOnsList) {
         for(let ado in addOnsList[k]) {
             var a = {}
             a[ado] = addOnsList[k][ado]
             addOns.push(a)
         }
-    }
+    }*/
     const [availBrands, setAvailBrands] = useState([])
     const [availCodes, setAvailCodes] = useState([])
     const [instr, setInstrument] = useState('')
