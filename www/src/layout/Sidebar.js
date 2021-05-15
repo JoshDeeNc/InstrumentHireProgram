@@ -1,7 +1,7 @@
 import React from 'react';
 import StudentList from '../StudentList';
 import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
-function Sidebar( {clearCredentials, toDos, instInventory, studentList, schoolList, ownerList} ) {
+function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolList, ownerList }) {
   return (
     <aside class="page-sidebar">
       <div class="page-logo">
@@ -25,9 +25,7 @@ function Sidebar( {clearCredentials, toDos, instInventory, studentList, schoolLi
           <img src="dist/img/demo/avatars/avatar-admin.png" class="profile-image rounded-circle" alt="Lucinda Jackson" />
           <div class="info-card-text">
             <a href="#" class="d-flex align-items-center text-white">
-              <span class="text-truncate text-truncate-sm d-inline-block">
-                Lucinda Jackson
-                          </span>
+              <span class="text-truncate text-truncate-sm d-inline-block">Lucinda Jackson</span>
             </a>
             <span class="d-inline-block text-truncate text-truncate-sm">Administrator</span>
           </div>
@@ -36,26 +34,43 @@ function Sidebar( {clearCredentials, toDos, instInventory, studentList, schoolLi
             <i class="fal fa-angle-down"></i>
           </a>
         </div>
-        <ul id="js-nav-menu" class="nav-menu js-nav-built">
-        <li>
-                <Link to="/" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
-                <i class="fal fa-home"></i>
-                  <span class="nav-link-text" data-i18n="nav.statistics_flot">Home</span>
-                  <span class="dl-ref label bg-info-900 ml-2">{toDos.filter(item => item.returned === false).length}</span>
-                </Link>
-              </li>
 
-          <li class="active open">
+      
+       
+        <ul id="js-nav-menu" class="nav-menu ">
+      
+          <li>
+            <Link to="/" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
+              <i class="fal fa-home"></i>
+              <span class="nav-link-text" data-i18n="nav.statistics_flot">Home</span>
+              <span class="dl-ref label bg-info-900 ml-2">{toDos.filter(item => item.returned === false).length}</span>
+            </Link>
+          </li>
+
+          <li class="active ">
             <a href="#" title="Statistics" data-filter-tags="statistics chart graphs" aria-expanded="true" class=" waves-effect waves-themed">
-              <i class="fal fa-cog"></i>
-              <span class="nav-link-text" data-i18n="nav.statistics">Settings</span>
+              <i class="fal fa-guitars"></i>
+              <span class="nav-link-text" data-i18n="nav.statistics">Hires</span>
               <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
             <ul>
-            <li>
+              <li>
                 <Link to="/newHire" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_chartist.js"> New Hire</span>
                 </Link>
               </li>
+            
+
+            </ul>
+          </li>
+         
+
+          <li class="active ">
+            <a href="#" title="Statistics" data-filter-tags="statistics chart graphs" aria-expanded="true" class=" waves-effect waves-themed">
+              <i class="fal fa-users"></i>
+              <span class="nav-link-text" data-i18n="nav.statistics">Students</span>
+              <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
+            <ul>
+               
               <li>
                 <Link to="/studentlist" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_flot">Students List</span>
@@ -67,7 +82,18 @@ function Sidebar( {clearCredentials, toDos, instInventory, studentList, schoolLi
                   <span class="nav-link-text" data-i18n="nav.statistics_chartist.js">Add Student</span>
                 </Link>
               </li>
-              <li class=" ">
+            </ul>
+          </li>
+
+
+          <li class="active ">
+            <a href="#" title="Statistics" data-filter-tags="statistics chart graphs" aria-expanded="true" class=" waves-effect waves-themed">
+              <i class="fal fa-guitar"></i>
+              <span class="nav-link-text" data-i18n="nav.statistics">Instruments</span>
+              <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
+            <ul>
+               
+            <li class=" ">
                 <Link to="/instrumentlist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Instruments List</span>
                   <span class="dl-ref label bg-info-900 ml-2">{instInventory.length}</span>
@@ -79,7 +105,21 @@ function Sidebar( {clearCredentials, toDos, instInventory, studentList, schoolLi
                   <span class="nav-link-text" data-i18n="nav.statistics_c3_charts">Add Instrument</span>
                 </Link>
               </li>
-              <li class=" ">
+        
+            </ul>
+          </li>
+
+
+
+
+          <li class="active ">
+            <a href="#" title="Statistics" data-filter-tags="statistics chart graphs" aria-expanded="true" class=" waves-effect waves-themed">
+              <i class="fal fa-building"></i>
+              <span class="nav-link-text" data-i18n="nav.statistics">Schools</span>
+              <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
+            <ul>
+               
+            <li class=" ">
                 <Link to="/schoollist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Schools List</span>
                   <span class="dl-ref label bg-info-900 ml-2">{schoolList.length}</span>
@@ -90,7 +130,19 @@ function Sidebar( {clearCredentials, toDos, instInventory, studentList, schoolLi
                   <span class="nav-link-text" data-i18n="nav.statistics_chartist.js"> New School</span>
                 </Link>
               </li>
-              <li class=" ">
+        
+            </ul>
+          </li>
+
+
+          <li class="active ">
+            <a href="#" title="Statistics" data-filter-tags="statistics chart graphs" aria-expanded="true" class=" waves-effect waves-themed">
+              <i class="fal fa-warehouse"></i>
+              <span class="nav-link-text" data-i18n="nav.statistics">Owners</span>
+              <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
+            <ul>
+               
+            <li class=" ">
                 <Link to="/ownerlist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Owner List</span>
                   <span class="dl-ref label bg-info-900 ml-2">{ownerList.length}</span>
@@ -101,24 +153,34 @@ function Sidebar( {clearCredentials, toDos, instInventory, studentList, schoolLi
                   <span class="nav-link-text" data-i18n="nav.statistics_chartist.js"> New Owner</span>
                 </Link>
               </li>
+        
+            </ul>
+          </li>
+         
+          <li class="active ">
+            <a href="#" title="Statistics" data-filter-tags="statistics chart graphs" aria-expanded="true" class=" waves-effect waves-themed">
+              <i class="fal fa-cog"></i>
+              <span class="nav-link-text" data-i18n="nav.statistics">Settings</span>
+              <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
+            <ul>
+             
               <li>
-              <Link to="/test" title="C3 Charts" data-filter-tags="statistics chart graphs c3 charts" class=" waves-effect waves-themed">
+                <Link to="/test" title="C3 Charts" data-filter-tags="statistics chart graphs c3 charts" class=" waves-effect waves-themed">
                   <span class="nav-link-text" data-i18n="nav.statistics_c3_charts">My Account</span>
                 </Link>
               </li>
 
             </ul>
           </li>
+         
+         
           <li>
-                <Link onClick={clearCredentials} title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
-                <i class="fal fa-door-open"></i>
-                  <span class="nav-link-text" data-i18n="nav.statistics_flot">Logout</span>
-                
-                </Link>
-              </li>
+            <Link onClick={clearCredentials} title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
+              <i class="fal fa-door-open"></i>
+              <span class="nav-link-text" data-i18n="nav.statistics_flot">Logout</span>
 
-              
-
+            </Link>
+          </li>
         </ul>
         <div class="filter-message js-filter-message bg-success-600"></div>
       </nav>
@@ -144,7 +206,7 @@ function Sidebar( {clearCredentials, toDos, instInventory, studentList, schoolLi
             </a>
           </li>
         </ul>
-          </div>
+      </div>
     </aside>
   );
 }
