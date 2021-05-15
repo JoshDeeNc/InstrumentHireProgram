@@ -66,7 +66,7 @@ function Header({schoolList, ownerList, instOptionsList }) {
                                 Settings
                                 <small class="mb-0 opacity-80">  Applications Settings</small>
                     
-                            </h4>
+                            </h4>  
                            
                         </div>
 
