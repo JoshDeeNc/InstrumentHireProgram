@@ -28,7 +28,9 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
         setAvailBrands(inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique))
         if(instr != '') {
             let a = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
-            setAddOns(a[0])
+            if(a.length > 0) {
+                setAddOns(a[0])
+            }
         }
     }, [instr])
 
