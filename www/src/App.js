@@ -23,8 +23,8 @@ import NewInstOptions from './NewInstOptions';
 import InstOptionsRecord from './InstOptionsRecord';
 import Test from './Test'
 import './App.css';
-import Header from './layout/Header'
 import Sidebar from './layout/Sidebar'
+import Header from './layout/Header'
 import Footer from './layout/Footer'
 
 import config from './config';
@@ -854,7 +854,7 @@ function App() {
             <div class="page-inner">
               <Sidebar clearCredentials={clearCredentials} toDos={toDos} instInventory={instInventory} studentList={studentList} schoolList={schoolList} ownerList={ownerList} instOptionsList={instOptionsList}/>
               <div class="page-content-wrapper">
-                <Header />
+                <Header schoolList={schoolList} ownerList={ownerList} instOptionsList={instOptionsList} />
                 <main id="js-page-content" role="main" class="page-content">
                   <Row>
                     <Col md="12">
