@@ -71,8 +71,8 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument Type </label>
                                         <div class="col-sm-9">
-                                            <input list="size" name="size" id="newInstType" class="form-control" value={instr} onChange={(e) => setInstType(e.target.value)} />
-                                            <datalist id="size">
+                                            <input list="type" name="type" id="newInstType" class="form-control" value={instr} onChange={(e) => setInstType(e.target.value)} />
+                                            <datalist id="type">
                                             {instTypes.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </datalist>
@@ -85,10 +85,12 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Size</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newInstSize">
-                                                    {instSizes.map((item, index) => (
-                                                        <option>{item}</option>))}
-                                            </select>
+                                        <input list="size" name="size" id="newInstSize" class="form-control" />
+                                            <datalist id="size">
+                                            {instSizes.map((item, index) => (
+                                                    <option>{item}</option>))}
+                                            </datalist>
+                                            <div class="invalid-tooltip">  Please enter the instrument size </div>
                                         </div> <div class="col-sm-12 ">
                                             <div class=" hr"></div>
                                         </div>    
