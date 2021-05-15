@@ -16,7 +16,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
-        setInstSizes(instOptionsList.find(item => item.instrumentTypeName === instr))
+        setInstSizes(instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.sizes))
     }, [instr])
 
     const add = async (event) => {
@@ -87,7 +87,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                         <div class="col-sm-9">
                                         <input list="size" name="size" id="newInstSize" class="form-control" />
                                             <datalist id="size">
-                                            {instSizes.map((item, index) => (
+                                            {instSizes[0].map((item, index) => (
                                                     <option>{item}</option>))}
                                             </datalist>
                                             <div class="invalid-tooltip">  Please enter the instrument size </div>
