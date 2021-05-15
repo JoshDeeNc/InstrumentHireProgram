@@ -18,7 +18,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     for(let k in addOnsList) {
         console.log(addOnsList[k])
         for(let ado in addOnsList[k]) {
-            addOns[ado] = ado
+            addOns[ado] = addOnsList[k][ado]
         }
     }
     const [availBrands, setAvailBrands] = useState([])
