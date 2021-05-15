@@ -236,7 +236,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                     <div class=" hr-2"></div>
                                                                 </div>
                                                             </div>
-                                                            {addOns.length > 0 ? addOns.map((item) => (
+                                                            {addOns.length > 0 ? addOns.map((item, index) => (
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" for="simpleinput">{addOns[item]}</label>
                                                                 <div class="col-2">
@@ -248,17 +248,6 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                     <div class=" hr"></div>
                                                                 </div>
                                                             </div>)) : (<div></div>)}
-                                                            <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">TextField</label>
-                                                                <div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div><div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div>
-                                                                <div class="col-sm-12 ">
-                                                                    <div class=" hr"></div>
-                                                                </div>
-                                                            </div>
                                                        
                                                        
                                                         </div>
