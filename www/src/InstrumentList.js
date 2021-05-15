@@ -75,7 +75,7 @@ function InstrumentList({ instInventory, toDos }) {
                             <td>{item.brand}</td>
                             <td>{item.rate}</td>
                             <td>{item.owner}</td>
-                            {item.available ? (<td>Available</td>) : (<td>Hired to {toDos.filter(hire => hire.code === item.code)[0].name}</td>)}
+                            {item.available ? (<td>Available</td>) : (<td>Hired to {toDos.filter(hire => hire.returned === "" && hire.code === item.code)[0].name}</td>)}
                             <td class="al-ctr"><Link to={`/instrumentrecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                           </tr>
                         ))}
