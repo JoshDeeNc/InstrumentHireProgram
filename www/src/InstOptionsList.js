@@ -12,6 +12,8 @@ function InstOptionsList({ instOptionsList }) {
 
   const [qry, setQry] = useState("")
 
+  console.log(instOptionsList)
+
   function search() {
     if (qry != "") {
       return instOptionsList.filter((row) => 
