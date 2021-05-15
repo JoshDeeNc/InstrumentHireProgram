@@ -31,16 +31,24 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [rate, setRate] = useState('')
     const [owner, setOwner] = useState('')
     //const [addOns,setAddOns] = useState({})
-    /*function search(records) {
+    function search(records) {
         if(instr != '') {
-            let a = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
-            if(a.length > 0) {
-                addOns = a[0]
-                return addOns
+            const filtAddOns = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
+            if(filtAddOns.length > 0) {
+                var newAddons = []
+                for(let k in filtAddOns) {
+                    for(let ado in filtAddOns[k]) {
+                        var a = {}
+                        a[ado] = filtAddOns[k][ado]
+                        newAddons.push(a)
+                    }
+                }
+                console.log(newAddons)
+                return newAddons
             }
         }
         return records
-    }*/
+    }
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
@@ -253,13 +261,13 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                 </div>
                                                             </div>
                                                             
-                                                            {addOns.map((item, index) => (
+                                                            {search(addOns).map((item, index) => (
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" for="simpleinput">{Object.keys(item)[0]}</label>
                                                                 <div class="col-2">
                                                                     <Input type="text" name="Qty" id=" " placeholder=" " />
                                                                 </div><div class="col-2">
-                                                                    <Input type="text" value={item[Object.keys(item)[0]]} name="RateAddon" id=" " placeholder=" " />
+                                                                    <Input type="text" value={item[Object.keys(item)[0]]} name="RateAddon" placeholder=" " />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
