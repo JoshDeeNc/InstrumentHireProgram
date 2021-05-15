@@ -28,17 +28,20 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
     }
 
     const deletion = async (itemId, event) => {
-        /*const result = await deleteInstOptions(itemId);
+        const result = await deleteInstOptions(itemId);
         if (result.status === 200) {
             history.push('/instoptionslist');
-        }*/
+        }
     }
 
     const update = async (itemId, event) => {
-        /*const result = await updateInstOptions(itemId);
+        const inst = instTypeName == "" ? "" : instTypeName;
+        const szs = sizes == "" ? ["N/A"] : sizes.split(",");
+        const ado = addOns == "" ? ["N/A"] : addOns.split(",");
+        const result = await updateInstOptions(itemId, inst, szs, ado);
         if (result.status === 200) {
             history.push('/instoptionslist');
-        }*/
+        }
     }
 
     const [deleteModal, setDelModal] = useState(false);
@@ -98,7 +101,7 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
 
                                     <div class="btn-div text-center pt-2">
                                         <Button data-item-id={instOptionsRecord.id} onClick={toggleUp} color="primary" className="mr-2"  >Update</Button>
-                                        <Link to="/addoptionslist"><Button color="secondary"  >Cancel</Button></Link>
+                                        <Link to="/instoptionslist"><Button color="secondary"  >Cancel</Button></Link>
                                     </div>
                                 </form>
                             </div>

@@ -741,7 +741,7 @@ function App() {
 
     if (!instTypeName || instTypeName === '' || !sizes || !addOns ) return;
 
-    const newOwner = {
+    const newInstOptions = {
       "instrumentTypeName": instTypeName,
       "sizes": sizes,
       "addOns": addOns
@@ -753,7 +753,7 @@ function App() {
       headers: {
         Authorization: idToken
       },
-      data: newOwner
+      data: newInstOptions
     });
 
     if (result && result.status === 401) {
@@ -783,6 +783,54 @@ function App() {
       setInstOptionsList(result.data.Items);
     }
   };
+
+  const updateInstOptions = async (itemId, instTypeName, sizes, addOns, event) => {
+    if (itemId === null) return;
+
+    if (!instTypeName || instTypeName === '' || !sizes || !addOns ) return;
+
+    const updateInstOptions = {
+      "instrumentTypeName": instTypeName,
+      "sizes": sizes,
+      "addOns": addOns
+    };
+
+    const result = await axios({
+      method: 'PUT',
+      url: `${config.api_base_url}/instoptions/${itemId}`,
+      headers: {
+        Authorization: idToken
+      },
+      data: updateInstOptions
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+      console.log(result)
+    } else if (result && result.status === 200) {
+      getAllInstOptions();
+    }
+    return result;
+  }
+
+  const deleteInstOptions = async (itemId) => {
+    if (itemId === null) return;
+
+    const result = await axios({
+      method: 'DELETE',
+      url: `${config.api_base_url}/instoptions/${itemId}`,
+      headers: {
+        Authorization: idToken
+      }
+    });
+
+    if (result && result.status === 401) {
+      clearCredentials();
+    } else if (result && result.status === 200) {
+      getAllInstOptions();
+    }
+    return result;
+  }
 
   return (
     <div className="App">
@@ -817,6 +865,7 @@ function App() {
                           <Route path="/newowner"><NewOwner addOwner={addOwner} /></Route>
                           <Route path="/instoptionslist"><InstOptionsList instOptionsList={instOptionsList} /></Route>
                           <Route path="/newinstoptions"><NewInstOptions addInstOptions={addInstOptions} /></Route>
+                          <Route path="/instoptionsrecord"><InstOptionsRecord deleteInstOptions={deleteInstOptions} updateInstOptions={updateInstOptions} instOptionsList={instOptionsList} /></Route>
                           <Route path="/test"><Test/></Route>
                           <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} /></Route>
                         </Switch>    
