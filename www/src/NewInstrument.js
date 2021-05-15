@@ -16,7 +16,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
-        setInstSizes(instOptionsList.find(item => item.instrumentTypeName === instr).sizes)
+        setInstSizes(instOptionsList.find(item => item.instrumentTypeName === instr))
     }, [instr])
 
     const add = async (event) => {
