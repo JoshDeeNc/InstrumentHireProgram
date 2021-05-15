@@ -13,12 +13,12 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
 
     const availInstruments = inventory.map(item => item.type).filter(unique)
     const addOnsList = instOptionsList.map(item => item.addOns)
-    console.log(addOnsList)
-    var addOns = {}
+    var addOns = []
     for(let k in addOnsList) {
-        console.log(addOnsList[k])
         for(let ado in addOnsList[k]) {
-            addOns[ado] = addOnsList[k][ado]
+            var a = {}
+            a[ado] = addOnsList[k][ado]
+            addOns.push(a)
         }
     }
     const [availBrands, setAvailBrands] = useState([])
@@ -31,7 +31,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [rate, setRate] = useState('')
     const [owner, setOwner] = useState('')
     //const [addOns,setAddOns] = useState({})
-    function search(records) {
+    /*function search(records) {
         if(instr != '') {
             let a = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
             if(a.length > 0) {
@@ -40,11 +40,12 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
             }
         }
         return records
-    }
+    }*/
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
         setAvailBrands(inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique))
+        //search(addOns)
     }, [instr])
 
     useEffect(() => {
@@ -251,18 +252,8 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                     <div class=" hr-2"></div>
                                                                 </div>
                                                             </div>
-                                                            <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">Label</label>
-                                                                <div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div><div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div>
-                                                                <div class="col-sm-12 ">
-                                                                    <div class=" hr"></div>
-                                                                </div>
-                                                            </div>
-                                                            {/*search(addOns).map((item, index) => (
+                                                            
+                                                            {addOns.map((item, index) => (
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" for="simpleinput">{item}</label>
                                                                 <div class="col-2">
@@ -273,7 +264,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
                                                                 </div>
-                                                            </div>))*/}
+                                                            </div>))}
                                                        
                                                        
                                                         </div>
