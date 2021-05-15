@@ -12,6 +12,13 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     }
 
     const availInstruments = inventory.map(item => item.type).filter(unique)
+    const addOnsList = instOptionsList.map(item => item.addOns)
+    var addOns = {}
+    for(let instaddons in addOnsList) {
+        for(let ado in instaddons) {
+            addOns[ado] = instaddons[ado]
+        }
+    }
     const [availBrands, setAvailBrands] = useState([])
     const [availCodes, setAvailCodes] = useState([])
     const [instr, setInstrument] = useState('')
@@ -21,17 +28,21 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [serialNum, setSerialNum] = useState('')
     const [rate, setRate] = useState('')
     const [owner, setOwner] = useState('')
-    const [addOns,setAddOns] = useState({})
+    //const [addOns,setAddOns] = useState({})
+    function search(records) {
+        if(instr != '') {
+            let a = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
+            if(a.length > 0) {
+                addOns = a[0]
+                return addOns
+            }
+        }
+        return records
+    }
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
         setAvailBrands(inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique))
-        if(instr != '') {
-            let a = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
-            if(a.length > 0) {
-                setAddOns(a[0])
-            }
-        }
     }, [instr])
 
     useEffect(() => {
@@ -249,7 +260,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                     <div class=" hr"></div>
                                                                 </div>
                                                             </div>
-                                                            {addOns.length > 0 ? addOns.map((item, index) => (
+                                                            {search(addOns).map((item, index) => (
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" for="simpleinput">{item}</label>
                                                                 <div class="col-2">
@@ -260,7 +271,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
                                                                 </div>
-                                                            </div>)) : (<div></div>)}
+                                                            </div>))}
                                                        
                                                        
                                                         </div>
