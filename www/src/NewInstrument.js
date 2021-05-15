@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-function NewInstrument({ addInstrument, ownerList }) {
+function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
 
     const history = useHistory();
 
@@ -10,6 +10,14 @@ function NewInstrument({ addInstrument, ownerList }) {
     }
 
     const owners = ownerList.map(item => item.name).filter(unique)
+    const [instType, setInstType] = useState('')
+    const [instSizes, setInstSizes] = useState([])
+    const instTypes = instOptionsList.map(item => item.instrumentTypeName).filter(unique)
+
+    useEffect(() => {
+        console.log(instType); // add whatever functions use new `college` value here.
+        setInstSizes(instOptionsList.filter(item => item.instrumentTypeName === instType).map(item => item.sizes).filter(unique))
+    }, [instType])
 
     const add = async (event) => {
         const result = await addInstrument();
@@ -62,7 +70,24 @@ function NewInstrument({ addInstrument, ownerList }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument Type </label>
                                         <div class="col-sm-9">
-                                            <Input type="text" class="  form-control " name="name" id="newInstType" placeholder=" " />
+                                            <input list="size" name="size" id="newInstType" class="form-control" value={instType} onChange={(e) => setInstType(e.target.value)} />
+                                            <datalist id="size">
+                                            {instTypes.map((item, index) => (
+                                                    <option>{item}</option>))}
+                                            </datalist>
+                                            <div class="invalid-tooltip">  Please enter the instrument type </div>
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+                                    </div>
+                                    <div class=" form-group row">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Size</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" id="newInstSize">
+                                                    {instSizes.map((item, index) => (
+                                                        <option>{item}</option>))}
+                                            </select>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>

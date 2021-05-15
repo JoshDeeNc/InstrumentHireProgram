@@ -302,6 +302,7 @@ function App() {
     const code = document.getElementById('newInstCode').value;
     const serialNum = document.getElementById('newSerialNum').value;
     const type = document.getElementById('newInstType').value;
+    const size = document.getElementById('newInstSize').value;
     const brand = document.getElementById('newInstBrand').value;
     const rate = document.getElementById('newInstRate').value;
     const purchVal = document.getElementById('newInstPurchVal').value
@@ -310,7 +311,7 @@ function App() {
     const notes = document.getElementById('newInstNotes').value == null ? "" : document.getElementById('newInstNotes').value;
 
 
-    if (!code || code === '' || !serialNum || serialNum === '' || !type || type === ''
+    if (!code || code === '' || !serialNum || serialNum === '' || !type || type === '' || !size || size === ''
       || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === ''
       || !depreciation || depreciation === '' || !owner || owner === '') return;
 
@@ -318,6 +319,7 @@ function App() {
       "code": code,
       "serialNum": serialNum,
       "type": type,
+      "size": size,
       "brand": brand,
       "rate": rate,
       "purchaseValue": purchVal,
@@ -347,6 +349,7 @@ function App() {
   const updateInstrument = async (itemId, event) => {
     const code = document.getElementById('editInstCode').value;
     const type = document.getElementById('editInstType').value;
+    const size = document.getElementById('editInstSize').value;
     const serialNum = document.getElementById('editInstSerialNum').value;
     const brand = document.getElementById('editInstBrand').value;
     const rate = document.getElementById('editInstRate').value;
@@ -357,13 +360,14 @@ function App() {
 
     let inst = instInventory.find(item => item.id === itemId);
 
-    if (!code || code === '' || !type || type === '' || !serialNum || serialNum === ''
+    if (!code || code === '' || !type || type === '' || !serialNum || serialNum === '' || !size || size === ''
       || !brand || brand === '' || !rate || rate === '' || !purchVal || purchVal === ''
       || !depreciation || depreciation === '' || !owner || owner === '') return;
 
     const updateInstrument = {
       "code": code,
       "type": type,
+      "size": size,
       "serialNum": serialNum,
       "brand": brand,
       "rate": rate,
@@ -853,7 +857,7 @@ function App() {
                           <Route path="/hirerecord"><HireRecord deleteToDo={deleteToDo} updateToDo={updateToDo} returnToDo={returnToDo} toDos={toDos} /></Route>
                           <Route path="/instrumentrecord"><InstrumentRecord deleteInstrument={deleteInstrument} updateInstrument={updateInstrument} instInventory={instInventory} /></Route>
                           <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} toDos={toDos} /></Route>
-                          <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} ownerList={ownerList} /></Route>
+                          <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} ownerList={ownerList} instOptionsList={instOptionsList} /></Route>
                           <Route path="/studentrecord"><StudentRecord deleteStudent={deleteStudent} updateStudent={updateStudent} studentList={studentList} /></Route>
                           <Route path="/studentlist"><StudentList studentList={studentList} /></Route>
                           <Route path="/newstudent"><NewStudent addStudent={addStudent} schoolList={schoolList} /></Route>

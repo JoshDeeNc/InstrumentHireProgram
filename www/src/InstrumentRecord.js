@@ -12,6 +12,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
     const [code, setCode] = useState(instrumentRecord.code)
     const [serialNum, setSerialNum] = useState(instrumentRecord.serialNum)
     const [type, setType] = useState(instrumentRecord.type)
+    const [size, setSize] = useState(instrumentRecord.size)
     const [brand, setBrand] = useState(instrumentRecord.brand)
     const [rate, setRate] = useState(instrumentRecord.rate)
     const [purchVal, setPurchVal] = useState(instrumentRecord.purchaseValue)
@@ -27,6 +28,9 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
     }
     const onChangeType = (event) => {
         setType(event.target.value);
+    }
+    const onChangeSize = (event) => {
+        setSize(event.target.value);
     }
     const onChangeBrand = (event) => {
         setBrand(event.target.value);
@@ -156,6 +160,16 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                                                 <div class="col-sm-9">
                                                     <input type="text" class="form-control nox" name=" " id="editInstBrand"
                                                         value={brand} onChange={onChangeBrand} placeholder="Brand " />
+                                                </div>
+                                                <div class="col-sm-12 ">
+                                                    <div class=" hr"></div>
+                                                </div>
+                                            </div>
+                                            <div class=" form-group row" >
+                                                <label class="col-sm-3 col-form-label" for=" ">Size </label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control nox" name=" " id="editInstSize"
+                                                        value={size} onChange={onChangeSize} placeholder="Size " />
                                                 </div>
                                                 <div class="col-sm-12 ">
                                                     <div class=" hr"></div>
