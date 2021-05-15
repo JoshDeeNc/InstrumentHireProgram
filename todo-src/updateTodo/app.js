@@ -58,14 +58,16 @@ function updateRecord(username, recordId, eventBody) {
             "cognito-username": username,
             "id": recordId
         },
-        UpdateExpression: "set #field = :c, lastupdate_date = :lud, #n = :n, #cde = :cde, instrument = :instr, brand = :brd, #serNum = :serNum, rate = :rte, #owon = :odh, due = :d, #nts = :nts",
+        UpdateExpression: "set #field = :c, lastupdate_date = :lud, #szs = :szs, #n = :n, #cde = :cde, instrument = :instr, brand = :brd, #serNum = :serNum, rate = :rte, #owon = :odh, due = :d, #nts = :nts, #ado = :ado",
         ExpressionAttributeNames: { 
             '#field': 'returned',
             '#n': 'name',
             '#cde': 'code',
+            '#szs': 'size',
             '#serNum': 'serialNum',
             '#owon': 'owner',
-            '#nts': 'notes'
+            '#nts': 'notes',
+            '#ado': 'addOns'
         },
         ExpressionAttributeValues: {
             ':lud': d.toISOString(),
@@ -75,10 +77,12 @@ function updateRecord(username, recordId, eventBody) {
             ':instr': item.instrument,
             ':serNum': item.serialNum,
             ':brd': item.brand,
+            ':szs': item.size,
             ':rte': item.rate,
             ':odh': item.owner,
             ':d': item.due,
-            ':nts': item.notes
+            ':nts': item.notes,
+            ':ado': item.addOns
         }
     }
     return docClient.update(params)
