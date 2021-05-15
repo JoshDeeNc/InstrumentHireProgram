@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-function NewHire({ toDos, studentList, instInventory, addToDo }) {
+function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }) {
 
     const inventory = instInventory.filter(item => item.available === true)
+    let addOnsList = instOptionsList.map(item => item.addOns)
+    console.log(addOnsList)
 
     const history = useHistory();
 
@@ -21,10 +23,15 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
     const [serialNum, setSerialNum] = useState('')
     const [rate, setRate] = useState('')
     const [owner, setOwner] = useState('')
+    let addOns = {}
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
         setAvailBrands(inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique))
+        if(instr != '') {
+            addOns = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
+            console.log(addOns)
+        }
     }, [instr])
 
     useEffect(() => {
@@ -229,8 +236,9 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                                                     <div class=" hr-2"></div>
                                                                 </div>
                                                             </div>
+                                                            {//addOns.map((item, index) => (
                                                             <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">Wire leads 6mt</label>
+                                                                <label class="col-8 col-form-label" for="simpleinput">Label</label>
                                                                 <div class="col-2">
                                                                     <Input type="text" name="owner" id=" " placeholder=" " />
                                                                 </div><div class="col-2">
@@ -239,40 +247,9 @@ function NewHire({ toDos, studentList, instInventory, addToDo }) {
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
                                                                 </div>
-                                                            </div>
-                                                            <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">Strings</label>
-                                                                <div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div><div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div>
-                                                                <div class="col-sm-12 ">
-                                                                    <div class=" hr"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">Stands</label>
-                                                                <div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div><div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div>
-                                                                <div class="col-sm-12 ">
-                                                                    <div class=" hr"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">Picks</label>
-                                                                <div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div><div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div>
-                                                                <div class="col-sm-12 ">
-                                                                    <div class=" hr"></div>
-                                                                </div>
-                                                            </div>
+                                                            </div>/*))*/}
+                                                       
+                                                       
                                                         </div>
                                                   
                                                 </div>
