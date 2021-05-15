@@ -13,6 +13,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
 
     const availInstruments = inventory.map(item => item.type).filter(unique)
     const addOnsList = instOptionsList.map(item => item.addOns)
+    console.log(addOnsList)
     var addOns = {}
     for(let instaddons in addOnsList) {
         for(let ado in instaddons) {
@@ -71,7 +72,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
-    console.log(addOns)
+    //console.log(addOns)
 
     return (
         <div>
@@ -260,7 +261,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                     <div class=" hr"></div>
                                                                 </div>
                                                             </div>
-                                                            {search(addOns).map((item, index) => (
+                                                            {/*search(addOns).map((item, index) => (
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" for="simpleinput">{item}</label>
                                                                 <div class="col-2">
@@ -271,7 +272,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
                                                                 </div>
-                                                            </div>))}
+                                                            </div>))*/}
                                                        
                                                        
                                                         </div>
