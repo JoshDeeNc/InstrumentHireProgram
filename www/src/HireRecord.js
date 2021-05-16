@@ -126,10 +126,10 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
             sendAddons.push(newado)
         }
         console.log(sendAddons)
-        /*const result = await updateToDo(itemId);
+        const result = await updateToDo(itemId,sendAddons);
         if (result.status === 200) {
             history.push('/');
-        }*/
+        }
     }
 
     const returned = async (itemId, instCode, event) => {
@@ -338,7 +338,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" id={"editAddOnName"+index}>{item.name}</label>
                                                                 <div class="col-2">
-                                                                    <Input type="text" defaultValue={item.rate} id={"editAddOnRate"+index} name="RateAddon" placeholder=" " />
+                                                                    <Input type="text" value={item.rate} id={"editAddOnRate"+index} name="RateAddon" placeholder=" " />
                                                                 </div>
                                                                 <div class="col-2">
                                                                     <Input type="text" defaultValue={item.qty} name="Qty" id={"editAddOnQty"+index} placeholder=" " />

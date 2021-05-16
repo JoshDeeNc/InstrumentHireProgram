@@ -169,7 +169,7 @@ function App() {
     }
   }
 
-  const updateToDo = async (itemId, event) => {
+  const updateToDo = async (itemId, addOns, event) => {
     if (itemId === null) return;
     const name = document.getElementById('editToDoName').value;
     const code = document.getElementById('editToDoCode').value;
@@ -197,7 +197,8 @@ function App() {
       "rate": rate,
       "owner": owner,
       "due": dueDate,
-      "notes": notes
+      "notes": notes,
+      "addOns":addOns
     };
 
     const result = await axios({
