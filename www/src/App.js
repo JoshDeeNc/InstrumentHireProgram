@@ -861,7 +861,7 @@ function App() {
                     <Col md="12">
                         <Switch>
                           <Route path="/newhire"><NewHire toDos={toDos} studentList={studentList} instInventory={instInventory} instOptionsList={instOptionsList} addToDo={addToDo} /></Route>
-                          <Route path="/hirerecord"><HireRecord deleteToDo={deleteToDo} updateToDo={updateToDo} returnToDo={returnToDo} toDos={toDos} /></Route>
+                          <Route path="/hirerecord"><HireRecord deleteToDo={deleteToDo} updateToDo={updateToDo} returnToDo={returnToDo} toDos={toDos} instOptionsList={instOptionsList} /></Route>
                           <Route path="/instrumentrecord"><InstrumentRecord deleteInstrument={deleteInstrument} updateInstrument={updateInstrument} instInventory={instInventory} /></Route>
                           <Route path="/instrumentlist"><InstrumentList instInventory={instInventory} toDos={toDos} /></Route>
                           <Route path="/newinstrument"><NewInstrument addInstrument={addInstrument} ownerList={ownerList} instOptionsList={instOptionsList} /></Route>

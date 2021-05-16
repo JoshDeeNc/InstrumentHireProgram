@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
+function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList }) {
     const history = useHistory();
     const id = /[^/]*$/.exec(window.location.href)[0];
     const hireRecord = toDos.find(item => item.id === id);
@@ -17,6 +17,36 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
     const [owner, setOwner] = useState(hireRecord.owner)
     const [dueDate, setDue] = useState(hireRecord.due)
     const [notes, setNotes] = useState(hireRecord.notes)
+    let addOns = hireRecord.addOns
+    /*for(let k in addOnsList) {
+        for(let ado in addOnsList[k]) {
+            var a = {}
+            a[ado] = addOnsList[k][ado]
+            addOns.push(a)
+        }
+    }*/
+
+    function search(records) {
+        if(instrument != hireRecord.instrument) {
+            const filtAddOns = instOptionsList.filter(item => item.instrumentTypeName === instrument).map(item => item.addOns)
+            if(filtAddOns.length > 0) {
+                var newAddons = []
+                for(let k in filtAddOns) {
+                    for(let ado in filtAddOns[k]) {
+                        var a = {}
+                        a['name'] = ado
+                        a['rate'] = filtAddOns[k][ado]
+                        a['qty'] = ""
+                        newAddons.push(a)
+                    }
+                }
+                addOns = newAddons
+                return addOns
+            }
+        }
+        addOns = hireRecord.addOns
+        return addOns
+    }
 
     const onChangeStud = (event) => {
         setStudName(event.target.value);
@@ -84,10 +114,22 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
     }
 
     const update = async (itemId, event) => {
-        const result = await updateToDo(itemId);
+        var sendAddons = []
+        for(var index = 0; index < addOns.length; index++) {
+            var newado = {}
+            var adoname = document.getElementById("editAddOnName"+index).innerHTML
+            var adoqty = document.getElementById("editAddOnQty"+index).value
+            var adorate = document.getElementById("editAddOnRate"+index).value
+            newado['name'] = adoname
+            newado['rate'] = adorate
+            newado['qty'] = adoqty
+            sendAddons.push(newado)
+        }
+        console.log(sendAddons)
+        /*const result = await updateToDo(itemId);
         if (result.status === 200) {
             history.push('/');
-        }
+        }*/
     }
 
     const returned = async (itemId, instCode, event) => {
@@ -292,51 +334,20 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos }) {
                                                                     <div class=" hr-2"></div>
                                                                 </div>
                                                             </div>
+                                                            {search(addOns).map((item, index) => (
                                                             <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">Wire leads 6mt</label>
+                                                                <label class="col-8 col-form-label" id={"editAddOnName"+index}>{item.name}</label>
                                                                 <div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div><div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
+                                                                    <Input type="text" value={item.rate} id={"editAddOnRate"+index} name="RateAddon" placeholder=" " />
+                                                                </div>
+                                                                <div class="col-2">
+                                                                    <Input type="text" value={item.qty} name="Qty" id={"editAddOnQty"+index} placeholder=" " />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
                                                                 </div>
-                                                            </div>
-                                                            <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">Strings</label>
-                                                                <div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div><div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div>
-                                                                <div class="col-sm-12 ">
-                                                                    <div class=" hr"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">Stands</label>
-                                                                <div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div><div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div>
-                                                                <div class="col-sm-12 ">
-                                                                    <div class=" hr"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">Picks</label>
-                                                                <div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div><div class="col-2">
-                                                                    <Input type="text" name="owner" id=" " placeholder=" " />
-                                                                </div>
-                                                                <div class="col-sm-12 ">
-                                                                    <div class=" hr"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                            </div>))}
+                                                           </div>
                                                   
                                                 </div>
                                             </div>
