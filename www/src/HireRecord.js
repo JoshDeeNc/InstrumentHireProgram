@@ -326,9 +326,9 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label fw-700" for="simpleinput">Description</label>
 
-                                                                <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Qty</label>
-
                                                                 <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Rate</label>
+
+                                                                <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Qty</label>
 
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr-2"></div>
