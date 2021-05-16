@@ -22,7 +22,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [serialNum, setSerialNum] = useState('')
     const [rate, setRate] = useState('')
     const [owner, setOwner] = useState('')
-    const [actAddOns,setActAddOns] = useState([])
+    let actAddOns = []
     function search(records) {
         if(instr != '') {
             const filtAddOns = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
@@ -35,7 +35,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                         newAddons.push(a)
                     }
                 }
-                setActAddOns(newAddons)
+                actAddOns = newAddons
                 return newAddons
             }
         }
