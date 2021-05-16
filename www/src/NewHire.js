@@ -268,7 +268,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" id={"addOnName"+index}>{Object.keys(item)[0]}</label>
                                                                 <div class="col-2">
-                                                                    <Input type="text" value={item[Object.keys(item)[0]]} onChange="" id={"addOnRate"+index} name="RateAddon" placeholder=" " />
+                                                                    <Input type="text" defaultValue={item[Object.keys(item)[0]]} id={"addOnRate"+index} name="RateAddon" placeholder=" " />
                                                                 </div>
                                                                 <div class="col-2">
                                                                     <Input type="text" name="Qty" id={"addOnQty"+index} placeholder=" " />
