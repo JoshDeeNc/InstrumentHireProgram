@@ -108,7 +108,7 @@ function App() {
     }
   };
 
-  const addToDo = async (event) => {
+  const addToDo = async (addOns,event) => {
     const name = document.getElementById('newToDoName').value;
     const code = document.getElementById('newToDoCode').value;
     const instrument = document.getElementById('newToDoInstrument').value;
@@ -135,7 +135,8 @@ function App() {
       "rate": rate,
       "owner": owner,
       "due": dueDate,
-      "notes": notes
+      "notes": notes,
+      "addOns":addOns
     };
 
     const result = await axios({

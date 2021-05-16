@@ -77,16 +77,14 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
             sendAddons.push(newado)
         }
         console.log(sendAddons)
-        /*const result = await addToDo();
+        const result = await addToDo(sendAddons);
         if (result.status === 200) {
             history.push('/');
-        }*/
+        }
     }
 
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
-
-    console.log(addOns)
 
     return (
         <div>
