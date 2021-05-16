@@ -68,7 +68,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
         var sendAddons = []
         for(var index = 0; index < actAddOns.length; index++) {
             var newado = {}
-            var adoname = document.getElementById("addOnName"+index).value
+            var adoname = document.getElementById("addOnName"+index).innerHTML
             var adoqty = document.getElementById("addOnQty"+index).value
             var adorate = document.getElementById("addOnRate"+index).value
             newado['name'] = adoname
