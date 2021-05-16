@@ -81,7 +81,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
 
 
     const editToggle = async (event) => {
-        if(hireRecord.returned != "") {
+        if(hireRecord.returned === "") {
             var a = document.getElementsByTagName('input');
             var a1 = document.getElementsByTagName('textarea');
             // loop through all 'a' elements

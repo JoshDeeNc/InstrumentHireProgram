@@ -234,7 +234,7 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       let hire = toDos.find(item => item.id === itemId)
-      if(hire.returned != "") {
+      if(hire.returned === "") {
         let instr = instInventory.find(item => item.code === instCode)
         instr.available = true;
         const resultInst = await axios({
