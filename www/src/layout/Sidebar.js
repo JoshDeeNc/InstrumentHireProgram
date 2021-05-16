@@ -35,88 +35,143 @@ function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolLi
           </a>
         </div>
 
-      
-       
-        <ul id="js-nav-menu" class="nav-menu ">
-      
-          <li>
-            <Link to="/" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
-              <i class="fal fa-home"></i>
-              <span class="nav-link-text" data-i18n="nav.statistics_flot">Home</span>
-              <span class="dl-ref label bg-info-900 ml-2">{toDos.filter(item => item.returned === "").length}</span>
-            </Link>
-          </li>
+        <div class="accordion accordion-hover" id="js_demo_accordion-5">
+          <div class="card">
+            <div class="card-header-nl">
+              <a href="javascript:void(0);" class="card-title" data-toggle="collapse" data-target="#js_demo_accordion-5a" aria-expanded="true">
 
-          <li class="active ">
-            <a href="#" title="Statistics" data-filter-tags="statistics chart graphs" aria-expanded="true" class=" waves-effect waves-themed">
-              <i class="fal fa-guitars"></i>
-              <span class="nav-link-text" data-i18n="nav.statistics">Hires</span>
-              <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
-            <ul>
-              <li>
-                <Link to="/newHire" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
-                  <span class="nav-link-text" data-i18n="nav.statistics_chartist.js"> New Hire</span>
+                <Link to="/" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
+
+                  <span class="nav-link-text" data-i18n="nav.statistics_flot"><i class="fal fa-home width-2 fs-xl"></i>Home</span>
                 </Link>
-              </li>
-            
 
-            </ul>
-          </li>
-         
+              </a>
+            </div>
 
-          <li class="active ">
-            <a href="#" title="Statistics" data-filter-tags="statistics chart graphs" aria-expanded="true" class=" waves-effect waves-themed">
-              <i class="fal fa-users"></i>
-              <span class="nav-link-text" data-i18n="nav.statistics">Students</span>
-              <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
-            <ul>
-               
-              <li>
-                <Link to="/studentlist" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
-                  <span class="nav-link-text" data-i18n="nav.statistics_flot">Students List</span>
-                  <span class="dl-ref label bg-info-900 ml-2">{studentList.length}</span>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5b" aria-expanded="false">
+                <i class="fal fa-guitars width-2 fs-xl"></i>
+                                                            Hires
+                                                            <span class="dl-ref label bg-info-900 ml-auto ">{toDos.filter(item => item.returned === "").length}</span>
+
+                <span class="ml-auto">
+                  <span class="collapsed-reveal">
+                    <i class="fal fa-chevron-up fs-xl"></i>
+                  </span>
+                  <span class="collapsed-hidden">
+                    <i class="fal fa-chevron-down fs-xl"></i>
+                  </span>
+                </span>
+              </a>
+            </div>
+            <div id="js_demo_accordion-5b" class="collapse" data-parent="#js_demo_accordion-5">
+              <div class="card-body">
+                <ul>
+                  <li>
+                    <Link to="/newHire" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
+                      <span class="nav-link-text" data-i18n="nav.statistics_chartist.js"> New Hire</span>
+                    </Link>
+                  </li>
+
+
+                </ul>
+
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5c" aria-expanded="false">
+                <i class="fal fa-users width-2 fs-xl"></i>
+                                                            Students
+                                                            <span class="ml-auto">
+                  <span class="collapsed-reveal">
+                    <i class="fal fa-chevron-up fs-xl"></i>
+                  </span>
+                  <span class="collapsed-hidden">
+                    <i class="fal fa-chevron-down fs-xl"></i>
+                  </span>
+                </span>
+              </a>
+            </div>
+            <div id="js_demo_accordion-5c" class="collapse" data-parent="#js_demo_accordion-5">
+              <div class="card-body">
+                <ul>
+                  <li>
+                    <Link to="/studentlist" title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
+                      <span class="nav-link-text" data-i18n="nav.statistics_flot">Students List</span>
+                      <span class="dl-ref label bg-info-900 ml-2">{studentList.length}</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/newStudent" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
+                      <span class="nav-link-text" data-i18n="nav.statistics_chartist.js">Add Student</span>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5d" aria-expanded="false">
+                <i class="fal fa-guitars width-2 fs-xl"></i>
+                                                            Instruments
+                                                            <span class="ml-auto">
+                  <span class="collapsed-reveal">
+                    <i class="fal fa-chevron-up fs-xl"></i>
+                  </span>
+                  <span class="collapsed-hidden">
+                    <i class="fal fa-chevron-down fs-xl"></i>
+                  </span>
+                </span>
+              </a>
+            </div>
+            <div id="js_demo_accordion-5d" class="collapse" data-parent="#js_demo_accordion-5">
+              <div class="card-body">
+                <ul>
+
+                  <li class=" ">
+                    <Link to="/instrumentlist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
+                      <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Instruments List</span>
+                      <span class="dl-ref label bg-info-900 ml-2">{instInventory.length}</span>
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link to="/newinstrument" title="C3 Charts" data-filter-tags="statistics chart graphs c3 charts" class=" waves-effect waves-themed">
+                      <span class="nav-link-text" data-i18n="nav.statistics_c3_charts">Add Instrument</span>
+                    </Link>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header-nl">
+              <a href="javascript:void(0);" class="card-title" data-toggle="collapse" data-target="#js_demo_accordion-5a" aria-expanded="true">
+
+
+                <Link onClick={clearCredentials} title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
+                  <span class="nav-link-text" data-i18n="nav.statistics_flot"> <i class="fal fa-door-open width-2 fs-xl"></i>Logout</span>
                 </Link>
-              </li>
-              <li>
-                <Link to="/newStudent" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
-                  <span class="nav-link-text" data-i18n="nav.statistics_chartist.js">Add Student</span>
-                </Link>
-              </li>
-            </ul>
-          </li>
+
+              </a>
+            </div>
+
+          </div>
 
 
-          <li class="active ">
-            <a href="#" title="Statistics" data-filter-tags="statistics chart graphs" aria-expanded="true" class=" waves-effect waves-themed">
-              <i class="fal fa-guitar"></i>
-              <span class="nav-link-text" data-i18n="nav.statistics">Instruments</span>
-              <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
-            <ul>
-               
-            <li class=" ">
-                <Link to="/instrumentlist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
-                  <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Instruments List</span>
-                  <span class="dl-ref label bg-info-900 ml-2">{instInventory.length}</span>
-                </Link>
-              </li>
 
-              <li>
-                <Link to="/newinstrument" title="C3 Charts" data-filter-tags="statistics chart graphs c3 charts" class=" waves-effect waves-themed">
-                  <span class="nav-link-text" data-i18n="nav.statistics_c3_charts">Add Instrument</span>
-                </Link>
-              </li>
-        
-            </ul>
-          </li>
-         
-          <li>
-            <Link onClick={clearCredentials} title="Flot" data-filter-tags="statistics chart graphs flot bar pie" class=" waves-effect waves-themed">
-              <i class="fal fa-door-open"></i>
-              <span class="nav-link-text" data-i18n="nav.statistics_flot">Logout</span>
+        </div>
 
-            </Link>
-          </li>
-        </ul>
+
+
         <div class="filter-message js-filter-message bg-success-600"></div>
       </nav>
       <div class="nav-footer shadow-top">

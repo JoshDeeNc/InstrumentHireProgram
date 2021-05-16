@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
 
-function Header({schoolList, ownerList, instOptionsList }) { 
+function Header({ schoolList, ownerList, instOptionsList }) {
     return (
         <header class="page-header" role="banner">
 
@@ -54,10 +54,10 @@ function Header({schoolList, ownerList, instOptionsList }) {
                         <i class="fal fa-search"></i>
                     </a>
                 </div>
-                <div>
+                <div  >
                     <a href="#" class="header-icon" data-toggle="dropdown" title="You got 11 notifications">
                         <i class="fal fa-cog"></i>
-                       
+
                     </a>
                     <div class="dropdown-menu dropdown-menu-animated dropdown-xl">
                         <div
@@ -65,100 +65,162 @@ function Header({schoolList, ownerList, instOptionsList }) {
                             <h4 class="m-0 text-center color-white  ">
                                 Settings
                                 <small class="mb-0 opacity-80">  Applications Settings</small>
-                    
-                            </h4>  
-                           
+
+                            </h4>
+
                         </div>
 
+                        <div class="settings-mn" >
 
-                        <ul id="js-nav-menu" class="nav-menu bg-green  ">
+                            <div class="accordion accordion-hover " id="js_demo_accordion-">
 
-                        <li class="active ">
-                                <a href="#" title="Statistics" data-filter-tags="statistics chart graphs" aria-expanded="true" class=" waves-effect waves-themed">
-                                    <i class="fal fa-guitars"></i>
-                                    <span class="nav-link-text" data-i18n="nav.statistics">Instruments</span>
-                                    <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
-                                <ul>
-                                    <li class=" ">
-                                        <Link to="/instoptionslist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
-                                            <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Instrument Types List</span>
-                                            <span class="dl-ref label bg-info-900 ml-2"> {instOptionsList.length}</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/newinstoptions" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
-                                            <span class="nav-link-text" data-i18n="nav.statistics_chartist.js">New Instrument Type</span>
-                                        </Link>
-                                    </li>
-                                     
-
-                                </ul>
-                            </li>
-
-                            <li class="active ">
-                                <a href="#" title="Statistics" data-filter-tags="statistics chart graphs" aria-expanded="true" class=" waves-effect waves-themed">
-                                    <i class="fal fa-building"></i>
-                                    <span class="nav-link-text" data-i18n="nav.statistics">Schools</span>
-                                    <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
-                                <ul>
-
-                                    <li class=" ">
-                                        <Link to="/schoollist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
-                                            <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Schools List</span>
-                                            <span class="dl-ref label bg-info-900 ml-2">{schoolList.length}</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/newschool" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
-                                            <span class="nav-link-text" data-i18n="nav.statistics_chartist.js"> New School</span>
-                                        </Link>
-                                    </li>
-
-                                </ul>
-                            </li>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5c1" aria-expanded="false">
+                                            <i class="fal fa-guitars width-2 fs-xl"></i>
+                                                            Instruments
+                                                            <span class="ml-auto">
+                                                <span class="collapsed-reveal">
+                                                    <i class="fal fa-chevron-up fs-xl"></i>
+                                                </span>
+                                                <span class="collapsed-hidden">
+                                                    <i class="fal fa-chevron-down fs-xl"></i>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div id="js_demo_accordion-5c1" class="collapse" data-parent="#js_demo_accordion-5">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li class=" ">
+                                                    <Link to="/instoptionslist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
+                                                        <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Instrument Types List</span>
+                                                        <span class="dl-ref label bg-info-900 ml-2"> {instOptionsList.length}</span>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link to="/newinstoptions" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
+                                                        <span class="nav-link-text" data-i18n="nav.statistics_chartist.js">New Instrument Type</span>
+                                                    </Link>
+                                                </li>
 
 
-                            <li class="active ">
-                                <a href="#" data-filter-tags="statistics chart graphs" aria-expanded="true" class=" waves-effect waves-themed">
-                                    <i class="fal fa-warehouse"></i>
-                                    <span class="nav-link-text" data-i18n="nav.statistics">Owners</span>
-                                    <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
-                                <ul>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                    <li class=" ">
-                                        <Link to="/ownerlist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
-                                            <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Owner List</span>
-                                            <span class="dl-ref label bg-info-900 ml-2">{ownerList.length} </span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/newowner" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
-                                            <span class="nav-link-text" data-i18n="nav.statistics_chartist.js"> New Owner</span>
-                                        </Link>
-                                    </li>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5c2" aria-expanded="false">
+                                            <i class="fal fa-building width-2 fs-xl"></i>
+                                                            Schools
+                                                            <span class="ml-auto">
+                                                <span class="collapsed-reveal">
+                                                    <i class="fal fa-chevron-up fs-xl"></i>
+                                                </span>
+                                                <span class="collapsed-hidden">
+                                                    <i class="fal fa-chevron-down fs-xl"></i>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div id="js_demo_accordion-5c2" class="collapse" data-parent="#js_demo_accordion-5">
+                                        <div class="card-body">
 
-                                </ul>
-                            </li>
+                                            <ul>
 
-                          
+                                                <li class=" ">
+                                                    <Link to="/schoollist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
+                                                        <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Schools List</span>
+                                                        <span class="dl-ref label bg-info-900 ml-2">{schoolList.length}</span>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link to="/newschool" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
+                                                        <span class="nav-link-text" data-i18n="nav.statistics_chartist.js"> New School</span>
+                                                    </Link>
+                                                </li>
 
-                            <li class="active ">
-                                <a href="#" title="Statistics" data-filter-tags="statistics chart graphs" aria-expanded="true" class=" waves-effect waves-themed">
-                                    <i class="fal fa-user"></i>
-                                    <span class="nav-link-text" data-i18n="nav.statistics">My Account</span>
-                                    <b class="collapse-sign"><em class="fal fa-angle-down"></em></b></a>
-                                <ul>
-                                <li>
-                                        <Link to="/test" title="C3 Charts" data-filter-tags="statistics chart graphs c3 charts" class=" waves-effect waves-themed">
-                                            <span class="nav-link-text" data-i18n="nav.statistics_c3_charts">My Profile</span>
-                                        </Link>
-                                    </li>
+                                            </ul>
 
-                                </ul>
-                            </li>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5c3" aria-expanded="false">
+                                            <i class="fal fa-warehouse width-2 fs-xl"></i>
+                                                            Owners
+                                                            <span class="ml-auto">
+                                                <span class="collapsed-reveal">
+                                                    <i class="fal fa-chevron-up fs-xl"></i>
+                                                </span>
+                                                <span class="collapsed-hidden">
+                                                    <i class="fal fa-chevron-down fs-xl"></i>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div id="js_demo_accordion-5c3" class="collapse" data-parent="#js_demo_accordion-5">
+                                        <div class="card-body">
+
+                                            <ul>
+
+                                                <li class=" ">
+                                                    <Link to="/ownerlist" title="Chart.js" data-filter-tags="statistics chart graphs chart.js bar pie" class=" waves-effect waves-themed">
+                                                        <span class="nav-link-text" data-i18n="nav.statistics_chart.js">Owner List</span>
+                                                        <span class="dl-ref label bg-info-900 ml-2">{ownerList.length} </span>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link to="/newowner" title="Chartist.js" data-filter-tags="statistics chart graphs chartist.js" class=" waves-effect waves-themed">
+                                                        <span class="nav-link-text" data-i18n="nav.statistics_chartist.js"> New Owner</span>
+                                                    </Link>
+                                                </li>
+
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5c4" aria-expanded="false">
+                                            <i class="fal fa-user width-2 fs-xl"></i>
+                                                            My Account
+                                                            <span class="ml-auto">
+                                                <span class="collapsed-reveal">
+                                                    <i class="fal fa-chevron-up fs-xl"></i>
+                                                </span>
+                                                <span class="collapsed-hidden">
+                                                    <i class="fal fa-chevron-down fs-xl"></i>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div id="js_demo_accordion-5c4" class="collapse" data-parent="#js_demo_accordion-5">
+                                        <div class="card-body">
+
+                                            <ul>
+                                                <li>
+                                                    <Link to="/test" title="C3 Charts" data-filter-tags="statistics chart graphs c3 charts" class=" waves-effect waves-themed">
+                                                        <span class="nav-link-text" data-i18n="nav.statistics_c3_charts">My Profile</span>
+                                                    </Link>
+                                                </li>
+
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
 
 
-                        </ul>
+                            </div>
+
+                        </div>
 
 
                     </div>
@@ -180,8 +242,8 @@ function Header({schoolList, ownerList, instOptionsList }) {
                             <ul class="app-list">
                                 <li>
                                     <a href="https://www.pacifichills.nsw.edu.au/phcs/" target="_blank" class="app-list-item hover-white">
-                                        <img src="dist/img/phcs.png" class="settings-logos" alt=" " aria-roledescription="logo" />  
-                                       
+                                        <img src="dist/img/phcs.png" class="settings-logos" alt=" " aria-roledescription="logo" />
+
                                         <span class="app-list-name">
                                             PHCS
                             </span>
@@ -189,8 +251,8 @@ function Header({schoolList, ownerList, instOptionsList }) {
                                 </li>
                                 <li>
                                     <a href="https://www.onemakeracademy.com.au/oma/" target="_blank" class="app-list-item hover-white">
-                                    <img src="dist/img/omalogo.png" class="settings-logos" alt=" " aria-roledescription="logo" />  
-                                       
+                                        <img src="dist/img/omalogo.png" class="settings-logos" alt=" " aria-roledescription="logo" />
+
                                         <span class="app-list-name">
                                             OMA
                             </span>
@@ -198,8 +260,8 @@ function Header({schoolList, ownerList, instOptionsList }) {
                                 </li>
                                 <li>
                                     <a href="https://www.pacifichills.nsw.edu.au/phcs/" target="_blank" class="app-list-item hover-white">
-                                    <img src="dist/img/phcs.png"  class="settings-logos" alt=" " aria-roledescription="logo" />  
-                                       
+                                        <img src="dist/img/phcs.png" class="settings-logos" alt=" " aria-roledescription="logo" />
+
                                         <span class="app-list-name">
                                             Edumate
                             </span>
@@ -207,8 +269,8 @@ function Header({schoolList, ownerList, instOptionsList }) {
                                 </li>
                                 <li>
                                     <a href="https://www.musicorp.com.au/" target="_blank" class="app-list-item hover-white">
-                                    <img src="dist/img/polygon.png" class="settings-logos" alt=" " aria-roledescription="logo" />  
-                                       
+                                        <img src="dist/img/polygon.png" class="settings-logos" alt=" " aria-roledescription="logo" />
+
                                         <span class="app-list-name">
                                             Polygon
                             </span>
@@ -216,8 +278,8 @@ function Header({schoolList, ownerList, instOptionsList }) {
                                 </li>
                                 <li>
                                     <a href="https://www.duralmusic.com.au/" target="_blank" class="app-list-item hover-white">
-                                    <img src="dist/img/duralmusic.png" class="settings-logos" alt=" " aria-roledescription="logo" />  
-                                       
+                                        <img src="dist/img/duralmusic.png" class="settings-logos" alt=" " aria-roledescription="logo" />
+
                                         <span class="app-list-name">
                                             Dural Music
                             </span>
@@ -225,23 +287,20 @@ function Header({schoolList, ownerList, instOptionsList }) {
                                 </li>
                                 <li>
                                     <a href="https://www.turramusic.com.au/" target="_blank" class="app-list-item hover-white">
-                                    <img src="dist/img/tmusic.png" class="settings-logos" alt=" " aria-roledescription="logo" />  
-                                       
+                                        <img src="dist/img/tmusic.png" class="settings-logos" alt=" " aria-roledescription="logo" />
+
                                         <span class="app-list-name">
                                             Turramarra
                             </span>
                                     </a>
                                 </li>
-                                
-                               
-                               
-                                
-                                
+
+
                             </ul>
                         </div>
                     </div>
                 </div>
-               
+
             </div>
         </header>
     )

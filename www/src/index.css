@@ -131,7 +131,6 @@ html body a {
 }
 
 .nav-menu li a .dl-ref.label {
-
   color: #000000;
 }
 
@@ -184,7 +183,10 @@ body {
   background-color: rgba(0, 0, 0, .02);
 }
 
-.table-hover tbody tr:hover {box-shadow: none; background:#eff5f4 ;}
+.table-hover tbody tr:hover {
+  box-shadow: none;
+  background: #eff5f4;
+}
 
 .table-bordered thead th, .table-bordered thead td {
   background: #f0f8ff63
@@ -228,11 +230,19 @@ table tr td a .fa-2x {
   font-weight: 700;
 }
 
-.settings-logos {width: 80%; max-width: 50px; margin: 10px 0;}
+.settings-logos {
+  width: 80%;
+  max-width: 50px;
+  margin: 10px 0;
+}
 
-.app-list {height: auto;}
+.app-list {
+  height: auto;
+}
 
-.app-list-item {height: auto;}
+.app-list-item {
+  height: auto;
+}
 
 .badge.badge-icon {
   font-weight: 700;
@@ -250,9 +260,13 @@ table tr td a .fa-2x {
   background-color: #8bc34a;
 }
 
-.card, .card-group {box-shadow: none;}
+.card, .card-group {
+  box-shadow: none;
+}
 
- .card-body {padding: 5px 15px}
+.card-body {
+  padding: 5px 15px
+}
 
 .btn {
   border-radius: 0.15rem;
@@ -290,7 +304,6 @@ table tr td a .fa-2x {
   width: 50px;
   position: relative;
   z-index: 99999;
- 
 }
 
 .nav-menu li a .dl-ref {
@@ -298,12 +311,14 @@ table tr td a .fa-2x {
   padding: 0 5px;
 }
 
-.app-list a {text-decoration: none !important; text-transform: uppercase;}
+.app-list a {
+  text-decoration: none !important;
+  text-transform: uppercase;
+}
 
 .header-btn[data-class='mobile-nav-on'] {
   border-color: #004d40;
   background-color: #004d40;
-
 }
 
 .bg-red {
@@ -315,9 +330,7 @@ table tr td a .fa-2x {
 }
 
 .bg-trans-gradient {
-  background: linear-gradient(
-0deg
-, #28a745, #064e4d);
+  background: linear-gradient( 0deg, #28a745, #064e4d);
 }
 
 body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.active.active {
@@ -411,7 +424,6 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   margin: 5px 0;
 }
 
-
 .hr-2 {
   border-top: 3px solid #eeeeee;
   height: 1px;
@@ -419,8 +431,11 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
 }
 
 .accordion .card .card-header .card-title {
-  padding: 0.5rem 0.7rem; color: #666666; font-weight: 300; text-transform: uppercase;}
-  
+  padding: 0.5rem 0.7rem;
+  color: #666666;
+  font-weight: 300;
+  text-transform: uppercase;
+}
 
 .form-group {
   margin-bottom: 0;
@@ -490,7 +505,6 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   max-width: 1100px;
 }
 
-
 .chart-div {
   width: 50%;
   height: 300px;
@@ -500,32 +514,132 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   font-size: 14px !important;
 }
 
-.sm-inpt-width {width:auto; max-width: 60px; min-width: 60px;}
-.sm-inpt-width-edt {width:auto; max-width: 80px; min-width: 80px;}
+.sm-inpt-width {
+  width: auto;
+  max-width: 60px;
+  min-width: 60px;
+}
+
+.sm-inpt-width-edt {
+  width: auto;
+  max-width: 80px;
+  min-width: 80px;
+}
 
 .input-group-text-white {
   display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
-    align-items: center;
-    padding: .375rem .3rem .375rem 0;
-    margin-bottom: 0;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    text-align: center;
-    white-space: nowrap;
-    background-color: #e9ecef;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-  background: #ffffff ; border-color: #ffffff; }
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: .375rem .3rem .375rem 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  background: #ffffff;
+  border-color: #ffffff;
+}
 
-  .input-group-text-lbl .input-group-text {padding-left: 0;}
-  #editInstDepr {padding:12px  0 ;}
+.input-group-text-lbl .input-group-text {
+  padding-left: 0;
+}
 
-.hand {cursor: pointer;}
+#editInstDepr {
+  padding: 12px 0;
+}
+
+.hand {
+  cursor: pointer;
+}
 
 .frame-wrap {
   margin: 1.5rem 0;
+}
+
+.page-sidebar .side-nav .accordion.accordion-hover .card-title:not(.collapsed), .settings-mn .side-nav .accordion.accordion-hover .card-title:not(.collapsed) {
+  color: #fff;
+  background-color: #145c5a;
+}
+
+.page-sidebar .bg-info-900, .settings-mn .bg-info-900 {
+  float: right;
+  padding: 2px 6px;
+  border-radius: 20px;
+  font-size: 11px;
+  color: black;
+}
+
+.page-sidebar a, .page-sidebar .accordion.accordion-hover .card-header a, .settings-mn a, .settings-mn .accordion.accordion-hover .card-header a {
+  width: 100%;
+  color: #ffffff !important;
+  font-weight: 400;
+  padding: 13px 15px;
+}
+
+.page-sidebar .card, .settings-mn .card {
+  background-color: #145c5a;
+  background-clip: border-box;
+  border: none;
+  border-radius: 0;
+}
+
+.page-sidebar i, .settings-mn i {
+  opacity: 0.4;
+}
+
+.page-sidebar .card-header-nl {
+  background: #055756;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-sidebar .accordion.accordion-hover .card-header, .settings-mn .accordion.accordion-hover .card-header {
+  padding: 0rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-sidebar .card-header-nl a, .settings-mn .card-header-nl a {
+  background: none !important;
+  padding: 9px 8px;
+}
+
+.page-sidebar ul, .settings-mn ul {
+  margin-bottom: -6px;
+  text-transform: uppercase;
+}
+
+.page-sidebar .accordion.accordion-hover .card-header, .settings-mn .accordion.accordion-hover .card-header {
+  background: #145c5a;
+  color: #ffffff;
+}
+
+.page-sidebar .accordion.accordion-hover .card-title:not(.collapsed), .settings-mn .accordion.accordion-hover .card-title:not(.collapsed) {
+  color: #fff;
+  background-color: #28a745;
+}
+
+.page-sidebar .accordion.accordion-hover .card-header:hover .card-title.collapsed, .settings-mn .accordion.accordion-hover .card-header:hover .card-title.collapsed {
+  color: #fff;
+  background-color: #2e7d32;
+}
+
+.page-sidebar .card-body li, .settings-mn .card-body li {
+  margin-left: -12px;
+  list-style: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.page-sidebar .accordion>.card>.card-header, .settings-mn .accordion>.card>.card-header {
+  border-radius: 0;
+  margin-bottom: 0px;
+}
+
+.page-sidebar .accordion.accordion-hover .card-title:not(.collapsed) .card-header-nl {
+  background: #055756;
 }
