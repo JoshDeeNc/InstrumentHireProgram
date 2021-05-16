@@ -109,6 +109,13 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
         else {
             var a1 = document.getElementsByTagName('textarea');
             a1[0].classList.remove('nox');
+            var b = document.getElementsByTagName('div');
+            // loop through all 'a' elements
+            for (var i = 0; i < b.length; i++) {
+                // Remove the class 'active' if it exists
+                b[i].classList.remove('btn-div');
+
+            }
         }
     }
 
