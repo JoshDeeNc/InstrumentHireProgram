@@ -186,9 +186,10 @@ function App() {
       || !size || size === '' || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' 
       || !dueDate || dueDate === '') return;
 
+    let hire = toDos.find(item => item.id === itemId);
     const updateToDo = {
       "name": name,
-      "returned": "",
+      "returned": hire.returned,
       "code": code,
       "instrument": instrument,
       "brand": brand,
