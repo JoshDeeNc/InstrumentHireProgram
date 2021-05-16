@@ -27,8 +27,8 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
     }*/
 
     function search(records) {
+        const filtAddOns = instOptionsList.filter(item => item.instrumentTypeName === instrument).map(item => item.addOns)
         if(instrument != hireRecord.instrument) {
-            const filtAddOns = instOptionsList.filter(item => item.instrumentTypeName === instrument).map(item => item.addOns)
             if(filtAddOns.length > 0) {
                 var newAddons = []
                 for(let k in filtAddOns) {
@@ -43,6 +43,22 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                 addOns = newAddons
                 return addOns
             }
+        }
+        if(filtAddOns.length > 0) {
+            var newAddons = []
+            var i = 0
+            for(let k in filtAddOns) {
+                for(let ado in filtAddOns[k]) {
+                    var a = {}
+                    a['name'] = ado
+                    a['rate'] = filtAddOns[k][ado]
+                    a['qty'] = document.getElementById("editAddOnQty"+i) && document.getElementById("editAddOnQty"+i).value
+                    newAddons.push(a)
+                    i++;
+                }
+            }
+            addOns = newAddons
+            return addOns
         }
         addOns = hireRecord.addOns
         return addOns
