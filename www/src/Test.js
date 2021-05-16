@@ -7,69 +7,43 @@ function Test() {
         <div>
             <h1>Test</h1>
 
-            <div class="row">
-                <div class="col-lg-7 col-md-10">
-                    <div id="panel-1" class="panel">
-                        <div class="panel-hdr-dsp">
-                            <h2>New Instrument</h2>
-                            <div></div>
-                        </div>
-                        <div class="panel-container show">
-                            <div class="panel-content">
+            <ul id="js-nav-menu" class="nav-menu">
+        <li>
+            <a href="#" title="Application Intel" data-filter-tags="application intel">
+                <i class="fal fa-info-circle"></i>
+                <span class="nav-link-text" data-i18n="nav.application_intel">Application Intel</span>
+            </a>
+            <ul>
+                <li>
+                    <a href="intel_analytics_dashboard.html" title="Analytics Dashboard"
+                        data-filter-tags="application intel analytics dashboard">
+                        <span class="nav-link-text" data-i18n="nav.application_intel_analytics_dashboard">Analytics
+                            Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="intel_marketing_dashboard.html" title="Marketing Dashboard"
+                        data-filter-tags="application intel marketing dashboard">
+                        <span class="nav-link-text" data-i18n="nav.application_intel_marketing_dashboard">Marketing
+                            Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="intel_introduction.html" title="Introduction"
+                        data-filter-tags="application intel introduction">
+                        <span class="nav-link-text" data-i18n="nav.application_intel_introduction">Introduction</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="intel_privacy.html" title="Privacy" data-filter-tags="application intel privacy">
+                        <span class="nav-link-text" data-i18n="nav.application_intel_privacy">Privacy</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
 
-                                <form>
-                                    <div class=" form-group row">
-                                        <label class="col-sm-3 col-form-label" for="simpleinput">Instrument Name </label>
-                                        <div class="col-sm-9">
-                                            <Input type="text" class="form-control no-edit" name="name" id="newSchoolName"  />
-                                        </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class=" form-group row ">
-                                        <label class="col-sm-3 col-form-label" for="simpleinput">Size</label>
-                                        <div class="col-sm-9">
-                                            <Input type="text" class="form-control no-edit" value="Half, Three Quarter, Full " name="code" id="newSchoolNumber" />
-                                        </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                         
-                                         
-                                        <div class="col-sm-12 mb-2 mt-2 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class=" form-group row">
-                                        <label class="col-sm-3 col-form-label" for="simpleinput"> Add-On </label>
-                                        <div class="col-sm-9">
-                                            <Input type="text" class="form-control no-edit" value="Metronome, Strings, Stand" name="code" id="newSchoolNumber" />
-                                        </div>
-                                        <div class="col-sm-12 ">
-                                            <div class=" hr"></div>
-                                        </div>
-              
-                                        <div class="col-sm-12 mb-2 mt-2 ">
-                                            <div class=" hr"></div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="btn-divS">
-                                        <Button color="primary" className="mr-2" >Add</Button>
-
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
+    </ul>
+    
 
         </div>
     );
