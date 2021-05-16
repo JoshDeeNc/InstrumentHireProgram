@@ -338,10 +338,10 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" id={"editAddOnName"+index}>{item.name}</label>
                                                                 <div class="col-2">
-                                                                    <Input type="text" value={item.rate} id={"editAddOnRate"+index} name="RateAddon" placeholder=" " />
+                                                                    <Input type="text" defaultValue={item.rate} id={"editAddOnRate"+index} name="RateAddon" placeholder=" " />
                                                                 </div>
                                                                 <div class="col-2">
-                                                                    <Input type="text" value={item.qty} name="Qty" id={"editAddOnQty"+index} placeholder=" " />
+                                                                    <Input type="text" defaultValue={item.qty} name="Qty" id={"editAddOnQty"+index} placeholder=" " />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
