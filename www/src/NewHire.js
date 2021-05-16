@@ -22,7 +22,6 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [serialNum, setSerialNum] = useState('')
     const [rate, setRate] = useState('')
     const [owner, setOwner] = useState('')
-    let actAddOns = []
     function search(records) {
         if(instr != '') {
             const filtAddOns = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
@@ -35,11 +34,12 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                         newAddons.push(a)
                     }
                 }
-                actAddOns = newAddons
-                return newAddons
+                addOns = newAddons
+                return addOns
             }
         }
-        return records
+        addOns = records
+        return addOns
     }
 
     useEffect(() => {
@@ -66,7 +66,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
 
     const add = async (event) => {
         var sendAddons = []
-        for(var index = 0; index < actAddOns.length; index++) {
+        for(var index = 0; index < addOns.length; index++) {
             var newado = {}
             var adoname = document.getElementById("addOnName"+index).innerHTML
             var adoqty = document.getElementById("addOnQty"+index).value
@@ -74,7 +74,6 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
             newado['name'] = adoname
             newado['rate'] = adorate
             newado['qty'] = adoqty
-            console.log(newado)
             sendAddons.push(newado)
         }
         console.log(sendAddons)
