@@ -106,6 +106,10 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                 c[i].classList.remove('input-group-text-white');         
             }
         }
+        else {
+            var a1 = document.getElementsByTagName('textarea');
+            a1[0].classList.remove('nox');
+        }
     }
 
     const deletion = async (itemId, instCode, event) => {
@@ -161,8 +165,8 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                         <div class="panel-hdr-dsp">
                         <span onClick={() => history.goBack()}><i class="fal fn-icon fa-arrow-circle-left hand mr-2"></i></span>
                             <h2>Hire Description </h2>
-                                <Button onClick={toggleRet} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
-                                <span class="fal fa-hand-holding-box mr-1"></span>  Return </Button>
+                                {hireRecord.returned === "" && (<Button onClick={toggleRet} type="button" class="btn btn-sm btn-outline-default waves-effect waves-themed ml-2 mr-2">
+                                <span class="fal fa-hand-holding-box mr-1"></span>  Return </Button>)}
 
                         </div>
 

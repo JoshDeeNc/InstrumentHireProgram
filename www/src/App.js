@@ -251,7 +251,10 @@ function App() {
           return resultInst;
         }
       }
-      else return result;
+      else {
+        getAllTodos();
+        return result;
+      }
     }
   }
 
