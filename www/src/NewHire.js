@@ -12,15 +12,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     }
 
     const availInstruments = inventory.map(item => item.type).filter(unique)
-    const addOnsList = instOptionsList.map(item => item.addOns)
     var addOns = []
-    /*for(let k in addOnsList) {
-        for(let ado in addOnsList[k]) {
-            var a = {}
-            a[ado] = addOnsList[k][ado]
-            addOns.push(a)
-        }
-    }*/
     const [availBrands, setAvailBrands] = useState([])
     const [availCodes, setAvailCodes] = useState([])
     const [instr, setInstrument] = useState('')
@@ -30,7 +22,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [serialNum, setSerialNum] = useState('')
     const [rate, setRate] = useState('')
     const [owner, setOwner] = useState('')
-    //const [addOns,setAddOns] = useState({})
+    const [actAddOns,setActAddOns] = useState([])
     function search(records) {
         if(instr != '') {
             const filtAddOns = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
@@ -43,7 +35,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                         newAddons.push(a)
                     }
                 }
-                console.log(newAddons)
+                setActAddOns(newAddons)
                 return newAddons
             }
         }
@@ -73,10 +65,23 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [student, setStudent] = useState('')
 
     const add = async (event) => {
-        const result = await addToDo();
+        var sendAddons = []
+        for(var index = 0; index < actAddOns.length; index++) {
+            var newado = {}
+            var adoname = document.getElementById("addOnName"+index).value
+            var adoqty = document.getElementById("addOnQty"+index).value
+            var adorate = document.getElementById("addOnRate"+index).value
+            newado['name'] = adoname
+            newado['rate'] = adorate
+            newado['qty'] = adoqty
+            console.log(newado)
+            sendAddons.push(newado)
+        }
+        console.log(sendAddons)
+        /*const result = await addToDo();
         if (result.status === 200) {
             history.push('/');
-        }
+        }*/
     }
 
     const [modal, setModal] = useState(false);
@@ -251,10 +256,11 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                 <div class="card card-body">
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label fw-700" for="simpleinput">Description</label>
+                                                                <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Rate</label>
 
                                                                 <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Qty</label>
 
-                                                                <label class="col-2 col-form-label fw-700 text-center" for="simpleinput">Rate</label>
+                                                               
 
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr-2"></div>
@@ -263,11 +269,12 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                             
                                                             {search(addOns).map((item, index) => (
                                                             <div class=" form-group row">
-                                                                <label class="col-8 col-form-label" for="simpleinput">{Object.keys(item)[0]}</label>
+                                                                <label class="col-8 col-form-label" id={"addOnName"+index}>{Object.keys(item)[0]}</label>
                                                                 <div class="col-2">
-                                                                    <Input type="text" name="Qty" id=" " placeholder=" " />
-                                                                </div><div class="col-2">
-                                                                    <Input type="text" value={item[Object.keys(item)[0]]} name="RateAddon" placeholder=" " />
+                                                                    <Input type="text" value={item[Object.keys(item)[0]]} id={"addOnRate"+index} name="RateAddon" placeholder=" " />
+                                                                </div>
+                                                                <div class="col-2">
+                                                                    <Input type="text" name="Qty" id={"addOnQty"+index} placeholder=" " />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
