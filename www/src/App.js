@@ -233,21 +233,25 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      let instr = instInventory.find(item => item.code === instCode)
-      instr.available = true;
-      const resultInst = await axios({
-        method: 'PUT',
-        url: `${config.api_base_url}/instrument/${instr.id}`,
-        headers: {
-          Authorization: idToken
-        },
-        data: instr
-      });
+      let hire = toDos.find(item => item.id === itemId)
+      if(hire.returned != "") {
+        let instr = instInventory.find(item => item.code === instCode)
+        instr.available = true;
+        const resultInst = await axios({
+          method: 'PUT',
+          url: `${config.api_base_url}/instrument/${instr.id}`,
+          headers: {
+            Authorization: idToken
+          },
+          data: instr
+        });
 
-      if (resultInst && resultInst.status === 200) {
-        getAllTodos();
-        return resultInst;
+        if (resultInst && resultInst.status === 200) {
+          getAllTodos();
+          return resultInst;
+        }
       }
+      else return result;
     }
   }
 

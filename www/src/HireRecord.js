@@ -81,28 +81,30 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
 
 
     const editToggle = async (event) => {
-        var a = document.getElementsByTagName('input');
-        var a1 = document.getElementsByTagName('textarea');
-        // loop through all 'a' elements
-        for (var i = 0; i < a.length; i++) {
-            // Remove the class 'active' if it exists
-            a[i].classList.remove('nox');
-           
+        if(hireRecord.returned != "") {
+            var a = document.getElementsByTagName('input');
+            var a1 = document.getElementsByTagName('textarea');
+            // loop through all 'a' elements
+            for (var i = 0; i < a.length; i++) {
+                // Remove the class 'active' if it exists
+                a[i].classList.remove('nox');
+            
 
-        }
-        a1[0].classList.remove('nox');
-        var b = document.getElementsByTagName('div');
-        // loop through all 'a' elements
-        for (var i = 0; i < b.length; i++) {
-            // Remove the class 'active' if it exists
-            b[i].classList.remove('btn-div');
+            }
+            a1[0].classList.remove('nox');
+            var b = document.getElementsByTagName('div');
+            // loop through all 'a' elements
+            for (var i = 0; i < b.length; i++) {
+                // Remove the class 'active' if it exists
+                b[i].classList.remove('btn-div');
 
-        }
-        var c = document.getElementsByClassName('input-group-text-white')
-        for (var i = 0; i < c.length; i++) {
-            // Remove the class 'active' if it exists
-            c[i].classList.add('input-group-text');
-            c[i].classList.remove('input-group-text-white');         
+            }
+            var c = document.getElementsByClassName('input-group-text-white')
+            for (var i = 0; i < c.length; i++) {
+                // Remove the class 'active' if it exists
+                c[i].classList.add('input-group-text');
+                c[i].classList.remove('input-group-text-white');         
+            }
         }
     }
 
@@ -338,10 +340,10 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" id={"editAddOnName"+index}>{item.name}</label>
                                                                 <div class="col-2">
-                                                                    <input class="nox" type="text" value={item.rate} id={"editAddOnRate"+index} name="RateAddon" placeholder=" " />
+                                                                    <input class="form-control nox" type="text" value={item.rate} id={"editAddOnRate"+index} name="RateAddon" placeholder=" " />
                                                                 </div>
                                                                 <div class="col-2">
-                                                                    <input class="nox" type="text" defaultValue={item.qty} name="Qty" id={"editAddOnQty"+index} placeholder=" " />
+                                                                    <input class="form-control nox" type="text" defaultValue={item.qty} name="Qty" id={"editAddOnQty"+index} placeholder=" " />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
