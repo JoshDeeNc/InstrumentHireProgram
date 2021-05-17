@@ -119,8 +119,8 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
         }
     }
 
-    const deletion = async (itemId, instCode, event) => {
-        const result = await deleteToDo(itemId, instCode);
+    const deletion = async (itemId, instrumentId, event) => {
+        const result = await deleteToDo(itemId, instrumentId);
         if (result.status === 200) {
             history.push('/');
         }
@@ -145,8 +145,8 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
         }
     }
 
-    const returned = async (itemId, instCode, event) => {
-        const result = await returnToDo(itemId, instCode);
+    const returned = async (itemId, instrumentId, event) => {
+        const result = await returnToDo(itemId, instrumentId);
         if (result.status === 200) {
             history.push('/');
         }
@@ -391,7 +391,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                     Are you sure you want to delete {studName}'s {instrument + " " + brand} hire record?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => deletion(hireRecord.id, hireRecord.code)}>Yes</Button>
+                    <Button color="primary" onClick={(e) => deletion(hireRecord.id, hireRecord.instrumentId)}>Yes</Button>
                     <Button color="secondary" onClick={toggleDel}>No</Button>
                 </ModalFooter>
             </Modal>
@@ -411,7 +411,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                     Are you sure that {studName} has returned {instrument + " " + brand} with code ({code})?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => returned(hireRecord.id, hireRecord.code)}>Yes</Button>
+                    <Button color="primary" onClick={(e) => returned(hireRecord.id, hireRecord.instrumentId)}>Yes</Button>
                     <Button color="secondary" onClick={toggleRet}>No</Button>
                 </ModalFooter>
             </Modal>

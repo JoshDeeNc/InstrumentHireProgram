@@ -108,7 +108,7 @@ function App() {
     }
   };
 
-  const addToDo = async (addOns,event) => {
+  const addToDo = async (addOns,instrumentId,event) => {
     const name = document.getElementById('newToDoName').value;
     const code = document.getElementById('newToDoCode').value;
     const instrument = document.getElementById('newToDoInstrument').value;
@@ -127,6 +127,7 @@ function App() {
     const newToDo = {
       "name": name,
       "returned": "",
+      "instrumentId": instrumentId,
       "code": code,
       "instrument": instrument,
       "brand": brand,
@@ -151,7 +152,7 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      let instr = instInventory.find(item => item.code === code)
+      let instr = instInventory.find(item => item.id === instrumentId)
       instr.available = false;
       const resultInst = await axios({
         method: 'PUT',
@@ -220,7 +221,7 @@ function App() {
     return result;
   }
 
-  const deleteToDo = async (itemId, instCode) => {
+  const deleteToDo = async (itemId, instrumentId) => {
     if (itemId === null) return;
 
     const result = await axios({
@@ -236,7 +237,7 @@ function App() {
     } else if (result && result.status === 200) {
       let hire = toDos.find(item => item.id === itemId)
       if(hire.returned === "") {
-        let instr = instInventory.find(item => item.code === instCode)
+        let instr = instInventory.find(item => item.id === instrumentId)
         instr.available = true;
         const resultInst = await axios({
           method: 'PUT',
@@ -259,7 +260,7 @@ function App() {
     }
   }
 
-  const returnToDo = async (itemId, instCode) => {
+  const returnToDo = async (itemId, instrumentId) => {
     if (itemId === null) return;
 
     let hire = toDos.find(item => item.id === itemId);
@@ -276,7 +277,7 @@ function App() {
     });
 
     if (result && result.status === 200) {
-      let instr = instInventory.find(item => item.code === instCode)
+      let instr = instInventory.find(item => item.id === instrumentId)
       instr.available = true;
       const resultInst = await axios({
         method: 'PUT',
