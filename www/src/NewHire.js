@@ -70,7 +70,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
 
     const add = async (event) => {
         var sendAddons = []
-        const instrumentId = inventory.find(item => item.code === code && item.serialNum === serialNum)
+        const instrumentId = inventory.find(item => item.code === code && item.serialNum === serialNum).id
         for(var index = 0; index < addOns.length; index++) {
             var newado = {}
             var adoname = document.getElementById("addOnName"+index).innerHTML
