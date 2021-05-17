@@ -562,7 +562,10 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   margin: 1.5rem 0;
 }
 
-
+.shortcut-menu {
+  right: 10px;
+  bottom: 10px;
+}
 .shortcut-menu .btn {min-width: 45px !important; border-radius: 50% !important;     font-size: 1.2rem; } 
 .shortcut-menu .btn:hover, label.menu-open-button:hover  { background:#28a845 } 
 .menu-item, label.menu-open-button {background:#03554f;}
