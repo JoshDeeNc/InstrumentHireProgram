@@ -70,7 +70,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
 
     const add = async (event) => {
         var sendAddons = []
-        const instrumentId = inventory.find(item => item.code === code && item.serialNum === serialNum).id
+        const instrumentInfo = inventory.find(item => item.code === code && item.serialNum === serialNum)
         for(var index = 0; index < addOns.length; index++) {
             var newado = {}
             var adoname = document.getElementById("addOnName"+index).innerHTML
@@ -82,7 +82,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
             sendAddons.push(newado)
         }
         console.log(sendAddons)
-        const result = await addToDo(sendAddons, instrumentId);
+        const result = await addToDo(sendAddons, instrumentInfo.id);
         if (result.status === 200) {
             history.push('/');
         }
