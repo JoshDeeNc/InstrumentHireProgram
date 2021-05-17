@@ -13,26 +13,17 @@ function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolLi
         </a>
       </div>
       <nav id="js-primary-nav" class="primary-nav js-list-filter" role="navigation">
-        <div class="nav-filter">
-          <div class="position-relative">
-            <input type="text" id="nav_filter_input" placeholder="Filter menu" class="form-control" tabindex="0" />
-            <a href="#" onclick="return false;" class="btn-primary btn-search-close js-waves-off" data-action="toggle" data-class="list-filter-active" data-target=".page-sidebar">
-              <i class="fal fa-chevron-up"></i>
-            </a>
-          </div>
-        </div>
+       
         <div class="info-card">
           <img src="dist/img/demo/avatars/avatar-admin.png" class="profile-image rounded-circle" alt="Lucinda Jackson" />
           <div class="info-card-text">
             <a href="#" class="d-flex align-items-center text-white">
-              <span class="text-truncate text-truncate-sm d-inline-block">Lucinda Jackson</span>
+              <span class="text-truncate text-truncate-sm d-inline-block">Lucinda Jackson<br /> <small>Administrator</small></span>
             </a>
-            <span class="d-inline-block text-truncate text-truncate-sm">Administrator</span>
+            
           </div>
           <img src="dist/img/menubg.jpeg" class="cover" alt="cover" />
-          <a href="#" onclick="return false;" class="pull-trigger-btn" data-action="toggle" data-class="list-filter-active" data-target=".page-sidebar" data-focus="nav_filter_input">
-            <i class="fal fa-angle-down"></i>
-          </a>
+          
         </div>
 
         <div class="accordion accordion-hover" id="js_demo_accordion-5">
@@ -53,11 +44,10 @@ function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolLi
           <div class="card">
             <div class="card-header">
               <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5b" aria-expanded="false">
-                <i class="fal fa-guitars width-2 fs-xl"></i>
-                                                            Hires
-                                                            <span class="dl-ref label bg-info-900 ml-auto ">{toDos.filter(item => item.returned === "").length}</span>
+                <i class="fal fa-guitars width-2 fs-xl"></i>Hires
+                 <span class="dl-ref label bg-info-900 ml-auto ">{toDos.filter(item => item.returned === "").length}</span>
 
-                <span class="ml-auto">
+                <span class="ml-3">
                   <span class="collapsed-reveal">
                     <i class="fal fa-chevron-up fs-xl"></i>
                   </span>
