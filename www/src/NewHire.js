@@ -18,13 +18,13 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     
     const [availBrands, setAvailBrands] = useState([])
     const [availCodes, setAvailCodes] = useState([])
-    const [instr, setInstrument] = useState(locId === "newHire" ? '' : instrumentRecord.type)
-    const [brand, setBrand] = useState(locId === "newHire" ? '' : instrumentRecord.brand)
-    const [size, setSize] = useState(locId === "newHire" ? '' : instrumentRecord.size)
-    const [code, setCode] = useState(locId === "newHire" ? '' : instrumentRecord.code)
-    const [serialNum, setSerialNum] = useState(locId === "newHire" ? '' : instrumentRecord.serialNum)
-    const [rate, setRate] = useState(locId === "newHire" ? '' : instrumentRecord.rate)
-    const [owner, setOwner] = useState(locId === "newHire" ? '' : instrumentRecord.owner)
+    const [instr, setInstrument] = useState(locId === "newhire" ? '' : instrumentRecord.type)
+    const [brand, setBrand] = useState(locId === "newhire" ? '' : instrumentRecord.brand)
+    const [size, setSize] = useState(locId === "newhire" ? '' : instrumentRecord.size)
+    const [code, setCode] = useState(locId === "newhire" ? '' : instrumentRecord.code)
+    const [serialNum, setSerialNum] = useState(locId === "newhire" ? '' : instrumentRecord.serialNum)
+    const [rate, setRate] = useState(locId === "newhire" ? '' : instrumentRecord.rate)
+    const [owner, setOwner] = useState(locId === "newhire" ? '' : instrumentRecord.owner)
 
     function search(records) {
         if(instr != '') {
@@ -69,6 +69,11 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [student, setStudent] = useState('')
 
     const add = async (event) => {
+        var forms = document.getElementsByClassName('needs-validation')[0];
+        forms.classList.add('was-validated');
+        if (forms.checkValidity() === false) {
+            return
+        }
         var sendAddons = []
         const instrumentInfo = inventory.find(item => item.code === code)
         for(var index = 0; index < addOns.length; index++) {
@@ -175,7 +180,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Size</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
-                                                <Input type="text" name="size" id="newToDoSize" placeholder="size" value={size} required />
+                                                <Input type="text" name="size" id="newToDoSize"   value={size} required />
                                              </div>
                                             
                                             <div class="invalid-tooltip">  Please enter Size </div>
@@ -189,7 +194,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                         <div class="col-md-4">
                                              
                                             <div class="input-group">
-                                                <Input type="text" name="serialNumber" id="newToDoSerialNum" placeholder="serial number" value={serialNum} required />
+                                                <Input type="text" name="serialNumber" id="newToDoSerialNum"   value={serialNum} required />
                                              </div>
                                             
                                             <div class="invalid-tooltip">  Please enter serial number </div>
@@ -207,7 +212,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">$</span>
                                                 </div>
-                                                <Input type="text" name="rate" id="newToDoRate" placeholder="rate" value={rate} required />
+                                                <Input type="text" name="rate" id="newToDoRate"   value={rate} required />
                                              </div>
                                             
                                             <div class="invalid-tooltip">  Please enter rate </div>
@@ -220,7 +225,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Owner</label>
                                         <div class="col-sm-9">
-                                        <Input type="text" name="owner" id="newToDoOwner" placeholder="owner" value={owner} required />
+                                        <Input type="text" name="owner" id="newToDoOwner"   value={owner} required />
                                             <div class="invalid-tooltip">  Please select owner </div>
                                         </div>
                                         <div class="col-sm-12 ">
@@ -231,7 +236,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Due Date</label>
                                         <div class="col-md-4">
-                                            <Input class="  form-control " id="newToDoDueDate" type="date" name="date" placeholder="dd/mm/yyyy" required />
+                                            <Input class="  form-control " id="newToDoDueDate" type="date" name="date"   required />
                                             <div class="invalid-tooltip">  Please select the due date </div>
                                         </div>
                                         <div class="col-sm-12 ">
@@ -244,7 +249,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
                                         <div class="col-md-9">
                                             <textarea class="form-control    " id="newToDoNotes" type="text"  
-                                                placeholder=" "  rows="3"   > </textarea>
+                                             rows="3"   > </textarea>
                                         </div>
                                     </div>
                                     <div class="frame-wrap mt-4 mb-3  ">
@@ -275,10 +280,10 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" id={"addOnName"+index}>{Object.keys(item)[0]}</label>
                                                                 <div class="col-2">
-                                                                    <Input type="text" defaultValue={item[Object.keys(item)[0]]} id={"addOnRate"+index} name="RateAddon" placeholder=" " />
+                                                                    <Input type="text" defaultValue={item[Object.keys(item)[0]]} id={"addOnRate"+index} name="RateAddon"   />
                                                                 </div>
                                                                 <div class="col-2">
-                                                                    <Input type="text" name="Qty" id={"addOnQty"+index} placeholder=" " />
+                                                                    <Input type="text" name="Qty" id={"addOnQty"+index}   />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>

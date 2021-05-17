@@ -152,9 +152,7 @@ function Home({ toDos, deleteToDo }) {
             <li class="nav-item">
               <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-3" role="tab" aria-selected="false"><i class="fal fa-hand-holding-box mr-1"></i> Returned Hires</a>
             </li>
-            <li class="nav-item no-disp">
-              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-4" role="tab" aria-selected="false"><i class="fal fa-chart-bar mr-1"></i> Insights </a>
-            </li>
+              
 
           </ul>
 
@@ -165,6 +163,8 @@ function Home({ toDos, deleteToDo }) {
                   <div id="panel-1" class="panel mb-0">
                     <div class="panel-hdr">
                       <h2> Instrument Hires</h2>
+                      <Link to="/newhire"><Button className="btn-sm  "> Add Hire </Button></Link>
+
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
@@ -420,70 +420,7 @@ function Home({ toDos, deleteToDo }) {
               </div>
             </div>
 
-            <div class="tab-pane fade" id="tab_borders_icons-4" role="tabpanel">
-              <div class="row">
-                <div class="col-xl-12">
-                  <div id="panel-1" class="panel mb-0">
-                    <div class="panel-hdr">
-                      <h2>Insights </h2>
-                    </div>
-                    <div class="panel-container show">
-                      <div class="panel-content">
-
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="panel">
-                              <div class="panel-hdr">
-                                <h2> Instrument Hires  </h2>
-
-                              </div>
-                              <div class="panel-container show">
-                                <div class="panel-content">
-                                  <div class="panel-tag">
-                                    This chart depicts the instrument hires over time.
-                                       </div>
-
-                                  <div>
-                                    <div id="lineChart">
-                                      <canvas class="chart-div bdr "></canvas>
-                                    </div> </div>
-
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="panel">
-                              <div class="panel-hdr">
-                                <h2> Instrument Availability </h2>
-
-                              </div>
-                              <div class="panel-container show">
-                                <div class="panel-content">
-                                  <div class="panel-tag">
-                                    This chart depicts the instrument inventory available for hire over time.
-                                                    </div>
-                                  <div>   <div>
-                                    <div id="areaChart">
-                                      <canvas class="chart-div bdr "></canvas>
-                                    </div> </div>     </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-
-
-
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+           
           </div>
 
         </Col>
