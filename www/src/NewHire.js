@@ -14,7 +14,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const availInstruments = inventory.map(item => item.type).filter(unique)
     var addOns = []
     const locId = /[^/]*$/.exec(window.location.href)[0];
-
+    
     const [availBrands, setAvailBrands] = useState([])
     const [availCodes, setAvailCodes] = useState([])
     const [instr, setInstrument] = useState('')
@@ -24,8 +24,17 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [serialNum, setSerialNum] = useState('')
     const [rate, setRate] = useState('')
     const [owner, setOwner] = useState('')
+    if (locId !== "newHire") {
+        const instrumentRecord = instInventory.find(item => item.id === locId);
+        setInstrument(instrumentRecord.type)
+        setBrand(instrumentRecord.brand)
+        setSize(instrumentRecord.size)
+        setCode(instrumentRecord.code)
+        setSerialNum(instrumentRecord.serialNum)
+        setRate(instrumentRecord.rate)
+        setOwner(instrumentRecord.owner)
 
-    console.log(locId)
+    }
 
     function search(records) {
         if(instr != '') {
