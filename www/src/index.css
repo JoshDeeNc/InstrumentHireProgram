@@ -304,6 +304,8 @@ table tr td a .fa-2x {
   width: 50px;
   position: relative;
   z-index: 99999;
+  z-index: 9;
+  right: 30px;
 }
 
 .nav-menu li a .dl-ref {
