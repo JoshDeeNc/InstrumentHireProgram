@@ -12,28 +12,19 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     }
 
     const availInstruments = inventory.map(item => item.type).filter(unique)
-    var addOns = []
     const locId = /[^/]*$/.exec(window.location.href)[0];
+    const instrumentRecord = instInventory.find(item => item.id === locId);
+    var addOns = []
     
-    let availBrands = []
-    let availCodes = []
-    let instr = ''
-    let brand = ''
-    let size = ''
-    let code = ''
-    let serialNum = ''
-    let rate = ''
-    let owner = ''
-    if (locId !== "newHire") {
-        const instrumentRecord = instInventory.find(item => item.id === locId);
-        instr = instrumentRecord.type
-        brand = instrumentRecord.brand
-        size = instrumentRecord.size
-        code = instrumentRecord.code
-        serialNum = instrumentRecord.serialNum
-        rate = instrumentRecord.rate
-        owner = instrumentRecord.owner
-    }
+    const [availBrands, setAvailBrands] = useState([])
+    const [availCodes, setAvailCodes] = useState([])
+    const [instr, setInstrument] = useState(locId === "newHire" ? '' : instrumentRecord.type)
+    const [brand, setBrand] = useState(locId === "newHire" ? '' : instrumentRecord.brand)
+    const [size, setSize] = useState(locId === "newHire" ? '' : instrumentRecord.size)
+    const [code, setCode] = useState(locId === "newHire" ? '' : instrumentRecord.code)
+    const [serialNum, setSerialNum] = useState(locId === "newHire" ? '' : instrumentRecord.serialNum)
+    const [rate, setRate] = useState(locId === "newHire" ? '' : instrumentRecord.rate)
+    const [owner, setOwner] = useState(locId === "newHire" ? '' : instrumentRecord.owner)
 
     function search(records) {
         if(instr != '') {
@@ -57,21 +48,21 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
 
     useEffect(() => {
         console.log(instr); // add whatever functions use new `college` value here.
-        availBrands = inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique)
+        setAvailBrands(inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique))
         //search(addOns)
     }, [instr])
 
     useEffect(() => {
         console.log(brand); // add whatever functions use new `college` value here.
-        availCodes = inventory.filter(item => item.type === instr && item.brand === brand).map(item => item.code).filter(unique)
+        setAvailCodes(inventory.filter(item => item.type === instr && item.brand === brand).map(item => item.code).filter(unique))
     }, [brand])
 
     useEffect(() => {
         console.log(code); // add whatever functions use new `college` value here.
-        rate = inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.rate).filter(unique)
-        serialNum = inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.serialNum).filter(unique)
-        owner = inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.owner).filter(unique)
-        size = inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.size).filter(unique)
+        setRate(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.rate).filter(unique))
+        setSerialNum(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.serialNum).filter(unique))
+        setOwner(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.owner).filter(unique))
+        setSize(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.size).filter(unique))
     }, [code])
 
     const studentConcat = studentList.map(item => item.firstName + " " + item.lastName)
@@ -136,7 +127,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument</label>
                                         <div class="col-sm-9">
-                                        <input list="instrument" name="instrument" class="form-control" id="newToDoInstrument" value={instr} onChange={(e) => instr = e.target.value} />
+                                        <input list="instrument" name="instrument" class="form-control" id="newToDoInstrument" value={instr} onChange={(e) => setInstrument(e.target.value)} />
                                             <datalist id="instrument">
                                             {availInstruments.map((item, index) => (
                                                     <option>{item}</option>))}
@@ -151,7 +142,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Brand</label>
                                         <div class="col-sm-9">
-                                        <input list="brand" name="brand" class="form-control" id="newToDoBrand" value={brand} onChange={(e) => brand = e.target.value} />
+                                        <input list="brand" name="brand" class="form-control" id="newToDoBrand" value={brand} onChange={(e) => setBrand(e.target.value)} />
                                             <datalist id="brand">
                                             {availBrands.map((item, index) => (
                                                     <option>{item}</option>))}
@@ -166,7 +157,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
                                         <div class="col-md-4">
-                                        <input list="code" name="code" class="form-control" id="newToDoCode" value={code} onChange={(e) => code = e.target.value} />
+                                        <input list="code" name="code" class="form-control" id="newToDoCode" value={code} onChange={(e) => setCode(e.target.value)} />
                                             <datalist id="code">
                                             {availCodes.map((item, index) => (
                                                     <option>{item}</option>))}
