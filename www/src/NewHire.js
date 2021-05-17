@@ -82,6 +82,8 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
             sendAddons.push(newado)
         }
         console.log(sendAddons)
+        var saving = document.getElementsByClassName("disp")[0]
+        saving.innerHTML = '<div class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></div><strong>Saving...</strong>'
         const result = await addToDo(sendAddons, instrumentInfo.id);
         if (result.status === 200) {
             history.push('/');
@@ -292,7 +294,9 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
 
 
                                     <div class="btn-divS">
-                                        <Button onClick={add} color="primary" className="mr-2" >Add</Button>
+                                    <Button onClick={add} color="primary" className="mr-2" >
+                                        <span class="disp"> Add </span>
+                                     </Button>
                                         <Link to="/"><Button color="secondary">Cancel</Button></Link>
                                     </div>
                                 </form>

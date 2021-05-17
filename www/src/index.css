@@ -372,6 +372,9 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   pointer-events: none;
   padding-left: 0;
 }
+.disp {
+  display: block;
+}
 
 .no-disp {
   display: none;
