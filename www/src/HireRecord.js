@@ -278,10 +278,8 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
 
                                     {hireRecord.returned == "" ? (
                                     <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label" for="simpleinput">Date Hired</label>
-                                        <div class="col-sm-9">
-                                            <input class="form-control nox" type="text" value={new Date(hireRecord.creation_date).toLocaleDateString()} />
-                                        </div>
+                                        <label class="col-sm-3 col-form-label"  >Date Hired</label>
+                                        <label class="col-sm-9 col-form-label"  >{new Date(hireRecord.creation_date).toLocaleDateString()}</label>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
                                         </div>
@@ -289,18 +287,14 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                         <div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Date Returned</label>
-                                        <div class="col-sm-9">
-                                            <input class="form-control nox" type="text" value={new Date(hireRecord.returned).toLocaleDateString()} />
-                                        </div>
-                                        <div class="col-sm-12 ">
+                                        <label class="col-sm-9 col-form-label"  >{new Date(hireRecord.returned).toLocaleDateString()}</label>
+                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                     <label class="col-sm-3 col-form-label" for="simpleinput">Date Hired</label>
-                                    <div class="col-sm-9">
-                                        <input class="form-control nox" type="text" value={new Date(hireRecord.creation_date).toLocaleDateString()} />
-                                    </div>
+                                    <label class="col-sm-9 col-form-label"  >{new Date(hireRecord.creation_date).toLocaleDateString()}</label>
                                     <div class="col-sm-12 ">
                                         <div class=" hr"></div>
                                     </div>

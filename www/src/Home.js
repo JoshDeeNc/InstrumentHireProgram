@@ -223,7 +223,7 @@ function Home({ toDos, deleteToDo }) {
                                   <td>{item.code}</td>
                                   <td>{item.instrument}</td>
                                   <td>{item.brand}</td>
-                                  <td>{item.rate}</td>
+                                  <td>${item.rate}</td>
                                   <td>{item.owner}</td>
                                   <td>{new Date(item.due).toLocaleDateString()}</td>
                                   <td class="al-ctr">
@@ -313,7 +313,7 @@ function Home({ toDos, deleteToDo }) {
                                   <td>{item.code}</td>
                                   <td>{item.instrument}</td>
                                   <td>{item.brand}</td>
-                                  <td>{item.rate}</td>
+                                  <td>${item.rate}</td>
                                   <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                   <td>{item.owner}</td>
                                   <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
@@ -402,7 +402,7 @@ function Home({ toDos, deleteToDo }) {
                                   <td>{item.code}</td>
                                   <td>{item.instrument}</td>
                                   <td>{item.brand}</td>
-                                  <td>{item.rate}</td>
+                                  <td>${item.rate}</td>
                                   <td>{item.owner}</td>
                                   <td>{new Date(item.due).toLocaleDateString()}</td>
                                   <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
