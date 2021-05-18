@@ -661,3 +661,4 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
 }
 
 
+.invalid-tooltip {left:15px; clear: both !important;}

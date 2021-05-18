@@ -120,12 +120,14 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Student Name </label>
                                         <div class="col-sm-9">
-                                        <input list="student" name="student" id="newToDoName" class="form-control" value={student} onChange={(e) => setStudent(e.target.value)} />
+                                        <input list="student" name="student" id="newToDoName" class="form-control" value={student} onChange={(e) => setStudent(e.target.value)} required />
                                             <datalist id="student">
                                             {studentConcat.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </datalist>
-                                            <div class="invalid-tooltip">  Please enter the student name </div>
+                                            
+                                            <div class="invalid-tooltip ">  Please enter the student name </div>
+                                             
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -135,7 +137,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument</label>
                                         <div class="col-sm-9">
-                                        <input list="instrument" name="instrument" class="form-control" id="newToDoInstrument" value={instr} onChange={(e) => setInstrument(e.target.value)} />
+                                        <input list="instrument" name="instrument" class="form-control" id="newToDoInstrument" value={instr} onChange={(e) => setInstrument(e.target.value)} required />
                                             <datalist id="instrument">
                                             {availInstruments.map((item, index) => (
                                                     <option>{item}</option>))}
@@ -150,7 +152,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Brand</label>
                                         <div class="col-sm-9">
-                                        <input list="brand" name="brand" class="form-control" id="newToDoBrand" value={brand} onChange={(e) => setBrand(e.target.value)} />
+                                        <input list="brand" name="brand" class="form-control" id="newToDoBrand" value={brand} onChange={(e) => setBrand(e.target.value)}  required/>
                                             <datalist id="brand">
                                             {availBrands.map((item, index) => (
                                                     <option>{item}</option>))}
@@ -165,7 +167,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
                                         <div class="col-md-4">
-                                        <input list="code" name="code" class="form-control" id="newToDoCode" value={code} onChange={(e) => setCode(e.target.value)} />
+                                        <input list="code" name="code" class="form-control" id="newToDoCode" value={code} onChange={(e) => setCode(e.target.value)} required />
                                             <datalist id="code">
                                             {availCodes.map((item, index) => (
                                                     <option>{item}</option>))}
@@ -180,7 +182,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Size</label>
                                         <div class="col-md-4">
                                             <div class="input-group">
-                                                <Input type="text" name="size" id="newToDoSize"   value={size} required />
+                                                <input type="text" class="form-control no-edit" id="newToDoSize"   value={size} required />
                                              </div>
                                             
                                             <div class="invalid-tooltip">  Please enter Size </div>
@@ -194,7 +196,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                         <div class="col-md-4">
                                              
                                             <div class="input-group">
-                                                <Input type="text" name="serialNumber" id="newToDoSerialNum"   value={serialNum} required />
+                                                <input type="text" class="form-control no-edit" id="newToDoSerialNum"   value={serialNum} required />
                                              </div>
                                             
                                             <div class="invalid-tooltip">  Please enter serial number </div>
@@ -212,7 +214,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">$</span>
                                                 </div>
-                                                <Input type="text" name="rate" id="newToDoRate"   value={rate} required />
+                                                <input type="text" class="form-control no-edit"  id="newToDoRate"   value={rate} required />
                                              </div>
                                             
                                             <div class="invalid-tooltip">  Please enter rate </div>
@@ -225,7 +227,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Owner</label>
                                         <div class="col-sm-9">
-                                        <Input type="text" name="owner" id="newToDoOwner"   value={owner} required />
+                                        <input type="text" class="form-control no-edit"  id="newToDoOwner"   value={owner} required />
                                             <div class="invalid-tooltip">  Please select owner </div>
                                         </div>
                                         <div class="col-sm-12 ">
@@ -236,7 +238,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Due Date</label>
                                         <div class="col-md-4">
-                                            <Input class="  form-control " id="newToDoDueDate" type="date" name="date"   required />
+                                            <input class="  form-control " id="newToDoDueDate" type="date" name="date"   required />
                                             <div class="invalid-tooltip">  Please select the due date </div>
                                         </div>
                                         <div class="col-sm-12 ">

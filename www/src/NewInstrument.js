@@ -23,6 +23,13 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
     }, [instr])
 
     const add = async (event) => {
+        var forms = document.getElementsByClassName('needs-validation')[0];
+        forms.classList.add('was-validated');
+        if (forms.checkValidity() === false) {
+            return
+        }
+        var saving = document.getElementsByClassName("disp")[0]
+        saving.innerHTML = '<div class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></div><strong>Saving...</strong>'
         const result = await addInstrument();
         if (result.status === 200) {
             history.push('/instrumentlist');
@@ -50,11 +57,11 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
 
                         <div class="panel-container show">
                             <div class="panel-content">
-                                <form>
+                                <form class="needs-validation" novalidate>
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
                                         <div class="col-sm-9">
-                                            <Input type="text" class="  form-control " name="code" id="newInstCode" placeholder=" " />
+                                            <input type="text" class="  form-control " name="code" id="newInstCode" required />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -64,7 +71,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput"> Serial Number </label>
                                         <div class="col-sm-9">
-                                            <Input type="text" class="  form-control " name="serialNumber" id="newSerialNum" placeholder=" " />
+                                            <Input type="text" class="  form-control " name="serialNumber" id="newSerialNum" required />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -74,7 +81,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument Type </label>
                                         <div class="col-sm-9">
-                                            <input list="type" name="type" id="newInstType" class="form-control" value={instr} onChange={(e) => setInstType(e.target.value)} />
+                                            <input list="type" name="type" id="newInstType" class="form-control" value={instr} onChange={(e) => setInstType(e.target.value)}  required/>
                                             <datalist id="type">
                                             {instTypes.map((item, index) => (
                                                     <option>{item}</option>))}
@@ -88,7 +95,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Size</label>
                                         <div class="col-sm-9">
-                                        <input list="size" name="size" id="newInstSize" class="form-control" />
+                                        <input list="size" name="size" id="newInstSize" class="form-control"  required/>
                                             <datalist id="size">
                                             {instSizes.map((item, index) => (
                                                     <option>{item}</option>))}
@@ -101,7 +108,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Brand</label>
                                         <div class="col-sm-9">
-                                            <Input type="text" class="  form-control " name="brand" id="newInstBrand" placeholder=" " />
+                                            <input type="text" class="  form-control " name="brand" id="newInstBrand" required />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -115,7 +122,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">$</span>
                                                 </div>
-                                                <Input type="text" class="  form-control " name="rate" id="newInstRate" placeholder=" " />
+                                                <input type="text" class="  form-control " name="rate" id="newInstRate" required />
                                             </div>
                                         </div>
                                         <div class="col-sm-12 ">
@@ -130,7 +137,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">$</span>
                                                 </div>
-                                                <Input type="text" class="  form-control " name="rate" id="newInstPurchVal" placeholder=" " />
+                                                <input type="text" class="  form-control " name="rate" id="newInstPurchVal" required />
                                             </div>
                                         </div>
                                         <div class="col-sm-12 ">
@@ -142,7 +149,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Depreciation </label>
                                         <div class="col-md-2">
                                             <div class="input-group   sm-inpt-width-edt">
-                                                <Input type="text" class="  form-control " name="rate" id="newInstDepr" placeholder=" " />
+                                                <input type="text" class="  form-control " name="rate" id="newInstDepr" required />
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">%</span>
                                                 </div>
@@ -174,7 +181,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                     </div>
 
                                     <div class="btn-divS">
-                                        <Button onClick={add} color="primary" className="mr-2"  >Add</Button>
+                                        <Button onClick={add} color="primary" className="mr-2"  ><span class="disp"> Add </span></Button>
                                         <Link to="/instrumentlist"><Button color="secondary"  >Cancel</Button></Link>
                                     </div>
 
