@@ -91,7 +91,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
     }
 
     const update = async (itemId, event) => {
-        var saving = document.getElementsByClassName("disp")[1]
+        var saving = document.getElementsByClassName("updt")[0]
         saving.innerHTML = '<div class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></div><strong>Saving...</strong>'
         const result = await updateInstrument(itemId);
         if (result.status === 200) {
@@ -283,7 +283,7 @@ function InstrumentRecord({ deleteInstrument, updateInstrument, instInventory })
                     Are you sure you want to update {type + " " + brand}?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => update(instrumentRecord.id)}><span class="disp"> Yes </span></Button>
+                    <Button color="primary" onClick={(e) => update(instrumentRecord.id)}><span class="disp updt"> Yes </span></Button>
                     <Button color="secondary" onClick={toggleUp}>No</Button>
                 </ModalFooter>
             </Modal>

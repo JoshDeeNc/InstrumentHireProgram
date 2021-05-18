@@ -141,7 +141,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
             sendAddons.push(newado)
         }
         console.log(sendAddons)
-        var saving = document.getElementsByClassName("disp")[1]
+        var saving = document.getElementsByClassName("updt")[0]
         saving.innerHTML = '<div class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></div><strong>Saving...</strong>'
         const result = await updateToDo(itemId,sendAddons);
         if (result.status === 200) {
@@ -150,7 +150,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
     }
 
     const returned = async (itemId, instrumentId, event) => {
-        var returning = document.getElementsByClassName("disp")[2]
+        var returning = document.getElementsByClassName("rtnd")[0]
         returning.innerHTML = '<div class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></div><strong>Returning...</strong>'
         const result = await returnToDo(itemId, instrumentId);
         if (result.status === 200) {
@@ -407,7 +407,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                     Are you sure you want to update {studName}'s {instrument + " " + brand} hire record?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => update(hireRecord.id)}><span class="disp"> Yes </span></Button>
+                    <Button color="primary" onClick={(e) => update(hireRecord.id)}><span class="disp updt"> Yes </span></Button>
                     <Button color="secondary" onClick={toggleUp}>No</Button>
                 </ModalFooter>
             </Modal>
@@ -417,7 +417,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                     Are you sure that {studName} has returned {instrument + " " + brand} with code ({code})?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => returned(hireRecord.id, hireRecord.instrumentId)}><span class="disp"> Yes </span></Button>
+                    <Button color="primary" onClick={(e) => returned(hireRecord.id, hireRecord.instrumentId)}><span class="disp rtnd"> Yes </span></Button>
                     <Button color="secondary" onClick={toggleRet}>No</Button>
                 </ModalFooter>
             </Modal>

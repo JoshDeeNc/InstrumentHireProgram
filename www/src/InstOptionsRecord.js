@@ -45,7 +45,7 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
     }
 
     const update = async (itemId, event) => {
-        var saving = document.getElementsByClassName("disp")[1]
+        var saving = document.getElementsByClassName("updt")[0]
         saving.innerHTML = '<div class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></div><strong>Saving...</strong>'
         const inst = instTypeName == "" ? "" : instTypeName;
         const szs = sizes == "" ? ["N/A"] : sizes.split(",");
@@ -159,7 +159,7 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
                     Are you sure you want to update {instTypeName}'s record?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => update(instOptionsRecord.id)}><span class="disp"> Yes </span></Button>
+                    <Button color="primary" onClick={(e) => update(instOptionsRecord.id)}><span class="disp updt"> Yes </span></Button>
                     <Button color="secondary" onClick={toggleUp}>No</Button>
                 </ModalFooter>
             </Modal>
