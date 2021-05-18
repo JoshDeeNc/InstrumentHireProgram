@@ -209,7 +209,7 @@ function Home({ toDos, deleteToDo }) {
                                 <th>Code</th>
                                 <th>Instrument</th>
                                 <th>Brand</th>
-                                <th class="text-center" >Rate</th>
+                                <th>Rate</th>
                                 <th>Owner</th>
                                 <th>Due Date</th>
                                 <th >Details</th>
@@ -223,7 +223,7 @@ function Home({ toDos, deleteToDo }) {
                                   <td>{item.code}</td>
                                   <td>{item.instrument}</td>
                                   <td>{item.brand}</td>
-                                  <td class="text-right">${item.rate}</td>
+                                  <td>${item.rate}</td>
                                   <td>{item.owner}</td>
                                   <td>{new Date(item.due).toLocaleDateString()}</td>
                                   <td class="al-ctr">
@@ -298,7 +298,7 @@ function Home({ toDos, deleteToDo }) {
                                 <th>Code</th>
                                 <th>Instrument</th>
                                 <th>Brand</th>
-                                <th class="text-center">Rate</th>
+                                <th>Rate</th>
                                 <th>Date Hired</th>
                                 <th>Owner</th>
                                 <th class="dtl-cel">Details</th>
@@ -313,7 +313,7 @@ function Home({ toDos, deleteToDo }) {
                                   <td>{item.code}</td>
                                   <td>{item.instrument}</td>
                                   <td>{item.brand}</td>
-                                  <td class="text-right">${item.rate}</td>
+                                  <td>${item.rate}</td>
                                   <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                   <td>{item.owner}</td>
                                   <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
@@ -387,7 +387,7 @@ function Home({ toDos, deleteToDo }) {
                                 <th>Code</th>
                                 <th>Instrument</th>
                                 <th>Brand</th>
-                                <th class="text-center">Rate</th>
+                                <th>Rate</th>
                                 <th>Owner</th>
                                 <th>Due Date </th>
                                 <th class="dtl-cel">Details</th>
@@ -402,7 +402,7 @@ function Home({ toDos, deleteToDo }) {
                                   <td>{item.code}</td>
                                   <td>{item.instrument}</td>
                                   <td>{item.brand}</td>
-                                  <td class="text-right">${item.rate}</td>
+                                  <td>${item.rate}</td>
                                   <td>{item.owner}</td>
                                   <td>{new Date(item.due).toLocaleDateString()}</td>
                                   <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
