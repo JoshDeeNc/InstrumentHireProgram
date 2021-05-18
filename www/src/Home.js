@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col, image } from 'reactstrap';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import chart1 from './img/chart1.png';
-import chart2 from './img/chart2.png';
 
 import history from './history';
 

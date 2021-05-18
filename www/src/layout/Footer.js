@@ -5,7 +5,7 @@ function Footer() {
 
         <footer class="page-footer" role="contentinfo">
             <div class="d-flex align-items-center flex-1 text-muted">
-                <span class="hidden-md-down fw-700">2021 © One Maker Academy</span>
+                <span class="hidden-md-down fw-400 "><small>© MUSIC EMPORIUM | 2021 </small></span>
             </div>
             <div>
                 <ul class="list-table m-0">
