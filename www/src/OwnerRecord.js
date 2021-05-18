@@ -31,6 +31,8 @@ function OwnerRecord({ deleteOwner, updateOwner, ownerList }) {
     }
 
     const deletion = async (itemId, event) => {
+        var deleting = document.getElementsByClassName("disp")[0]
+        deleting.innerHTML = '<div class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></div><strong>Deleting...</strong>'
         const result = await deleteOwner(itemId);
         if (result.status === 200) {
             history.push('/ownerlist');
@@ -38,6 +40,8 @@ function OwnerRecord({ deleteOwner, updateOwner, ownerList }) {
     }
 
     const update = async (itemId, event) => {
+        var saving = document.getElementsByClassName("disp")[1]
+        saving.innerHTML = '<div class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></div><strong>Saving...</strong>'
         const result = await updateOwner(itemId);
         if (result.status === 200) {
             history.push('/ownerlist');
@@ -136,7 +140,7 @@ function OwnerRecord({ deleteOwner, updateOwner, ownerList }) {
                     Are you sure you want to delete {ownerName}'s record?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => deletion(ownerRecord.id)}>Yes</Button>
+                    <Button color="primary" onClick={(e) => deletion(ownerRecord.id)}><span class="disp"> Yes </span></Button>
                     <Button color="secondary" onClick={toggleDel}>No</Button>
                 </ModalFooter>
             </Modal>
@@ -146,7 +150,7 @@ function OwnerRecord({ deleteOwner, updateOwner, ownerList }) {
                     Are you sure you want to update {ownerName}'s record?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => update(ownerRecord.id)}>Yes</Button>
+                    <Button color="primary" onClick={(e) => update(ownerRecord.id)}><span class="disp"> Yes </span></Button>
                     <Button color="secondary" onClick={toggleUp}>No</Button>
                 </ModalFooter>
             </Modal>

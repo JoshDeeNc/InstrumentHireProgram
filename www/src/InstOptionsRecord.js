@@ -36,6 +36,8 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
     }
 
     const deletion = async (itemId, event) => {
+        var deleting = document.getElementsByClassName("disp")[0]
+        deleting.innerHTML = '<div class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></div><strong>Deleting...</strong>'
         const result = await deleteInstOptions(itemId);
         if (result.status === 200) {
             history.push('/instoptionslist');
@@ -43,6 +45,8 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
     }
 
     const update = async (itemId, event) => {
+        var saving = document.getElementsByClassName("disp")[1]
+        saving.innerHTML = '<div class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></div><strong>Saving...</strong>'
         const inst = instTypeName == "" ? "" : instTypeName;
         const szs = sizes == "" ? ["N/A"] : sizes.split(",");
         const ado = addOns.split(";");
@@ -145,7 +149,7 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
                     Are you sure you want to delete {instTypeName}'s record?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => deletion(instOptionsRecord.id)}>Yes</Button>
+                    <Button color="primary" onClick={(e) => deletion(instOptionsRecord.id)}><span class="disp"> Yes </span></Button>
                     <Button color="secondary" onClick={toggleDel}>No</Button>
                 </ModalFooter>
             </Modal>
@@ -155,7 +159,7 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
                     Are you sure you want to update {instTypeName}'s record?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => update(instOptionsRecord.id)}>Yes</Button>
+                    <Button color="primary" onClick={(e) => update(instOptionsRecord.id)}><span class="disp"> Yes </span></Button>
                     <Button color="secondary" onClick={toggleUp}>No</Button>
                 </ModalFooter>
             </Modal>

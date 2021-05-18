@@ -31,6 +31,8 @@ function SchoolRecord({ deleteSchool, updateSchool, schoolList }) {
     }
 
     const deletion = async (itemId, event) => {
+        var deleting = document.getElementsByClassName("disp")[0]
+        deleting.innerHTML = '<div class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></div><strong>Deleting...</strong>'
         const result = await deleteSchool(itemId);
         if (result.status === 200) {
             history.push('/schoollist');
@@ -38,6 +40,8 @@ function SchoolRecord({ deleteSchool, updateSchool, schoolList }) {
     }
 
     const update = async (itemId, event) => {
+        var saving = document.getElementsByClassName("disp")[1]
+        saving.innerHTML = '<div class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></div><strong>Saving...</strong>'
         const result = await updateSchool(itemId);
         if (result.status === 200) {
             history.push('/schoollist');
@@ -136,7 +140,7 @@ function SchoolRecord({ deleteSchool, updateSchool, schoolList }) {
                     Are you sure you want to delete {schoolName}'s record?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => deletion(schoolRecord.id)}>Yes</Button>
+                    <Button color="primary" onClick={(e) => deletion(schoolRecord.id)}><span class="disp"> Yes </span></Button>
                     <Button color="secondary" onClick={toggleDel}>No</Button>
                 </ModalFooter>
             </Modal>
@@ -146,7 +150,7 @@ function SchoolRecord({ deleteSchool, updateSchool, schoolList }) {
                     Are you sure you want to update {schoolName}'s record?
         </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={(e) => update(schoolRecord.id)}>Yes</Button>
+                    <Button color="primary" onClick={(e) => update(schoolRecord.id)}><span class="disp"> Yes </span></Button>
                     <Button color="secondary" onClick={toggleUp}>No</Button>
                 </ModalFooter>
             </Modal>
