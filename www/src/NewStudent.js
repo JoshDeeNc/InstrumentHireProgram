@@ -95,6 +95,7 @@ function NewStudent({ addStudent, schoolList }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Student's School</label>
                                         <div class="col-sm-9">
                                             <select class="form-control" id="newStudentSchool" required>
+                                                <option selected disabled hidden></option>
                                                     {schools.map((item, index) => (
                                                         <option>{item}</option>))}
                                             </select>
