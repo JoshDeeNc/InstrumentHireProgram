@@ -10,9 +10,12 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
     const [instTypeName, setInstTypeName] = useState(instOptionsRecord.instrumentTypeName)
     const [sizes, setSizes] = useState(instOptionsRecord.sizes.toString())
     let addOnStr = ""
+    let i = 0;
     for(let key in instOptionsRecord.addOns) {
+        i++
         let value = instOptionsRecord.addOns[key]
-        addOnStr = addOnStr + key + "," + value + ";"
+        addOnStr = addOnStr + key + "," + value 
+        if(i != instOptionsRecord.addOns.length) addOnStr += ";"
     }
     const [addOns, setAddOns] = useState(addOnStr)
 
@@ -41,7 +44,7 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
 
     const update = async (itemId, event) => {
         const inst = instTypeName == "" ? "" : instTypeName;
-        const szs = sizes == "" ? ["N/A"] : sizes.split(";");
+        const szs = sizes == "" ? ["N/A"] : sizes.split(",");
         const ado = addOns.split(";");
         let addOnsUpdate = {};
         if (ado != "") {
@@ -52,7 +55,7 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
             }
             console.log(addOnsUpdate)
         }
-        const result = await updateInstOptions(itemId, inst, szs, ado);
+        const result = await updateInstOptions(itemId, inst, szs, addOnsUpdate);
         if (result.status === 200) {
             history.push('/instoptionslist');
         }

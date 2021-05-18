@@ -13,7 +13,7 @@ function NewInstOptions({ addInstOptions }) {
             return
         }
         const instTypeName = document.getElementById("newInstTypeName").value === null ? "" : document.getElementById('newInstTypeName').value;
-        const sizes = document.getElementById("newSizesList").value === "" ? ["N/A"] : document.getElementById('newSizesList').value.split(";");
+        const sizes = document.getElementById("newSizesList").value === "" ? ["N/A"] : document.getElementById('newSizesList').value.split(",");
         let ado = document.getElementById('newAddOnsList').value.split(";");
         console.log(ado)
         let addOns = {};
