@@ -45,6 +45,7 @@ function NewOwner({ addOwner }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Owner Name </label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control no-edit" name="name" id="newOwnerName" placeholder="Name" required />
+                                            <div class="invalid-feedback">  Please enter owner's name  </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -55,6 +56,7 @@ function NewOwner({ addOwner }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Phone</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control no-edit" name="code" id="newOwnerNumber" placeholder="Phone number" required />
+                                            <div class="invalid-feedback">  Please enter the phone number </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -65,6 +67,7 @@ function NewOwner({ addOwner }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Email</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control no-edit" name="code" id="newOwnerEmail" placeholder="Email" required />
+                                            <div class="invalid-feedback">  Please enter the email address </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>

@@ -21,20 +21,7 @@ function Header({ schoolList, ownerList, instOptionsList }) {
                     data-class="nav-function-hidden" title="Hide Navigation">
                     <i class="ni ni-menu"></i>
                 </a>
-                <ul>
-                    <li>
-                        <a href="#" class="btn js-waves-off" data-action="toggle"
-                            data-class="nav-function-minify" title="Minify Navigation">
-                            <i class="ni ni-minify-nav"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="btn js-waves-off" data-action="toggle"
-                            data-class="nav-function-fixed" title="Lock Navigation">
-                            <i class="ni ni-lock-nav"></i>
-                        </a>
-                    </li>
-                </ul>
+                
             </div>
 
             <div class="hidden-lg-up">
@@ -72,11 +59,11 @@ function Header({ schoolList, ownerList, instOptionsList }) {
 
                         <div class="settings-mn" >
 
-                            <div class="accordion accordion-hover " id="js_demo_accordion-">
+                            <div class="accordion accordion-hover " id="top-nav">
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5c1" aria-expanded="false">
+                                        <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#top-nav1" aria-expanded="false">
                                             <i class="fal fa-guitars width-2 fs-xl"></i>
                                                             Instrument/Add-ons Options
                                                             <span class="ml-auto">
@@ -89,7 +76,7 @@ function Header({ schoolList, ownerList, instOptionsList }) {
                                             </span>
                                         </a>
                                     </div>
-                                    <div id="js_demo_accordion-5c1" class="collapse" data-parent="#js_demo_accordion-5">
+                                    <div id="top-nav1" class="collapse" data-parent="#top-nav">
                                         <div class="card-body">
                                             <ul>
                                                 <li class=" ">
@@ -112,7 +99,7 @@ function Header({ schoolList, ownerList, instOptionsList }) {
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5c2" aria-expanded="false">
+                                        <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#top-nav2" aria-expanded="false">
                                             <i class="fal fa-building width-2 fs-xl"></i>
                                                             Schools
                                                             <span class="ml-auto">
@@ -125,7 +112,7 @@ function Header({ schoolList, ownerList, instOptionsList }) {
                                             </span>
                                         </a>
                                     </div>
-                                    <div id="js_demo_accordion-5c2" class="collapse" data-parent="#js_demo_accordion-5">
+                                    <div id="top-nav2" class="collapse" data-parent="#top-nav">
                                         <div class="card-body">
 
                                             <ul>
@@ -150,7 +137,7 @@ function Header({ schoolList, ownerList, instOptionsList }) {
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5c3" aria-expanded="false">
+                                        <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#top-nav3" aria-expanded="false">
                                             <i class="fal fa-warehouse width-2 fs-xl"></i>
                                                             Owners
                                                             <span class="ml-auto">
@@ -163,7 +150,7 @@ function Header({ schoolList, ownerList, instOptionsList }) {
                                             </span>
                                         </a>
                                     </div>
-                                    <div id="js_demo_accordion-5c3" class="collapse" data-parent="#js_demo_accordion-5">
+                                    <div id="top-nav3" class="collapse" data-parent="#top-nav">
                                         <div class="card-body">
 
                                             <ul>
@@ -188,7 +175,7 @@ function Header({ schoolList, ownerList, instOptionsList }) {
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5c4" aria-expanded="false">
+                                        <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#top-nav4" aria-expanded="false">
                                             <i class="fal fa-user width-2 fs-xl"></i>
                                                             My Account
                                                             <span class="ml-auto">
@@ -201,7 +188,7 @@ function Header({ schoolList, ownerList, instOptionsList }) {
                                             </span>
                                         </a>
                                     </div>
-                                    <div id="js_demo_accordion-5c4" class="collapse" data-parent="#js_demo_accordion-5">
+                                    <div id="top-nav4" class="collapse" data-parent="#top-nav">
                                         <div class="card-body">
 
                                             <ul>

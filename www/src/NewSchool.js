@@ -45,6 +45,7 @@ function NewSchool({ addSchool }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">School Name </label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control no-edit" name="name" id="newSchoolName"   required />
+                                            <div class="invalid-feedback">  Please enter the school name </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -55,6 +56,7 @@ function NewSchool({ addSchool }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Phone</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control no-edit" name="code" id="newSchoolNumber" required />
+                                            <div class="invalid-feedback">  Please enter the phone number </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -65,6 +67,7 @@ function NewSchool({ addSchool }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Email</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control no-edit" name="code" id="newSchoolEmail" required/>
+                                            <div class="invalid-feedback">  Please enter the email </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>

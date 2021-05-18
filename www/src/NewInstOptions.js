@@ -55,6 +55,7 @@ function NewInstOptions({ addInstOptions }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument Type Name </label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control no-edit"   id="newInstTypeName" required />
+                                            <div class="invalid-feedback">  Please enter instrument type name </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -64,7 +65,8 @@ function NewInstOptions({ addInstOptions }) {
                                     <div class=" form-group row ">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Sizes</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control no-edit"   id="newSizesList"  />
+                                            <input type="text" class="form-control no-edit"   id="newSizesList"   />
+                                            
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>

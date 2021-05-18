@@ -51,6 +51,7 @@ function NewStudent({ addStudent, schoolList }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Student First Name </label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control no-edit" name="name" id="newFirstName" placeholder="First name" required />
+                                            <div class="invalid-feedback">  Please enter student's first name </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -61,6 +62,7 @@ function NewStudent({ addStudent, schoolList }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Student Last Name </label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control no-edit" name="name" id="newLastName" placeholder="Last name" required />
+                                            <div class="invalid-feedback">  Please enter student's last name </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -71,6 +73,7 @@ function NewStudent({ addStudent, schoolList }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Phone</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control no-edit" name="code" id="newPhoneNumber" placeholder="Phone number" required />
+                                            <div class="invalid-feedback">  Please enter student's phone number </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -81,6 +84,7 @@ function NewStudent({ addStudent, schoolList }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Email</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control no-edit" name="code" id="newEmail" placeholder="Email" required />
+                                            <div class="invalid-feedback">  Please enter student's email address </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -94,6 +98,7 @@ function NewStudent({ addStudent, schoolList }) {
                                                     {schools.map((item, index) => (
                                                         <option>{item}</option>))}
                                             </select>
+                                            <div class="invalid-feedback">  Please select student's school </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>

@@ -126,7 +126,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                     <option>{item}</option>))}
                                             </datalist>
                                             
-                                            <div class="invalid-tooltip ">  Please enter the student name </div>
+                                            <div class="invalid-feedback ">  Please enter the student name </div>
                                              
                                         </div>
                                         <div class="col-sm-12 ">
@@ -142,7 +142,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                             {availInstruments.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </datalist>
-                                            <div class="invalid-tooltip">  Please select an instrument </div>
+                                            <div class="invalid-feedback">  Please select an instrument </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -157,7 +157,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                             {availBrands.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </datalist>
-                                            <div class="invalid-tooltip">  Please select a brand </div>
+                                            <div class="invalid-feedback">  Please select a brand </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -172,7 +172,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                             {availCodes.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </datalist>
-                                            <div class="invalid-tooltip">  Please enter the code </div>
+                                            <div class="invalid-feedback">  Please enter the code </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -183,9 +183,10 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                         <div class="col-md-4">
                                             <div class="input-group">
                                                 <input type="text" class="form-control no-edit" id="newToDoSize"   value={size} required />
+                                                <div class="invalid-feedback">  Please enter Size </div>
                                              </div>
                                             
-                                            <div class="invalid-tooltip">  Please enter Size </div>
+                                            
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -197,9 +198,10 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                              
                                             <div class="input-group">
                                                 <input type="text" class="form-control no-edit" id="newToDoSerialNum"   value={serialNum} required />
+                                                <div class="invalid-feedback">  Please enter serial number </div>
                                              </div>
                                             
-                                            <div class="invalid-tooltip">  Please enter serial number </div>
+                                           
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -215,20 +217,21 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                     <span class="input-group-text">$</span>
                                                 </div>
                                                 <input type="text" class="form-control no-edit"  id="newToDoRate"   value={rate} required />
+                                                <div class="invalid-feedback">  Please enter rate </div>
                                              </div>
                                             
-                                            <div class="invalid-tooltip">  Please enter rate </div>
+                                           
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
                                         </div>
                                     </div>
-
+ 
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Owner</label>
                                         <div class="col-sm-9">
                                         <input type="text" class="form-control no-edit"  id="newToDoOwner"   value={owner} required />
-                                            <div class="invalid-tooltip">  Please select owner </div>
+                                            <div class="invalid-feedback">  Please select owner </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -239,7 +242,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Due Date</label>
                                         <div class="col-md-4">
                                             <input class="  form-control " id="newToDoDueDate" type="date" name="date"   required />
-                                            <div class="invalid-tooltip">  Please select the due date </div>
+                                            <div class="invalid-feedback">  Please select the due date </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>

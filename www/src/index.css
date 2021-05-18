@@ -648,7 +648,7 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
 .page-sidebar .card-body li, .settings-mn .card-body li {
   margin-left: -12px;
   list-style: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
 .page-sidebar .accordion>.card>.card-header, .settings-mn .accordion>.card>.card-header {
@@ -661,5 +661,6 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
 }
 
 .dropdown-menu {font-size: 00.8rem;}
+.dropdown-icon-menu:hover > ul { height:84px ;}
 
-.invalid-tooltip {left:15px; clear: both !important;}
+.header-btn[data-class='mobile-nav-on'] {background:#004d40; border: none;}

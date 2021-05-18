@@ -43,7 +43,7 @@ function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolLi
 
           <div class="card">
             <div class="card-header">
-              <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5b" aria-expanded="false">
+              <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#left-nav1" aria-expanded="false">
                 <i class="fal fa-guitars width-2 fs-xl"></i>Hires
                  <span class="dl-ref label bg-info-900 ml-auto ">{toDos.filter(item => item.returned === "").length}</span>
 
@@ -57,7 +57,7 @@ function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolLi
                 </span>
               </a>
             </div>
-            <div id="js_demo_accordion-5b" class="collapse" data-parent="#js_demo_accordion-5">
+            <div id="left-nav1" class="collapse" data-parent="#js_demo_accordion-5">
               <div class="card-body">
                 <ul>
                   <li>
@@ -74,7 +74,7 @@ function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolLi
           </div>
           <div class="card">
             <div class="card-header">
-              <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5c" aria-expanded="false">
+              <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#left-nav2" aria-expanded="false">
                 <i class="fal fa-users width-2 fs-xl"></i>
                                                             Students
                                                             <span class="ml-auto">
@@ -87,7 +87,7 @@ function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolLi
                 </span>
               </a>
             </div>
-            <div id="js_demo_accordion-5c" class="collapse" data-parent="#js_demo_accordion-5">
+            <div id="left-nav2" class="collapse" data-parent="#js_demo_accordion-5">
               <div class="card-body">
                 <ul>
                   <li>
@@ -107,7 +107,7 @@ function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolLi
           </div>
           <div class="card">
             <div class="card-header">
-              <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#js_demo_accordion-5d" aria-expanded="false">
+              <a href="javascript:void(0);" class="card-title collapsed" data-toggle="collapse" data-target="#left-nav3" aria-expanded="false">
                 <i class="fal fa-guitars width-2 fs-xl"></i>
                                                             Instruments
                                                             <span class="ml-auto">
@@ -120,7 +120,7 @@ function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolLi
                 </span>
               </a>
             </div>
-            <div id="js_demo_accordion-5d" class="collapse" data-parent="#js_demo_accordion-5">
+            <div id="left-nav3" class="collapse" data-parent="#js_demo_accordion-5">
               <div class="card-body">
                 <ul>
 
@@ -140,7 +140,7 @@ function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolLi
                 </ul>
               </div>
             </div>
-          </div>
+          </div> 
 
           <div class="card">
             <div class="card-header-nl">
@@ -163,7 +163,7 @@ function Sidebar({ clearCredentials, toDos, instInventory, studentList, schoolLi
 
 
         <div class="filter-message js-filter-message bg-success-600"></div>
-      </nav>
+      </nav> 
       <div class="nav-footer shadow-top">
         <a href="#" onclick="return false;" data-action="toggle" data-class="nav-function-minify" class="hidden-md-down">
           <i class="ni ni-chevron-right"></i>

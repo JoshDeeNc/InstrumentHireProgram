@@ -63,6 +63,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="  form-control " name="code" id="newInstCode" required />
+                                            <div class="invalid-feedback">  Please enter the code </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -73,6 +74,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput"> Serial Number </label>
                                         <div class="col-sm-9">
                                             <Input type="text" class="  form-control " name="serialNumber" id="newSerialNum" required />
+                                            <div class="invalid-feedback">  Please enter the serial number </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -87,7 +89,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                             {instTypes.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </datalist>
-                                            <div class="invalid-tooltip">  Please enter the instrument type </div>
+                                            <div class="invalid-feedback">  Please enter the instrument type </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -101,7 +103,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                             {instSizes.map((item, index) => (
                                                     <option>{item}</option>))}
                                             </datalist>
-                                            <div class="invalid-tooltip">  Please enter the instrument size </div>
+                                            <div class="invalid-feedback">  Please enter the instrument size </div>
                                         </div> <div class="col-sm-12 ">
                                             <div class=" hr"></div>
                                         </div>    
@@ -110,6 +112,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Brand</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="  form-control " name="brand" id="newInstBrand" required />
+                                            <div class="invalid-feedback">  Please enter the brand </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -124,6 +127,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                                     <span class="input-group-text">$</span>
                                                 </div>
                                                 <input type="text" class="  form-control " name="rate" id="newInstRate" required />
+                                                <div class="invalid-feedback">  Please enter the rate </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-12 ">
@@ -139,6 +143,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                                     <span class="input-group-text">$</span>
                                                 </div>
                                                 <input type="text" class="  form-control " name="rate" id="newInstPurchVal" required />
+                                                <div class="invalid-feedback">  Please enter the purchase cost </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-12 ">
@@ -147,14 +152,10 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                     </div>
 
                                     <div class=" form-group row">
-                                        <label class="col-sm-3 col-form-label" for="simpleinput">Depreciation </label>
-                                        <div class="col-md-2">
-                                            <div class="input-group   sm-inpt-width-edt">
-                                                <input type="text" class="  form-control " name="rate" id="newInstDepr" required />
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text">%</span>
-                                                </div>
-                                            </div>
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Depreciation %</label>
+                                        <div class="col-md-4">
+                                        <input type="text" class="  form-control " name="rate" id="newInstDepr" required />
+                                                <div class="invalid-feedback">  Please enter the depreciation % </div>
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -164,10 +165,11 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Owner</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="newInstOwner">
+                                            <select class="form-control" id="newInstOwner" required>
                                                     {owners.map((item, index) => (
                                                         <option>{item}</option>))}
                                             </select>
+                                            <div class="invalid-feedback">  Please select the owner</div>
                                         </div> <div class="col-sm-12 ">
                                             <div class=" hr"></div>
                                         </div>
