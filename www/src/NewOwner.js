@@ -55,7 +55,7 @@ function NewOwner({ addOwner }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Phone</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control no-edit" name="code" id="newOwnerNumber" placeholder="Phone number" required />
+                                            <input type="tel" pattern="[0-9]{0,12}" maxlength="12" class="form-control no-edit" name="code" id="newOwnerNumber" placeholder="Phone number" required />
                                             <div class="invalid-feedback">  Please enter the phone number </div>
                                         </div>
                                         <div class="col-sm-12 ">
@@ -66,7 +66,7 @@ function NewOwner({ addOwner }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Email</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control no-edit" name="code" id="newOwnerEmail" placeholder="Email" required />
+                                            <input type="email" class="form-control no-edit" name="code" id="newOwnerEmail" placeholder="Email" required />
                                             <div class="invalid-feedback">  Please enter the email address </div>
                                         </div>
                                         <div class="col-sm-12 ">

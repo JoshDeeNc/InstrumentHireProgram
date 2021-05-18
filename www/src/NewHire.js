@@ -216,7 +216,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">$</span>
                                                 </div>
-                                                <input type="text" class="form-control no-edit"  id="newToDoRate"   value={rate} required />
+                                                <input type="number" class="form-control no-edit"  id="newToDoRate"   value={rate} required />
                                                 <div class="invalid-feedback">  Please enter rate </div>
                                              </div>
                                             
@@ -285,10 +285,10 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                                             <div class=" form-group row">
                                                                 <label class="col-8 col-form-label" id={"addOnName"+index}>{Object.keys(item)[0]}</label>
                                                                 <div class="col-2">
-                                                                    <Input type="text" defaultValue={item[Object.keys(item)[0]]} id={"addOnRate"+index} name="RateAddon"   />
+                                                                    <Input type="number" defaultValue={item[Object.keys(item)[0]]} id={"addOnRate"+index} name="RateAddon"   />
                                                                 </div>
                                                                 <div class="col-2">
-                                                                    <Input type="text" name="Qty" id={"addOnQty"+index}   />
+                                                                    <Input type="number" name="Qty" id={"addOnQty"+index}   />
                                                                 </div>
                                                                 <div class="col-sm-12 ">
                                                                     <div class=" hr"></div>
