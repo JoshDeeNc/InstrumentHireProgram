@@ -12,10 +12,12 @@ function InstOptionsRecord({ deleteInstOptions, updateInstOptions, instOptionsLi
     let addOnStr = ""
     let i = 0;
     for(let key in instOptionsRecord.addOns) {
-        i++
+        i=i+1
         let value = instOptionsRecord.addOns[key]
         addOnStr = addOnStr + key + "," + value 
-        if(i != instOptionsRecord.addOns.length) addOnStr += ";"
+        if(i != Object.keys(instOptionsRecord.addOns).length) addOnStr += ";"
+        console.log(i)
+        console.log(Object.keys(instOptionsRecord.addOns).length)
     }
     const [addOns, setAddOns] = useState(addOnStr)
 
