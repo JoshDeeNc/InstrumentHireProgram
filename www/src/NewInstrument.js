@@ -166,6 +166,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Owner</label>
                                         <div class="col-sm-9">
                                             <select class="form-control" id="newInstOwner" required>
+                                            <option selected disabled hidden></option>
                                                     {owners.map((item, index) => (
                                                         <option>{item}</option>))}
                                             </select>
