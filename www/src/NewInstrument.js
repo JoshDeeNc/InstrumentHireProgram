@@ -126,7 +126,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">$</span>
                                                 </div>
-                                                <input type="number" min="1" step="0.01" class="  form-control " name="rate" id="newInstRate" required />
+                                                <input type="number" step="0.01" class="  form-control " name="rate" id="newInstRate" required />
                                                 <div class="invalid-feedback">  Please enter the rate </div>
                                             </div>
                                         </div>
@@ -142,7 +142,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">$</span>
                                                 </div>
-                                                <input type="number" min="1" step="0.01" class="  form-control " name="rate" id="newInstPurchVal" required />
+                                                <input type="number" step="0.01" class="  form-control " name="rate" id="newInstPurchVal" required />
                                                 <div class="invalid-feedback">  Please enter the purchase cost </div>
                                             </div>
                                         </div>
@@ -154,7 +154,7 @@ function NewInstrument({ addInstrument, ownerList, instOptionsList }) {
                                     <div class=" form-group row">
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Depreciation %</label>
                                         <div class="col-md-4">
-                                        <input type="number" min="1" step="0.01" class="  form-control " name="rate" id="newInstDepr" required />
+                                        <input type="number" step="0.01" class="  form-control " name="rate" id="newInstDepr" required />
                                                 <div class="invalid-feedback">  Please enter the depreciation % </div>
                                         </div>
                                         <div class="col-sm-12 ">
