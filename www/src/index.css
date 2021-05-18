@@ -660,5 +660,6 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   background: #055756;
 }
 
+.dropdown-menu {font-size: 00.8rem;}
 
 .invalid-tooltip {left:15px; clear: both !important;}
