@@ -299,7 +299,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                     <div class="form-group row">
                                     <label class="col-sm-3 col-form-label" for="simpleinput">Date Hired</label>
                                     <div class="col-sm-9">
-                                        <input class="form-control nox" type="text" value={new Date(hireRecord.creation_date).toLocaleDateString()} />
+                                        <input class="form-control nox" type="date" value={new Date(hireRecord.creation_date).toLocaleDateString()} />
                                     </div>
                                     <div class="col-sm-12 ">
                                         <div class=" hr"></div>
