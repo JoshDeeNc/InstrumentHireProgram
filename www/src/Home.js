@@ -8,9 +8,9 @@ import history from './history';
 
 function Home({ toDos, deleteToDo }) {
 
-  const curHires = toDos.filter(item => item.returned === "")
-  const overDues = toDos.filter(item => item.returned === "" && new Date(item.due) < new Date())
-  const returnedHires = toDos.filter(item => item.returned != "")
+  var curHires = toDos.filter(item => item.returned === "")
+  var overDues = toDos.filter(item => item.returned === "" && new Date(item.due) < new Date())
+  var returnedHires = toDos.filter(item => item.returned != "")
 
   const [qry, setQry] = useState("")
   const [filtDates, setFiltDates] = useState([])
@@ -20,7 +20,7 @@ function Home({ toDos, deleteToDo }) {
   function search(records) {
     if (qry != "") {
       console.log(qry)
-      return records.filter((row) => new Date(row.creation_date).toLocaleDateString().indexOf(qry.toLowerCase()) > -1 ||
+      let changed = records.filter((row) => new Date(row.creation_date).toLocaleDateString().indexOf(qry.toLowerCase()) > -1 ||
         new Date(row.returned).toLocaleDateString().indexOf(qry.toLowerCase()) > -1 ||
         row.code.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         row.name.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
@@ -29,8 +29,11 @@ function Home({ toDos, deleteToDo }) {
         row.rate.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         row.owner.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         new Date(row.due).toLocaleDateString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+        curHires = changed
+        overDues = changed
+        returnedHires = changed
     }
-    if (filtDates.length > 0 && dtRange) {
+    /*if (filtDates.length > 0 && dtRange) {
       console.log(filtDates)
       return records.filter(item => new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1]))
     }
@@ -42,7 +45,7 @@ function Home({ toDos, deleteToDo }) {
       console.log(filtRetDates)
       return returnedHires = records.filter(item => new Date(item.creation_date) >= new Date(filtRetDates[0]) && new Date(item.creation_date) <= new Date(filtRetDates[1]))
     }
-    return records
+    return records*/
   }
 
   const [dtRange, setDtRange] = useState(false);
@@ -188,7 +191,7 @@ function Home({ toDos, deleteToDo }) {
                               </tr>
                             </thead>
                             <tbody>
-                              {search(curHires).map((item, index) => (
+                              {curHires.map((item, index) => (
                                 <tr role="row" key={item.id}>
                                   <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                   <td> {item.name}</td>
@@ -277,7 +280,7 @@ function Home({ toDos, deleteToDo }) {
                               </tr>
                             </thead>
                             <tbody>
-                              {search(overDues).map((item, index) => (
+                              {overDues.map((item, index) => (
                                 <tr role="row" key={item.id}>
                                   <td>{new Date(item.due).toLocaleDateString()}</td>
                                   <td class="al-ctr"> <span class="txt-red">{Math.floor((new Date().getTime() - new Date(item.due).getTime()) / (1000 * 60 * 60 * 24))}</span></td>
@@ -366,7 +369,7 @@ function Home({ toDos, deleteToDo }) {
                               </tr>
                             </thead>
                             <tbody>
-                              {search(returnedHires).map((item, index) => (
+                              {returnedHires.map((item, index) => (
                                 <tr role="row" key={item.id}>
                                   <td>{new Date(item.returned).toLocaleDateString()}</td>
                                   <td>{new Date(item.creation_date).toLocaleDateString()}</td>
