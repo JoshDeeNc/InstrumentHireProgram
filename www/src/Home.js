@@ -8,18 +8,9 @@ import history from './history';
 
 function Home({ toDos, deleteToDo }) {
 
-  const [filter, setFilter] = useState('all');
-  const changeFilter = (newFilter) => {
-    setFilter(newFilter);
-  };
-
-  const ogOverDues = toDos.filter(item => item.returned === "" && new Date(item.due) < new Date())
-  const ogCurHires = toDos.filter(item => item.returned === "")
-  const ogReturnedHires = toDos.filter(item => item.returned != "")
-
-  const [overDues, setOverDues] = useState(ogOverDues)
-  const [curHires, setCurHires] = useState(ogCurHires)
-  const [returnedHires, setReturnedHires] = useState(ogReturnedHires)
+  const [overDues, setOverDues] = useState(toDos.filter(item => item.returned === "" && new Date(item.due) < new Date()))
+  const [curHires, setCurHires] = useState(toDos.filter(item => item.returned === ""))
+  const [returnedHires, setReturnedHires] = useState(toDos.filter(item => item.returned != ""))
 
   const [qry, setQry] = useState("")
   const [filtDates, setFiltDates] = useState([])
