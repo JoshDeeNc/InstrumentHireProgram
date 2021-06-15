@@ -9,7 +9,7 @@ import history from './history';
 function Home({ toDos, deleteToDo }) {
 
   const ogCurHires = toDos.filter(item => item.returned === "")
-  const ogOverDues = useState(toDos.filter(item => item.returned === "" && new Date(item.due) < new Date()))
+  const ogOverDues = toDos.filter(item => item.returned === "" && new Date(item.due) < new Date())
   const ogReturnedHires = toDos.filter(item => item.returned != "")
 
   let curHires = ogCurHires
