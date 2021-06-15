@@ -12,9 +12,9 @@ function Home({ toDos, deleteToDo }) {
   const ogOverDues = toDos.filter(item => item.returned === "" && new Date(item.due) < new Date())
   const ogReturnedHires = toDos.filter(item => item.returned != "")
 
-  let curHires = ogCurHires
-  let overDues = ogOverDues
-  let returnedHires = ogReturnedHires
+  var curHires = ogCurHires
+  var overDues = ogOverDues
+  var returnedHires = ogReturnedHires
 
   const [qry, setQry] = useState("")
   const [filtDates, setFiltDates] = useState([])
