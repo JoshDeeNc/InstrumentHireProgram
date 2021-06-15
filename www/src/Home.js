@@ -15,9 +15,13 @@ function Home({ toDos, deleteToDo }) {
     setFilter(newFilter);
   };
 
-  const overDues = toDos.filter(item => item.returned === "" && new Date(item.due) < new Date())
-  const curHires = toDos.filter(item => item.returned === "")
-  const returnedHires = toDos.filter(item => item.returned != "")
+  const ogOverDues = toDos.filter(item => item.returned === "" && new Date(item.due) < new Date())
+  const ogCurHires = toDos.filter(item => item.returned === "")
+  const ogReturnedHires = toDos.filter(item => item.returned != "")
+
+  const [overDues, setOverDues] = useState(ogOverDues)
+  const [curHires, setCurHires] = useState(ogCurHires)
+  const [returnedHires, setReturnedHires] = useState(ogReturnedHires)
 
   const [qry, setQry] = useState("")
   const [filtDates, setFiltDates] = useState([])
@@ -41,7 +45,7 @@ function Home({ toDos, deleteToDo }) {
       console.log(filtDates)
       return records.filter(item => new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1]))
     }
-    if (filtOvDates.length > 0 && dtRange2) {
+    if (filtOvDates.length > 0 && ovDtRange) {
       console.log(filtOvDates)
       return records.filter(item => new Date(item.creation_date) >= new Date(filtOvDates[0]) && new Date(item.creation_date) <= new Date(filtOvDates[1]))
     }
@@ -52,36 +56,15 @@ function Home({ toDos, deleteToDo }) {
     return records
   }
 
-  function searchDates(records) {
-    if (filtDates.length > 0 && dtRange) {
-      console.log(filtDates)
-      search(records.filter(item => new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1])))
-    }
-  }
-
-  function searchOvDates(records) {
-    if (filtOvDates.length > 0 && dtRange2) {
-      console.log(filtOvDates)
-      return records.filter(item => new Date(item.creation_date) >= new Date(filtOvDates[0]) && new Date(item.creation_date) <= new Date(filtOvDates[1]))
-    }
-  }
-
-  function searchRetDates(records) {
-    if (filtRetDates.length > 0 && dtRange3) {
-      console.log(filtRetDates)
-      return records.filter(item => new Date(item.creation_date) >= new Date(filtRetDates[0]) && new Date(item.creation_date) <= new Date(filtRetDates[1]))
-    }
-  }
-
   const [dtRange, setDtRange] = useState(false);
   useEffect(() => {
     setDateRange(dtRange)
   }, [dtRange]);
 
-  const [dtRange2, setDtRange2] = useState(false);
+  const [ovDtRange, setOvDtRange] = useState(false);
   useEffect(() => {
-    setDateRange2(dtRange2)
-  }, [dtRange2]);
+    setDateRange2(ovDtRange)
+  }, [ovDtRange]);
 
   const [dtRange3, setDtRange3] = useState(false);
   useEffect(() => {
@@ -98,9 +81,9 @@ function Home({ toDos, deleteToDo }) {
     }
   }
 
-  const setDateRange2 = (dtRange2) => {
+  const setDateRange2 = (ovDtRange) => {
     var a = document.getElementById('dt-range2');
-    if (dtRange2 == true) {
+    if (ovDtRange == true) {
       a.classList.remove('dt-range');
     }
     else {
@@ -257,7 +240,7 @@ function Home({ toDos, deleteToDo }) {
                           <div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
                           </div>
 
-                          <div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setDtRange2(!dtRange2)} className="btn-sm "> Dates</Button>
+                          <div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setOvDtRange(!ovDtRange)} className="btn-sm "> Dates</Button>
                           </div>
                           <div class="col-lg-5 col-md-7   ">
                             <div class="row dt-range " id="dt-range2">
