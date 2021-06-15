@@ -38,7 +38,7 @@ function Home({ toDos, deleteToDo }) {
       console.log(filtOvDates)
       return records.filter(item => new Date(item.creation_date) >= new Date(filtOvDates[0]) && new Date(item.creation_date) <= new Date(filtOvDates[1]))
     }
-    if (filtRetDates.length > 0 && dtRange3) {
+    if (filtRetDates.length > 0 && retDtRange) {
       console.log(filtRetDates)
       return records.filter(item => new Date(item.creation_date) >= new Date(filtRetDates[0]) && new Date(item.creation_date) <= new Date(filtRetDates[1]))
     }
@@ -52,13 +52,13 @@ function Home({ toDos, deleteToDo }) {
 
   const [ovDtRange, setOvDtRange] = useState(false);
   useEffect(() => {
-    setDateRange2(ovDtRange)
+    setDateRangeOv(ovDtRange)
   }, [ovDtRange]);
 
-  const [dtRange3, setDtRange3] = useState(false);
+  const [retDtRange, setRetDtRange] = useState(false);
   useEffect(() => {
-    setDateRange3(dtRange3)
-  }, [dtRange3]);
+    setDateRangeRet(retDtRange)
+  }, [retDtRange]);
 
   const setDateRange = (dtRange) => {
     var a = document.getElementById('dt-range');
@@ -70,8 +70,8 @@ function Home({ toDos, deleteToDo }) {
     }
   }
 
-  const setDateRange2 = (ovDtRange) => {
-    var a = document.getElementById('dt-range2');
+  const setDateRangeOv = (ovDtRange) => {
+    var a = document.getElementById('dt-rangeOv');
     if (ovDtRange == true) {
       a.classList.remove('dt-range');
     }
@@ -80,9 +80,9 @@ function Home({ toDos, deleteToDo }) {
     }
   }
 
-  const setDateRange3 = (dtRange3) => {
-    var a = document.getElementById('dt-range3');
-    if (dtRange3 == true) {
+  const setDateRangeRet = (retDtRange) => {
+    var a = document.getElementById('dt-rangeRet');
+    if (retDtRange == true) {
       a.classList.remove('dt-range');
     }
     else {
@@ -96,12 +96,12 @@ function Home({ toDos, deleteToDo }) {
   }
 
   const filterDates2 = () => {
-    setFiltOvDates([document.getElementById("startDate2").value, document.getElementById("endDate2").value])
+    setFiltOvDates([document.getElementById("startDateOv").value, document.getElementById("endDateOv").value])
     search(overDues)
   }
 
   const filterDates3 = () => {
-    setFiltRetDates([document.getElementById("startDate3").value, document.getElementById("endDate3").value])
+    setFiltRetDates([document.getElementById("startDateRet").value, document.getElementById("endDateRet").value])
     search(returnedHires)
   }
 
@@ -232,18 +232,18 @@ function Home({ toDos, deleteToDo }) {
                           <div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setOvDtRange(!ovDtRange)} className="btn-sm "> Dates</Button>
                           </div>
                           <div class="col-lg-5 col-md-7   ">
-                            <div class="row dt-range " id="dt-range2">
+                            <div class="row dt-range " id="dt-rangeOv">
                               <div class="col-12">
 
                                 <div class="form-group row">
                                   <div class="col-md-5  ">
                                     <div class="input-group">
-                                      <input type="date" class="form-control mt-2 " placeholder="Select date" id="startDate2" />
+                                      <input type="date" class="form-control mt-2 " placeholder="Select date" id="startDateOv" />
                                     </div>
                                   </div>
                                   <div class="col-md-5  ">
                                     <div class="input-group">
-                                      <input type="date" class="form-control mt-2 " placeholder="Select date" id="endDate2" />
+                                      <input type="date" class="form-control mt-2 " placeholder="Select date" id="endDateOv" />
                                     </div>
                                   </div>
 
@@ -316,21 +316,21 @@ function Home({ toDos, deleteToDo }) {
                           <div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
                           </div>
 
-                          <div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setDtRange3(!dtRange3)} className="btn-sm "> Dates</Button>
+                          <div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setRetDtRange(!retDtRange)} className="btn-sm "> Dates</Button>
                           </div>
                           <div class="col-lg-5 col-md-7    ">
-                            <div class="row dt-range " id="dt-range3">
+                            <div class="row dt-range " id="dt-rangeRet">
                               <div class="col-12">
 
                                 <div class="form-group row">
                                   <div class="col-md-5  ">
                                     <div class="input-group">
-                                      <input type="date" class="form-control mt-2 " placeholder="Select date" id="startDate3" />
+                                      <input type="date" class="form-control mt-2 " placeholder="Select date" id="startDateRet" />
                                     </div>
                                   </div>
                                   <div class="col-md-5  ">
                                     <div class="input-group">
-                                      <input type="date" class="form-control mt-2 " placeholder="Select date" id="endDate3" />
+                                      <input type="date" class="form-control mt-2 " placeholder="Select date" id="endDateRet" />
                                     </div>
                                   </div>
 
