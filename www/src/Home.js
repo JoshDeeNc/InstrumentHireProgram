@@ -8,8 +8,8 @@ import history from './history';
 
 function Home({ toDos, deleteToDo }) {
 
-  const overDues = toDos.filter(item => item.returned === "" && new Date(item.due) < new Date())
   const curHires = toDos.filter(item => item.returned === "")
+  const [overDues, setOverDues] = useState(toDos.filter(item => item.returned === "" && new Date(item.due) < new Date()))
   const returnedHires = toDos.filter(item => item.returned != "")
 
   const [qry, setQry] = useState("")
