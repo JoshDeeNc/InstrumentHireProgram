@@ -17,6 +17,10 @@ function Home({ toDos, deleteToDo }) {
   const [filtOvDates, setFiltOvDates] = useState([])
   const [filtRetDates, setFiltRetDates] = useState([])
 
+  useEffect(() => {
+    search(returnedHires)
+  }, [qry]);
+
   function search(records) {
     if (qry != "") {
       console.log(qry)
