@@ -20,7 +20,7 @@ function Home({ toDos, deleteToDo }) {
   function search(records) {
     if (qry != "") {
       console.log(qry)
-      return records.filter((row) => new Date(row.creation_date).toLocaleDateString().indexOf(qry.toLowerCase()) > -1 ||
+      records = records.filter((row) => new Date(row.creation_date).toLocaleDateString().indexOf(qry.toLowerCase()) > -1 ||
         new Date(row.returned).toLocaleDateString().indexOf(qry.toLowerCase()) > -1 ||
         row.code.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         row.name.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
@@ -32,16 +32,17 @@ function Home({ toDos, deleteToDo }) {
     }
     if (filtDates.length > 0 && dtRange) {
       console.log(filtDates)
-      return records.filter(item => new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1]))
+      records = records.filter(item => new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1]))
     }
     if (filtOvDates.length > 0 && ovDtRange) {
       console.log(filtOvDates)
-      return records.filter(item => new Date(item.creation_date) >= new Date(filtOvDates[0]) && new Date(item.creation_date) <= new Date(filtOvDates[1]))
+      records = records.filter(item => new Date(item.creation_date) >= new Date(filtOvDates[0]) && new Date(item.creation_date) <= new Date(filtOvDates[1]))
     }
     if (filtRetDates.length > 0 && retDtRange) {
       console.log(filtRetDates)
-      return returnedHires = records.filter(item => new Date(item.creation_date) >= new Date(filtRetDates[0]) && new Date(item.creation_date) <= new Date(filtRetDates[1]))
+      records = records.filter(item => new Date(item.creation_date) >= new Date(filtRetDates[0]) && new Date(item.creation_date) <= new Date(filtRetDates[1]))
     }
+    console.log(records)
     return records
   }
 
