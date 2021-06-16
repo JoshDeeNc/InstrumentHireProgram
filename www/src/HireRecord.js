@@ -8,6 +8,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
     const hireRecord = toDos.find(item => item.id === id);
 
     const [studName, setStudName] = useState(hireRecord.name)
+    const [studEmail, setStudEmail] = useState(hireRecord.email)
     const [code, setCode] = useState(hireRecord.code)
     const [instrument, setInstrument] = useState(hireRecord.instrument)
     const [brand, setBrand] = useState(hireRecord.brand)
@@ -188,6 +189,17 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="name" id="editToDoName"
                                                 value={studName} onChange={onChangeStud} placeholder="name" />
+                                        </div>
+                                        <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Student Email </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control nox" name="name" id="editToDoEmail"
+                                                value={studEmail} onChange={(e) => setStudEmail(e.target.value)} placeholder="email" />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>

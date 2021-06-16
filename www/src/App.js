@@ -110,6 +110,7 @@ function App() {
 
   const addToDo = async (addOns,instrumentId,event) => {
     const name = document.getElementById('newToDoName').value;
+    const email = document.getElementById('newToDoEmail').value;
     const code = document.getElementById('newToDoCode').value;
     const instrument = document.getElementById('newToDoInstrument').value;
     const brand = document.getElementById('newToDoBrand').value;
@@ -120,12 +121,13 @@ function App() {
     const dueDate = document.getElementById('newToDoDueDate').value;
     const notes = document.getElementById('newToDoNotes').value == null ? "" : document.getElementById('newToDoNotes').value;
 
-    if (!name || name === '' || !code || code === '' || !instrument || instrument === '' || !serialNum || serialNum === ''
-      || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' ||
+    if (!name || name === '' || !email || email === '' || !code || code === '' || !instrument || instrument === '' || 
+      !serialNum || serialNum === '' || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' ||
       !size || size === '' || !dueDate || dueDate === '') return;
 
     const newToDo = {
       "name": name,
+      "email": email,
       "returned": "",
       "instrumentId": instrumentId,
       "code": code,
@@ -173,6 +175,7 @@ function App() {
   const updateToDo = async (itemId, addOns, event) => {
     if (itemId === null) return;
     const name = document.getElementById('editToDoName').value;
+    const email = document.getElementById('editToDoEmail').value;
     const code = document.getElementById('editToDoCode').value;
     const instrument = document.getElementById('editToDoInstrument').value;
     const brand = document.getElementById('editToDoBrand').value;
@@ -183,13 +186,14 @@ function App() {
     const dueDate = document.getElementById('editToDoDueDate').value;
     const notes = document.getElementById('editToDoNotes').value == null ? "" : document.getElementById('editToDoNotes').value;
     console.log(name);
-    if (!name || name === '' || !code || code === '' || !instrument || instrument === '' || !serialNum || serialNum === ''
-      || !size || size === '' || !brand || brand === '' || !rate || rate === '' || !owner || owner === '' 
-      || !dueDate || dueDate === '') return;
+    if (!name || name === '' || !email || email === '' || !code || code === '' || !instrument || instrument === '' || 
+      !serialNum || serialNum === '' || !size || size === '' || !brand || brand === '' ||
+      !rate || rate === '' || !owner || owner === '' || !dueDate || dueDate === '') return;
 
     let hire = toDos.find(item => item.id === itemId);
     const updateToDo = {
       "name": name,
+      "email": email,
       "returned": hire.returned,
       "code": code,
       "instrument": instrument,

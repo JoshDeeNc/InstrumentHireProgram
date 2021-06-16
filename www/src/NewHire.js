@@ -136,7 +136,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                         </div>
                                     </div>
                                     <div class=" form-group row">
-                                        <label class="col-sm-3 col-form-label" for="simpleinput">Student's Email</label>
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Student Email</label>
                                         <div class="col-sm-9">
                                             <select class="form-control" id="newToDoEmail" required>
                                             <option selected disabled hidden></option>
