@@ -61,7 +61,7 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
 
     const findEmails = () => {
         if(student.indexOf(" ") > -1) {
-            studArray = student.split(" ")
+            let studArray = student.split(" ")
             setFiltEmails(studentList.filter(item => item.firstName === studArray[0] && item.lastName === studArray[1]).map(item => item.email))
         }
     }
