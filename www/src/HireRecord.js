@@ -49,37 +49,6 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
         return addOns
     }
 
-    const onChangeStud = (event) => {
-        setStudName(event.target.value);
-    }
-    const onChangeCode = (event) => {
-        setCode(event.target.value);
-    }
-    const onChangeInstr = (event) => {
-        setInstrument(event.target.value);
-    }
-    const onChangeBrand = (event) => {
-        setBrand(event.target.value);
-    }
-    const onChangeSize = (event) => {
-        setSize(event.target.value);
-    }
-    const onChangeRate = (event) => {
-        setRate(event.target.value);
-    }
-    const onChangeSerialNum = (event) => {
-        setSerialNum(event.target.value);
-    }
-    const onChangeOwner = (event) => {
-        setOwner(event.target.value);
-    }
-    const onChangeDue = (event) => {
-        setDue(event.target.value);
-    }
-    const onChangeNotes = (event) => {
-        setNotes(event.target.value);
-    }
-
 
     const editToggle = async (event) => {
         if(hireRecord.returned === "") {
@@ -188,7 +157,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Student Name </label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="name" id="editToDoName"
-                                                value={studName} onChange={onChangeStud} placeholder="name" />
+                                                value={studName} onChange={(e) => setStudName(e.target.value)} placeholder="name" />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -210,7 +179,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Code</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="code" id="editToDoCode" placeholder="code"
-                                                value={code} onChange={onChangeCode} />
+                                                value={code} onChange={(e) => setCode(e.target.value)} />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -220,7 +189,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Serial Number</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control nox" name="code" id="editToDoSerialNum" placeholder="serial number"
-                                                value={serialNum} onChange={onChangeSerialNum} />
+                                                value={serialNum} onChange={(e) => setSerialNum(e.target.value)} />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -231,7 +200,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Instrument</label>
                                         <div class="col-sm-9">
                                             <input class="form-control nox" type="text" name="code" id="editToDoInstrument" placeholder="instrument"
-                                                value={instrument} onChange={onChangeInstr} />
+                                                value={instrument} onChange={(e) => setInstrument(e.target.value)} />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -242,7 +211,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Brand</label>
                                         <div class="col-sm-9">
                                             <input class="form-control nox" type="text" name="brand" id="editToDoBrand" placeholder="brand"
-                                                value={brand} onChange={onChangeBrand} />
+                                                value={brand} onChange={(e) => setBrand(e.target.value)} />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -252,7 +221,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Size</label>
                                         <div class="col-sm-9">
                                             <input class="form-control nox" type="text" name="size" id="editToDoSize" placeholder="size"
-                                                value={size} onChange={onChangeSize} />
+                                                value={size} onChange={(e) => setSize(e.target.value)} />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -267,7 +236,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                                     <span class="input-group-text-white">$</span>
                                                 </div>
                                                 <input class="form-control nox" type="text" name="rate" id="editToDoRate" placeholder="rate"
-                                                value={rate} onChange={onChangeRate} />
+                                                value={rate} onChange={(e) => setRate(e.target.value)} />
                                             </div>
 
 
@@ -281,7 +250,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Owner</label>
                                         <div class="col-sm-9">
                                             <input class="form-control nox" type="text" name="owner" id="editToDoOwner" placeholder="owner"
-                                                value={owner} onChange={onChangeOwner} />
+                                                value={owner} onChange={(e) => setOwner(e.target.value)} />
                                         </div>
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
@@ -318,7 +287,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Due Date</label>
                                         <div class="col-md-4">
                                             <input class="form-control nox" id="editToDoDueDate" type="date" name="date"
-                                                placeholder="dd/mm/yyyy" value={dueDate} onChange={onChangeDue} />
+                                                placeholder="dd/mm/yyyy" value={dueDate} onChange={(e) => setDue(e.target.value)} />
                                         </div>
 
                                         <div class="col-sm-12 ">
@@ -330,7 +299,7 @@ function HireRecord({ deleteToDo, updateToDo, returnToDo, toDos, instOptionsList
                                         <label class="col-sm-3 col-form-label" for="simpleinput">Notes</label>
                                         <div class="col-md-9">
                                             <textarea class="form-control nox" id="editToDoNotes" type="text"  
-                                                placeholder=" "  rows="3" value={notes} onChange={onChangeNotes}> </textarea>
+                                                placeholder=" "  rows="3" value={notes} onChange={(e) => setNotes(e.target.value)}> </textarea>
                                         </div>
                                     </div>
                                     <div class="frame-wrap mt-4 mb-3  ">
