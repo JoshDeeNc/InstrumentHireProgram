@@ -26,6 +26,10 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     const [rate, setRate] = useState(locId === "newhire" ? '' : instrumentRecord.rate)
     const [owner, setOwner] = useState(locId === "newhire" ? '' : instrumentRecord.owner)
 
+    const studentConcat = studentList.map(item => item.firstName + " " + item.lastName)
+    const [filtEmails, setFiltEmails] = useState([])
+    const [student, setStudent] = useState('')
+
     function search(records) {
         if(instr != '') {
             const filtAddOns = instOptionsList.filter(item => item.instrumentTypeName === instr).map(item => item.addOns)
@@ -47,7 +51,6 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     }
 
     useEffect(() => {
-        console.log(code); // add whatever functions use new `college` value here.
         setAvailBrands(inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique))
         setAvailCodes(inventory.filter(item => item.type === instr && item.brand === brand).map(item => item.code).filter(unique))
         setRate(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.rate).filter(unique))
@@ -56,8 +59,16 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
         setSize(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.size).filter(unique))
     }, [instr, brand, code])
 
-    const studentConcat = studentList.map(item => item.firstName + " " + item.lastName)
-    const [student, setStudent] = useState('')
+    const findEmails = () => {
+        if(student.indexOf(" ") > -1) {
+            studArray = student.split(" ")
+            setFiltEmails(studentList.filter(item => item.firstName === studArray[0] && item.lastName === studArray[1]).map(item => item.email))
+        }
+    }
+
+    useEffect(() => {
+        findEmails()
+    }, [student])
 
     const add = async (event) => {
         var forms = document.getElementsByClassName('needs-validation')[0];
@@ -123,6 +134,20 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
                                         <div class="col-sm-12 ">
                                             <div class=" hr"></div>
                                         </div>
+                                    </div>
+                                    <div class=" form-group row">
+                                        <label class="col-sm-3 col-form-label" for="simpleinput">Student's Email</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" id="newToDoEmail" required>
+                                            <option selected disabled hidden></option>
+                                                    {filtEmails.map((item, index) => (
+                                                        <option>{item}</option>))}
+                                            </select>
+                                            <div class="invalid-feedback">  Please select the student's email</div>
+                                        </div> <div class="col-sm-12 ">
+                                            <div class=" hr"></div>
+                                        </div>
+                                        
                                     </div>
 
                                     <div class=" form-group row">
