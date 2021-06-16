@@ -47,23 +47,14 @@ function NewHire({ toDos, studentList, instInventory, instOptionsList, addToDo }
     }
 
     useEffect(() => {
-        console.log(instr); // add whatever functions use new `college` value here.
-        setAvailBrands(inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique))
-        //search(addOns)
-    }, [instr])
-
-    useEffect(() => {
-        console.log(brand); // add whatever functions use new `college` value here.
-        setAvailCodes(inventory.filter(item => item.type === instr && item.brand === brand).map(item => item.code).filter(unique))
-    }, [brand])
-
-    useEffect(() => {
         console.log(code); // add whatever functions use new `college` value here.
+        setAvailBrands(inventory.filter(item => item.type === instr).map(item => item.brand).filter(unique))
+        setAvailCodes(inventory.filter(item => item.type === instr && item.brand === brand).map(item => item.code).filter(unique))
         setRate(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.rate).filter(unique))
         setSerialNum(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.serialNum).filter(unique))
         setOwner(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.owner).filter(unique))
         setSize(inventory.filter(item => item.type === instr && item.brand === brand && item.code === code).map(item => item.size).filter(unique))
-    }, [code])
+    }, [instr, brand, code])
 
     const studentConcat = studentList.map(item => item.firstName + " " + item.lastName)
     const [student, setStudent] = useState('')
