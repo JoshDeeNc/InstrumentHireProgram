@@ -4,24 +4,16 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 
 function InstrumentList({ instInventory, toDos }) {
-  const [filter, setFilter] = useState('all');
-
-  const changeFilter = (newFilter) => {
-    setFilter(newFilter);
-  };
 
   const [qry, setQry] = useState("")
 
   function search() {
+    const columns = instInventory[0] && Object.keys(instInventory[0]);
+    console.log(columns)
     if (qry != "") {
       return instInventory.filter((row) => 
-      row.code.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.type.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.serialNum.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.brand.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.rate.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.owner.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.available.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      columns.some((column) => row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      )
     }
     else return instInventory
   }
