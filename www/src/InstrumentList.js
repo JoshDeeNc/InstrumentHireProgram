@@ -10,13 +10,14 @@ function InstrumentList({ instInventory, toDos }) {
   instInventory = instInventory.map(item => Object.assign({},item, {available : (item.available ? "Available" : "Hired to " + toDos.filter(hire => hire.returned === "" && hire.instrumentId === item.id)[0].name)}))
 
   function search() {
-    /*const columns = instInventory[0] && Object.keys(instInventory[0]);
+    const columns = instInventory[0] && Object.keys(instInventory[0]);
+    console.log(columns)
     if (qry != "") {
       return instInventory.filter((row) => 
       columns.some((column) => (row[column] && row[column].length > 0) && row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
       )
     }
-    else*/ return instInventory
+    else return instInventory
   }
 
   return (
