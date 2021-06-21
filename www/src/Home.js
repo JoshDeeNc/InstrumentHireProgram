@@ -8,7 +8,7 @@ import history from './history';
 
 function Home({ toDos, deleteToDo }) {
 
-  toDos = toDos.map(item => Object.assign({},item, {creation_date : new Date(item.creation_date).toLocaleDateString(), due : new Date(item.due).toLocaleDateString()}))
+  toDos = toDos.map(item => Object.assign({},item, {creation_date : new Date(item.creation_date).toLocaleDateString()}))
 
   const curHires = toDos.filter(item => item.returned === "")
   const overDues = toDos.filter(item => item.returned === "" && new Date(item.due) < new Date())
@@ -200,7 +200,7 @@ function Home({ toDos, deleteToDo }) {
                                   <td>{item.brand}</td>
                                   <td>${item.rate}</td>
                                   <td>{item.owner}</td>
-                                  <td>{item.due}</td>
+                                  <td>{new Date(item.due).toLocaleDateString()}</td>
                                   <td class="al-ctr">
                                     <Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link>
                                   </td>
@@ -282,7 +282,7 @@ function Home({ toDos, deleteToDo }) {
                             <tbody>
                               {search(overDues).map((item, index) => (
                                 <tr role="row" key={item.id}>
-                                  <td>{item.due}</td>
+                                  <td>{new Date(item.due).toLocaleDateString()}</td>
                                   <td class="al-ctr"> <span class="txt-red">{Math.floor((new Date().getTime() - new Date(item.due).getTime()) / (1000 * 60 * 60 * 24))}</span></td>
                                   <td>{item.name}</td>
                                   <td>{item.code}</td>
@@ -379,7 +379,7 @@ function Home({ toDos, deleteToDo }) {
                                   <td>{item.brand}</td>
                                   <td>${item.rate}</td>
                                   <td>{item.owner}</td>
-                                  <td>{item.due}</td>
+                                  <td>{new Date(item.due).toLocaleDateString()}</td>
                                   <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                                 </tr>
                               ))}
