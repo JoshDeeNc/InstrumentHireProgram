@@ -11,7 +11,7 @@ function OwnerList({ ownerList }) {
     const columns = ownerList[0] && Object.keys(ownerList[0]);
     if (qry != "") {
       return ownerList.filter((row) => 
-      columns.some((column) => row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      columns.some((column) => (row[column] && row[column].length > 0) && row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
       )
     }
     else return ownerList

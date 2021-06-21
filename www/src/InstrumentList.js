@@ -11,7 +11,7 @@ function InstrumentList({ instInventory, toDos }) {
     const columns = instInventory[0] && Object.keys(instInventory[0]);
     if (qry != "") {
       return instInventory.filter((row) => 
-      columns.some((column) => row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      columns.some((column) => (row[column] && row[column].length > 0) && row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
       )
     }
     else return instInventory
