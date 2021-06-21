@@ -4,11 +4,6 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 
 function StudentList({ studentList, deleteToDo, completeToDo }) {
-  const [filter, setFilter] = useState('all');
-
-  const changeFilter = (newFilter) => {
-    setFilter(newFilter);
-  };
 
   const [qry, setQry] = useState("")
 
@@ -17,7 +12,7 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
     console.log(columns)
     if (qry != "") {
       return studentList.filter((row) => 
-      columns.some((column) => row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      columns.some((column) => (row[column] && row[column].length > 0) && row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
       )
     }
     else return studentList
