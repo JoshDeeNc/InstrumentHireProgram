@@ -7,6 +7,8 @@ function InstrumentList({ instInventory, toDos }) {
 
   const [qry, setQry] = useState("")
 
+  instInventory = instInventory.forEach(item => item.available = (item.available ? "Available" : "Hired to " + toDos.filter(hire => hire.returned === "" && hire.instrumentId === item.id)[0].name))
+
   function search() {
     const columns = instInventory[0] && Object.keys(instInventory[0]);
     if (qry != "") {
@@ -66,7 +68,7 @@ function InstrumentList({ instInventory, toDos }) {
                             <td>{item.brand}</td>
                             <td>${item.rate}</td>
                             <td>{item.owner}</td>
-                            {item.available ? (<td>Available</td>) : (<td>Hired to {toDos.filter(hire => hire.returned === "" && hire.instrumentId === item.id)[0].name}</td>)}
+                            <td>{item.available}</td>
                             <td class="al-ctr"><Link to={`/instrumentrecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                           </tr>
                         ))}
