@@ -14,6 +14,7 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
 
   function search() {
     const columns = studentList[0] && Object.keys(studentList[0]);
+    console.log(columns)
     if (qry != "") {
       return studentList.filter((row) => 
       columns.some((column) => row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
