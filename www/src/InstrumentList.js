@@ -7,7 +7,7 @@ function InstrumentList({ instInventory, toDos }) {
 
   const [qry, setQry] = useState("")
 
-  instInventory = instInventory.map(item => item.available = (item.available ? "Available" : "Hired to " + toDos.filter(hire => hire.returned === "" && hire.instrumentId === item.id)[0].name))
+  instInventory = instInventory.map(item => Object.assign({},item, {available : (item.available ? "Available" : "Hired to " + toDos.filter(hire => hire.returned === "" && hire.instrumentId === item.id)[0].name)}))
 
   function search() {
     /*const columns = instInventory[0] && Object.keys(instInventory[0]);
