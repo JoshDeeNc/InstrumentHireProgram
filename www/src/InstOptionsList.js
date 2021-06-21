@@ -15,9 +15,11 @@ function InstOptionsList({ instOptionsList }) {
   console.log(instOptionsList)
 
   function search() {
+    const columns = instOptionsList[0] && Object.keys(instOptionsList[0]);
     if (qry != "") {
       return instOptionsList.filter((row) => 
-      row.instrumentTypeName.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      columns.some((column) => row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      )
     }
     else return instOptionsList
   }

@@ -13,12 +13,11 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
   const [qry, setQry] = useState("")
 
   function search() {
+    const columns = studentList[0] && Object.keys(studentList[0]);
     if (qry != "") {
       return studentList.filter((row) => 
-      row.firstName.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.lastName.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.phone.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.email.toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      columns.some((column) => row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      )
     }
     else return studentList
   }

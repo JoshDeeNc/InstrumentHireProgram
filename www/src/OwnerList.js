@@ -4,20 +4,15 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 
 function OwnerList({ ownerList }) {
-  const [filter, setFilter] = useState('all');
-
-  const changeFilter = (newFilter) => {
-    setFilter(newFilter);
-  };
 
   const [qry, setQry] = useState("")
 
   function search() {
+    const columns = ownerList[0] && Object.keys(ownerList[0]);
     if (qry != "") {
       return ownerList.filter((row) => 
-      row.name.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.phone.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.email.toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      columns.some((column) => row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      )
     }
     else return ownerList
   }

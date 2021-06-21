@@ -9,7 +9,6 @@ function InstrumentList({ instInventory, toDos }) {
 
   function search() {
     const columns = instInventory[0] && Object.keys(instInventory[0]);
-    console.log(columns)
     if (qry != "") {
       return instInventory.filter((row) => 
       columns.some((column) => row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)

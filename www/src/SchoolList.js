@@ -13,11 +13,11 @@ function SchoolList({ schoolList }) {
   const [qry, setQry] = useState("")
 
   function search() {
+    const columns = schoolList[0] && Object.keys(schoolList[0]);
     if (qry != "") {
       return schoolList.filter((row) => 
-      row.name.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.phone.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-      row.email.toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      columns.some((column) => row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      )
     }
     else return schoolList
   }
