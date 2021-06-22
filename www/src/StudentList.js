@@ -12,8 +12,8 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
   function search() {
     console.log(columns)
     if (qry != "") {
-      return studentList.filter((row) => 
-      searchColumns.some((column) => (row[column] && row[column].length > 0) && row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      return studentList.filter((row) =>
+        searchColumns.some((column) => (row[column] && row[column].length > 0) && row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
       )
     }
     else return studentList
@@ -22,12 +22,12 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
   return (
     <div className="ToDo">
 
-<div class="subheader">
-                    <h1 class="subheader-title">
-                    Student List
+      <div class="subheader">
+        <h1 class="subheader-title">
+          Student List
 
-                    </h1>
-                </div>
+        </h1>
+      </div>
       <Row>
         <Col xs="12" className="mt-1 mb-1">
 
@@ -36,15 +36,21 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
               <div id="panel-1" class="panel">
                 <div class="panel-hdr-dsp    mb-3">
                   <h2>Student List</h2>
-                    <Link to="/newstudent"><Button color="primary" className="ml-1">New Student</Button></Link>
+                  <Link to="/newstudent"><Button color="primary" className="ml-1">New Student</Button></Link>
 
                 </div>
                 <div class="panel-container show">
                   <div class="panel-content">
-                  <div class="row mb-2 mt-n3 ">  
-                          <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
-                         </div>
-                         {columns && columns.map((column) => <label><input type="checkbox" checked={searchColumns.includes(column)} />{column}</label>)} 
+                    <div class="row mb-2 mt-n3 ">
+                      <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                      </div>
+                      {columns && columns.map((column) =>
+                        <label><input type="checkbox" checked={searchColumns.includes(column)}
+                          onChange={(e) => {
+                            const checked = searchColumns.includes(column);
+                            setSearchColumns(prev => checked ? prev.filter(sc => sc !== column) : [...prev, column])
+                          }
+                      } />{column}</label>)}
                     </div>
                     <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                       <thead>
