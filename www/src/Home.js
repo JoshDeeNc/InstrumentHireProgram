@@ -8,7 +8,10 @@ import history from './history';
 
 function Home({ toDos, deleteToDo }) {
 
-  toDos = toDos.map(item => Object.assign({}, item, { creation_date: new Date(item.creation_date).toLocaleDateString()}))
+  toDos = toDos.map(item => Object.assign({}, item, { creation_date: new Date(item.creation_date).toLocaleDateString(),
+                                                      due: new Date(item.due).toLocaleDateString(),
+                                                      returned: (item.returned === "" ? "" : new Date(item.due).toLocaleDateString())
+                                                      }))
 
   const curHires = toDos.filter(item => item.returned === "")
   const overDues = toDos.filter(item => item.returned === "" && new Date(item.due) < new Date())
@@ -23,14 +26,14 @@ function Home({ toDos, deleteToDo }) {
     if (qry != "") {
       console.log(qry)
       records = records.filter((row) => row.creation_date.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-        new Date(row.returned).toLocaleDateString().indexOf(qry.toLowerCase()) > -1 ||
+        row.returned.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         row.code.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         row.name.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         row.instrument.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         row.brand.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         row.rate.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         row.owner.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-        new Date(row.due).toLocaleDateString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+        row.due.toLowerCase().indexOf(qry.toLowerCase()) > -1)
     }
     if (filtDates.length > 0 && dtRange) {
       console.log(filtDates)
@@ -212,7 +215,7 @@ function Home({ toDos, deleteToDo }) {
                                   <td>{item.brand}</td>
                                   <td>${item.rate}</td>
                                   <td>{item.owner}</td>
-                                  <td>{new Date(item.due).toLocaleDateString()}</td>
+                                  <td>{item.due}</td>
                                   <td class="al-ctr">
                                     <Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link>
                                   </td>
@@ -294,7 +297,7 @@ function Home({ toDos, deleteToDo }) {
                             <tbody>
                               {search(overDues).map((item, index) => (
                                 <tr role="row" key={item.id}>
-                                  <td>{new Date(item.due).toLocaleDateString()}</td>
+                                  <td>{item.due}</td>
                                   <td class="al-ctr"> <span class="txt-red">{Math.floor((new Date().getTime() - new Date(item.due).getTime()) / (1000 * 60 * 60 * 24))}</span></td>
                                   <td>{item.name}</td>
                                   <td>{item.code}</td>
@@ -383,7 +386,7 @@ function Home({ toDos, deleteToDo }) {
                             <tbody>
                               {search(returnedHires).map((item, index) => (
                                 <tr role="row" key={item.id}>
-                                  <td>{new Date(item.returned).toLocaleDateString()}</td>
+                                  <td>{item.returned}</td>
                                   <td>{item.creation_date}</td>
                                   <td>{item.name}</td>
                                   <td>{item.code}</td>
@@ -391,7 +394,7 @@ function Home({ toDos, deleteToDo }) {
                                   <td>{item.brand}</td>
                                   <td>${item.rate}</td>
                                   <td>{item.owner}</td>
-                                  <td>{new Date(item.due).toLocaleDateString()}</td>
+                                  <td>{item.due}</td>
                                   <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                                 </tr>
                               ))}
