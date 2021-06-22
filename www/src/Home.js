@@ -22,8 +22,6 @@ function Home({ toDos, deleteToDo }) {
   })
   const returnedHires = toDos.filter(item => item.returned !== "")
 
-  const dateSearches = ["hired", "due", "returned"]
-
   const [qry, setQry] = useState("")
   const [filtDates, setFiltDates] = useState([])
   const [filtOvDates, setFiltOvDates] = useState([])
@@ -38,26 +36,52 @@ function Home({ toDos, deleteToDo }) {
         searchColumns.some((column) => (row[column] && row[column].length > 0) && row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
       )
     }
+
     if (filtDates.length > 0 && dtRange) {
       console.log(filtDates)
       records = records.filter(function (item) {
-        var parts = item.creation_date.split("/")
+        var parts = []
+        if(document.getElementById("dueBox").checked) {
+          parts = item.due.split("/")
+        }
+        else if(document.getElementById("returnedBox").checked) {
+          parts = item.returned.split("/")
+        }
+        else {
+          parts = item.creation_date.split("/")
+        }
         var created = new Date(parts[2], parts[1] - 1, parts[0])
         return created >= new Date(filtDates[0]) && created <= new Date(filtDates[1])
       })
     }
     if (filtOvDates.length > 0 && ovDtRange) {
-      console.log(filtOvDates)
       records = records.filter(function (item) {
-        var parts = item.creation_date.split("/")
+        var parts = []
+        if(document.getElementById("dueBox").checked) {
+          parts = item.due.split("/")
+        }
+        else if(document.getElementById("returnedBox").checked) {
+          parts = item.returned.split("/")
+        }
+        else {
+          parts = item.creation_date.split("/")
+        }
         var created = new Date(parts[2], parts[1] - 1, parts[0])
         return created >= new Date(filtOvDates[0]) && created <= new Date(filtOvDates[1])
       })
     }
     if (filtRetDates.length > 0 && retDtRange) {
-      console.log(filtRetDates)
       records = records.filter(function (item) {
-        var parts = item.creation_date.split("/")
+        var parts = []
+        if(document.getElementById("dueBox").checked) {
+          parts = item.due.split("/")
+        }
+        else if(document.getElementById("returnedBox").checked) {
+          parts = item.returned.split("/")
+        }
+        else {
+          parts = item.creation_date.split("/")
+        }
         var created = new Date(parts[2], parts[1] - 1, parts[0])
         return created >= new Date(filtRetDates[0]) && created <= new Date(filtRetDates[1])
       })
@@ -185,9 +209,12 @@ function Home({ toDos, deleteToDo }) {
                             <div class="row dt-range " id="dt-range">
                               <div class="col-12">
                                 <div>
-                                {dateSearches.map((item, index) => (
-                                    <input type="radio" id={"dateRadio" + index} value={item}/>
-                                ))}
+                                  <input type="radio" id="hiredBox" name="dateSearching" value="" />
+                                  <label for="hiredBox">hired date</label><br />
+                                  <input type="radio" id="dueBox" name="dateSearching" value="due" />
+                                  <label for="dueBox">due date</label><br />
+                                  <input type="radio" id="returnedBox" name="dateSearching" value="returned" />
+                                  <label for="returnedBox">returned date</label>
                                 </div>
 
                                 <div class="form-group row">
