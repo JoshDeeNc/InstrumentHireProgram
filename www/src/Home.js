@@ -296,6 +296,13 @@ function Home({ toDos, deleteToDo }) {
 
                           <div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setOvDtRange(!ovDtRange)} className="btn-sm "> Dates</Button>
                           </div>
+                          {columns && columns.map((column) =>
+                            <label><input type="checkbox" checked={searchColumns.includes(column)}
+                              onChange={(e) => {
+                                const checked = searchColumns.includes(column);
+                                setSearchColumns(prev => checked ? prev.filter(sc => sc !== column) : [...prev, column])
+                              }
+                          } />{column}</label>)}
                           <div class="col-lg-5 col-md-7   ">
                             <div class="row dt-range " id="dt-rangeOv">
                               <div class="col-12">
@@ -383,6 +390,13 @@ function Home({ toDos, deleteToDo }) {
 
                           <div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setRetDtRange(!retDtRange)} className="btn-sm "> Dates</Button>
                           </div>
+                          {columns && columns.map((column) =>
+                            <label><input type="checkbox" checked={searchColumns.includes(column)}
+                              onChange={(e) => {
+                                const checked = searchColumns.includes(column);
+                                setSearchColumns(prev => checked ? prev.filter(sc => sc !== column) : [...prev, column])
+                              }
+                          } />{column}</label>)}
                           <div class="col-lg-5 col-md-7    ">
                             <div class="row dt-range " id="dt-rangeRet">
                               <div class="col-12">
