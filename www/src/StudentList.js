@@ -10,7 +10,6 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
   const columns = ["firstName","lastName","school","email","phone"]
 
   function search() {
-    console.log(columns)
     if (qry != "") {
       return studentList.filter((row) =>
         searchColumns.some((column) => (row[column] && row[column].length > 0) && row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
