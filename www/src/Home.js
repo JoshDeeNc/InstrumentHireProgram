@@ -36,6 +36,7 @@ function Home({ toDos, deleteToDo }) {
       console.log(filtDates)
       records = records.filter(function(item) {
         var datefitting = item.creation_date.split("/").join("-")
+        console.log(datefitting)
         console.log(new Date(datefitting))
         return new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1])})
     }
