@@ -184,12 +184,11 @@ function Home({ toDos, deleteToDo }) {
                           <div class="col-lg-5  col-md-7     ">
                             <div class="row dt-range " id="dt-range">
                               <div class="col-12">
+                                <div>
                                 {dateSearches.map((item, index) => (
-                                  <div>
-                                    <input type="radio" id={"dateRadio" + index} />
-                                    <label>{item}</label>
-                                  </div>
+                                    <input type="radio" id={"dateRadio" + index}>{item}</input>
                                 ))}
+                                </div>
 
                                 <div class="form-group row">
                                   <div class="col-md-5  ">
