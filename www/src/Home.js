@@ -8,8 +8,6 @@ import history from './history';
 
 function Home({ toDos, deleteToDo }) {
 
-  toDos = toDos.map(item => Object.assign({},item, {creation_date : new Date(item.creation_date).toLocaleDateString()}))
-
   const curHires = toDos.filter(item => item.returned === "")
   const overDues = toDos.filter(item => item.returned === "" && new Date(item.due) < new Date())
   const returnedHires = toDos.filter(item => item.returned != "")
@@ -34,21 +32,15 @@ function Home({ toDos, deleteToDo }) {
     }
     if (filtDates.length > 0 && dtRange) {
       console.log(filtDates)
-      records = records.filter(function(item) {
-        var datefitting = item.creation_date.split("/").join("-")
-        console.log(datefitting)
-        console.log(new Date(datefitting))
-        return new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1])})
+      records = records.filter(item => new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1]))
     }
     if (filtOvDates.length > 0 && ovDtRange) {
-      records = records.filter(function(item) {
-        var datefitting = item.creation_date.split("/").join("-")
-        return new Date(datefitting) >= new Date(filtOvDates[0]) && new Date(datefitting) <= new Date(filtOvDates[1])})
+      console.log(filtOvDates)
+      records = records.filter(item => new Date(item.creation_date) >= new Date(filtOvDates[0]) && new Date(item.creation_date) <= new Date(filtOvDates[1]))
     }
     if (filtRetDates.length > 0 && retDtRange) {
-      records = records.filter(function(item) {
-        var datefitting = item.creation_date.split("/").join("-")
-        return new Date(datefitting) >= new Date(filtRetDates[0]) && new Date(datefitting) <= new Date(filtRetDates[1])})
+      console.log(filtRetDates)
+      records = records.filter(item => new Date(item.creation_date) >= new Date(filtRetDates[0]) && new Date(item.creation_date) <= new Date(filtRetDates[1]))
     }
     console.log(records)
     return records
@@ -199,7 +191,7 @@ function Home({ toDos, deleteToDo }) {
                             <tbody>
                               {search(curHires).map((item, index) => (
                                 <tr role="row" key={item.id}>
-                                  <td>{item.creation_date}</td>
+                                  <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                   <td> {item.name}</td>
                                   <td>{item.code}</td>
                                   <td>{item.instrument}</td>
@@ -295,7 +287,7 @@ function Home({ toDos, deleteToDo }) {
                                   <td>{item.instrument}</td>
                                   <td>{item.brand}</td>
                                   <td>${item.rate}</td>
-                                  <td>{item.creation_date}</td>
+                                  <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                   <td>{item.owner}</td>
                                   <td class="al-ctr"><Link to={`/hirerecord/${item.id}`}><i class="fal fa-2x fa-arrow-circle-right float-right"></i></Link></td>
                                 </tr>
@@ -378,7 +370,7 @@ function Home({ toDos, deleteToDo }) {
                               {search(returnedHires).map((item, index) => (
                                 <tr role="row" key={item.id}>
                                   <td>{new Date(item.returned).toLocaleDateString()}</td>
-                                  <td>{item.creation_date}</td>
+                                  <td>{new Date(item.creation_date).toLocaleDateString()}</td>
                                   <td>{item.name}</td>
                                   <td>{item.code}</td>
                                   <td>{item.instrument}</td>
