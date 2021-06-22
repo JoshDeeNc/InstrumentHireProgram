@@ -123,6 +123,11 @@ function Home({ toDos, deleteToDo }) {
     search(returnedHires)
   }
 
+  const calcOv = (dt) => {
+      var parts = dt.split("/")
+      return new Date(parts[2], parts[1]-1, parts[0]).getTime()
+  }
+
 
   return (
     <div className="ToDo">
@@ -298,7 +303,7 @@ function Home({ toDos, deleteToDo }) {
                               {search(overDues).map((item, index) => (
                                 <tr role="row" key={item.id}>
                                   <td>{item.due}</td>
-                                  <td class="al-ctr"> <span class="txt-red">{Math.floor((new Date().getTime() - new Date(item.due).getTime()) / (1000 * 60 * 60 * 24))}</span></td>
+                                  <td class="al-ctr"> <span class="txt-red">{Math.floor((new Date().getTime() - calcOv(item.due)) / (1000 * 60 * 60 * 24))}</span></td>
                                   <td>{item.name}</td>
                                   <td>{item.code}</td>
                                   <td>{item.instrument}</td>
