@@ -23,7 +23,7 @@ function Home({ toDos, deleteToDo }) {
   const [filtRetDates, setFiltRetDates] = useState([])
 
   const [searchColumns, setSearchColumns] = useState([])
-  const columns = instInventory[0] && Object.keys(instInventory[0]);
+  const columns = toDos[0] && Object.keys(toDos[0]);
 
   function search(records) {
     if (qry != "") {
