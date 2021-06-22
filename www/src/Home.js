@@ -14,8 +14,12 @@ function Home({ toDos, deleteToDo }) {
                                                       }))
 
   const curHires = toDos.filter(item => item.returned === "")
-  const overDues = toDos.filter(item => item.returned === "" && new Date(item.due) < new Date())
-  const returnedHires = toDos.filter(item => item.returned != "")
+  const overDues = curHires.filter(function(item) {
+      var parts = item.due.split("/")
+      var created = new Date(parts[2], parts[1]-1, parts[0])
+      return new Date(created) < new Date()
+  })
+  const returnedHires = toDos.filter(item => item.returned !== "")
 
   const [qry, setQry] = useState("")
   const [filtDates, setFiltDates] = useState([])
