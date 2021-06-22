@@ -50,7 +50,7 @@ function Home({ toDos, deleteToDo }) {
         else {
           parts = item.creation_date.split("/")
         }
-        var created = new Date(parts[2], parts[1] - 1, parts[0])
+        var created = new Date(parts[2], parts[1], parts[0])
         return created >= new Date(filtDates[0]) && created <= new Date(filtDates[1])
       })
     }
@@ -66,7 +66,7 @@ function Home({ toDos, deleteToDo }) {
         else {
           parts = item.creation_date.split("/")
         }
-        var created = new Date(parts[2], parts[1] - 1, parts[0])
+        var created = new Date(parts[2], parts[1], parts[0])
         return created >= new Date(filtOvDates[0]) && created <= new Date(filtOvDates[1])
       })
     }
@@ -82,7 +82,7 @@ function Home({ toDos, deleteToDo }) {
         else {
           parts = item.creation_date.split("/")
         }
-        var created = new Date(parts[2], parts[1] - 1, parts[0])
+        var created = new Date(parts[2], parts[1], parts[0])
         return created >= new Date(filtRetDates[0]) && created <= new Date(filtRetDates[1])
       })
     }
