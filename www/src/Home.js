@@ -22,7 +22,7 @@ function Home({ toDos, deleteToDo }) {
   function search(records) {
     if (qry != "") {
       console.log(qry)
-      records = records.filter((row) => new Date(row.creation_date).toLocaleDateString().indexOf(qry.toLowerCase()) > -1 ||
+      records = records.filter((row) => row.creation_date.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         new Date(row.returned).toLocaleDateString().indexOf(qry.toLowerCase()) > -1 ||
         row.code.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
         row.name.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
