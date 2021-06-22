@@ -27,8 +27,8 @@ function Home({ toDos, deleteToDo }) {
   const [filtOvDates, setFiltOvDates] = useState([])
   const [filtRetDates, setFiltRetDates] = useState([])
 
-  const [searchColumns, setSearchColumns] = useState(["creation_date", "name", "instrument", "brand", "rate", "owner", "due"])
-  const columns = ["creation_date", "name", "instrument", "brand", "size", "serialNum", "returned", "rate", "owner", "due"];
+  const [searchColumns, setSearchColumns] = useState(["name", "code", "instrument", "brand", "rate", "owner"])
+  const columns = ["name", "code", "instrument", "brand", "size", "serialNum", "rate", "owner"];
 
   function search(records) {
     if (qry != "") {
