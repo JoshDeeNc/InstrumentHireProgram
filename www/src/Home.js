@@ -22,18 +22,14 @@ function Home({ toDos, deleteToDo }) {
   const [filtOvDates, setFiltOvDates] = useState([])
   const [filtRetDates, setFiltRetDates] = useState([])
 
+  const [searchColumns, setSearchColumns] = useState([])
+  const columns = instInventory[0] && Object.keys(instInventory[0]);
+
   function search(records) {
     if (qry != "") {
-      console.log(qry)
-      records = records.filter((row) => row.creation_date.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-        row.returned.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-        row.code.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-        row.name.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-        row.instrument.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-        row.brand.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-        row.rate.toString().toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-        row.owner.toLowerCase().indexOf(qry.toLowerCase()) > -1 ||
-        row.due.toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      records = records.filter((row) =>
+        columns.some((column) => (row[column] && row[column].length > 0) && row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      )
     }
     if (filtDates.length > 0 && dtRange) {
       console.log(filtDates)
