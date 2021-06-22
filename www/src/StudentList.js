@@ -7,7 +7,7 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
 
   const [qry, setQry] = useState("")
   const [searchColumns, setSearchColumns] = useState([])
-  const columns = studentList[0] && Object.keys(studentList[0]);
+  const columns = ["firstName","lastName","school","email","phone"]
 
   function search() {
     console.log(columns)
