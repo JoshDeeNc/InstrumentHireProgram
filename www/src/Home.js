@@ -186,7 +186,7 @@ function Home({ toDos, deleteToDo }) {
                               <div class="col-12">
                                 <div>
                                 {dateSearches.map((item, index) => (
-                                    <input type="radio" id={"dateRadio" + index}>{item}</input>
+                                    <input type="radio" id={"dateRadio" + index} value={item}/>
                                 ))}
                                 </div>
 
