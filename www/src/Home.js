@@ -35,7 +35,8 @@ function Home({ toDos, deleteToDo }) {
     if (filtDates.length > 0 && dtRange) {
       console.log(filtDates)
       records = records.filter(function(item) {
-        console.log(new Date(item.creation_date))
+        item.creation_date = new Date(item.creation_date.split("/").join("-"))
+        console.log(item.creation_date)
         return new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1])})
     }
     if (filtOvDates.length > 0 && ovDtRange) {
