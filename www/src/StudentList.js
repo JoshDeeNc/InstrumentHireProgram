@@ -6,13 +6,14 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 function StudentList({ studentList, deleteToDo, completeToDo }) {
 
   const [qry, setQry] = useState("")
+  const [searchColumns, setSearchColumns] = useState([])
+  const columns = studentList[0] && Object.keys(studentList[0]);
 
   function search() {
-    const columns = studentList[0] && Object.keys(studentList[0]);
     console.log(columns)
     if (qry != "") {
       return studentList.filter((row) => 
-      columns.some((column) => (row[column] && row[column].length > 0) && row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+      searchColumns.some((column) => (row[column] && row[column].length > 0) && row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
       )
     }
     else return studentList
@@ -42,7 +43,8 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
                   <div class="panel-content">
                   <div class="row mb-2 mt-n3 ">  
                           <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
-                         </div> 
+                         </div>
+                         {columns && columns.map((column) => <label><input type="checkbox" checked={searchColumns.includes(column)} />{column}</label>)} 
                     </div>
                     <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                       <thead>
