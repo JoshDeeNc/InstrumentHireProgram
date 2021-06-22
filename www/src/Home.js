@@ -34,15 +34,27 @@ function Home({ toDos, deleteToDo }) {
     }
     if (filtDates.length > 0 && dtRange) {
       console.log(filtDates)
-      records = records.filter(item => new Date(item.creation_date) >= new Date(filtDates[0]) && new Date(item.creation_date) <= new Date(filtDates[1]))
+      records = records.filter(function(item) {
+        var parts = item.creation_date.split("/")
+        var created = new Date(parts[2], parts[1]-1, parts[0])
+        return created >= new Date(filtDates[0]) && created <= new Date(filtDates[1])
+      })
     }
     if (filtOvDates.length > 0 && ovDtRange) {
       console.log(filtOvDates)
-      records = records.filter(item => new Date(item.creation_date) >= new Date(filtOvDates[0]) && new Date(item.creation_date) <= new Date(filtOvDates[1]))
+      records = records.filter(function(item) {
+        var parts = item.creation_date.split("/")
+        var created = new Date(parts[2], parts[1]-1, parts[0])
+        return created >= new Date(filtOvDates[0]) && created <= new Date(filtOvDates[1])
+      })
     }
     if (filtRetDates.length > 0 && retDtRange) {
       console.log(filtRetDates)
-      records = records.filter(item => new Date(item.creation_date) >= new Date(filtRetDates[0]) && new Date(item.creation_date) <= new Date(filtRetDates[1]))
+      records = records.filter(function(item) {
+        var parts = item.creation_date.split("/")
+        var created = new Date(parts[2], parts[1]-1, parts[0])
+        return created >= new Date(filtRetDates[0]) && created <= new Date(filtRetDates[1])
+      })
     }
     console.log(records)
     return records
