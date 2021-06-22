@@ -490,6 +490,7 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
   text-transform: uppercase;
 }
 
+.filter-tab {background: #ffffff;     margin: 0; padding: 0 15px;}
 .bdr {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }

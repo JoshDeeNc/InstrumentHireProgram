@@ -24,8 +24,6 @@ function Home({ toDos, deleteToDo }) {
 
   const [qry, setQry] = useState("")
   const [filtDates, setFiltDates] = useState([])
-  const [filtOvDates, setFiltOvDates] = useState([])
-  const [filtRetDates, setFiltRetDates] = useState([])
 
   const [searchColumns, setSearchColumns] = useState(["name", "code", "instrument", "brand", "rate", "owner"])
   const columns = ["name", "code", "instrument", "brand", "size", "serialNum", "rate", "owner"];
@@ -54,38 +52,6 @@ function Home({ toDos, deleteToDo }) {
         return created >= new Date(filtDates[0]) && created <= new Date(filtDates[1])
       })
     }
-    if (filtOvDates.length > 0 && ovDtRange) {
-      records = records.filter(function (item) {
-        var parts = []
-        if(document.getElementById("dueBox").checked) {
-          parts = item.due.split("/")
-        }
-        else if(document.getElementById("returnedBox").checked) {
-          parts = item.returned.split("/")
-        }
-        else {
-          parts = item.creation_date.split("/")
-        }
-        var created = new Date(parts[2], parts[1] - 1, parts[0])
-        return created >= new Date(filtOvDates[0]) && created <= new Date(filtOvDates[1])
-      })
-    }
-    if (filtRetDates.length > 0 && retDtRange) {
-      records = records.filter(function (item) {
-        var parts = []
-        if(document.getElementById("dueBox").checked) {
-          parts = item.due.split("/")
-        }
-        else if(document.getElementById("returnedBox").checked) {
-          parts = item.returned.split("/")
-        }
-        else {
-          parts = item.creation_date.split("/")
-        }
-        var created = new Date(parts[2], parts[1] - 1, parts[0])
-        return created >= new Date(filtRetDates[0]) && created <= new Date(filtRetDates[1])
-      })
-    }
     console.log(records)
     return records
   }
@@ -94,16 +60,6 @@ function Home({ toDos, deleteToDo }) {
   useEffect(() => {
     setDateRange(dtRange)
   }, [dtRange]);
-
-  const [ovDtRange, setOvDtRange] = useState(false);
-  useEffect(() => {
-    setDateRangeOv(ovDtRange)
-  }, [ovDtRange]);
-
-  const [retDtRange, setRetDtRange] = useState(false);
-  useEffect(() => {
-    setDateRangeRet(retDtRange)
-  }, [retDtRange]);
 
   const setDateRange = (dtRange) => {
     var a = document.getElementById('dt-range');
@@ -115,39 +71,9 @@ function Home({ toDos, deleteToDo }) {
     }
   }
 
-  const setDateRangeOv = (ovDtRange) => {
-    var a = document.getElementById('dt-rangeOv');
-    if (ovDtRange == true) {
-      a.classList.remove('dt-range');
-    }
-    else {
-      a.classList.add('dt-range');
-    }
-  }
-
-  const setDateRangeRet = (retDtRange) => {
-    var a = document.getElementById('dt-rangeRet');
-    if (retDtRange == true) {
-      a.classList.remove('dt-range');
-    }
-    else {
-      a.classList.add('dt-range');
-    }
-  }
-
   const filterDates = () => {
     setFiltDates([document.getElementById("startDate").value, document.getElementById("endDate").value])
-    search(curHires)
-  }
-
-  const filterDates2 = () => {
-    setFiltOvDates([document.getElementById("startDateOv").value, document.getElementById("endDateOv").value])
-    search(overDues)
-  }
-
-  const filterDates3 = () => {
-    setFiltRetDates([document.getElementById("startDateRet").value, document.getElementById("endDateRet").value])
-    search(returnedHires)
+    //search(curHires)
   }
 
   const calcOv = (dt) => {
@@ -166,48 +92,37 @@ function Home({ toDos, deleteToDo }) {
         <Col xs="12" className="mt-1 mb-1">
           <ul class="nav nav-tabs nav-justified" role="tablist">
             <li class="nav-item ">
-              <a class="nav-link h2 active " data-toggle="tab" href="#tab_borders_icons-1" role="tab" aria-selected="true"><i class="fal fa-guitar mr-1"></i> Current Hires</a>
+              <a class="nav-link h2 active " data-toggle="tab" href="#currentHires" role="tab" aria-selected="true"><i class="fal fa-guitar mr-1"></i> Current Hires</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-2" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Overdue Hires<span class="badge badge-icon bg-red pos-top ml-1 mt-2">{overDues.length}</span> </a>
+              <a class="nav-link h2" data-toggle="tab" href="#ovderdueHires" role="tab" aria-selected="false"><i class="fal fa-bell-on mr-1"></i> Overdue Hires<span class="badge badge-icon bg-red pos-top ml-1 mt-2">{overDues.length}</span> </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-3" role="tab" aria-selected="false"><i class="fal fa-hand-holding-box mr-1"></i> Returned Hires</a>
+              <a class="nav-link h2" data-toggle="tab" href="#returnedHires" role="tab" aria-selected="false"><i class="fal fa-hand-holding-box mr-1"></i> Returned Hires</a>
             </li>
-
-
           </ul>
-
+              
           <div class="tab-content border border-top-0  ">
-            <div class="tab-pane fade active show" id="tab_borders_icons-1" role="tabpanel">
-              <div class="row">
-                <div class="col-xl-12">
-                  <div id="panel-1" class="panel mb-0">
-                    <div class="panel-hdr">
-                      <h2> Instrument Hires</h2>
-                      <Link to="/newhire"><Button className="btn-sm  "> Add Hire </Button></Link>
+          <div class="row filter-tab p-0 pb-2  ">
+             
+                <div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                </div>
+                <div class="col-md-8   text-right">
+                  <Button onClick={(e) => setDtRange(!dtRange)} className="btn-sm mt-2 "> Advanced Search</Button>
+                </div>
 
-                    </div>
-                    <div class="panel-container show">
-                      <div class="panel-content">
-                        <div class="row mb-2 mt-n3 ">
-
-                          <div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
-                          </div>
-
-                          <div class="col-md-1   text-right">
-                            <Button onClick={(e) => setDtRange(!dtRange)} className="btn-sm mt-2 "> Dates</Button>
-                          </div>
-                          {columns && columns.map((column) =>
-                            <label><input type="checkbox" checked={searchColumns.includes(column)}
-                              onChange={(e) => {
-                                const checked = searchColumns.includes(column);
-                                setSearchColumns(prev => checked ? prev.filter(sc => sc !== column) : [...prev, column])
-                              }
-                          } />{column}</label>)}
-                          <div class="col-lg-5  col-md-7     ">
-                            <div class="row dt-range " id="dt-range">
+                <div class="  col-12     ">
+                            <div class="  dt-range " id="dt-range">
                               <div class="col-12">
+                    {columns && columns.map((column, index) => (
+                      <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" id={"checkBox"+index} checked={searchColumns.includes(column)}
+                          onChange={(e) => {
+                            const checked = searchColumns.includes(column);
+                            setSearchColumns(prev => checked ? prev.filter(sc => sc !== column) : [...prev, column])
+                          }
+                          } /><label class="custom-control-label" for={"checkBox"+index}>{column}</label>
+                        </div>))}
                                 <div>
                                   <input type="radio" id="hiredBox" name="dateSearching" value="" />
                                   <label for="hiredBox">hired date</label><br />
@@ -235,8 +150,21 @@ function Home({ toDos, deleteToDo }) {
                             </div>
 
                           </div>
+              
+            </div>
 
-                        </div>
+            <div class="tab-pane fade active show" id="currentHires" role="tabpanel">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div id="panel-1" class="panel mb-0">
+                    <div class="panel-hdr">
+                      <h2> Instrument Hires</h2>
+                      <Link to="/newhire"><Button className="btn-sm  "> Add Hire </Button></Link>
+
+                    </div>
+                    <div class="panel-container show">
+                      <div class="panel-content">
+                    
                         <div class="table-responsive">
                           <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                             <thead>
@@ -280,7 +208,7 @@ function Home({ toDos, deleteToDo }) {
                 </div>
               </div>
             </div>
-            <div class="tab-pane fade" id="tab_borders_icons-2" role="tabpanel">
+            <div class="tab-pane fade" id="ovderdueHires" role="tabpanel">
               <div class="row">
                 <div class="col-xl-12">
                   <div id="panel-1" class="panel mb-0">
@@ -289,48 +217,6 @@ function Home({ toDos, deleteToDo }) {
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
-                        <div class="row mb-2 mt-n3 ">
-
-                          <div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
-                          </div>
-
-                          <div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setOvDtRange(!ovDtRange)} className="btn-sm "> Dates</Button>
-                          </div>
-                          {columns && columns.map((column) =>
-                            <label><input type="checkbox" checked={searchColumns.includes(column)}
-                              onChange={(e) => {
-                                const checked = searchColumns.includes(column);
-                                setSearchColumns(prev => checked ? prev.filter(sc => sc !== column) : [...prev, column])
-                              }
-                          } />{column}</label>)}
-                          <div class="col-lg-5 col-md-7   ">
-                            <div class="row dt-range " id="dt-rangeOv">
-                              <div class="col-12">
-
-                                <div class="form-group row">
-                                  <div class="col-md-5  ">
-                                    <div class="input-group">
-                                      <input type="date" class="form-control mt-2 " placeholder="Select date" id="startDateOv" />
-                                    </div>
-                                  </div>
-                                  <div class="col-md-5  ">
-                                    <div class="input-group">
-                                      <input type="date" class="form-control mt-2 " placeholder="Select date" id="endDateOv" />
-                                    </div>
-                                  </div>
-
-                                  <div class="col-md-2  "> <Button onClick={filterDates2} color="primary" className=" btn-sm mt-2  ">Go</Button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                          </div>
-
-
-
-
-                        </div>
 
                         <div class="table-responsive">
                           <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
@@ -374,7 +260,7 @@ function Home({ toDos, deleteToDo }) {
                 </div>
               </div>
             </div>
-            <div class="tab-pane fade" id="tab_borders_icons-3" role="tabpanel">
+            <div class="tab-pane fade" id="returnedHires" role="tabpanel">
               <div class="row">
                 <div class="col-xl-12">
                   <div id="panel-1" class="panel mb-0">
@@ -383,51 +269,6 @@ function Home({ toDos, deleteToDo }) {
                     </div>
                     <div class="panel-container show">
                       <div class="panel-content">
-                        <div class="row mb-2 mt-n3 ">
-
-                          <div class="col-md-4"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
-                          </div>
-
-                          <div class="col-md-1 mt-2 text-right"> <Button onClick={(e) => setRetDtRange(!retDtRange)} className="btn-sm "> Dates</Button>
-                          </div>
-                          {columns && columns.map((column) =>
-                            <label><input type="checkbox" checked={searchColumns.includes(column)}
-                              onChange={(e) => {
-                                const checked = searchColumns.includes(column);
-                                setSearchColumns(prev => checked ? prev.filter(sc => sc !== column) : [...prev, column])
-                              }
-                          } />{column}</label>)}
-                          <div class="col-lg-5 col-md-7    ">
-                            <div class="row dt-range " id="dt-rangeRet">
-                              <div class="col-12">
-
-                                <div class="form-group row">
-                                  <div class="col-md-5  ">
-                                    <div class="input-group">
-                                      <input type="date" class="form-control mt-2 " placeholder="Select date" id="startDateRet" />
-                                    </div>
-                                  </div>
-                                  <div class="col-md-5  ">
-                                    <div class="input-group">
-                                      <input type="date" class="form-control mt-2 " placeholder="Select date" id="endDateRet" />
-                                    </div>
-                                  </div>
-
-                                  <div class="col-md-2  "> <Button onClick={filterDates3} color="primary" className=" btn-sm mt-2  ">Go</Button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                          </div>
-
-
-
-
-                        </div>
-
-
-
                         <div class="table-responsive">
                           <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                             <thead>
