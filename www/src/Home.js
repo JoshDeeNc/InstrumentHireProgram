@@ -8,16 +8,17 @@ import history from './history';
 
 function Home({ toDos, deleteToDo }) {
 
-  toDos = toDos.map(item => Object.assign({}, item, { creation_date: new Date(item.creation_date).toLocaleDateString(),
-                                                      due: new Date(item.due).toLocaleDateString(),
-                                                      returned: (item.returned === "" ? "" : new Date(item.due).toLocaleDateString())
-                                                      }))
+  toDos = toDos.map(item => Object.assign({}, item, {
+    creation_date: new Date(item.creation_date).toLocaleDateString(),
+    due: new Date(item.due).toLocaleDateString(),
+    returned: (item.returned === "" ? "" : new Date(item.due).toLocaleDateString())
+  }))
 
   const curHires = toDos.filter(item => item.returned === "")
-  const overDues = curHires.filter(function(item) {
-      var parts = item.due.split("/")
-      var created = new Date(parts[2], parts[1]-1, parts[0])
-      return new Date(created) < new Date()
+  const overDues = curHires.filter(function (item) {
+    var parts = item.due.split("/")
+    var created = new Date(parts[2], parts[1] - 1, parts[0])
+    return new Date(created) < new Date()
   })
   const returnedHires = toDos.filter(item => item.returned !== "")
 
@@ -32,30 +33,30 @@ function Home({ toDos, deleteToDo }) {
   function search(records) {
     if (qry != "") {
       records = records.filter((row) =>
-        columns.some((column) => (row[column] && row[column].length > 0) && row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
+        searchColumns.some((column) => (row[column] && row[column].length > 0) && row[column].toString().toLowerCase().indexOf(qry.toLowerCase()) > -1)
       )
     }
     if (filtDates.length > 0 && dtRange) {
       console.log(filtDates)
-      records = records.filter(function(item) {
+      records = records.filter(function (item) {
         var parts = item.creation_date.split("/")
-        var created = new Date(parts[2], parts[1]-1, parts[0])
+        var created = new Date(parts[2], parts[1] - 1, parts[0])
         return created >= new Date(filtDates[0]) && created <= new Date(filtDates[1])
       })
     }
     if (filtOvDates.length > 0 && ovDtRange) {
       console.log(filtOvDates)
-      records = records.filter(function(item) {
+      records = records.filter(function (item) {
         var parts = item.creation_date.split("/")
-        var created = new Date(parts[2], parts[1]-1, parts[0])
+        var created = new Date(parts[2], parts[1] - 1, parts[0])
         return created >= new Date(filtOvDates[0]) && created <= new Date(filtOvDates[1])
       })
     }
     if (filtRetDates.length > 0 && retDtRange) {
       console.log(filtRetDates)
-      records = records.filter(function(item) {
+      records = records.filter(function (item) {
         var parts = item.creation_date.split("/")
-        var created = new Date(parts[2], parts[1]-1, parts[0])
+        var created = new Date(parts[2], parts[1] - 1, parts[0])
         return created >= new Date(filtRetDates[0]) && created <= new Date(filtRetDates[1])
       })
     }
@@ -124,8 +125,8 @@ function Home({ toDos, deleteToDo }) {
   }
 
   const calcOv = (dt) => {
-      var parts = dt.split("/")
-      return new Date(parts[2], parts[1]-1, parts[0]).getTime()
+    var parts = dt.split("/")
+    return new Date(parts[2], parts[1] - 1, parts[0]).getTime()
   }
 
 
@@ -147,7 +148,7 @@ function Home({ toDos, deleteToDo }) {
             <li class="nav-item">
               <a class="nav-link h2" data-toggle="tab" href="#tab_borders_icons-3" role="tab" aria-selected="false"><i class="fal fa-hand-holding-box mr-1"></i> Returned Hires</a>
             </li>
-              
+
 
           </ul>
 
@@ -171,6 +172,13 @@ function Home({ toDos, deleteToDo }) {
                           <div class="col-md-1   text-right">
                             <Button onClick={(e) => setDtRange(!dtRange)} className="btn-sm mt-2 "> Dates</Button>
                           </div>
+                          {columns && columns.map((column) =>
+                            <label><input type="checkbox" checked={searchColumns.includes(column)}
+                              onChange={(e) => {
+                                const checked = searchColumns.includes(column);
+                                setSearchColumns(prev => checked ? prev.filter(sc => sc !== column) : [...prev, column])
+                              }
+                          } />{column}</label>)}
                           <div class="col-lg-5  col-md-7     ">
                             <div class="row dt-range " id="dt-range">
                               <div class="col-12">
@@ -415,7 +423,7 @@ function Home({ toDos, deleteToDo }) {
               </div>
             </div>
 
-           
+
           </div>
 
         </Col>
