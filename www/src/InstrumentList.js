@@ -8,8 +8,8 @@ function InstrumentList({ instInventory, toDos }) {
   instInventory = instInventory.map(item => Object.assign({}, item, { available: (item.available ? "Available" : "Hired to " + toDos.filter(hire => hire.returned === "" && hire.instrumentId === item.id)[0].name) }))
 
   const [qry, setQry] = useState("")
-  const [searchColumns, setSearchColumns] = useState([])
-  const columns = instInventory[0] && Object.keys(instInventory[0]);
+  const [searchColumns, setSearchColumns] = useState(["code", "type", "serialNum", "brand", "rate", "owner", "available"])
+  const columns = ["code", "type", "serialNum", "brand", "size", "rate", "owner", "available", "depreciation", "purchaseValue"];
 
 
   function search() {
