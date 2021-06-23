@@ -13,12 +13,12 @@ function LoanReturn({ toDos, instInventory }) {
 
   function search() {
     if (qry !== "") {
-      const hire = curHires.find(item => item.code === qry);
-      const instrument = instInventory.find(item => item.code === qry);
+      const hire = curHires.find(item => item.code.toString().toLowerCase() === qry.toLowerCase());
+      const instrument = instInventory.find(item => item.code.toString().toLowerCase() === qry.toLowerCase());
       if (hire !== undefined) {
-        history.push(`/hirerecord/${hire.code}`)
+        history.push(`/hirerecord/${hire.id}`)
       } else if (instrument !== undefined) {
-        history.push(`/instrumentrecord/${hire.code}`)
+        history.push(`/instrumentrecord/${instrument.id}`)
       } else {
         document.getElementById("yellowerror").innerHTML = "cannot find yellow bar code"
       }
