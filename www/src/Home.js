@@ -11,7 +11,7 @@ function Home({ toDos, deleteToDo }) {
   toDos = toDos.map(item => Object.assign({}, item, {
     creation_date: new Date(item.creation_date).toLocaleDateString(),
     due: new Date(item.due).toLocaleDateString(),
-    returned: (item.returned === "" ? "" : new Date(item.due).toLocaleDateString())
+    returned: (item.returned === "" ? "" : new Date(item.returned).toLocaleDateString())
   }))
 
   const curHires = toDos.filter(item => item.returned === "")
