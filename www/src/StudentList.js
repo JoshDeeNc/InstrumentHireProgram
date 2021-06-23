@@ -59,7 +59,7 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
                       <div class="col-md-5"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
                       </div>
                       <div class="col-md-7   text-right">
-                  <Button onClick={(e) => setDtRange(!dtRange)} className="btn-sm mt-2 "> Advanced Search</Button>
+                  <Button onClick={(e) => setDtRange(!dtRange)} className="btn-sm btn-transparent mt-2 "> Advanced Search</Button>
                 </div>
                 <div class="  dt-range p-3 " id="dt-range">
                       {columns && columns.map((column, index) => (

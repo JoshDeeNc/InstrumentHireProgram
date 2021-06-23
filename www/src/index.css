@@ -45,6 +45,7 @@ button a {
   padding: 6px 12px !important;
 }
 
+
 /* --- Custom Styling  ---------------- */
 
 .panel-hdr-dsp {
@@ -303,8 +304,15 @@ table tr td a .fa-2x {
 
 .btn-secondary {
   color: #666666 !important;
-  background-color: #eeeeee !important;
+  background-color: #eeeeee !important ;
   border: none !important;
+}
+
+.btn-transparent {
+  background-color:#ffffff !important;
+  border: 0px solid #ced4da !important;
+  color:#4caf50 !important;
+  box-shadow: none !important;
 }
 
 .phcs-logo {
@@ -349,9 +357,12 @@ body:not(.mod-pace-custom) .pace .pace-progress, .daterangepicker table tr td.ac
 
 .custom-control-input:checked~.custom-control-label:before {
   color: #fff;
-  border-color: #2e7d32;
-  background-color: #2e7d32;
+  border-color: #78909c ;
+  background-color: #78909c ;
 }
+
+.custom-checkbox .custom-control-label::before {
+  border-radius: 2px; }
 
 .daterangepicker table tr td.active.active:hover {
   background: #4caf50;
