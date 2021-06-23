@@ -110,10 +110,10 @@ function Home({ toDos, deleteToDo }) {
                 <div class="col-md-8   text-right">
                   <Button onClick={(e) => setDtRange(!dtRange)} className="btn-sm mt-2 "> Advanced Search</Button>
                 </div>
-
-                <div class="  col-12     ">
-                            <div class="  dt-range " id="dt-range">
-                              <div class="col-12">
+                <div class="  dt-range " id="dt-range">
+                <div class="  col-12   mt-3   ">
+                           
+                              
                     {columns && columns.map((column, index) => (
                       <div class="custom-control custom-checkbox custom-control-inline">
                         <input type="checkbox" class="custom-control-input" id={"checkBox"+index} checked={searchColumns.includes(column)}
@@ -123,14 +123,23 @@ function Home({ toDos, deleteToDo }) {
                           }
                           } /><label class="custom-control-label" for={"checkBox"+index}>{column}</label>
                         </div>))}
-                                <div>
-                                  <input type="radio" id="hiredBox" name="dateSearching" value="" />
-                                  <label for="hiredBox">hired date</label><br />
-                                  <input type="radio" id="dueBox" name="dateSearching" value="due" />
-                                  <label for="dueBox">due date</label><br />
-                                  <input type="radio" id="returnedBox" name="dateSearching" value="returned" />
-                                  <label for="returnedBox">returned date</label>
-                                </div>
+
+                        <div class="mt-2 mb-2">
+
+                                <div class="custom-control custom-radio custom-control-inline">
+                                  <input type="radio" class="custom-control-input" id="hiredBox" name="inlineDefaultRadiosExample"  checked     />
+                                  <label class="custom-control-label" for="hiredBox">Hired date</label>
+                                  </div>
+                                  <div class="custom-control custom-radio custom-control-inline">
+                                  <input type="radio" class="custom-control-input" id="dueBox" name="inlineDefaultRadiosExample"  />
+                                  <label class="custom-control-label" for="dueBox">Due date</label>
+                                  </div>
+                                  <div class="custom-control custom-radio custom-control-inline">
+
+                                  <input type="radio" class="custom-control-input" id="returnedBox" name="inlineDefaultRadiosExample"   />
+                                  <label class="custom-control-label" for="returnedBox">Returned date</label>
+                                  </div>
+                                  </div>
 
                                 <div class="form-group row">
                                   <div class="col-md-5  ">
@@ -146,7 +155,7 @@ function Home({ toDos, deleteToDo }) {
                                   <div class="col-md-2  "> <Button onClick={filterDates} color="primary" className="btn-sm mt-2">Go</Button>
                                   </div>
                                 </div>
-                              </div>
+                              
                             </div>
 
                           </div>
