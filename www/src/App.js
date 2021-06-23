@@ -21,6 +21,7 @@ import OwnerRecord from './OwnerRecord';
 import InstOptionsList from './InstOptionsList';
 import NewInstOptions from './NewInstOptions';
 import InstOptionsRecord from './InstOptionsRecord';
+import LoanReturn from './LoanReturn'
 import Test from './Test'
 import './App.css';
 import Sidebar from './layout/Sidebar'
@@ -907,6 +908,7 @@ function App() {
                           <Route path="/instoptionslist"><InstOptionsList instOptionsList={instOptionsList} /></Route>
                           <Route path="/newinstoptions"><NewInstOptions addInstOptions={addInstOptions} /></Route>
                           <Route path="/instoptionsrecord"><InstOptionsRecord deleteInstOptions={deleteInstOptions} updateInstOptions={updateInstOptions} instOptionsList={instOptionsList} /></Route>
+                          <Route path="/loanreturnhire"><LoanReturn toDos={toDos} instInventory={instInventory} /></Route>
                           <Route path="/test"><Test/></Route>
                           <Route path="/"><Home updateAlert={updateAlert} toDos={toDos} addToDo={addToDo} deleteToDo={deleteToDo} /></Route>
                         </Switch>    
