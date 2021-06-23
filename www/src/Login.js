@@ -21,7 +21,7 @@ function Login() {
                                 <div class="underln" >   </div>
                                 <h1 class="txt-green   " >Instrument Hire Management System</h1>
 
-                                <p class="mb-5  mt-4 op-7 ">OneMaker Accademy is a store for all your instrumenetal needs.
+                                <p class="mb-5  mt-4 op-7 ">OneMaker Accademy is a store for all your instrumental needs.
 We aim to build and nurture a creative community that is inspired in all aspects of the arts with a strong emphasis on excellence in teaching and performing.</p>
                                 <Button
                                     href={`https://${config.cognito_hosted_domain}/login?response_type=token&client_id=${config.aws_user_pools_web_client_id}&redirect_uri=${config.redirect_url}`}
