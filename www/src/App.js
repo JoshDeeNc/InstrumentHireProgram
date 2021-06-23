@@ -859,7 +859,7 @@ function App() {
 
   return (
     <div className="App">
-      {idToken.length > 0 ? (
+      {idToken.length == 0 ? (
         <BrowserRouter>
             <nav class="shortcut-menu d-none d-sm-block">
                 <input type="checkbox" class="menu-open" name="menu-open" id="menu_open" />

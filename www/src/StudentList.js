@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, ButtonGroup, Form, FormGroup, Input, Label, Row, Col } from 'reactstrap';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
@@ -6,8 +6,23 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 function StudentList({ studentList, deleteToDo, completeToDo }) {
 
   const [qry, setQry] = useState("")
-  const [searchColumns, setSearchColumns] = useState([])
+  const [searchColumns, setSearchColumns] = useState(["firstName","lastName","email","phone"])
   const columns = ["firstName","lastName","school","email","phone"]
+
+  const [dtRange, setDtRange] = useState(false);
+  useEffect(() => {
+    setDateRange(dtRange)
+  }, [dtRange]);
+
+  const setDateRange = (dtRange) => {
+    var a = document.getElementById('dt-range');
+    if (dtRange == true) {
+      a.classList.remove('dt-range');
+    }
+    else {
+      a.classList.add('dt-range');
+    }
+  }
 
   function search() {
     if (qry != "") {
@@ -33,7 +48,7 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
           <div class="row">
             <div class="col-xl-12">
               <div id="panel-1" class="panel">
-                <div class="panel-hdr-dsp    mb-3">
+                <div class="panel-hdr-dsp    ">
                   <h2>Student List</h2>
                   <Link to="/newstudent"><Button color="primary" className="ml-1">New Student</Button></Link>
 
@@ -41,15 +56,22 @@ function StudentList({ studentList, deleteToDo, completeToDo }) {
                 <div class="panel-container show">
                   <div class="panel-content">
                     <div class="row mb-2 mt-n3 ">
-                      <div class="col-md-3"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
+                      <div class="col-md-5"> <input type="text" value={qry} onChange={(e) => setQry(e.target.value)} class="form-control mt-2" placeholder="search..." />
                       </div>
-                      {columns && columns.map((column) =>
-                        <label><input type="checkbox" checked={searchColumns.includes(column)}
+                      <div class="col-md-7   text-right">
+                  <Button onClick={(e) => setDtRange(!dtRange)} className="btn-sm mt-2 "> Advanced Search</Button>
+                </div>
+                <div class="  dt-range p-3 " id="dt-range">
+                      {columns && columns.map((column, index) => (
+                      <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" id={"checkBox"+index} checked={searchColumns.includes(column)}
                           onChange={(e) => {
                             const checked = searchColumns.includes(column);
                             setSearchColumns(prev => checked ? prev.filter(sc => sc !== column) : [...prev, column])
                           }
-                      } />{column}</label>)}
+                          } /><label class="custom-control-label" for={"checkBox"+index}>{column}</label>
+                        </div>))}
+                        </div>
                     </div>
                     <table class="dt-basic-example table table-bordered table-hover table-striped w-100">
                       <thead>
