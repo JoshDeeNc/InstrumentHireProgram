@@ -104,8 +104,10 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      console.log(result.data.Items);
-      setToDos(result.data.Items);
+      const unsorted = result.data.Items;
+      const sorted = unsorted.sort((a,b) => b.creation_date - a.creation_date)
+      console.log(sorted)
+      setToDos(sorted);
     }
   };
 
