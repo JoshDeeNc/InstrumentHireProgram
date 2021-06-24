@@ -105,7 +105,7 @@ function App() {
       clearCredentials();
     } else if (result && result.status === 200) {
       const unsorted = result.data.Items;
-      const sorted = unsorted.sort((a,b) => b.creation_date - a.creation_date)
+      const sorted = unsorted.sort((a,b) => new Date(b.creation_date) - new Date(a.creation_date))
       console.log(sorted)
       setToDos(sorted);
     }
