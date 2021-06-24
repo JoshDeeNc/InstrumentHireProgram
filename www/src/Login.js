@@ -17,7 +17,7 @@ function Login() {
 
                             <div class="col-md-6 p-5 ">
                                
-                                <h2 class="sprd-txt"><strong>OneMaker  </strong> Accademy</h2>
+                                <h2 class="sprd-txt"><strong>OneMaker  </strong> Academy</h2>
                                 <div class="underln" >   </div>
                                 <h1 class="txt-green   " >Instrument Hire Management System</h1>
 
