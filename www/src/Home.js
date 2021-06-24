@@ -26,7 +26,12 @@ function Home({ toDos, deleteToDo }) {
     var createdB = new Date(partB[2], partB[1] - 1, partB[0])
     return createdB - createdA })
 
-  const returnedHires = toDos.filter(item => item.returned !== "").sort((a,b) => new Date(b.returned) - new Date(a.returned))
+  const returnedHires = toDos.filter(item => item.returned !== "").sort(function (a,b) {
+    var partA = a.due.split("/")
+    var partB = b.due.split("/")
+    var createdA = new Date(partA[2], partA[1] - 1, partA[0])
+    var createdB = new Date(partB[2], partB[1] - 1, partB[0])
+    return createdB - createdA })
 
   const [qry, setQry] = useState("")
   const [filtDates, setFiltDates] = useState([])
