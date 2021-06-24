@@ -27,8 +27,8 @@ function Home({ toDos, deleteToDo }) {
     return createdB - createdA })
 
   const returnedHires = toDos.filter(item => item.returned !== "").sort(function (a,b) {
-    var partA = a.due.split("/")
-    var partB = b.due.split("/")
+    var partA = a.returned.split("/")
+    var partB = b.returned.split("/")
     var createdA = new Date(partA[2], partA[1] - 1, partA[0])
     var createdB = new Date(partB[2], partB[1] - 1, partB[0])
     return createdB - createdA })
