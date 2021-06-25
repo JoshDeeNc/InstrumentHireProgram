@@ -500,8 +500,18 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      console.log(result.data.Items);
-      setStudents(result.data.Items);
+      const unsorted = result.data.Items;
+      const sorted = unsorted.sort(function (a, b) {
+        if (a.firstName < b.firstName) {
+          return -1;
+        }
+        if (a.firstName > b.firstName) {
+          return 1;
+        }
+        return 0;
+      })
+      console.log(sorted)
+      setStudents(sorted);
     }
   };
 
@@ -610,8 +620,18 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      console.log(result.data.Items);
-      setSchools(result.data.Items);
+      const unsorted = result.data.Items;
+      const sorted = unsorted.sort(function (a, b) {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      })
+      console.log(sorted)
+      setSchools(sorted);
     }
   };
 
@@ -716,8 +736,18 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      console.log(result.data.Items);
-      setOwners(result.data.Items);
+      const unsorted = result.data.Items;
+      const sorted = unsorted.sort(function (a, b) {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      })
+      console.log(sorted)
+      setOwners(sorted);
     }
   };
 
@@ -817,8 +847,18 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      console.log(result.data.Items);
-      setInstOptionsList(result.data.Items);
+      const unsorted = result.data.Items;
+      const sorted = unsorted.sort(function (a, b) {
+        if (a.instrumentTypeName < b.instrumentTypeName) {
+          return -1;
+        }
+        if (a.instrumentTypeName > b.instrumentTypeName) {
+          return 1;
+        }
+        return 0;
+      })
+      console.log(sorted)
+      setInstOptionsList(sorted);
     }
   };
 
