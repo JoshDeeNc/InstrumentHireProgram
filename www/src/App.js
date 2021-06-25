@@ -317,8 +317,18 @@ function App() {
     if (result && result.status === 401) {
       clearCredentials();
     } else if (result && result.status === 200) {
-      console.log(result.data.Items);
-      setInstInventory(result.data.Items);
+      const unsorted = result.data.Items;
+      const sorted = unsorted.sort(function (a, b) {
+        if (a.code < b.code) {
+          return -1;
+        }
+        if (a.code > b.code) {
+          return 1;
+        }
+        return 0;
+      })
+      console.log(sorted)
+      setInstInventory(sorted);
     }
   };
 
